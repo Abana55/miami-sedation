@@ -1,5 +1,4 @@
-import styles from './Home.module.scss';
-
+import styles from './components/Home.module.scss';
 const Home: React.FC = () => {
   return (
     <div className={styles.container}>
