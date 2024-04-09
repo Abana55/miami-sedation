@@ -1,4 +1,4 @@
-import styles from './home/Home.module.scss';
+import styles from './Home.module.scss';
 
 const Home: React.FC = () => {
   return (
