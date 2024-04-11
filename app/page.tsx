@@ -1,7 +1,11 @@
 import styles from './components/Home.module.scss';
+import Header from './components/Header/Header';
+
+
 const Home: React.FC = () => {
   return (
     <div className={styles.container}>
+      <Header />
       <div className={styles.hero}>
         <h1 className={styles.heroTitle}>Welcome to Miami Sedation Dentistry</h1>
         <p className={styles.heroTagline}>Providing expert dental care with a gentle touch.</p>
