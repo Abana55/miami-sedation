@@ -12,7 +12,7 @@ const Dropdown: React.FC = () => {
         <div className={styles.dropdownContent}>
           <Link href="/dental-services/cleaning"><a>Cleaning</a></Link>
           <Link href="/dental-services/fillings"><a>Fillings</a></Link>
-          {/* Add more links as needed */}
+          
         </div>
       )}
     </div>
