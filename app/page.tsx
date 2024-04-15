@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 import styles from './components/Home.module.scss';
-
-const Header = dynamic(() => import('./components/Header/Header'), { ssr: false });
+import Header from './components/Header/Header';
 
 const Home: React.FC = () => {
   return (

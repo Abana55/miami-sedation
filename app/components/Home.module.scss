@@ -1,15 +1,41 @@
-.homepage {
-    text-align: center;
-    padding: 20px;
+$almond-milk: #f5f5dc; 
+$honied-white: #fbf7ef; 
+
+.body-background {
+  background-color: $almond-milk;
+}
+
+.header {
+  background-color: $honied-white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.nav-links {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin-left: 20px;
   }
-  
-  .headline {
-    font-size: 2rem;
-    color: #0070f3;
+
+  .dropdown-button {
+    background-color: #ffeabc; 
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f0c678; 
+    }
   }
-  
-  .tagline {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #666;
-  }
+}

@@ -1,6 +1,8 @@
+"use client";
 import { useState } from 'react';
 import Link from 'next/link';
-import styles from './Header.module.scss';
+import styles from '../Home.module.scss';  
+
 
 const Dropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +12,8 @@ const Dropdown: React.FC = () => {
       <button className={styles.dropdownButton}>Services</button>
       {isOpen && (
         <div className={styles.dropdownContent}>
-          <Link href="/dental-services/cleaning"><a>Cleaning</a></Link>
-          <Link href="/dental-services/fillings"><a>Fillings</a></Link>
-          
+          <Link href="/dental-services/cleaning">Cleaning</Link>
+          <Link href="/dental-services/fillings">Fillings</Link>
         </div>
       )}
     </div>
