@@ -1,0 +1,26 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+    --foreground-rgb: 0, 0, 0; // Black for light mode text
+    --background-start-rgb: 214, 219, 220; // Light grey
+    --background-end-rgb: 255, 255, 255; // White
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255; // White for dark mode text
+        --background-start-rgb: 0, 0, 0; // Dark grey
+        --background-end-rgb: 0, 0, 0; // Black
+    }
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        rgb(var(--background-start-rgb)),
+        rgb(var(--background-end-rgb))
+    );
+}

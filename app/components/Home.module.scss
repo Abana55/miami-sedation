@@ -1,41 +1,46 @@
 $almond-milk: #f5f5dc; 
 $honied-white: #fbf7ef; 
 
-.body-background {
-  background-color: $almond-milk;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fbf7ef;
 }
-
 .header {
-  background-color: $honied-white;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.5em;
+  background-color: #f5f5dc;
+  
+  padding: 1rem;
   color: #333;
 }
 
-.nav-links {
-  list-style-type: none;
-  padding: 0;
+.hero {
+  text-align: center;
+  padding: 20px;
+  
+}
 
-  li {
-    display: inline-block;
-    margin-left: 20px;
-  }
+.heroTitle {
+  font-size: 2rem;
+  color: #333;
+}
 
-  .dropdown-button {
-    background-color: #ffeabc; 
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
+.heroTagline {
+  font-size: 1.2rem;
+  color: #666;
+}
 
-    &:hover {
-      background-color: #f0c678; 
-    }
-  }
+.missionStatement {
+  margin-top: 40px;
+  padding: 1rem;
+   
+}
+
+.sectionTitle {
+  font-weight: bold;
+  color: #333;
+}
+
+.sectionContent {
+  font-size: 1rem;
+  color: #444;
 }

@@ -2,32 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0; 
+  
+  --background-start-rgb: 214, 219, 220; 
+  --background-end-rgb: 255, 255, 255; 
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* Dark mode text color in RGB */
+    --foreground-rgb: 255, 255, 255; /* White for dark mode text */
+    --background-start-rgb: 0, 0, 0; /* Dark grey */
+    --background-end-rgb: 0, 0, 0; /* Black */
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  margin: 0;
+}
+.button {
+  background-color: rgb(var(--button-bg));
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgb(var(--button-bg) / 0.8);
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
   }
 }
