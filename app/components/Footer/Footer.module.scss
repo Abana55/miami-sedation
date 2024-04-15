@@ -1,0 +1,25 @@
+.footer {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .footerContent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .location, .officeHours, .additionalLinks, .consultation, .reviews, .copyRight {
+    padding: 10px;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
