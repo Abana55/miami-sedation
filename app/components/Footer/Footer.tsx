@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import styles from './Footer.module.scss'; 
+import React from "react";
+import Link from "next/link";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
@@ -11,8 +11,14 @@ const Footer = () => {
           <p>Ramon Bana, DDS</p>
           <p>2461 Coral Way, Suite 100</p>
           <p>Miami, FL 33145</p>
-          <p><a href="tel:+17866255550">(786) 625-5550</a></p>
-          <Link href="/map-directions"><a>Map & Directions</a></Link>
+          <p>
+            <a href="tel:+17866255550" className={styles.link}>
+              (786) 625-5550
+            </a>
+          </p>
+          <Link href="/map-directions" className={styles.link}>
+            Map & Directions
+          </Link>
         </section>
 
         <section className={styles.officeHours}>
@@ -23,16 +29,29 @@ const Footer = () => {
         </section>
 
         <section className={styles.additionalLinks}>
-          <Link href="/accessibility"><a>Accessibility</a></Link>
-          <Link href="/privacy-policy"><a>Privacy Policy</a></Link>
-          <Link href="/terms-of-service"><a>Terms of Service</a></Link>
+          <Link href="/accessibility" className={styles.link}>
+            Accessibility
+          </Link>
+          <Link href="/privacy-policy" className={styles.link}>
+            Privacy Policy
+          </Link>
+          <Link href="/terms-of-service" className={styles.link}>
+            Terms of Service
+          </Link>
         </section>
 
         <section className={styles.consultation}>
-          <p>Call Our Dental Office: <a href="tel:+17866255550">(786) 625-5550</a></p>
-          <Link href="/request-consultation"><a>Request a Consultation</a></Link>
+          <p>
+            Call Our Dental Office:{" "}
+            <a href="tel:+17866255550" className={styles.link}>
+              (786) 625-5550
+            </a>
+          </p>
+          <Link href="/request-consultation" className={styles.link}>
+            Request a Consultation
+          </Link>
         </section>
-        
+
         <section className={styles.reviews}>
           <p>4.9 Stars on 280 Google Reviews</p>
         </section>

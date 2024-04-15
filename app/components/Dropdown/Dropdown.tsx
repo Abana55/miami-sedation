@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Link from 'next/link';
-import styles from '../Home.module.scss';  
+import styles from './Dropdown.module.scss';  
 
 
 const Dropdown: React.FC = () => {

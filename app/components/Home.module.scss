@@ -6,13 +6,35 @@ $honied-white: #fbf7ef;
   margin: 0 auto;
   background-color: #fbf7ef;
 }
-.header {
-  background-color: #f5f5dc;
-  
-  padding: 1rem;
-  color: #333;
+
+.header {  
+  background-color: #f4f4f4; 
+  padding: 0 20px;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  height: 60px;
+}
+
+.navbar div {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  color: #333;
+  text-decoration: none;
+  margin: 0 15px; 
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
 .hero {
   text-align: center;
   padding: 20px;
@@ -43,4 +65,15 @@ $honied-white: #fbf7ef;
 .sectionContent {
   font-size: 1rem;
   color: #444;
+}
+
+@media (max-width: 768px) {
+  .navbar div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .link {
+    margin: 10px 0; 
+  }
 }
