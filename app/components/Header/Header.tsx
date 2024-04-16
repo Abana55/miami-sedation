@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from '../Home.module.scss';
 import Dropdown from '../Dropdown/Dropdown';  
+import style from '../Dropdown/Dropdown.module.scss';
 
 const Header: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Header: React.FC = () => {
           <Link href="/about" className={styles.link}>About</Link>
           <Link href="/before-after" className={styles.link}>Before & After</Link>
           <Link href="/resources" className={styles.link}>Resources</Link>
-          <Dropdown />
+          <Dropdown className={styles.customDropdown} />
         </div>
       </nav>
     </header>
