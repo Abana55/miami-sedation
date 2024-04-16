@@ -1,10 +1,24 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./Footer.module.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
+            <div className={styles.socialMedia}>
+        <a href="https://www.facebook.com" className={styles.icon}>
+        <FontAwesomeIcon icon={faFacebook} />
+
+        </a>
+        <a href="https://www.instagram.com" className={styles.icon}>
+          <FontAwesomeIcon icon={faInstagram} />
+        </a>
+        <a href="https://www.youtube.com" className={styles.icon}>
+          <FontAwesomeIcon icon={faYoutube} />
+        </a>
+      </div>
       <div className={styles.footerContent}>
         <section className={styles.location}>
           <h3>Miami Location</h3>
