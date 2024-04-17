@@ -13,7 +13,7 @@ const Dropdown: React.FC = () => {
       services: [
         {
           name: "Dental Implants",
-          path: "../../pages/DentalServices/DentalImplants.tsx",
+          path: "../../pages/dental-services/DentalImplants.tsx",
         },
       ],
     },
@@ -32,7 +32,7 @@ const Dropdown: React.FC = () => {
               <ul className={styles.dropdownList}>
                 {category.services.map((service, serviceIndex) => (
                   <li key={serviceIndex} className={styles.dropdownItem}>
-                    <Link href="/services/dental-implants">
+                    <Link href="/dental-services/dental-implants">
                       Dental Implants
                     </Link>
                   </li>
