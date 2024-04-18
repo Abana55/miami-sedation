@@ -13,7 +13,7 @@ const Dropdown: React.FC = () => {
       services: [
         {
           name: "Dental Implants",
-          path: "../../pages/dental-services/DentalImplants.tsx",
+          path: "../../pages/dental-services/dental-implants/page.tsx",
         },
       ],
     },
