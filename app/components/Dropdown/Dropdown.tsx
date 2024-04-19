@@ -7,17 +7,16 @@ const Dropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
-  const serviceCategories = [
-    {
-      category: "Cosmetic Dentistry",
-      services: [
-        {
-          name: "Dental Implants",
-          path: "../../pages/dental-services/dental-implants/page.tsx",
-        },
-      ],
-    },
-  ];
+    const serviceCategories = [
+      {
+        category: "Cosmetic Dentistry",
+        services: [
+          { name: "Dental Implants", path: "/dental-services/dental-implants" },
+          { name: "Teeth Whitening", path: "/dental-services/teeth-whitening" } 
+        ],
+      },
+      
+    ];
 
   return (
     <div className={styles.dropdown} onClick={toggleDropdown}>
