@@ -6,17 +6,15 @@ import styles from "./Dropdown.module.scss";
 const Dropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => setIsOpen((prev) => !prev);
-    const serviceCategories = [
-      {
-        category: "Cosmetic Dentistry",
-        services: [
-          { name: "Dental Implants", path: "/dental-services/dental-implants" },
-          { name: "Teeth Whitening", path: "/dental-services/teeth-whitening" } 
-        ],
-      },
-      
-    ];
+  const serviceCategories = [
+    {
+      category: "Cosmetic Dentistry",
+      services: [
+        { name: "Dental Implants", path: "/dental-services/dental-implants" },
+        { name: "Teeth Whitening", path: "/dental-services/teeth-whitening" },
+      ],
+    },
+  ];
 
   return (
     <div className={styles.dropdown} onClick={toggleDropdown}>
@@ -31,9 +29,7 @@ const Dropdown: React.FC = () => {
               <ul className={styles.dropdownList}>
                 {category.services.map((service, serviceIndex) => (
                   <li key={serviceIndex} className={styles.dropdownItem}>
-                    <Link href="/dental-services/dental-implants">
-                      Dental Implants
-                    </Link>
+                    <Link href={service.path}>{service.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -44,5 +40,7 @@ const Dropdown: React.FC = () => {
     </div>
   );
 };
+
+
 
 export default Dropdown;
