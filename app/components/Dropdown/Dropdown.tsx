@@ -6,6 +6,8 @@ import styles from "./Dropdown.module.scss";
 const Dropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleDropdown = () => setIsOpen(prev => !prev);
+
   const serviceCategories = [
     {
       category: "Cosmetic Dentistry",
