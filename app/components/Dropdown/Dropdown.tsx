@@ -8,41 +8,34 @@ const Dropdown: React.FC = () => {
 
   const toggleDropdown = () => setIsOpen(prev => !prev);
 
-  const serviceCategories = [
-    {
-      category: "Cosmetic Dentistry",
-      services: [
-        { name: "Dental Implants", path: "/dental-services/dental-implants" },
-        { name: "Teeth Whitening", path: "/dental-services/teeth-whitening" },
-      ],
-    },
-  ];
-
   return (
     <div className={styles.dropdown} onClick={toggleDropdown}>
       <button className={styles.button}>Services</button>
       {isOpen && (
-        <div
-          className={`${styles.dropdownContent} ${isOpen ? styles.show : ""}`}
-        >
-          {serviceCategories.map((category, index) => (
-            <div key={index} className={styles.dropdownColumn}>
-              <h3 className={styles.dropdownHeader}>{category.category}</h3>
-              <ul className={styles.dropdownList}>
-                {category.services.map((service, serviceIndex) => (
-                  <li key={serviceIndex} className={styles.dropdownItem}>
-                    <Link href={service.path}>{service.name}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className={`${styles.dropdownContent} ${isOpen ? styles.show : ""}`}>
+          <div className={styles.dropdownColumn}>
+            <h3 className={styles.dropdownHeader}>Cosmetic Dentistry</h3>
+            <ul className={styles.dropdownList}>
+              <li className={styles.dropdownItem}>
+                <Link href="/dental-services/dental-implants">Dental Implants</Link>
+              </li>
+              <li className={styles.dropdownItem}>
+                <Link href="/dental-services/teeth-whitening">Teeth Whitening</Link>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.dropdownColumn}>
+            <h3 className={styles.dropdownHeader}>Restoration Dentistry</h3>
+            <ul className={styles.dropdownList}>
+              {/* Add links as needed */}
+            </ul>
+          </div>
+          {/* Additional categories to be added */}
         </div>
       )}
     </div>
   );
 };
-
 
 
 export default Dropdown;

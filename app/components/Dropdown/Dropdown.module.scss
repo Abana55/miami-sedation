@@ -1,72 +1,71 @@
 .dropdown {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .button {
-    background: none;
-    border: none;
-    color: inherit;
-    font: inherit;
-    padding: 10px 20px;
-    color: #333;
-  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.button {
+  background: none;
+  border: none;
+  color: #333;
+  font: inherit;
+  padding: 10px 20px;
   margin: 0 15px; 
   font-weight: bold;
   cursor: pointer;
-  }
-  
-  .dropdownContent {
-    display: none;
-    position: fixed;
-    background-color: #f9f9f9;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 100;
-    border-radius: 25px;
-    padding: 10px;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    display: flex;  
-  }
-  
-  .dropdownContent.show {
-    display: flex; 
-  }
-  
-  .dropdownColumn {
-    margin: 10px;
-    padding: 10px;
-    border-left: 2px solid #ccc; 
-  }
-  
-  .dropdownColumn:first-child {
-    border-left: none; 
-  }
-  
-  .dropdownHeader {
-    font-weight: bold;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ccc; 
-  }
-  
-  .dropdownList {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .dropdownItem {
-    padding: 5px 0;
-    line-height: 1.5;
-  }
-  
-  .dropdownItem a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .dropdownItem:hover a {
-    text-decoration: underline;
-  }
+  text-decoration: none;
+}
+
+.dropdownContent {
+  display: none; 
+  position: fixed;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 100;
+  border-radius: 25px;
+  padding: 10px;
+  top: 60px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  flex-direction: column; 
+}
+
+.dropdownContent.show {
+  display: flex; 
+}
+
+.dropdownColumn {
+  margin: 10px;
+  padding: 10px;
+  border-left: 2px solid #ccc; 
+}
+
+.dropdownColumn:first-child {
+  border-left: none; 
+}
+
+.dropdownHeader {
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc; 
+}
+
+.dropdownList {
+  list-style: none;
+  padding: 0;
+}
+
+.dropdownItem {
+  padding: 5px 0;
+  line-height: 1.5;
+}
+
+.dropdownItem a {
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdownItem:hover a {
+  text-decoration: underline;
+}
