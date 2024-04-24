@@ -16,12 +16,10 @@ const Dropdown: React.FC = () => {
           <div className={styles.dropdownColumn}>
             <h3 className={styles.dropdownHeader}>Cosmetic Dentistry</h3>
             <ul className={styles.dropdownList}>
-              <li className={styles.dropdownItem}>
-                <Link href="/dental-services/dental-implants">Dental Implants</Link>
-              </li>
-              <li className={styles.dropdownItem}>
-                <Link href="/dental-services/teeth-whitening">Teeth Whitening</Link>
-              </li>
+            <nav>
+            <Link href="/dental-services/dental-implants" onClick={(e) => e.stopPropagation()}>Dental Implants</Link>
+      <Link href="/dental-services/teeth-whitening">Teeth Whitening</Link>
+    </nav>
             </ul>
           </div>
           <div className={styles.dropdownColumn}>

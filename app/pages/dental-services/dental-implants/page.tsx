@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import styles from "./DentalServices.module.scss";
+import styles from '../../DentalServices.module.scss';
 
 const DentalImplants = () => {
   return (
