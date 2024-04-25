@@ -17,7 +17,7 @@ const Header: React.FC = () => {
           </Link>
         </li>
         <li>
-          <Link href="/dental-implants" className={styles.link}>
+          <Link href="/about-us" className={styles.link}>
             About Us
           </Link>
         </li>

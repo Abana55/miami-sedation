@@ -25,10 +25,8 @@ const Dropdown: React.FC = () => {
           <div className={styles.dropdownColumn}>
             <h3 className={styles.dropdownHeader}>Restoration Dentistry</h3>
             <ul className={styles.dropdownList}>
-              {/* Add links as needed */}
             </ul>
           </div>
-          {/* Additional categories to be added */}
         </div>
       )}
     </div>
