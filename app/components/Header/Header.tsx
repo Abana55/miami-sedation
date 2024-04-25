@@ -6,18 +6,33 @@ import style from '../Dropdown/Dropdown.module.scss';
 const Header: React.FC = () => {
   return (
     <header className={styles.header}>
-      <nav className={styles.navbar}>
-        <Link href="/">
-          <a className={styles.link}>Miami Sedation Dentistry</a>
-        </Link>
-        <ul>
-          <li><Link href="/services"><a className={styles.link}>Services</a></Link></li>
-          <li><Link href="/about"><a className={styles.link}>About Us</a></Link></li>
-          <li><Link href="/contact"><a className={styles.link}>Contact</a></Link></li>
-        </ul>
-      </nav>
-    </header>
-  );
+    <nav className={styles.navbar}>
+      <Link href="/" className={styles.link}>
+        Miami Sedation Dentistry
+      </Link>
+      <ul>
+        <li>
+          <Link href="/services" className={styles.link}>
+            Services
+          </Link>
+        </li>
+        <li>
+          <Link href="/dental-implants" className={styles.link}>
+            About Us
+          </Link>
+        </li>
+        <li>
+          <Link href="/contact" className={styles.link}>
+            Contact
+          </Link>
+        </li>
+        <li>
+          <Dropdown/>
+        </li>
+      </ul>
+    </nav>
+  </header>
+);
 };
 
 export default Header;
