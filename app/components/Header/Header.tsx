@@ -10,9 +10,6 @@ const Header: React.FC = () => {
         <Link href="/" className={styles.link}>Miami Sedation Dentistry</Link>
         <ul className={styles.navList}>
           <li>
-            <Link href="/services" className={styles.link}>Services</Link>
-          </li>
-          <li>
             <Link href="/about-us" className={styles.link}>About Us</Link>
           </li>
           <li>
