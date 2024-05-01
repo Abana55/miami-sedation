@@ -1,7 +1,7 @@
 .dropdown {
   position: relative;
-  cursor: pointer;
 }
+
 
 .button {
   background: none;
@@ -16,24 +16,22 @@
 }
 
 .dropdownContent {
-  display: none; 
-  position: fixed;
-  background-color: #f9f9f9;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 100;
-  border-radius: 25px;
-  padding: 10px;
-  top: 60px; 
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
-  flex-direction: column; 
+  position: absolute;
+  top: 100%;  
+  left: 0;
+  z-index: 1000; 
+  background: white; 
+  width: 100%; 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
 }
 
-.dropdownContent.show {
-  display: block;
-  display: flex; 
+.dropdownContent {
+  display: none; 
 }
+.dropdownContent.show {
+  display: block; 
+}
+
 
 .dropdownColumn {
   margin: 10px;

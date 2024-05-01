@@ -1,29 +1,24 @@
 "use client";
 import Link from "next/link";
 import styles from "./Dropdown.module.scss";
-
 import React, { useState, useCallback } from 'react';
+
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = useCallback((event) => {
-    console.log("Toggling Dropdown"); 
+  const toggleDropdown = (event) => {
     event.stopPropagation();
-    setIsOpen(prev => !prev);
-  }, []);
+    console.log("Current state before toggle:", isOpen);
+    setIsOpen(!isOpen);
+    console.log("Current state after toggle:", isOpen);
+  };
 
   return (
     <div onClick={toggleDropdown}>
-      <button>Services</button>
-      {isOpen && (
-        <div>
-          <p>Dental Implants</p>
-          <p>Teeth Whitening</p>
-        </div>
-      )}
+      <button>Toggle Dropdown</button>
+      {isOpen && <div>Dropdown Content</div>}
     </div>
   );
 };
-
 export default Dropdown;
