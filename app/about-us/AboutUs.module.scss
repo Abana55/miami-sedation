@@ -1,0 +1,32 @@
+.aboutContainer {
+    background-color: #fbf7ef; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    color: #333; 
+    font-family: 'Helvetica', 'Arial', sans-serif;
+  
+    h1, h2 {
+      color: #004885; 
+      margin: 24px 0;
+    }
+  
+    .teamMember {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      img {
+        width: 200px; 
+        height: auto;
+        border-radius: 10px;
+        margin: 0 20px;
+      }
+    }
+  
+    .teamText {
+      flex: 1;
+    }
+  }
