@@ -1,27 +1,50 @@
 $almond-milk: #f5f5dc;
 $honied-white: #fbf7ef;
+$dark-gray: #333;  
+$medium-gray: #666; 
+
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: $honied-white; 
+  background-color: $honied-white;
 }
 
-.header {
+.header {  
   background-color: $almond-milk; 
   padding: 0 20px;
+  color: $dark-gray; 
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
   height: 60px;
+  color: $dark-gray; 
 }
 
-.navbar div {
+.navbar ul {
   display: flex;
   align-items: center;
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
 }
 
 .link {
@@ -76,4 +99,36 @@ $honied-white: #fbf7ef;
   .link {
     margin: 10px 0; 
   }
+}
+.services, .testimonials, .callToAction {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: $honied-white;
+}
+
+.servicesList, .testimonialItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.serviceItem {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.ctaButton {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  background-color: darken(#0077cc, 10%);
+}
+
+.footerImage img {
+  width: 100%;
+  height: auto;
 }
