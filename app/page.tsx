@@ -6,7 +6,7 @@ import "../app/styles/globals.scss";
 const Home: React.FC = () => {
   return (
     <div className={styles.container}>
-      <Header />
+      
       <div className={styles.hero}>
         <h1 className={styles.heroTitle}>
           Welcome to Miami Sedation Dentistry
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
           to our patients, ensuring their comfort and well-being at every visit.
         </p>
       </section>
-      <Footer />
+      
     </div>
   );
 };

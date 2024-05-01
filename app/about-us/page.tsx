@@ -25,7 +25,7 @@ export default function AboutPage() {
       <div>
         <h2>Request a Consultation</h2>
         <p>Over 250 Google Reviews</p>
-        <Link href="/contact"><a className="cta-button">Request a Consultation</a></Link>
+        <Link href="/contact">Request a Consultation</Link>
       </div>
     </div>
     );

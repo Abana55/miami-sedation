@@ -1,21 +1,21 @@
-$almond-milk: #f5f5dc; 
-$honied-white: #fbf7ef; 
+$almond-milk: #f5f5dc;
+$honied-white: #fbf7ef;
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #fbf7ef;
+  background-color: $honied-white; 
 }
 
-.header {  
-  background-color: #f4f4f4; 
+.header {
+  background-color: $almond-milk; 
   padding: 0 20px;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   height: 60px;
 }
 
@@ -27,7 +27,7 @@ $honied-white: #fbf7ef;
 .link {
   color: #333;
   text-decoration: none;
-  margin: 0 15px; 
+  margin: 0 15px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -35,10 +35,10 @@ $honied-white: #fbf7ef;
 .link:hover {
   text-decoration: underline;
 }
+
 .hero {
   text-align: center;
   padding: 20px;
-  
 }
 
 .heroTitle {
@@ -54,7 +54,6 @@ $honied-white: #fbf7ef;
 .missionStatement {
   margin-top: 40px;
   padding: 1rem;
-   
 }
 
 .sectionTitle {
@@ -66,6 +65,7 @@ $honied-white: #fbf7ef;
   font-size: 1rem;
   color: #444;
 }
+
 
 @media (max-width: 768px) {
   .navbar div {
