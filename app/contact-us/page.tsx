@@ -26,8 +26,12 @@ function ContactForm() {
     console.log(formData);
     alert("Form submitted. Thank you!");
   };
-
   return (
+    <div className={styles.container}>
+      <div className={styles.imageContainer}>
+        {/* Image is set via CSS background */}
+      </div>
+      <div className={styles.formContainer}></div>
     <form onSubmit={handleSubmit} className={styles.contactForm}>
       <label>
         First + Last Name (Required):
@@ -118,6 +122,7 @@ function ContactForm() {
         Submit
       </button>
     </form>
+    </div>
   );
 }
 
