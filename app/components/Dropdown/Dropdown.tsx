@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import styles from './Dropdown.module.scss';
 
-const Dropdown = () => {
+const Dropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = (e) => {
+  const toggleDropdown = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setIsOpen(prev => !prev);
   };
@@ -29,7 +29,7 @@ const Dropdown = () => {
         "Teeth Whitening"
       ]
     },
-    // Other categories...
+    // Add other categories here...
   ];
 
   return (

@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Dropdown/Dropdown.js", "app/components/Header/Header.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Dropdown/Dropdown.tsx", "app/components/Header/Header.tsx"],
   "exclude": ["node_modules"]
 }
