@@ -1,47 +1,67 @@
 .dropdown {
+  position: relative;
+  display: inline-block;
+
   .button {
     padding: 8px 16px;
     cursor: pointer;
     background-color: #0077cc;
     color: white;
     border-radius: 4px;
+    border: none;
+    font-size: 16px;
 
     &:hover {
       background-color: #005fa3;
     }
   }
 
-  .modal {
-    position: fixed; 
-    z-index: 1000; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.5); // Overlay background
-  }
-
-  .modalContent {
+  .dropdownContent {
+    display: none;
+    position: absolute;
     background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; 
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
     border-radius: 4px;
+    margin-top: 8px;
 
-    .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
+    .dropdownColumn {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
 
-      &:hover,
-      &:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .dropdownHeader {
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+      }
+
+      .dropdownList {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        .dropdownItem {
+          padding: 8px 16px;
+
+          .link {
+            color: #333;
+            text-decoration: none;
+            display: block;
+
+            &:hover {
+              background-color: #f1f1f1;
+            }
+          }
+        }
       }
     }
+  }
+
+  &.open .dropdownContent {
+    display: block;
   }
 }

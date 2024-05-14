@@ -6,7 +6,11 @@ import styles from './Dropdown.module.scss';
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => setIsOpen(prev => !prev);
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    setIsOpen(prev => !prev);
+  };
+
   const serviceCategories = [
     {
       category: "Cosmetic Dentistry",
@@ -29,10 +33,10 @@ const Dropdown = () => {
   ];
 
   return (
-    <div className={styles.dropdown} onClick={toggleDropdown}>
-      <button className={styles.button}>Services</button>
+    <div className={`${styles.dropdown} ${isOpen ? styles.open : ''}`}>
+      <button className={styles.button} onClick={toggleDropdown}>Services</button>
       {isOpen && (
-        <div className={`${styles.dropdownContent} ${isOpen ? styles.show : ''}`}>
+        <div className={styles.dropdownContent}>
           {serviceCategories.map((category, index) => (
             <div key={index} className={styles.dropdownColumn}>
               <h3 className={styles.dropdownHeader}>{category.category}</h3>

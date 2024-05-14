@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import styles from '../Home.module.scss';
-import Dropdown from '../Dropdown/Dropdown';  
-import style from '../Dropdown/Dropdown.module.scss';
+import Dropdown from '../Dropdown/Dropdown';
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
@@ -21,7 +20,7 @@ const Header: React.FC = () => {
         </ul>
       </nav>
     </header>
-);
+  );
 };
 
 export default Header;
