@@ -1,7 +1,5 @@
-import styles from "./components/Home.module.scss";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import "../app/styles/globals.scss";
+import React from 'react';
+import styles from './components/Home.module.scss';
 
 const Home: React.FC = () => {
   return (

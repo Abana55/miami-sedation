@@ -3,7 +3,6 @@ $honied-white: #fbf7ef;
 $dark-gray: #333;  
 $medium-gray: #666; 
 
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -90,7 +89,6 @@ $medium-gray: #666;
   color: #444;
 }
 
-
 @media (max-width: 768px) {
   .navbar div {
     flex-direction: column;
@@ -101,6 +99,7 @@ $medium-gray: #666;
     margin: 10px 0; 
   }
 }
+
 .services, .testimonials, .callToAction {
   margin-top: 40px;
   padding: 20px;

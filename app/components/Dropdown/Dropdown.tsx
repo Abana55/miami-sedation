@@ -9,49 +9,22 @@ const Dropdown: React.FC = () => {
   const toggleDropdown = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setIsOpen(prev => !prev);
+    console.log("Dropdown toggled", !isOpen); // Debugging log
   };
 
-  const serviceCategories = [
-    {
-      category: "Cosmetic Dentistry",
-      services: [
-        "Cosmetic Dentistry",
-        "Dental Bonding",
-        "Dental Crowns",
-        "Dental Implants",
-        "All-on-4® Dental Implants",
-        "Gum Contouring",
-        "Invisalign®",
-        "Invisalign Teen®",
-        "Porcelain Veneers",
-        "Smile Design",
-        "Smile Makeover",
-        "Teeth Whitening"
-      ]
-    },
-    // Add other categories here...
-  ];
-
   return (
-    <div className={`${styles.dropdown} ${isOpen ? styles.open : ''}`}>
-      <button className={styles.button} onClick={toggleDropdown}>Services</button>
+    <div className={styles.dropdown}>
+      <button className={styles.button} onClick={toggleDropdown}>
+        Services
+      </button>
       {isOpen && (
-        <div className={styles.dropdownContent}>
-          {serviceCategories.map((category, index) => (
-            <div key={index} className={styles.dropdownColumn}>
-              <h3 className={styles.dropdownHeader}>{category.category}</h3>
-              <ul className={styles.dropdownList}>
-                {category.services.map((service, serviceIndex) => (
-                  <li key={serviceIndex} className={styles.dropdownItem}>
-                    <Link href={`/services/${service.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')}`}>
-                      <a className={styles.link}>{service}</a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <ul className={styles.dropdownMenu}>
+          <li className={styles.dropdownItem}>
+            <Link href="/services/dental-implants">
+              <a className={styles.link}>Dental Implants</a>
+            </Link>
+          </li>
+        </ul>
       )}
     </div>
   );
