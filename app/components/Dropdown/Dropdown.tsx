@@ -17,21 +17,21 @@ const Dropdown: React.FC = () => {
       category: "Cosmetic",
       services: [
         { name: "Dental Implants", href: "/dental-services/dental-implants" },
-        // Add more cosmetic services here
+        
       ]
     },
     {
       category: "Preventative",
       services: [
         { name: "Teeth Cleaning", href: "/dental-services/teeth-cleaning" },
-        // Add more preventative services here
+        
       ]
     },
     {
       category: "Restoration",
       services: [
         { name: "Fillings", href: "/dental-services/fillings" },
-        // Add more restoration services here
+        
       ]
     }
     // Add more categories and services here
