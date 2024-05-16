@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './styles/globals.scss';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header'; // Correct the path
+import Footer from './components/Footer/Footer'; // Correct the path
 import React, { ReactNode } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });

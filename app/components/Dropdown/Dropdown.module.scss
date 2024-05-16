@@ -17,36 +17,59 @@
   }
 
   .dropdownMenu {
-    display: none; 
+    display: none; /* Default is hidden */
     position: absolute;
-    top: 100%; 
+    top: 100%; /* Position the dropdown right below the button */
     left: 0;
     background-color: white;
     color: black;
-    min-width: 200px; 
-    padding: 10px;
+    min-width: 300px; /* Increase width to make it larger */
+    padding: 20px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     border-radius: 4px;
     list-style-type: none;
     margin: 0;
+    display: flex; /* Display categories in a row */
+    flex-wrap: wrap;
 
-    .dropdownItem {
-      padding: 8px 16px;
+    .category {
+      flex: 1 1 30%; /* Adjust flex-basis for column width */
+      margin-right: 20px;
 
-      .link {
-        color: black; 
-        text-decoration: none;
-        display: block;
+      &:last-child {
+        margin-right: 0;
+      }
 
-        &:hover {
-          background-color: #f1f1f1;
+      .categoryTitle {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .serviceList {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        .serviceItem {
+          padding: 8px 0;
+
+          a {
+            color: black; /* Ensure font color is black */
+            text-decoration: none;
+            display: block;
+
+            &:hover {
+              background-color: #f1f1f1;
+            }
+          }
         }
       }
     }
   }
 
   &.open .dropdownMenu {
-    display: block; 
+    display: flex; /* Show when dropdown is open */
   }
 }

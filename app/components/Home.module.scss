@@ -1,7 +1,7 @@
 $almond-milk: #f5f5dc;
 $honied-white: #fbf7ef;
-$dark-gray: #333;  
-$medium-gray: #666; 
+$dark-gray: #333;
+$medium-gray: #666;
 
 .container {
   max-width: 1200px;
@@ -9,26 +9,26 @@ $medium-gray: #666;
   background-color: $honied-white;
 }
 
-.header {  
-  background-color: $almond-milk; 
+.header {
+  background-color: $almond-milk;
   padding: 0 20px;
-  color: $dark-gray; 
+  color: $dark-gray;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   height: 60px;
-  color: $dark-gray; 
+  color: $dark-gray;
 }
 
 .navbar ul {
   display: flex;
   align-items: center;
-  list-style: none; 
-  padding: 0; 
-  margin: 0; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar li {
@@ -49,7 +49,7 @@ $medium-gray: #666;
 .link {
   color: $dark-gray;
   text-decoration: none;
-  margin: 0 15px; 
+  margin: 0 15px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -96,7 +96,7 @@ $medium-gray: #666;
   }
 
   .link {
-    margin: 10px 0; 
+    margin: 10px 0;
   }
 }
 

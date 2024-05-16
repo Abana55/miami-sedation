@@ -12,20 +12,52 @@ const Dropdown: React.FC = () => {
     console.log("Dropdown toggled", !isOpen); // Debugging log
   };
 
+  const serviceCategories = [
+    {
+      category: "Cosmetic",
+      services: [
+        { name: "Dental Implants", href: "/dental-services/dental-implants" },
+        // Add more cosmetic services here
+      ]
+    },
+    {
+      category: "Preventative",
+      services: [
+        { name: "Teeth Cleaning", href: "/dental-services/teeth-cleaning" },
+        // Add more preventative services here
+      ]
+    },
+    {
+      category: "Restoration",
+      services: [
+        { name: "Fillings", href: "/dental-services/fillings" },
+        // Add more restoration services here
+      ]
+    }
+    // Add more categories and services here
+  ];
+
   return (
-    <div className={styles.dropdown}>
+    <div className={`${styles.dropdown} ${isOpen ? styles.open : ''}`}>
       <button className={styles.button} onClick={toggleDropdown}>
         Services
       </button>
-      {isOpen && (
-        <ul className={styles.dropdownMenu}>
-          <li className={styles.dropdownItem}>
-            <Link href="/services/dental-implants">
-              <a className={styles.link}>Dental Implants</a>
-            </Link>
-          </li>
-        </ul>
-      )}
+      <div className={styles.dropdownMenu}>
+        {serviceCategories.map(category => (
+          <div key={category.category} className={styles.category}>
+            <h4 className={styles.categoryTitle}>{category.category}</h4>
+            <ul className={styles.serviceList}>
+              {category.services.map(service => (
+                <li key={service.name} className={styles.serviceItem}>
+                  <Link href={service.href}>
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import styles from '../Home.module.scss';
-import Dropdown from '../Dropdown/Dropdown';
+import styles from '../Home.module.scss'; // Correct the path
+import Dropdown from '../Dropdown/Dropdown'; // Correct the path
 
 const Header: React.FC = () => {
   return (
