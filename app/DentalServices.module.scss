@@ -2,11 +2,11 @@ $primary-color: #4a4a4a; // Dark gray
 $primary-color-hover: #2a2a2a; // Darker gray
 $text-color: #333; // Dark text color
 $subheader-color: #555;
-$background-color: #f5f5f5; 
+$background-color: #f5f5f5;
 
-$cosmetic-bg: #f9f9f9; 
-$preventative-bg: #fafafa; 
-$restoration-bg: #f7f7f7; 
+$cosmetic-bg: #f9f9f9;
+$preventative-bg: #fafafa;
+$restoration-bg: #f7f7f7;
 
 .service-page {
   padding: 40px 20px;
@@ -16,6 +16,22 @@ $restoration-bg: #f7f7f7;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   background-color: $background-color;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__articles {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  &__image-slider {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &__header {
     font-size: 2.5rem;
@@ -60,6 +76,40 @@ $restoration-bg: #f7f7f7;
   &--restoration {
     background-color: $restoration-bg;
     border: 1px solid #ccc; // Gray border
+  }
+  .slider__main-image {
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .slider__thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    .thumbnail {
+      margin: 0 5px;
+      cursor: pointer;
+      opacity: 0.5;
+
+      &.active {
+        opacity: 1;
+      }
+
+      img {
+        width: 50px;
+        height: auto;
+      }
+    }
+  }
+
+  .slider__next-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
   }
 
   &__contact-button {

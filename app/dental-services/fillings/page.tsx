@@ -55,8 +55,8 @@ const Fillings = () => {
               Our dental practice offers high-quality fillings and personalized care
               to ensure the best outcomes for our patients.
             </p>
-            <Link href="/contact-us">
-              <a className={styles["service-page__contact-button"]}>Contact Us</a>
+            <Link href="/contact-us" className={styles["service-page__contact-button"]}>
+              Contact Us
             </Link>
           </div>
           <div className={styles["service-page__image-slider"]}>
