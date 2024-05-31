@@ -1,12 +1,13 @@
 "use client";
+
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from './Dropdown.module.scss';
 
-const Dropdown: React.FC = () => {
+const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const toggleDropdown = (e) => {
     e.stopPropagation();
     setIsOpen(prev => !prev);
   };
@@ -46,28 +47,29 @@ const Dropdown: React.FC = () => {
     <div className={styles['dropdown-container']}>
       <div
         className={`${styles.dropdown} ${isOpen ? styles.open : ''}`}
-        
+        onMouseLeave={closeDropdown}
       >
-        <button onMouseLeave={closeDropdown}
-        onMouseEnter={() => setIsOpen(true)} className={styles.button} onClick={toggleDropdown}>
+        <button className={styles.button} onClick={toggleDropdown}>
           Services
         </button>
-        <div className={styles.dropdownMenu}>
-          {serviceCategories.map(category => (
-            <div key={category.category} className={styles.category}>
-              <h4 className={styles.categoryTitle}>{category.category}</h4>
-              <ul className={styles.serviceList}>
-                {category.services.map(service => (
-                  <li key={service.name} className={styles.serviceItem}>
-                    <Link href={service.href}>
-                      {service.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        {isOpen && (
+          <div className={styles.dropdownMenu}>
+            {serviceCategories.map(category => (
+              <div key={category.category} className={styles.category}>
+                <h4 className={styles.categoryTitle}>{category.category}</h4>
+                <ul className={styles.serviceList}>
+                  {category.services.map(service => (
+                    <li key={service.name} className={styles.serviceItem}>
+                      <Link href={service.href}>
+                        {service.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

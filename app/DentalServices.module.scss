@@ -14,16 +14,19 @@ $restoration-bg: #f7f7f7;
   margin: 20px auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
   background-color: $background-color;
+  text-align: center;
+
   &__content {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
   }
 
   &__articles {
     flex: 1;
     margin-right: 20px;
+    text-align: left;
   }
 
   &__image-slider {
@@ -50,7 +53,6 @@ $restoration-bg: #f7f7f7;
     line-height: 1.8;
     margin-bottom: 25px;
     color: $text-color;
-    text-align: left;
   }
 
   &__list {
@@ -77,6 +79,7 @@ $restoration-bg: #f7f7f7;
     background-color: $restoration-bg;
     border: 1px solid #ccc; // Gray border
   }
+
   .slider__main-image {
     width: 100%;
     img {
@@ -110,6 +113,16 @@ $restoration-bg: #f7f7f7;
     margin-top: 10px;
     padding: 5px 10px;
     cursor: pointer;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-color-hover;
+    }
   }
 
   &__contact-button {
@@ -122,7 +135,7 @@ $restoration-bg: #f7f7f7;
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 
