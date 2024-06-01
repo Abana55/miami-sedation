@@ -6,9 +6,9 @@ import Link from "next/link";
 import styles from "../../DentalServices.module.scss";
 
 const images = [
-  "/images/filling1.jpg",
-  "/images/filling2.jpg",
-  "/images/filling3.jpg",
+  "../../../public/images/IMG_3696.JPG",
+  "../../../public/images/IMG_3948.jpeg",
+  "../../../public/images/IMG_6450.jpeg",
 ];
 
 const Fillings = () => {
