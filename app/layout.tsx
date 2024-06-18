@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './styles/globals.scss';
-import Header from './components/Header/Header'; // Correct the path
-import Footer from './components/Footer/Footer'; // Correct the path
+import Header from './components/Header/Header'; 
+import Footer from './components/Footer/Footer'; 
 import React, { ReactNode } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,9 +19,11 @@ interface RootLayoutProps {
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} layout-body`}>
         <Header />
-        <main>{children}</main>
+        <main className="layout-main">
+          <div className="main-container">{children}</div>
+        </main>
         <Footer />
       </body>
     </html>
