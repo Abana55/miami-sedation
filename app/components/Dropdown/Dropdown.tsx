@@ -46,14 +46,14 @@ const Dropdown: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Dental Services | Miami Sedation Dentistry</title>
+        <title>Dental Services | Bana Dental Design</title>
         <meta
           name="description"
-          content="Explore our comprehensive dental services including cosmetic dentistry, preventative dentistry, and restorative dentistry at Miami Sedation Dentistry."
+          content="Explore our comprehensive dental services including cosmetic dentistry, preventative dentistry, and restorative dentistry at Bana Dental Design."
         />
         <meta
           name="keywords"
-          content="dental services, cosmetic dentistry, preventative dentistry, restorative dentistry, dental implants, teeth whitening, veneers, teeth cleaning, oral exams, X-rays, fillings, crowns, bridges, Miami Sedation Dentistry"
+          content="dental services, cosmetic dentistry, preventative dentistry, restorative dentistry, dental implants, teeth whitening, veneers, teeth cleaning, oral exams, X-rays, fillings, crowns, bridges, Bana Dental Design"
         />
       </Head>
       <div className={styles['dropdown-container']} onMouseLeave={handleMouseLeave}>
@@ -76,7 +76,7 @@ const Dropdown: React.FC = () => {
                   {category.services.map(service => (
                     <li key={service.name} className={styles.serviceItem}>
                       <Link href={service.href}>
-                        {service.name} <span className={styles.hidden}>at Miami Sedation Dentistry</span>
+                        {service.name} <span className={styles.hidden}>at Bana Dental Design</span>
                       </Link>
                     </li>
                   ))}

@@ -31,6 +31,7 @@
   margin-top: 0.5rem;
   z-index: 1003;
   width: 20rem;
+  padding: 1rem 0;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
@@ -43,7 +44,12 @@
 }
 
 .category {
-  padding: 1rem;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .categoryTitle {
