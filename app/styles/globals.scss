@@ -1,26 +1,40 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Neue+Haas+Grotesk:wght@400;700&display=swap');
 
 :root {
-    --foreground-rgb: 0, 0, 0; // Black for light mode text
-    --background-start-rgb: 214, 219, 220; // Light grey
-    --background-end-rgb: 255, 255, 255; // White
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255; // White for dark mode text
-        --background-start-rgb: 0, 0, 0; // Dark grey
-        --background-end-rgb: 0, 0, 0; // Black
-    }
+  --primary-color: #0d283d; /* Deep Blue */
+  --secondary-color: #bc8c5a; /* Muted Gold */
+  --accent-color: #d4d9de; /* Lux Grey */
+  --background-color: #f5f5f5; /* Clean White */
+  --text-color: #0d283d; /* Deep Blue */
+  --font-heading: 'Quattrocento', serif;
+  --font-body: 'Neue Haas Grotesk', sans-serif;
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-        to bottom,
-        rgb(var(--background-start-rgb)),
-        rgb(var(--background-end-rgb))
-    );
+  font-family: var(--font-body);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+}
+
+p {
+  font-family: var(--font-body);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--secondary-color);
+  }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './components/Home.module.scss';
+import './styles/globals.scss';
 
 const Home: React.FC = () => {
   return (
