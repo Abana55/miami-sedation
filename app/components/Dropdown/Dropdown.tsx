@@ -58,7 +58,7 @@ const Dropdown: React.FC = () => {
       </button>
       {isOpen && (
         <div
-          className={styles.dropdownMenu}
+          className={`${styles.dropdownMenu} ${isOpen ? styles.open : ''}`}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
