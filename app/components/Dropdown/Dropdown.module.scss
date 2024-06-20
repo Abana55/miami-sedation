@@ -20,15 +20,15 @@
 
 .dropdownMenu {
   position: absolute;
-  top: 85%;
-  left: -6.25rem;
+  top: 100%;
+  left: 50%;
   transform: translateX(-50%);
   background-color: white;
   background: linear-gradient(180deg, #ffffff, #f0f0f0);
   border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   z-index: 1003;
   width: 20rem;
   opacity: 0;
@@ -76,6 +76,13 @@
     &:hover {
       color: #000;
       background-color: #f0f0f0;
+    }
+
+    .hidden {
+      visibility: hidden;
+      height: 0;
+      width: 0;
+      display: inline-block;
     }
   }
 }

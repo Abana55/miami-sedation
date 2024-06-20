@@ -8,11 +8,6 @@ import styles from './Dropdown.module.scss';
 const Dropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-    setIsOpen(prev => !prev);
-  };
-
   const handleMouseEnter = () => {
     setIsOpen(true);
   };
@@ -64,7 +59,6 @@ const Dropdown: React.FC = () => {
       <div className={styles['dropdown-container']} onMouseLeave={handleMouseLeave}>
         <button
           className={styles.button}
-          onClick={toggleDropdown}
           onMouseEnter={handleMouseEnter}
         >
           Services
@@ -82,7 +76,7 @@ const Dropdown: React.FC = () => {
                   {category.services.map(service => (
                     <li key={service.name} className={styles.serviceItem}>
                       <Link href={service.href}>
-                        {service.name} at Miami Sedation Dentistry
+                        {service.name} <span className={styles.hidden}>at Miami Sedation Dentistry</span>
                       </Link>
                     </li>
                   ))}
