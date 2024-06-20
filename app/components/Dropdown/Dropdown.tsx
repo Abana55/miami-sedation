@@ -4,15 +4,19 @@ import Link from 'next/link';
 import { useState } from 'react';
 import styles from './Dropdown.module.scss';
 
-const Dropdown = () => {
+const Dropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = (e) => {
+  const toggleDropdown = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setIsOpen(prev => !prev);
   };
 
-  const closeDropdown = () => {
+  const handleMouseEnter = () => {
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
     setIsOpen(false);
   };
 
@@ -44,33 +48,36 @@ const Dropdown = () => {
   ];
 
   return (
-    <div className={styles['dropdown-container']}>
-      <div
-        className={`${styles.dropdown} ${isOpen ? styles.open : ''}`}
-        onMouseLeave={closeDropdown}
+    <div className={styles['dropdown-container']} onMouseLeave={handleMouseLeave}>
+      <button
+        className={styles.button}
+        onClick={toggleDropdown}
+        onMouseEnter={handleMouseEnter}
       >
-        <button className={styles.button} onClick={toggleDropdown}>
-          Services
-        </button>
-        {isOpen && (
-          <div className={styles.dropdownMenu}>
-            {serviceCategories.map(category => (
-              <div key={category.category} className={styles.category}>
-                <h4 className={styles.categoryTitle}>{category.category}</h4>
-                <ul className={styles.serviceList}>
-                  {category.services.map(service => (
-                    <li key={service.name} className={styles.serviceItem}>
-                      <Link href={service.href}>
-                        {service.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+        Services
+      </button>
+      {isOpen && (
+        <div
+          className={styles.dropdownMenu}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {serviceCategories.map(category => (
+            <div key={category.category} className={styles.category}>
+              <h4 className={styles.categoryTitle}>{category.category}</h4>
+              <ul className={styles.serviceList}>
+                {category.services.map(service => (
+                  <li key={service.name} className={styles.serviceItem}>
+                    <Link href={service.href}>
+                      {service.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
