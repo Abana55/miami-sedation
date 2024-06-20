@@ -82,7 +82,7 @@ const Dropdown: React.FC = () => {
                   {category.services.map(service => (
                     <li key={service.name} className={styles.serviceItem}>
                       <Link href={service.href}>
-                        <a>{service.name} at Miami Sedation Dentistry</a>
+                        {service.name} at Miami Sedation Dentistry
                       </Link>
                     </li>
                   ))}
