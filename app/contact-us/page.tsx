@@ -22,6 +22,7 @@ function ContactForm() {
       [name]: value,
     }));
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -52,6 +53,7 @@ function ContactForm() {
       setError('Error sending message. Please try again later.');
     }
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>

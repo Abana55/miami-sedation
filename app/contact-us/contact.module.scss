@@ -1,78 +1,80 @@
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  gap: 20px;
-  background-color: #fbf7ef;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .imageContainer {
-  flex: 1;
-  background-image: url("../../public/images/62810023204__DA7C49EA-357B-46E3-A15F-BAB55533C9FC.jpeg");
-  background-size: cover;
-  background-position: center;
-  height: 45rem;
-  border-radius: 8px;
-  position: relative;
+  text-align: center;
+  margin-bottom: 2rem;
 }
+
 .contactInfo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 8px;
+  p {
+    margin: 0.5rem 0;
+    font-family: var(--font-body);
+  }
 }
 
 .formContainer {
-  flex: 2;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  color: #333;
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--background-color);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
-.label {
-    display: block;
-    color: #333; // Dark grey color for labels
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+
+  label {
     margin-bottom: 1rem;
+    font-family: var(--font-body);
+    color: var(--text-color);
   }
-  
+
   .input,
   .select,
   .textarea {
     width: 100%;
-    padding: 10px;
-    border: 2px solid #000; // Solid black border
-    box-sizing: border-box;
-    border-radius: 0; // Square borders
-    color: #333; // Dark grey color for input text
-    background-color: #fff; // Ensuring background is white for contrast
-    font-size: 16px; // Adequate font size for readability
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 0.25rem;
+    font-family: var(--font-body);
   }
-  
-  .button {
-    background-color: #0077cc; // Button color
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    &:hover {
-      background-color: #005fa3; // Darker shade on hover
+
+  .textarea {
+    height: 100px;
+  }
+
+  .fieldset {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    
+    label {
+      width: 48%;
     }
   }
-  
-  .textarea {
-    height: 100px; // Fixed height for textareas
+
+  .button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--secondary-color);
+    }
   }
-  
-  .input:focus,
-  .select:focus,
-  .textarea:focus {
-    outline: none;
-    border-color: #0077cc; // Highlight color on focus
-  }
+}
