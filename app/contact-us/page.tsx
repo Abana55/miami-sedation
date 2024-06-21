@@ -22,12 +22,37 @@ function ContactForm() {
       [name]: value,
     }));
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Form submitted. Thank you!");
+
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          phoneNumber: "",
+          doctor: "",
+          message: "",
+          callbackDate: "",
+          callbackTime: "",
+        });
+      } else {
+        setError('Error sending message. Please try again later.');
+      }
+    } catch (error) {
+      setError('Error sending message. Please try again later.');
+    }
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
