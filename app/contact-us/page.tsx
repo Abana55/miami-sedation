@@ -12,6 +12,8 @@ function ContactForm() {
     callbackDate: "",
     callbackTime: "",
   });
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
