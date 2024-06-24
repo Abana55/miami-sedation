@@ -1,13 +1,19 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../../DentalServices.module.scss";
-
+import styles from "../../styles/DentalServices.module.scss";
 
 const Veneers = () => {
-    return (
-        <>
-        <Head>
+  const portfolioImages = [
+    { before: "/images/veneers-before1.jpg", after: "/images/veneers-after1.jpg" },
+    { before: "/images/veneers-before2.jpg", after: "/images/veneers-after2.jpg" },
+    { before: "/images/veneers-before3.jpg", after: "/images/veneers-after3.jpg" },
+    // Add more before and after images as needed
+  ];
+
+  return (
+    <>
+      <Head>
         <title>Dental Veneers | Bana Dental Design</title>
         <meta
           name="description"
@@ -100,9 +106,27 @@ const Veneers = () => {
             </div>
           </aside>
         </section>
-      </main>
-        </>
-    )
 
+        <section className={styles["service-page__portfolio"]}>
+          <h2 className={styles["service-page__subheader"]}>Veneers Before and After</h2>
+          <div className={styles["portfolio"]}>
+            {portfolioImages.map((image, index) => (
+              <div key={index} className={styles["portfolio__item"]}>
+                <div className={styles["portfolio__image-container"]}>
+                  <img src={image.before} alt={`Before Veneers ${index + 1}`} className={styles["portfolio__image"]} />
+                  <span className={styles["portfolio__label"]}>Before</span>
+                </div>
+                <div className={styles["portfolio__image-container"]}>
+                  <img src={image.after} alt={`After Veneers ${index + 1}`} className={styles["portfolio__image"]} />
+                  <span className={styles["portfolio__label"]}>After</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+    </>
+  );
+};
 
 export default Veneers;
