@@ -1,12 +1,14 @@
 import Link from 'next/link';
-import styles from '../Home.module.scss'; // Correct the path
-import Dropdown from '../Dropdown/Dropdown'; // Correct the path
+import styles from './Header.scss';
+import Dropdown from '../Dropdown/Dropdown';
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
-        <Link href="/" className={styles.link}>Bana Dental Design</Link>
+        <Link href="/" className={styles.brand}>
+          Bana Dental Design
+        </Link>
         <ul className={styles.navList}>
           <li>
             <Link href="/about-us" className={styles.link}>About Us</Link>
@@ -22,5 +24,3 @@ const Header: React.FC = () => {
     </header>
   );
 };
-
-export default Header;
