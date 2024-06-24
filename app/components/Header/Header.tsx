@@ -1,5 +1,6 @@
+"use client";
 import Link from 'next/link';
-import styles from './Header.scss';
+import styles from './Header.module.scss';
 import Dropdown from '../Dropdown/Dropdown';
 
 const Header = () => {
@@ -24,3 +25,5 @@ const Header = () => {
     </header>
   );
 };
+
+export default Header;
