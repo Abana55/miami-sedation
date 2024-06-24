@@ -1,14 +1,14 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../../styles/DentalServices.module.scss";
+import styles from "../../DentalServices.module.scss";
 
 const Veneers = () => {
   const portfolioImages = [
     { before: "/images/veneers-before1.jpg", after: "/images/veneers-after1.jpg" },
     { before: "/images/veneers-before2.jpg", after: "/images/veneers-after2.jpg" },
     { before: "/images/veneers-before3.jpg", after: "/images/veneers-after3.jpg" },
-    // Add more before and after images as needed
+    
   ];
 
   return (
