@@ -1,6 +1,7 @@
-"use client";
-import { useState } from "react";
-import styles from "./contact.module.scss";
+'use client';
+
+import { useState, ChangeEvent, FormEvent } from 'react';
+import styles from './contact.module.scss';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,7 +16,7 @@ function ContactForm() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
@@ -23,7 +24,7 @@ function ContactForm() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
@@ -50,6 +51,7 @@ function ContactForm() {
         setError('Error sending message. Please try again later.');
       }
     } catch (error) {
+      console.error('Error:', error);
       setError('Error sending message. Please try again later.');
     }
   };
