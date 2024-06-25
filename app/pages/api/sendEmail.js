@@ -1,3 +1,4 @@
+// pages/api/sendEmail.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
@@ -5,6 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method === 'POST') {
     const { name, email, phoneNumber, doctor, message, callbackDate, callbackTime } = req.body;
 
+    // Configure the transporter
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -16,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Email content
     let mailOptions = {
       from: email,
-      to: process.env.OFFICE_EMAIL, // Office email address
+      to: process.env.OFFICE_EMAIL,
       subject: 'New Consultation Request',
       text: `You have a new consultation request from:
       

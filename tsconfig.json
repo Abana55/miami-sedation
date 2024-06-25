@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Dropdown/Dropdown.tsx", "app/components/Header/Header.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Dropdown/Dropdown.tsx", "app/components/Header/Header.tsx", "app/pages/api/sendEmail.js"],
   "exclude": ["node_modules"]
 }
