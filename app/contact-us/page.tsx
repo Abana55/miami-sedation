@@ -28,7 +28,7 @@ function ContactForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/sendEmail', {
+      const response = await fetch('../pages/api/sendEmail.js', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
