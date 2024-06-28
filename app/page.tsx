@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './components/Home.module.scss';
-
+import "./styles/globals.scss";
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -11,13 +12,27 @@ const Home = () => {
           <p>(786) 625-5550</p>
         </div>
       </div>
-      <section className={styles.missionStatement}>
+      {/* <section className={styles.missionStatement}>
         <h2 className={styles.sectionTitle}>Our Mission</h2>
         <p className={styles.sectionContent}>
           Our mission is to provide compassionate and comprehensive dental care
           to our patients, ensuring their comfort and well-being at every visit.
         </p>
+      </section> */}
+      <section className={styles.missionStatement}>
+        <div className={styles.missionContent}>
+          <div className={styles.textContent}>
+            <h2 className={styles.welcomeTitle}>Welcome to Bana Dental Design</h2>
+            <Link href="/about-us" className={styles.differentButton}>
+               What Makes Us Different
+            </Link>
+          </div>
+          <div className={styles.imageContent}>
+            <img src="/path/to/your/image.jpg" alt="Dental Office" className={styles.missionImage} />
+          </div>
+        </div>
       </section>
+
 
       {/* Services Section */}
       <section className={styles.services}>
