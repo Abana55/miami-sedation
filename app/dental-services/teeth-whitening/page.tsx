@@ -80,17 +80,15 @@ const TeethWhitening = () => {
               Contact Us
             </Link>
           </article>
-          <aside className={styles["service-page__image-slider"]}>
-            <div className={styles["slider__main-image"]}>
+          <aside className={styles["service-page__image-gallery"]}>
+            <div className={styles["gallery__image"]}>
               <img src="/images/Teeth Whitening Cottonbro.jpg" alt="Teeth Whitening Procedure" />
             </div>
-            <div className={styles["slider__thumbnails"]}>
-              <div className={styles["thumbnail"]}>
-                <img src="/images/Teeth Whitening Karolina Grabowska.jpg" alt="Teeth Whitening Before and After" />
-              </div>
-              <div className={styles["thumbnail"]}>
-                <img src="/images/Teeth Whitening Karolina Grabowska (1).jpg" alt="Patient with Whiter Teeth" />
-              </div>
+            <div className={styles["gallery__image"]}>
+              <img src="/images/Teeth Whitening Karolina Grabowska.jpg" alt="Teeth Whitening Before and After" />
+            </div>
+            <div className={styles["gallery__image"]}>
+              <img src="/images/Teeth Whitening Karolina Grabowska (1).jpg" alt="Patient with Whiter Teeth" />
             </div>
           </aside>
         </section>
