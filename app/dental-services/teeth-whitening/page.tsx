@@ -24,18 +24,22 @@ const TeethWhitening = () => {
             <p className={styles["service-page__text"]}>
               Teeth whitening is a popular cosmetic dental procedure designed to lighten the color of your teeth and remove stains and discoloration. It is a safe and effective way to achieve a brighter smile and boost your confidence.
             </p>
+            <div className={styles["service-page__image-inline"]}>
+              <img src="/images/Teeth Whitening Cottonbro.jpg" alt="Teeth Whitening Procedure" />
+            </div>
             <h2 className={styles["service-page__subheader"]}>Types of Teeth Whitening</h2>
             <section className={styles["service-page__text"]}>
               <h3>In-Office Teeth Whitening</h3>
               <p>
                 In-office teeth whitening is performed by a dental professional and can significantly whiten your teeth in just one visit. The procedure involves applying a high-concentration bleaching gel to your teeth and activating it with a special light. This method provides the fastest and most dramatic results.
               </p>
-
+              <div className={styles["service-page__image-inline"]}>
+                <img src="/images/Teeth Whitening Karolina Grabowska.jpg" alt="Teeth Whitening Before and After" />
+              </div>
               <h3>Take-Home Whitening Kits</h3>
               <p>
                 Take-home whitening kits are custom-made for you by your dentist. They include custom-fitted trays and a professional-grade bleaching gel. You can achieve noticeable results in a few weeks by wearing the trays for a specified amount of time each day.
               </p>
-
               <h3>Over-the-Counter Whitening Products</h3>
               <p>
                 Over-the-counter whitening products, such as whitening toothpaste, strips, and gels, are available at most drugstores. While these products can help remove surface stains, they are less effective than professional treatments and may take longer to show results.
@@ -50,6 +54,9 @@ const TeethWhitening = () => {
                 <li className={styles["service-page__list__item"]}>Safe and effective when performed by a dental professional.</li>
               </ul>
             </section>
+            <div className={styles["service-page__image-inline"]}>
+              <img src="/images/Teeth Whitening Karolina Grabowska (1).jpg" alt="Patient with Whiter Teeth" />
+            </div>
             <h2 className={styles["service-page__subheader"]}>Procedure Overview</h2>
             <section className={styles["service-page__text"]}>
               <h3>Initial Consultation</h3>
@@ -80,17 +87,6 @@ const TeethWhitening = () => {
               Contact Us
             </Link>
           </article>
-          <aside className={styles["service-page__image-gallery"]}>
-            <div className={styles["gallery__image"]}>
-              <img src="/images/Teeth Whitening Cottonbro.jpg" alt="Teeth Whitening Procedure" />
-            </div>
-            <div className={styles["gallery__image"]}>
-              <img src="/images/Teeth Whitening Karolina Grabowska.jpg" alt="Teeth Whitening Before and After" />
-            </div>
-            <div className={styles["gallery__image"]}>
-              <img src="/images/Teeth Whitening Karolina Grabowska (1).jpg" alt="Patient with Whiter Teeth" />
-            </div>
-          </aside>
         </section>
       </main>
     </>
