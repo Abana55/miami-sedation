@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from './components/Home.module.scss';
-import './styles/globals.scss';
 
-const Home: React.FC = () => {
+
+const Home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
-        <h1 className={styles.heroTitle}>Welcome to Bana Dental Design</h1>
-        <p className={styles.heroTagline}>Providing expert dental care with a gentle touch.</p>
+        <div className={styles.glassBox}>
+          <h1>Bana Dental Design</h1>
+          <p>(786) 625-5550</p>
+        </div>
       </div>
       <section className={styles.missionStatement}>
         <h2 className={styles.sectionTitle}>Our Mission</h2>

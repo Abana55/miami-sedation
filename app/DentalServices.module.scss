@@ -21,12 +21,18 @@
   &__image-inline {
     margin: 1.875rem 0;
     width: 100%;
+    max-width: 400px; /* Adjust the maximum width */
+    transition: transform 0.3s ease; /* Add transition effect */
 
     img {
       width: 100%;
       height: auto;
       border-radius: 0.5rem;
       object-fit: cover;
+    }
+
+    &:hover {
+      transform: scale(1.05); /* Scale up slightly on hover */
     }
   }
 
