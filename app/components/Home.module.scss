@@ -1,36 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Neue+Haas+Grotesk:wght@400;700&display=swap');
-
-:root {
-  --primary-color: #0d283d; /* Deep Blue */
-  --secondary-color: #bc8c5a; /* Muted Gold */
-  --accent-color: #d4d9de; /* Lux Grey */
-  --background-color: #f5f5f5; /* Clean White */
-  --text-color: #0d283d; /* Deep Blue */
-  --font-heading: 'Quattrocento', serif;
-  --font-body: 'Neue Haas Grotesk', sans-serif;
-  --glass-background: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: rgba(0, 0, 0, 0.2);
-}
-
-body {
-  font-family: var(--font-body);
-  background-color: var(--background-color);
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.container {
-  width: 100%;
-}
-
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  background: url('/path/to/your/hero-image.jpg') no-repeat center center;
+  height: 90vh;
+  background: url('/images/IMG_3948.jpeg') no-repeat center center;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -128,6 +100,39 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.banner {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  padding: 2rem;
+  text-align: center;
+}
+
+.bannerTitle {
+  font-family: var(--font-heading);
+    font-size: 5.75rem;
+    margin: 0;
+    color: var(--secondary-color);
+    font-weight: 100;
+}
+
+.bannerSubtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.description {
+  padding: 2rem;
+  text-align: left;
+}
+
+.descriptionText {
+  font-family: var(--font-body);
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
 .services, .testimonials, .callToAction {
   padding: 2rem;
   text-align: center;
@@ -167,7 +172,7 @@ body {
   color: white;
   border: none;
   border-radius: 5px;
-  font-family: var(--font-body);
+  font-family: var (--font-body);
   cursor: pointer;
   transition: background-color 0.3s;
 

@@ -26,12 +26,37 @@ const Home = () => {
           </div>
           <div className={styles.imageContent}>
             <img
-              src="images/Implant Photos Babydov.jpg"
+              src="/images/Implant Photos Shvetsa.jpg"
               alt="Dental Office"
               className={styles.missionImage}
             />
           </div>
         </div>
+      </section>
+
+      {/* New Banner Section */}
+      <section className={styles.banner}>
+        <h2 className={styles.bannerTitle}>THE ART OF DENTISTRY</h2>
+        <p className={styles.bannerSubtitle}>
+          Our highly skilled doctors carefully handcraft beautifully healthy
+          smiles
+        </p>
+      </section>
+
+      {/* Paragraphs Section */}
+      <section className={styles.description}>
+        <p className={styles.descriptionText}>
+          Discover <strong>Bana Dental Design</strong>, your top-tier modern
+          dental destination nestled in vibrant Miami, Florida. Elevate your
+          dental experience with our innovative services and concierge-level
+          care.
+        </p>
+        <p className={styles.descriptionText}>
+          Our skilled dentists harness cutting-edge digital workflows,
+          conservative biomimetic techniques, and state-of-the-art 3D printing &
+          design to address your cosmetic and general dentistry requirements
+          seamlessly.
+        </p>
       </section>
 
       {/* Services Section */}
