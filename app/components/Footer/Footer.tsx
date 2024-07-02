@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./Footer.module.scss";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -21,7 +21,7 @@ const Footer = () => {
       <div className={styles.footerContent}>
         <section className={styles.location}>
           <h3>Miami Location</h3>
-          <p>Bana Dental Design</p>
+          <p>Ramon Bana, DDS</p>
           <p>2461 Coral Way, Suite 100</p>
           <p>Miami, FL 33145</p>
           <p>
@@ -70,7 +70,7 @@ const Footer = () => {
         </section>
 
         <section className={styles.copyRight}>
-          <p>©2024 Bana Dental Design. All Rights Reserved.</p>
+          <p>©2024 Dr. Ramon Bana. All Rights Reserved.</p>
         </section>
       </div>
     </footer>

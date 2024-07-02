@@ -3,18 +3,24 @@
   padding: 2rem;
   color: var(--footer-text-color);
   text-align: center;
-  border-radius: 0.5rem; 
+  border-radius: 0.5rem; /* Add border-radius */
 
   .socialMedia {
     margin-bottom: 1rem;
 
     .icon {
       margin: 0 0.5rem;
-      font-size: 1.5rem;
+      font-size: 1.5rem; /* Adjust the font size to make icons smaller */
       color: var(--footer-icon-color);
+      border: 1px solid #ddd; /* Add border */
+      border-radius: 50%; /* Make it round */
+      padding: 0.5rem; /* Add padding */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+      transition: all 0.3s ease; /* Smooth transition */
 
       &:hover {
         color: var(--footer-icon-hover-color);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
       }
     }
   }
