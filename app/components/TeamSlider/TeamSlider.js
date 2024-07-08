@@ -4,30 +4,27 @@ import React, { useState } from "react";
 import styles from "./TeamSlider.module.scss";
 
 const TeamSlider = ({ teamMembers }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [hoverIndex, setHoverIndex] = useState(null);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length);
+  const handleMouseEnter = (index) => {
+    setHoverIndex(index);
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? teamMembers.length - 1 : prevIndex - 1
-    );
+  const handleMouseLeave = () => {
+    setHoverIndex(null);
   };
 
   return (
     <div className={styles.slider}>
-      <button onClick={handlePrev} className={styles.slider__button}>
-        &#10094;
-      </button>
       <div className={styles.slider__container}>
         {teamMembers.map((member, index) => (
           <div
             key={index}
             className={`${styles.slider__card} ${
-              index === currentIndex ? styles["slider__card--active"] : ""
-            }`}
+              hoverIndex === index ? styles["slider__card--active"] : ""
+            } ${hoverIndex !== null && hoverIndex !== index ? styles["slider__card--inactive"] : ""}`}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
           >
             <img
               src={member.photo}
@@ -40,9 +37,6 @@ const TeamSlider = ({ teamMembers }) => {
           </div>
         ))}
       </div>
-      <button onClick={handleNext} className={styles.slider__button}>
-        &#10095;
-      </button>
     </div>
   );
 };

@@ -10,22 +10,19 @@ const teamMembers = [
     name: "Dr. Ramon Bana",
     title: "Dentist",
     photo: "/images/dr-bana.jpg",
-    description:
-      "Dr. Ramon Bana is an experienced dentist specializing in cosmetic and restorative dentistry. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Dr. Ramon Bana is an experienced dentist specializing in cosmetic and restorative dentistry. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     name: "Dr. Andrew Brattain",
     title: "Dentist",
     photo: "/images/dr-brattain.jpg",
-    description:
-      "Dr. Andrew Brattain focuses on preventative care and oral health education. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Dr. Andrew Brattain focuses on preventative care and oral health education. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     name: "Jane Doe",
     title: "Hygienist",
     photo: "/images/jane-doe.jpg",
-    description:
-      "Jane Doe is a dedicated hygienist with a passion for patient care and comfort. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Jane Doe is a dedicated hygienist with a passion for patient care and comfort. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   // Add more team members as needed
 ];

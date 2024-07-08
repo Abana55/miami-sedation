@@ -7,49 +7,31 @@
     overflow: hidden;
     padding: 2rem 0;
   
-    &__button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: transparent;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 2;
-      color: var(--primary-color);
-  
-      &:hover {
-        color: var(--primary-color-hover);
-      }
-    }
-  
-    &__button:nth-of-type(1) {
-      left: 1rem;
-    }
-  
-    &__button:nth-of-type(2) {
-      right: 1rem;
-    }
-  
     &__container {
       display: flex;
+      gap: 1rem;
       transition: transform 0.3s ease-in-out;
       will-change: transform;
     }
   
     &__card {
-      min-width: 200px;
-      margin: 0 1rem;
+      min-width: 150px;
+      margin: 0 0.5rem;
       padding: 1rem;
       background-color: white;
       border-radius: 0.5rem;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      flex: 1;
   
       &--active {
-        opacity: 1;
+        flex: 3;
+      }
+  
+      &--inactive {
+        flex: 0.5;
+        opacity: 0.6;
       }
     }
   
