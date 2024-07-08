@@ -1,0 +1,23 @@
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+  
+    &__button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: transparent;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 2;
+  
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
