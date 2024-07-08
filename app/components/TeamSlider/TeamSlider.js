@@ -17,29 +17,29 @@ const TeamSlider = ({ teamMembers }) => {
   };
 
   return (
-    <div className={styles["slider"]}>
-      <button onClick={handlePrev} className={styles["slider__button"]}>
+    <div className={styles.slider}>
+      <button onClick={handlePrev} className={styles.slider__button}>
         &#10094;
       </button>
-      <div className={styles["slider__container"]}>
+      <div className={styles.slider__container}>
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className={`${styles["slider__card"]} ${
-              index === currentIndex ? styles["slider__card--active"] : ""
+            className={`${styles.slider__card} ${
+              index === currentIndex ? styles.slider__card--active : ""
             }`}
           >
             <img
               src={member.photo}
               alt={member.name}
-              className={styles["slider__image"]}
+              className={styles.slider__image}
             />
-            <h3 className={styles["slider__name"]}>{member.name}</h3>
-            <p className={styles["slider__title"]}>{member.title}</p>
+            <h3 className={styles.slider__name}>{member.name}</h3>
+            <p className={styles.slider__title}>{member.title}</p>
           </div>
         ))}
       </div>
-      <button onClick={handleNext} className={styles["slider__button"]}>
+      <button onClick={handleNext} className={styles.slider__button}>
         &#10095;
       </button>
     </div>
