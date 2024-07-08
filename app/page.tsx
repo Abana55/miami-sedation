@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "./components/Home.module.scss";
 import "./styles/globals.scss";
-import TeamSlider from "./components/TeamSlider/TeamSlider";
+import TeamAccordion from "./components/TeamAccordion/TeamAccordion";
 
 const teamMembers = [
   {
@@ -78,7 +78,7 @@ const Home = () => {
       {/* Team Section */}
       <section className={styles.team}>
         <h2 className={styles.sectionTitle}>Meet Our Team</h2>
-        <TeamSlider teamMembers={teamMembers} />
+        <TeamAccordion teamMembers={teamMembers} />
       </section>
 
       {/* Testimonials Section */}
