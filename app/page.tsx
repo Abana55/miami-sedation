@@ -1,61 +1,56 @@
 import React from "react";
+import Head from "next/head";
 import Link from "next/link";
 import styles from "./components/Home.module.scss";
+import "./styles/globals.scss";
+import TeamSlider from "./components/TeamSlider/TeamSlider";
+
+const teamMembers = [
+  {
+    name: "Dr. Ramon Bana",
+    title: "Dentist",
+    photo: "/images/dr-bana.jpg",
+    description:
+      "Dr. Ramon Bana is an experienced dentist specializing in cosmetic and restorative dentistry. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    name: "Dr. Andrew Brattain",
+    title: "Dentist",
+    photo: "/images/dr-brattain.jpg",
+    description:
+      "Dr. Andrew Brattain focuses on preventative care and oral health education. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    name: "Jane Doe",
+    title: "Hygienist",
+    photo: "/images/jane-doe.jpg",
+    description:
+      "Jane Doe is a dedicated hygienist with a passion for patient care and comfort. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  // Add more team members as needed
+];
 
 const Home = () => {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Bana Dental Design</title>
+        <meta
+          name="description"
+          content="Providing expert dental care with a gentle touch."
+        />
+      </Head>
       <div className={styles.hero}>
-        <div className={styles.glassBox}>
-          <h1 className={styles.heroTitle}>Bana Dental Design</h1>
-          <p className={styles.heroTagline}>(786) 625-5550</p>
-          <Link href="/contact-us">
-            <button className={styles.consultButton}>Request a Consult</button>
-          </Link>
-        </div>
+        <h1 className={styles.heroTitle}>Welcome to Bana Dental Design</h1>
+        <p className={styles.heroTagline}>
+          Providing expert dental care with a gentle touch.
+        </p>
       </div>
       <section className={styles.missionStatement}>
-        <div className={styles.missionContent}>
-          <div className={styles.textContent}>
-            <h2 className={styles.welcomeTitle}>
-              Welcome to Bana Dental Design
-            </h2>
-            <Link href="/about-us" className={styles.differentButton}>
-              What Makes Us Different
-            </Link>
-          </div>
-          <div className={styles.imageContent}>
-            <img
-              src="/images/Implant Photos Shvetsa.jpg"
-              alt="Dental Office"
-              className={styles.missionImage}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* New Banner Section */}
-      <section className={styles.banner}>
-        <h2 className={styles.bannerTitle}>THE ART OF DENTISTRY</h2>
-        <p className={styles.bannerSubtitle}>
-          Our highly skilled doctors carefully handcraft beautifully healthy
-          smiles
-        </p>
-      </section>
-
-      {/* Paragraphs Section */}
-      <section className={styles.description}>
-        <p className={styles.descriptionText}>
-          Discover <strong>Bana Dental Design</strong>, your top-tier modern
-          dental destination nestled in vibrant Miami, Florida. Elevate your
-          dental experience with our innovative services and concierge-level
-          care.
-        </p>
-        <p className={styles.descriptionText}>
-          Our skilled dentists harness cutting-edge digital workflows,
-          conservative biomimetic techniques, and state-of-the-art 3D printing &
-          design to address your cosmetic and general dentistry requirements
-          seamlessly.
+        <h2 className={styles.sectionTitle}>Our Mission</h2>
+        <p className={styles.sectionContent}>
+          Our mission is to provide compassionate and comprehensive dental care
+          to our patients, ensuring their comfort and well-being at every visit.
         </p>
       </section>
 
@@ -81,6 +76,12 @@ const Home = () => {
             <p>Experience pain-free dentistry with our sedation techniques.</p>
           </div>
         </div>
+      </section>
+
+      {/* Team Section */}
+      <section className={styles.team}>
+        <h2 className={styles.sectionTitle}>Meet Our Team</h2>
+        <TeamSlider teamMembers={teamMembers} />
       </section>
 
       {/* Testimonials Section */}

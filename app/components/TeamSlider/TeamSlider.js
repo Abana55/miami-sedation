@@ -26,7 +26,7 @@ const TeamSlider = ({ teamMembers }) => {
           <div
             key={index}
             className={`${styles.slider__card} ${
-              index === currentIndex ? styles.slider__card--active : ""
+              index === currentIndex ? styles["slider__card--active"] : ""
             }`}
           >
             <img
@@ -36,6 +36,7 @@ const TeamSlider = ({ teamMembers }) => {
             />
             <h3 className={styles.slider__name}>{member.name}</h3>
             <p className={styles.slider__title}>{member.title}</p>
+            <p className={styles.slider__description}>{member.description}</p>
           </div>
         ))}
       </div>
