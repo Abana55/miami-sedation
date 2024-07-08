@@ -4,79 +4,58 @@
   padding: 1rem;
 
   &__item {
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.5rem;
-    margin-right: 1rem;
-    flex: 0 0 auto;
-    width: 300px;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    transition: flex 0.3s ease-in-out, transform 0.3s ease-in-out;
+    overflow: hidden;
+    margin: 0 1rem;
+    cursor: pointer;
+    position: relative;
+
+    &.inactive {
+      flex: 0.5;
+      transform: scale(0.9);
+    }
   }
 
   &__header {
-    margin-bottom: 0;
-  }
-
-  &__button {
-    width: 100%;
-    padding: 1rem 1.25rem;
-    background-color: var(--accordion-bg);
-    color: var(--accordion-button-color);
-    text-align: left;
-    border: none;
-    border-radius: 0.5rem 0.5rem 0 0;
-    transition: background-color 0.15s ease;
-    cursor: pointer;
-
-    &.collapsed {
-      background-color: var(--accordion-button-active-bg);
-      color: var(--accordion-button-active-color);
-    }
-
-    &:focus {
-      outline: none;
-      box-shadow: var(--accordion-button-focus-box-shadow);
-    }
-
-    &::after {
-      content: "";
-      float: right;
-      width: var(--accordion-icon-width);
-      height: var(--accordion-icon-width);
-      background-image: var(--accordion-button-icon);
-      background-size: contain;
-      background-repeat: no-repeat;
-      transition: var(--accordion-icon-transition);
-    }
-
-    &[aria-expanded="true"]::after {
-      transform: var(--accordion-icon-transform);
-      background-image: var(--accordion-button-active-icon);
-    }
-  }
-
-  &__collapse {
-    display: none;
-
-    &.show {
-      display: block;
-    }
-  }
-
-  &__body {
-    padding: 1rem 1.25rem;
-    background-color: var(--accordion-body-bg);
-    border-radius: 0 0 0.5rem 0.5rem;
+    overflow: hidden;
+    position: relative;
   }
 
   &__image {
     width: 100%;
     height: auto;
     border-radius: 0.5rem;
-    margin-bottom: 1rem;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0 0 0.5rem 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  &__name {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
   }
 
   &__title {
-    font-size: 1.25rem;
-    color: var(--primary-color);
+    font-size: 1rem;
+    color: var(--secondary-color);
     margin-bottom: 0.5rem;
   }
 
