@@ -7,15 +7,24 @@
     flex: 1;
     min-width: 200px;
     max-width: 300px;
-    transition: flex 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: flex 0.5s ease-in-out, transform 0.5s ease-in-out;
     overflow: hidden;
     margin: 0 1rem;
     cursor: pointer;
     position: relative;
 
+    &:not(:last-child) {
+      margin-right: -100px; 
+    }
+
     &.inactive {
       flex: 0.5;
       transform: scale(0.9);
+      z-index: 1;
+    }
+
+    &.active {
+      z-index: 2;
     }
   }
 
@@ -28,7 +37,7 @@
     width: 100%;
     height: auto;
     border-radius: 0.5rem;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out;
   }
 
   &__body {
@@ -40,7 +49,7 @@
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 0 0 0.5rem 0.5rem;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 
     &.show {
       opacity: 1;
