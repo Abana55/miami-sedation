@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Neue+Haas+Grotesk:wght@400;700&display=swap');
 $breakpoint-mobile: 768px;
 
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == mobile {
-    @media (max-width: $breakpoint-mobile) { @content; }
-  }
-}
+
 :root {
   --primary-color: #0d283d; /* Deep Blue */
   --secondary-color: #bc8c5a; /* Muted Gold */
@@ -17,6 +13,11 @@ $breakpoint-mobile: 768px;
   --glass-background: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-shadow: rgba(0, 0, 0, 0.2);
+}
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $breakpoint-mobile) { @content; }
+  }
 }
 
 body {
