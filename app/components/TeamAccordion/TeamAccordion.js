@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./TeamAccordion.module.scss";
 
 const TeamAccordion = ({ teamMembers }) => {
-  const [activeIndex, setActiveIndex] = useState(0); // First card open by default
+  const [activeIndex, setActiveIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -32,6 +32,12 @@ const TeamAccordion = ({ teamMembers }) => {
     }
   };
 
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setActiveIndex(null);
+    }
+  };
+
   return (
     <div className={styles.accordion} id="accordionFlushExample">
       {teamMembers.map((member, index) => (
@@ -41,6 +47,7 @@ const TeamAccordion = ({ teamMembers }) => {
           }`}
           key={index}
           onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={handleMouseLeave}
         >
           <div className={styles.accordion__header}>
             <img

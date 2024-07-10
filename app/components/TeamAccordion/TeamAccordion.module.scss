@@ -2,28 +2,31 @@
   display: flex;
   overflow-x: auto;
   padding: 1rem;
+  gap: 1rem;
 
   &__item {
-    flex: 1;
-    min-width: 200px;
-    max-width: 300px;
-    transition: flex 0.5s ease-in-out, transform 0.5s ease-in-out;
+    flex: 0 0 25%;
+    transition: flex 0.5s ease-in-out;
     overflow: hidden;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     cursor: pointer;
     position: relative;
-
-    &:not(:last-child) {
-      margin-right: -100px; 
-    }
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 300px; // Increased height
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &.inactive {
-      flex: 0.5;
-      transform: scale(0.9);
-      z-index: 1;
+      flex: 0 0 10%;
+      height: 100px; // Maintain height for pill size
     }
 
     &.active {
+      flex: 1;
+      height: 300px; // Keep height consistent when active
       z-index: 2;
     }
   }
@@ -35,41 +38,39 @@
 
   &__image {
     width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
+    height: 100%;
+    border-radius: 1rem;
     transition: transform 0.5s ease-in-out;
   }
 
   &__body {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    display: none;
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 0 0 0.5rem 0.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0 0 1rem 1rem;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 
     &.show {
+      display: block;
       opacity: 1;
     }
   }
 
   &__name {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
   }
 
   &__title {
-    font-size: 1rem;
+    font-size: 0.875rem;
     color: var(--secondary-color);
     margin-bottom: 0.5rem;
   }
 
   &__description {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     color: var(--text-color);
   }
 }
