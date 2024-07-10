@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Neue+Haas+Grotesk:wght@400;700&display=swap');
-$breakpoint-mobile: 768px;
 
 
 :root {
@@ -14,6 +13,8 @@ $breakpoint-mobile: 768px;
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-shadow: rgba(0, 0, 0, 0.2);
 }
+$breakpoint-mobile: 768px;
+
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile {
     @media (max-width: $breakpoint-mobile) { @content; }
