@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Neue+Haas+Grotesk:wght@400;700&display=swap');
 
-
 :root {
   --primary-color: #0d283d; /* Deep Blue */
   --secondary-color: #bc8c5a; /* Muted Gold */
@@ -13,6 +12,7 @@
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-shadow: rgba(0, 0, 0, 0.2);
 }
+
 $breakpoint-mobile: 768px;
 
 @mixin respond-to($breakpoint) {

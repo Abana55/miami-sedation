@@ -1,114 +1,66 @@
-import React from "react";
-import Head from "next/head";
-import Link from "next/link";
-import styles from "./components/Home.module.scss";
-import "./styles/globals.scss";
-import TeamAccordion from "./components/TeamAccordion/TeamAccordion";
+"use client";
 
-const teamMembers = [
-  {
-    name: "Dr. Ramon Bana",
-    title: "Dentist",
-    photo: "/images/5D10A688-BC5F-4D17-9DE7-25F1347CEF64.JPG",
-    description: "Dr. Ramon Bana is an experienced dentist specializing in cosmetic and restorative dentistry. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    name: "Dr. Andrew Brattain",
-    title: "Dentist",
-    photo: "/images/IMG_6450.jpeg",
-    description: "Dr. Andrew Brattain focuses on preventative care and oral health education. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    name: "Jane Doe",
-    title: "Hygienist",
-    photo: "/images/jane-doe.jpg",
-    description: "Jane Doe is a dedicated hygienist with a passion for patient care and comfort. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  // Add more team members as needed
-];
+import React, { useState, useEffect } from "react";
+import styles from "./TeamAccordion.module.scss";
 
-const Home = () => {
+const TeamAccordion = ({ teamMembers }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      const interval = setInterval(() => {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % teamMembers.length);
+      }, 2000);
+      return () => clearInterval(interval);
+    }
+  }, [isMobile, teamMembers.length]);
+
+  const handleMouseEnter = (index) => {
+    if (!isMobile) {
+      setActiveIndex(index);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setActiveIndex(null);
+    }
+  };
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Bana Dental Design</title>
-        <meta
-          name="description"
-          content="Providing expert dental care with a gentle touch."
-        />
-      </Head>
-      <div className={styles.hero}>
-        <h1 className={styles.heroTitle}>Welcome to Bana Dental Design</h1>
-        <p className={styles.heroTagline}>
-          Providing expert dental care with a gentle touch.
-        </p>
-      </div>
-      <section className={styles.missionStatement}>
-        <h2 className={styles.sectionTitle}>Our Mission</h2>
-        <p className={styles.sectionContent}>
-          Our mission is to provide compassionate and comprehensive dental care
-          to our patients, ensuring their comfort and well-being at every visit.
-        </p>
-      </section>
-
-      {/* Services Section */}
-      <section className={styles.services}>
-        <h2 className={styles.sectionTitle}>Our Services</h2>
-        <div className={styles.servicesList}>
-          <div className={styles.serviceItem}>
-            <h3>Cosmetic Dentistry</h3>
-            <p>
-              Enhance your smile with our state-of-the-art cosmetic dental
-              services.
+    <div className={styles.accordion}>
+      {teamMembers.map((member, index) => (
+        <div
+          className={`${styles.accordion__item} ${
+            activeIndex === index ? styles.active : styles.inactive
+          }`}
+          key={index}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={handleMouseLeave}
+          style={{ backgroundImage: `url(${member.photo})` }}
+        >
+          <div className={styles.accordion__content}>
+            <h3 className={styles.accordion__name}>{member.name}</h3>
+            <p className={styles.accordion__title}>{member.title}</p>
+            <p className={styles.accordion__description}>
+              {member.description}
             </p>
           </div>
-          <div className={styles.serviceItem}>
-            <h3>Preventive Care</h3>
-            <p>
-              Regular exams, cleanings, and x-rays to maintain your oral health.
-            </p>
-          </div>
-          <div className={styles.serviceItem}>
-            <h3>Sedation Dentistry</h3>
-            <p>Experience pain-free dentistry with our sedation techniques.</p>
-          </div>
         </div>
-      </section>
-
-      {/* Team Section */}
-      <section className={styles.team}>
-        <h2 className={styles.sectionTitle}>Meet Our Team</h2>
-        <TeamAccordion teamMembers={teamMembers} />
-      </section>
-
-      {/* Testimonials Section */}
-      <section className={styles.testimonials}>
-        <h2 className={styles.sectionTitle}>What Our Patients Say</h2>
-        <div className={styles.testimonialItem}>
-          <p>
-            "The best dental experience I've ever had! The staff was friendly
-            and Dr. Bana made me feel at ease through the entire process."
-          </p>
-          <cite>— John Doe</cite>
-        </div>
-      </section>
-
-      {/* Call to Action for Appointments */}
-      <section className={styles.callToAction}>
-        <h2 className={styles.sectionTitle}>Ready to Smile?</h2>
-        <p>Book your next appointment with us today!</p>
-        <button className={styles.ctaButton}>Book Appointment</button>
-      </section>
-
-      {/* Footer Image or Banner */}
-      <div className={styles.footerImage}>
-        <img
-          src="/path/to/dental-office-photo.jpg"
-          alt="Our Modern Dental Office"
-        />
-      </div>
+      ))}
     </div>
   );
 };
 
-export default Home;
+export default TeamAccordion;
