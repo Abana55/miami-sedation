@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.scss";
+import Dropdown from "../Dropdown/Dropdown";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,11 +16,13 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Link href="/">
-        Bana Dental Design
+          <a>Bana Dental Design</a>
         </Link>
       </div>
       <div className={styles.hamburger} onClick={toggleMenu}>
-        <div className={isMenuOpen ? styles.hamburgerOpen : ""}></div>
+        <span className={`${styles.line} ${isMenuOpen ? styles.line1 : ""}`}></span>
+        <span className={`${styles.line} ${isMenuOpen ? styles.line2 : ""}`}></span>
+        <span className={`${styles.line} ${isMenuOpen ? styles.line3 : ""}`}></span>
       </div>
       <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
         <ul>
@@ -33,25 +36,8 @@ const Header = () => {
               Contact Us
             </Link>
           </li>
-          <li className={styles.dropdown}>
-            Services
-            <ul className={styles.dropdownMenu}>
-              <li>
-                <Link href="/services/service1">
-                  Service 1
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/service2">
-                  Service 2
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/service3">
-                  Service 3
-                </Link>
-              </li>
-            </ul>
+          <li>
+            <Dropdown />
           </li>
         </ul>
       </nav>
