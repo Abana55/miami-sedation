@@ -66,12 +66,12 @@ const Dropdown = () => {
                 {category.services.map((service) => (
                   <li key={service.name} className={styles.serviceItem}>
                     <Link href={service.href}>
-                      <a>
+                      
                         {service.name}{" "}
                         <span className={styles.hidden}>
                           at Bana Dental Design
                         </span>
-                      </a>
+                      
                     </Link>
                   </li>
                 ))}

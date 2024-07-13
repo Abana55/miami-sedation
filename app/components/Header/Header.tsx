@@ -16,7 +16,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Link href="/">
-          <a>Bana Dental Design</a>
+          Bana Dental Design
         </Link>
       </div>
       <div className={styles.hamburger} onClick={toggleMenu}>
