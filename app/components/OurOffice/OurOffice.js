@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './OurOffice.module.scss';
-import ImageModal from './ImageModal';
+import ImageModal from '../ImageModal/ImageModal';
 
 const officeImages = [
   { src: '/images/office1.jpg', alt: 'Office Image 1' },

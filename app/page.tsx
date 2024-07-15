@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./components/Home.module.scss";
 import "./styles/globals.scss";
 import TeamAccordion from "./components/TeamAccordion/TeamAccordion";
-import OurOffice from "./components/OurOffice/OurOffice"; // Import the OurOffice component
+import OurOffice from "./components/OurOffice/OurOffice"; // Correct import path
 
 const teamMembers = [
   {
