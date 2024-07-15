@@ -18,6 +18,8 @@
   padding: 2rem;
   text-align: center;
   color: var(--text-color);
+  max-width: 600px;
+  width: 90%;
 }
 
 .heroTitle {
@@ -32,7 +34,24 @@
   margin: 0.5rem 0 0 0;
 }
 
-.consultButton {
+.contactBox {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+}
+
+.contactBox p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.contactButton {
+  display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   background-color: var(--primary-color);
@@ -41,7 +60,7 @@
   border-radius: 5px;
   font-family: var(--font-body);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: var(--secondary-color);
@@ -109,17 +128,17 @@
 
 .bannerTitle {
   font-family: var(--font-heading);
-    font-size: 5.75rem;
-    margin: 0;
-    color: var(--secondary-color);
-    font-weight: 100;
+  font-size: 5.75rem;
+  margin: 0;
+  color: var(--secondary-color);
+  font-weight: 100;
 }
 
 .bannerSubtitle {
   font-family: var(--font-body);
   font-size: 1rem;
   margin-top: 0.5rem;
-  color: var(--secondary-color);
+  color: var (--secondary-color);
 }
 
 .description {
@@ -172,9 +191,9 @@
   color: white;
   border: none;
   border-radius: 5px;
-  font-family: var (--font-body);
+  font-family: var(--font-body);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: var(--accent-color);
