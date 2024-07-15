@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./components/Home.module.scss";
 import "./styles/globals.scss";
 import TeamAccordion from "./components/TeamAccordion/TeamAccordion";
-import ImageModal from "./components/ImageModal/ImageModal"; // Import the new ImageModal component
+import OurOffice from "./components/OurOffice/OurOffice"; // Import the OurOffice component
 
 const teamMembers = [
   {
@@ -28,24 +28,7 @@ const teamMembers = [
   // Add more team members as needed
 ];
 
-const officeImages = [
-  { src: "/images/office1.jpg", alt: "Office Image 1" },
-  { src: "/images/office2.jpg", alt: "Office Image 2" },
-  { src: "/images/office3.jpg", alt: "Office Image 3" },
-  { src: "/images/office4.jpg", alt: "Office Image 4" },
-];
-
 const Home = () => {
-  const [selectedImage, setSelectedImage] = React.useState(null);
-
-  const openImageModal = (image) => {
-    setSelectedImage(image);
-  };
-
-  const closeImageModal = () => {
-    setSelectedImage(null);
-  };
-
   return (
     <div className={styles.container}>
       <Head>
@@ -118,27 +101,7 @@ const Home = () => {
       </section>
 
       {/* Our Office Section */}
-      <section className={styles.ourOffice}>
-        <h2 className={styles.sectionTitle}>Our Office</h2>
-        <div className={styles.officeImages}>
-          {officeImages.map((image, index) => (
-            <div key={index} className={styles.imageContainer}>
-              <img
-                src={image.src}
-                alt={image.alt}
-                className={styles.officeImage}
-                onClick={() => openImageModal(image)}
-              />
-              <div className={styles.imageOverlay}>
-                <span className={styles.plusIcon}>+</span>
-              </div>
-            </div>
-          ))}
-        </div>
-        {selectedImage && (
-          <ImageModal image={selectedImage} onClose={closeImageModal} />
-        )}
-      </section>
+      <OurOffice />
 
       {/* Testimonials Section */}
       <section className={styles.testimonials}>
