@@ -85,16 +85,18 @@ const Home = () => {
 
       {/* Team Section */}
       <section className={styles.teamSection}>
-        <div className={styles.team}>
-          <h2 className={styles.sectionTitle}>Meet Our Team</h2>
-          <TeamAccordion teamMembers={teamMembers} />
+        <h2 className={styles.sectionTitle}>Meet Our Team</h2>
+        <div className={styles.teamContent}>
+          <div className={styles.team}>
+            <TeamAccordion teamMembers={teamMembers} />
+          </div>
+          <article className={styles.articleSection}>
+            <h2 className={styles.articleTitle}>Additional Information</h2>
+            <p className={styles.articleContent}>
+              Here you can add more information about your dental practice, services, or any other relevant details that you want to share with your patients. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Vivamus auctor, mi et luctus vehicula, urna ligula tincidunt risus, sit amet vestibulum lorem ipsum nec arcu.
+            </p>
+          </article>
         </div>
-        <article className={styles.articleSection}>
-          <h2 className={styles.articleTitle}>Additional Information</h2>
-          <p className={styles.articleContent}>
-            Here you can add more information about your dental practice, services, or any other relevant details that you want to share with your patients. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Vivamus auctor, mi et luctus vehicula, urna ligula tincidunt risus, sit amet vestibulum lorem ipsum nec arcu.
-          </p>
-        </article>
       </section>
 
       {/* Testimonials Section */}
