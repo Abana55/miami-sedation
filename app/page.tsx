@@ -38,10 +38,18 @@ const Home = () => {
         />
       </Head>
       <div className={styles.hero}>
-        <h1 className={styles.heroTitle}>Welcome to Bana Dental Design</h1>
-        <p className={styles.heroTagline}>
-          Providing expert dental care with a gentle touch.
-        </p>
+        <div className={styles.glassBox}>
+          <h1 className={styles.heroTitle}>Welcome to Bana Dental Design</h1>
+          <p className={styles.heroTagline}>
+            Providing expert dental care with a gentle touch.
+          </p>
+          <div className={styles.contactBox}>
+            <p>Call us: (123) 456-7890</p>
+            <Link href="/contact-us">
+              <button className={styles.contactButton}>Contact Us</button>
+            </Link>
+          </div>
+        </div>
       </div>
       <section className={styles.missionStatement}>
         <h2 className={styles.sectionTitle}>Our Mission</h2>
