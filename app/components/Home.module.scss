@@ -138,7 +138,7 @@
   font-family: var(--font-body);
   font-size: 1rem;
   margin-top: 0.5rem;
-  color: var (--secondary-color);
+  color: var(--secondary-color);
 }
 
 .description {
@@ -176,6 +176,36 @@
 
 .serviceItem {
   width: 30%;
+}
+
+.teamSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.team {
+  width: 60%;
+}
+
+.articleSection {
+  width: 35%;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.articleTitle {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.articleContent {
+  font-family: var(--font-body);
+  color: var(--text-color);
 }
 
 .callToAction {

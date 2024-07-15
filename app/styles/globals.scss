@@ -13,14 +13,6 @@
   --glass-shadow: rgba(0, 0, 0, 0.2);
 }
 
-$breakpoint-mobile: 768px;
-
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == mobile {
-    @media (max-width: $breakpoint-mobile) { @content; }
-  }
-}
-
 body {
   font-family: var(--font-body);
   background-color: var(--background-color);
