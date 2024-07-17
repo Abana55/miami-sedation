@@ -14,15 +14,15 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <Link href="/">
-          Bana Dental Design
-        </Link>
-      </div>
       <div className={styles.hamburger} onClick={toggleMenu}>
         <span className={`${styles.line} ${isMenuOpen ? styles.line1 : ""}`}></span>
         <span className={`${styles.line} ${isMenuOpen ? styles.line2 : ""}`}></span>
         <span className={`${styles.line} ${isMenuOpen ? styles.line3 : ""}`}></span>
+      </div>
+      <div className={styles.logo}>
+        <Link href="/">
+          Bana Dental Design
+        </Link>
       </div>
       <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
         <ul>
