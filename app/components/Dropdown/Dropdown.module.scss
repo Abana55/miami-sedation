@@ -1,46 +1,46 @@
 .dropdownContainer {
   position: relative;
-}
-
-.button {
-  background: none;
-  border: none;
-  font-size: 1rem;
   cursor: pointer;
-  color: var(--primary-color);
-}
 
-.dropdownMenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: var(--background-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: max-height 0.3s ease;
-  max-height: 0;
-  overflow: hidden;
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
 
-  &.open {
-    max-height: 15rem;
+    .line {
+      width: 100%;
+      height: 0.25rem;
+      background-color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
   }
 
-  .category {
-    padding: 1rem;
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
 
-    .categoryTitle {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary-color);
-    }
-
-    .serviceList {
+    ul {
       list-style: none;
       padding: 0;
       margin: 0;
 
-      .serviceItem {
-        padding: 0.5rem 0;
+      li {
+        padding: 1rem;
+        text-align: left;
+        cursor: pointer;
 
         a {
           text-decoration: none;
@@ -49,6 +49,28 @@
 
           &:hover {
             color: var(--secondary-color);
+          }
+        }
+
+        &.services {
+          position: relative;
+
+          .servicesMenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+
+            li {
+              padding: 0.5rem 1rem;
+
+              a {
+                color: var(--text-color);
+              }
+            }
+          }
+
+          &.open .servicesMenu {
+            max-height: 500px; 
           }
         }
       }
