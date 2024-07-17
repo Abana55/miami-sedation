@@ -5,17 +5,8 @@
   padding: 1rem;
   background-color: var(--background-color);
 
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-
-    a {
-      text-decoration: none;
-      color: var(--primary-color);
-    }
-  }
-
   .hamburger {
+    order: 1;
     width: 2rem;
     height: 2rem;
     display: flex;
@@ -44,10 +35,21 @@
     }
   }
 
+  .logo {
+    order: 2;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+    }
+  }
+
   .nav {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 0;
     background-color: var(--background-color);
     width: 100%;
     max-height: 0;
