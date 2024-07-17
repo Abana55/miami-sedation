@@ -19,8 +19,8 @@ const Dropdown: React.FC = () => {
   };
 
   return (
-    <div className={styles["dropdown-container"]} onClick={toggleMenu}>
-      <div className={styles["dropdown-hamburger"]}>
+    <div className={styles["dropdown-container"]}>
+      <div className={styles["dropdown-hamburger"]} onClick={toggleMenu}>
         <span className={styles["dropdown-line"]}></span>
         <span className={styles["dropdown-line"]}></span>
         <span className={styles["dropdown-line"]}></span>

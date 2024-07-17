@@ -5,7 +5,7 @@ import Link from "next/link";
 import styles from "./Header.module.scss";
 import Dropdown from "../Dropdown/Dropdown";
 
-const Header = () => {
+const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -14,29 +14,29 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.hamburger} onClick={toggleMenu}>
-        <span className={`${styles.line} ${isMenuOpen ? styles.line1 : ""}`}></span>
-        <span className={`${styles.line} ${isMenuOpen ? styles.line2 : ""}`}></span>
-        <span className={`${styles.line} ${isMenuOpen ? styles.line3 : ""}`}></span>
+      <div className={styles["header-hamburger"]} onClick={toggleMenu}>
+        <span className={`${styles["header-line"]} ${isMenuOpen ? styles["header-line--open"] : ""}`}></span>
+        <span className={`${styles["header-line"]} ${isMenuOpen ? styles["header-line--open"] : ""}`}></span>
+        <span className={`${styles["header-line"]} ${isMenuOpen ? styles["header-line--open"] : ""}`}></span>
       </div>
-      <div className={styles.logo}>
-        <Link href="/">
+      <div className={styles["header-logo"]}>
+        <Link href="/" className={styles["header-logo__link"]}>
           Bana Dental Design
         </Link>
       </div>
-      <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
-        <ul>
-          <li>
-            <Link href="/about-us">
+      <nav className={`${styles["header-nav"]} ${isMenuOpen ? styles["header-nav--open"] : ""}`}>
+        <ul className={styles["header-nav__list"]}>
+          <li className={styles["header-nav__item"]}>
+            <Link href="/about-us" className={styles["header-nav__link"]}>
               About Us
             </Link>
           </li>
-          <li>
-            <Link href="/contact-us">
+          <li className={styles["header-nav__item"]}>
+            <Link href="/contact-us" className={styles["header-nav__link"]}>
               Contact Us
             </Link>
           </li>
-          <li>
+          <li className={styles["header-nav__item"]}>
             <Dropdown />
           </li>
         </ul>
