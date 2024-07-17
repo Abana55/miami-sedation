@@ -1,79 +1,95 @@
-.dropdownContainer {
+.dropdown-container {
   position: relative;
   cursor: pointer;
+}
 
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
+.dropdown-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
 
-    .line {
-      width: 100%;
-      height: 0.25rem;
-      background-color: var(--primary-color);
-      transition: all 0.3s ease;
-    }
+  &__line {
+    width: 100%;
+    height: 0.25rem;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: var(--background-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+
+  &--fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
   }
 
-  .dropdownMenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 200px;
-    background-color: var(--background-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: max-height 0.3s ease;
-    overflow: hidden;
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    &__item {
+      padding: 1rem;
+      text-align: left;
+      cursor: pointer;
 
-      li {
-        padding: 1rem;
-        text-align: left;
-        cursor: pointer;
+      &--services {
+        position: relative;
 
-        a {
-          text-decoration: none;
-          color: var(--primary-color);
-          display: block;
+        &__services-list {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
 
-          &:hover {
-            color: var(--secondary-color);
+          &--fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
           }
-        }
 
-        &.services {
-          position: relative;
+          &__services-item {
+            padding: 0.5rem 1rem;
 
-          .servicesMenu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-
-            li {
-              padding: 0.5rem 1rem;
-
-              a {
-                color: var(--text-color);
-              }
+            &__services-link {
+              color: var(--text-color);
+              text-decoration: none;
             }
-          }
-
-          &.open .servicesMenu {
-            max-height: 500px; 
           }
         }
       }
+
+      &__link {
+        text-decoration: none;
+        color: var(--primary-color);
+        display: block;
+
+        &:hover {
+          color: var(--secondary-color);
+        }
+      }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px; // Adjust as needed
   }
 }
