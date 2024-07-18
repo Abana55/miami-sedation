@@ -2,7 +2,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.scss";
-import Dropdown from "../Dropdown/Dropdown";
+import React, { useState } from "react";
+import Link from "next/link";
+import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,16 +22,16 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles["header-hamburger"]} onClick={toggleMenu}>
-        <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open"] : ""}`}></span>
-        <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open"] : ""}`}></span>
-        <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open"] : ""}`}></span>
-      </div>
-      <div className={styles["header-logo"]}>
+      <section className={styles["header-hamburger"]} onClick={toggleMenu}>
+        <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open-top"] : ""}`}></span>
+        <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open-middle"] : ""}`}></span>
+        <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open-bottom"] : ""}`}></span>
+      </section>
+      <section className={styles["header-logo"]}>
         <Link href="/" className={styles["header-logo__link"]}>
           Bana Dental Design
         </Link>
-      </div>
+      </section>
       <nav className={`${styles["header-nav"]} ${isMenuOpen ? styles["header-nav--open"] : ""}`}>
         <ul className={styles["header-nav__list"]}>
           <li className={styles["header-nav__item"]}>

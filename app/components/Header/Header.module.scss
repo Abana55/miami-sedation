@@ -24,8 +24,16 @@
       background-color: var(--primary-color); // Ensure the color is visible
       transition: all 0.3s ease;
 
-      &--open {
-        background-color: var(--secondary-color);
+      &--open-top {
+        transform: rotate(45deg) translate(0.5rem, 0.5rem);
+      }
+
+      &--open-middle {
+        opacity: 0;
+      }
+
+      &--open-bottom {
+        transform: rotate(-45deg) translate(0.5rem, -0.5rem);
       }
     }
   }
@@ -88,8 +96,9 @@
             padding: 0;
             margin: 0;
             z-index: 1002;
-            width: 100%; // Make it as wide as the parent container
+            width: auto; // Make it auto width
             border-radius: 0.5rem; // Rounded corners for the submenu
+            border: 1px solid var(--primary-color); // Border line
 
             li {
               padding: 1rem;
