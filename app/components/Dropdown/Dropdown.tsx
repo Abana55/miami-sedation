@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { useState } from "react";
 import styles from "./Dropdown.module.scss";
@@ -9,12 +8,14 @@ const Dropdown: React.FC = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const toggleMenu = () => {
+    console.log('Menu toggled');
     setIsOpen(!isOpen);
-    setIsServicesOpen(false); // Close services submenu when toggling the main menu
+    setIsServicesOpen(false);
   };
 
   const toggleServicesMenu = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent closing the main menu when clicking on "Services"
+    e.stopPropagation();
+    console.log('Services menu toggled');
     setIsServicesOpen(!isServicesOpen);
   };
 

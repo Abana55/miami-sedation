@@ -1,95 +1,85 @@
+// Dropdown.module.scss
 .dropdown-container {
   position: relative;
-  cursor: pointer;
-  z-index: 1001; // Ensure it's above other content
 }
 
 .dropdown-hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
-  border: none;
   cursor: pointer;
+}
 
-  &__line {
-    width: 100%;
-    height: 0.25rem;
-    background-color: var(--primary-color); // Ensure the color is visible
-    transition: all 0.3s ease;
-  }
+.dropdown-line {
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  margin: 4px 0;
 }
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 33%;
-  background-color: var(--primary-color); // Change to blue background color
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: none;
+}
 
-  &--fade-in {
-    animation: fadeIn 0.5s ease-in-out forwards;
-  }
+.dropdown-menu--fade-in {
+  display: block;
+  animation: fadeIn 0.3s;
+}
 
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.dropdown-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    &__item {
-      padding: 1rem;
-      text-align: left;
-      cursor: pointer;
+.dropdown-menu__item {
+  padding: 12px 16px;
+}
 
-      &--services {
-        position: relative;
+.dropdown-menu__link {
+  text-decoration: none;
+  color: black;
+}
 
-        &__services-list {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.3s ease, opacity 0.3s ease;
+.dropdown-menu__item--services:hover {
+  background-color: #f1f1f1;
+}
 
-          &--fade-in {
-            animation: fadeIn 0.5s ease-in-out forwards;
-          }
+.dropdown-menu__services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
 
-          &__services-item {
-            padding: 0.5rem 1rem;
+.dropdown-menu__services-list--fade-in {
+  display: block;
+  animation: fadeIn 0.3s;
+}
 
-            &__services-link {
-              color: var(--secondary-color); // Change text color to gold
-              text-decoration: none;
-            }
-          }
-        }
-      }
+.dropdown-menu__services-item {
+  padding: 12px 16px;
+}
 
-      &__link {
-        text-decoration: none;
-        color: var(--secondary-color); // Change text color to gold
-        display: block;
-
-        &:hover {
-          color: var(--secondary-color); // Ensure hover color remains gold
-        }
-      }
-    }
-  }
+.dropdown-menu__services-link {
+  text-decoration: none;
+  color: black;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    max-height: 0;
   }
   to {
     opacity: 1;
-    max-height: 500px; // Adjust as needed
   }
 }

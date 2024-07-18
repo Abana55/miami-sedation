@@ -52,7 +52,7 @@
     transition: max-height 0.3s ease;
 
     &--open {
-      max-height: 15rem;
+      max-height: 15rem; // Adjust this as needed
     }
 
     &__list {
@@ -71,6 +71,43 @@
 
           &:hover {
             color: var(--secondary-color);
+          }
+        }
+
+        &--services {
+          position: relative;
+
+          .header-nav__submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--background-color);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 1002;
+            width: 100%; // Make it as wide as the parent container
+            border-radius: 0.5rem; // Rounded corners for the submenu
+
+            li {
+              padding: 1rem;
+              text-align: center;
+
+              a {
+                text-decoration: none;
+                color: var(--primary-color);
+
+                &:hover {
+                  color: var(--secondary-color);
+                }
+              }
+            }
+          }
+
+          &--open .header-nav__submenu {
+            display: block;
           }
         }
       }
