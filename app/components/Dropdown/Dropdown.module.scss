@@ -1,6 +1,7 @@
 .dropdown-container {
   position: relative;
   cursor: pointer;
+  z-index: 1001; // Ensure it's above other content
 }
 
 .dropdown-hamburger {
@@ -12,7 +13,6 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 1001;
 
   &__line {
     width: 100%;
@@ -27,7 +27,7 @@
   top: 100%;
   left: 0;
   width: 33%;
-  background-color: var(--background-color);
+  background-color: var(--primary-color); // Change to blue background color
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -63,7 +63,7 @@
             padding: 0.5rem 1rem;
 
             &__services-link {
-              color: var(--text-color);
+              color: var(--secondary-color); // Change text color to gold
               text-decoration: none;
             }
           }
@@ -72,11 +72,11 @@
 
       &__link {
         text-decoration: none;
-        color: var(--primary-color);
+        color: var(--secondary-color); // Change text color to gold
         display: block;
 
         &:hover {
-          color: var(--secondary-color);
+          color: var(--secondary-color); // Ensure hover color remains gold
         }
       }
     }
