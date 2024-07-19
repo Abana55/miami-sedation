@@ -54,10 +54,13 @@
     top: 100%;
     left: 0;
     background-color: var(--background-color);
-    width: 100%;
+    width: auto; // Change to auto to fit content
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
+    border: 1px solid var(--primary-color); // Add border
+    border-radius: 0.5rem; // Add border radius
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Add box shadow
 
     &--open {
       max-height: 15rem; // Adjust this as needed

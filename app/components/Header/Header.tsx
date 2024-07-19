@@ -1,7 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import styles from "./Header.module.scss";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.scss";
