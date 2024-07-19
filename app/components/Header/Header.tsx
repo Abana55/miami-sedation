@@ -45,17 +45,32 @@ const Header: React.FC = () => {
           <li className={`${styles["header-nav__item"]} ${styles["header-nav__item--services"]}`} onClick={toggleServicesMenu}>
             <span className={styles["header-nav__item__link"]}>Services</span>
             {isServicesOpen && (
-              <ul className={styles["header-nav__submenu"]}>
-                <li><Link href="/dental-services/dental-implants">Dental Implants</Link></li>
-                <li><Link href="/dental-services/teeth-whitening">Teeth Whitening</Link></li>
-                <li><Link href="/dental-services/veneers">Veneers</Link></li>
-                <li><Link href="/dental-services/teeth-cleaning">Teeth Cleaning</Link></li>
-                <li><Link href="/dental-services/oral-exams">Oral Exams</Link></li>
-                <li><Link href="/dental-services/x-rays">X-Rays</Link></li>
-                <li><Link href="/dental-services/fillings">Fillings</Link></li>
-                <li><Link href="/dental-services/crowns">Crowns</Link></li>
-                <li><Link href="/dental-services/bridges">Bridges</Link></li>
-              </ul>
+              <div className={styles["header-nav__submenu"]}>
+                <div className={styles["header-nav__submenu-category"]}>
+                  <h4>Cosmetic Treatments</h4>
+                  <ul>
+                    <li><Link href="/dental-services/teeth-whitening">Teeth Whitening</Link></li>
+                    <li><Link href="/dental-services/veneers">Veneers</Link></li>
+                  </ul>
+                </div>
+                <div className={styles["header-nav__submenu-category"]}>
+                  <h4>Preventive Treatments</h4>
+                  <ul>
+                    <li><Link href="/dental-services/teeth-cleaning">Teeth Cleaning</Link></li>
+                    <li><Link href="/dental-services/oral-exams">Oral Exams</Link></li>
+                    <li><Link href="/dental-services/x-rays">X-Rays</Link></li>
+                  </ul>
+                </div>
+                <div className={styles["header-nav__submenu-category"]}>
+                  <h4>Restorative Treatments</h4>
+                  <ul>
+                    <li><Link href="/dental-services/dental-implants">Dental Implants</Link></li>
+                    <li><Link href="/dental-services/fillings">Fillings</Link></li>
+                    <li><Link href="/dental-services/crowns">Crowns</Link></li>
+                    <li><Link href="/dental-services/bridges">Bridges</Link></li>
+                  </ul>
+                </div>
+              </div>
             )}
           </li>
         </ul>
