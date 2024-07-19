@@ -20,16 +20,16 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
-      <section className={styles["header-hamburger"]} onClick={toggleMenu}>
+      <div className={styles["header-hamburger"]} onClick={toggleMenu}>
         <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open-top"] : ""}`}></span>
         <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open-middle"] : ""}`}></span>
         <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open-bottom"] : ""}`}></span>
-      </section>
-      <section className={styles["header-logo"]}>
+      </div>
+      <div className={styles["header-logo"]}>
         <Link href="/" className={styles["header-logo__link"]}>
           Bana Dental Design
         </Link>
-      </section>
+      </div>
       <nav className={`${styles["header-nav"]} ${isMenuOpen ? styles["header-nav--open"] : ""}`}>
         <ul className={styles["header-nav__list"]}>
           <li className={styles["header-nav__item"]}>

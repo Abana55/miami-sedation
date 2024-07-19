@@ -1,4 +1,5 @@
 
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -98,30 +99,48 @@
           .header-nav__submenu {
             display: none;
             position: absolute;
-            top: 100%;
-            left: 0;
+            top: 0;
+            left: 100%; // Position to the right of the parent
             background-color: var(--submenu-background);
             box-shadow: var(--box-shadow);
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            padding: 1rem;
             z-index: 1002;
-            width: 15rem; // Set a fixed width
+            width: 20rem; // Set a fixed width
             border-radius: 0.5rem; // Rounded corners for the submenu
             border: 1px solid var(--dropdown-border-color); // Border line
+            opacity: 0; // Start with invisible
+            visibility: hidden;
+            transform: translateX(-10px); // Initial position for animation
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; // Smooth animation
 
-            li {
-              padding: 1rem;
-              text-align: center;
-              transition: background-color 0.3s ease;
+            &-category {
+              margin-bottom: 1rem;
 
-              a {
-                text-decoration: none;
+              h4 {
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
                 color: var(--primary-color);
+              }
 
-                &:hover {
-                  color: var(--secondary-color);
-                  background-color: var(--submenu-hover-background);
+              ul {
+                list-style: none; // Remove bullet points
+                padding: 0;
+                margin: 0;
+
+                li {
+                  padding: 0.5rem 0;
+                  text-align: left;
+                  transition: background-color 0.3s ease;
+
+                  a {
+                    text-decoration: none;
+                    color: var(--primary-color);
+
+                    &:hover {
+                      color: var(--secondary-color);
+                      background-color: var(--submenu-hover-background);
+                    }
+                  }
                 }
               }
             }
@@ -129,6 +148,9 @@
 
           &--open .header-nav__submenu {
             display: block;
+            opacity: 1; // Make visible
+            visibility: visible;
+            transform: translateX(0); // Move to final position
           }
         }
       }
