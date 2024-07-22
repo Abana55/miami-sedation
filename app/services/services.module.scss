@@ -1,0 +1,60 @@
+.services {
+    padding: 2rem;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+  
+    &__title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  
+    &__category {
+      margin-bottom: 2rem;
+  
+      &-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+  
+    &__cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  
+    &__card {
+      background-color: var(--submenu-background);
+      border: 1px solid var(--dropdown-border-color);
+      border-radius: 0.5rem;
+      box-shadow: var(--box-shadow);
+      padding: 1rem;
+      text-decoration: none;
+      color: var(--primary-color);
+      flex: 1 1 calc(33.333% - 1rem); // 3 cards per row with some spacing
+      max-width: calc(33.333% - 1rem);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+  
+      &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+  
+      &-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+  
+      &-description {
+        font-size: 1rem;
+        color: var(--secondary-color);
+      }
+    }
+  }
+  
