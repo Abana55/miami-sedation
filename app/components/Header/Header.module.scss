@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--background-color);
+  background-color: #ffffff; // background color
   position: relative;
   z-index: 1001; // Ensure it's above other content
 
@@ -21,7 +21,7 @@
     &__line {
       width: 100%;
       height: 0.25rem;
-      background-color: var(--primary-color); // Ensure the color is visible
+      background-color: #000000; // primary color
       transition: all 0.3s ease;
 
       &--open-top {
@@ -45,7 +45,7 @@
 
     &__link {
       text-decoration: none;
-      color: var(--primary-color);
+      color: #000000; // primary color
     }
   }
 
@@ -53,16 +53,17 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--dropdown-background);
-    width: 100%; // Make it full width
+    background-color: rgba(255, 255, 255, 0.1); // dropdown background
+    width: 25vw; // Adjust to take 25% of the viewport width
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-    border: 1px solid var(--dropdown-border-color); // Add border
+    backdrop-filter: blur(10px); // For glassmorphic effect
+    border: 1px solid rgba(255, 255, 255, 0.3); // dropdown border color
     border-radius: 0.5rem; // Add border radius
-    box-shadow: var(--box-shadow); // Add box shadow
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // box shadow
 
     &--open {
       max-height: 20rem; // Adjust this as needed to fit the content
@@ -73,35 +74,36 @@
     &__container {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       padding: 1rem;
 
       &__button {
-        background: none;
+        background: rgba(255, 255, 255, 0.1); // dropdown background
         border: none;
-        color: var(--primary-color);
+        color: #000000; // primary color
         font-size: 1rem;
         cursor: pointer;
         padding: 0.5rem 1rem; // Adjust padding for spacing
-        text-align: left;
+        margin: 0.5rem 0; // Ensure symmetrical spacing
+        text-align: center;
         width: 100%;
+        max-width: 200px; // Ensure buttons are of uniform width
+        border-radius: 0.5rem;
         transition: background-color 0.3s ease, color 0.3s ease;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // box shadow
+        backdrop-filter: blur(10px); // For glassmorphic effect
 
         &:hover {
-          background-color: var(--submenu-hover-background);
-          color: var(--secondary-color);
+          background-color: rgba(255, 255, 255, 0.2); // submenu hover background
+          color: #ff0000; // secondary color
         }
+      }
 
-        &__link {
-          text-decoration: none;
-          color: inherit;
-          display: block;
-          width: 100%;
-
-          &:hover {
-            color: var(--secondary-color);
-          }
-        }
+      &__separator {
+        width: 80%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.3); // dropdown border color
+        margin: 0.5rem 0;
       }
     }
   }
