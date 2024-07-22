@@ -55,7 +55,7 @@
     top: 100%;
     left: 0;
     background-color: var(--dropdown-background);
-    width: auto; // Change to auto to fit content
+    width: 100%; // Make it full width
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -66,7 +66,7 @@
     box-shadow: var(--box-shadow); // Add box shadow
 
     &--open {
-      max-height: 20rem; // Adjust this as needed
+      max-height: 20rem; // Adjust this as needed to fit the content
       opacity: 1;
       visibility: visible;
     }
@@ -83,7 +83,7 @@
         color: var(--primary-color);
         font-size: 1rem;
         cursor: pointer;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 1rem; // Adjust padding for spacing
         text-align: left;
         width: 100%;
         transition: background-color 0.3s ease, color 0.3s ease;
@@ -103,73 +103,6 @@
             color: var(--secondary-color);
           }
         }
-      }
-    }
-
-    &__services-container {
-      position: relative;
-    }
-
-    &__submenu {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 100%; // Position to the right of the parent
-      background-color: var(--submenu-background);
-      box-shadow: var(--box-shadow);
-      padding: 1rem;
-      z-index: 1002;
-      width: 20rem; // Set a fixed width
-      border-radius: 0.5rem; // Rounded corners for the submenu
-      border: 1px solid var(--dropdown-border-color); // Border line
-      opacity: 0; // Start with invisible
-      visibility: hidden;
-      transform: translateX(-10px); // Initial position for animation
-      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; // Smooth animation
-
-      &-category {
-        margin-bottom: 1rem;
-
-        h4 {
-          margin-bottom: 0.5rem;
-          font-size: 1rem;
-          color: var(--primary-color);
-        }
-
-        &-item {
-          background: none;
-          border: none;
-          color: var(--primary-color);
-          font-size: 1rem;
-          cursor: pointer;
-          padding: 0.5rem 1rem;
-          text-align: left;
-          width: 100%;
-          transition: background-color 0.3s ease, color 0.3s ease;
-
-          &:hover {
-            background-color: var(--submenu-hover-background);
-            color: var(--secondary-color);
-          }
-
-          &-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            width: 100%;
-
-            &:hover {
-              color: var(--secondary-color);
-            }
-          }
-        }
-      }
-
-      &--open {
-        display: block;
-        opacity: 1; // Make visible
-        visibility: visible;
-        transform: translateX(0); // Move to final position
       }
     }
   }
