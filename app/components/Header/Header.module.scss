@@ -84,26 +84,23 @@
         font-size: 1rem;
         cursor: pointer;
         padding: 0.5rem 1rem; // Adjust padding for spacing
-        margin: 0.5rem 0; // Ensure symmetrical spacing
         text-align: center;
         width: 100%;
         max-width: 200px; // Ensure buttons are of uniform width
-        border-radius: 0.5rem;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1); // Add border line between buttons
+        transition: background-color 0.3s ease, color 0.3s ease, border-bottom 0.3s ease;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // box shadow
         backdrop-filter: blur(10px); // For glassmorphic effect
+
+        &:last-child {
+          border-bottom: none; // Remove border from the last button
+        }
 
         &:hover {
           background-color: rgba(255, 255, 255, 0.2); // submenu hover background
           color: #ff0000; // secondary color
+          border-bottom: 4px solid #ff0000; // Thicker border on hover
         }
-      }
-
-      &__separator {
-        width: 80%;
-        height: 1px;
-        background-color: rgba(255, 255, 255, 0.3); // dropdown border color
-        margin: 0.5rem 0;
       }
     }
   }

@@ -28,11 +28,9 @@ const Header: React.FC = () => {
           <Link href="/about-us" className={styles["header-nav__button"]}>
             About Us
           </Link>
-          <div className={styles["header-nav__separator"]}></div>
           <Link href="/contact-us" className={styles["header-nav__button"]}>
             Contact Us
           </Link>
-          <div className={styles["header-nav__separator"]}></div>
           <Link href="/services" className={styles["header-nav__button"]}>
             Services
           </Link>
