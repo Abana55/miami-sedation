@@ -31,49 +31,61 @@ const Header: React.FC = () => {
         </Link>
       </div>
       <nav className={`${styles["header-nav"]} ${isMenuOpen ? styles["header-nav--open"] : ""}`}>
-        <ul className={styles["header-nav__list"]}>
-          <li className={styles["header-nav__item"]}>
-            <Link href="/about-us" className={styles["header-nav__item__link"]}>
+        <div className={styles["header-nav__container"]}>
+          <button className={styles["header-nav__button"]}>
+            <Link href="/about-us" className={styles["header-nav__link"]}>
               About Us
             </Link>
-          </li>
-          <li className={styles["header-nav__item"]}>
-            <Link href="/contact-us" className={styles["header-nav__item__link"]}>
+          </button>
+          <button className={styles["header-nav__button"]}>
+            <Link href="/contact-us" className={styles["header-nav__link"]}>
               Contact Us
             </Link>
-          </li>
-          <li className={`${styles["header-nav__item"]} ${styles["header-nav__item--services"]}`} onClick={toggleServicesMenu}>
-            <span className={styles["header-nav__item__link"]}>Services</span>
-            {isServicesOpen && (
-              <div className={styles["header-nav__submenu"]}>
-                <div className={styles["header-nav__submenu-category"]}>
-                  <h4>Cosmetic Treatments</h4>
-                  <ul>
-                    <li><Link href="/dental-services/teeth-whitening">Teeth Whitening</Link></li>
-                    <li><Link href="/dental-services/veneers">Veneers</Link></li>
-                  </ul>
-                </div>
-                <div className={styles["header-nav__submenu-category"]}>
-                  <h4>Preventive Treatments</h4>
-                  <ul>
-                    <li><Link href="/dental-services/teeth-cleaning">Teeth Cleaning</Link></li>
-                    <li><Link href="/dental-services/oral-exams">Oral Exams</Link></li>
-                    <li><Link href="/dental-services/x-rays">X-Rays</Link></li>
-                  </ul>
-                </div>
-                <div className={styles["header-nav__submenu-category"]}>
-                  <h4>Restorative Treatments</h4>
-                  <ul>
-                    <li><Link href="/dental-services/dental-implants">Dental Implants</Link></li>
-                    <li><Link href="/dental-services/fillings">Fillings</Link></li>
-                    <li><Link href="/dental-services/crowns">Crowns</Link></li>
-                    <li><Link href="/dental-services/bridges">Bridges</Link></li>
-                  </ul>
-                </div>
+          </button>
+          <div className={styles["header-nav__services-container"]}>
+            <button className={styles["header-nav__button"]} onClick={toggleServicesMenu}>
+              <span className={styles["header-nav__link"]}>Services</span>
+            </button>
+            <div className={`${styles["header-nav__submenu"]} ${isServicesOpen ? styles["header-nav__submenu--open"] : ""}`}>
+              <div className={styles["header-nav__submenu-category"]}>
+                <h4>Cosmetic Treatments</h4>
+                <button className={styles["header-nav__submenu-item"]}>
+                  <Link href="/dental-services/teeth-whitening" className={styles["header-nav__submenu-link"]}>Teeth Whitening</Link>
+                </button>
+                <button className={styles["header-nav__submenu-item"]}>
+                  <Link href="/dental-services/veneers" className={styles["header-nav__submenu-link"]}>Veneers</Link>
+                </button>
               </div>
-            )}
-          </li>
-        </ul>
+              <div className={styles["header-nav__submenu-category"]}>
+                <h4>Preventive Treatments</h4>
+                <button className={styles["header-nav__submenu-item"]}>
+                  <Link href="/dental-services/teeth-cleaning" className={styles["header-nav__submenu-link"]}>Teeth Cleaning</Link>
+                </button>
+                <button className={styles["header-nav__submenu-item"]}>
+                  <Link href="/dental-services/oral-exams" className={styles["header-nav__submenu-link"]}>Oral Exams</Link>
+                </button>
+                <button className={styles["header-nav__submenu-item"]}>
+                  <Link href="/dental-services/x-rays" className={styles["header-nav__submenu-link"]}>X-Rays</Link>
+                </button>
+              </div>
+              <div className={styles["header-nav__submenu-category"]}>
+                <h4>Restorative Treatments</h4>
+                <button className={styles["header-nav__submenu-item"]}>
+                  <Link href="/dental-services/dental-implants" className={styles["header-nav__submenu-link"]}>Dental Implants</Link>
+                </button>
+                <button className={styles["header-nav__submenu-item"]}>
+                  <Link href="/dental-services/fillings" className={styles["header-nav__submenu-link"]}>Fillings</Link>
+                </button>
+                <button className={styles["header-nav__submenu-item"]}>
+                  <Link href="/dental-services/crowns" className={styles["header-nav__submenu-link"]}>Crowns</Link>
+                </button>
+                <button className={styles["header-nav__submenu-item"]}>
+                  <Link href="/dental-services/bridges" className={styles["header-nav__submenu-link"]}>Bridges</Link>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
   );

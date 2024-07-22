@@ -1,5 +1,4 @@
 
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -72,87 +71,105 @@
       visibility: visible;
     }
 
-    &__list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
 
-      &__item {
-        padding: 1rem;
-        text-align: center;
-        transition: background-color 0.3s ease;
+      &__button {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        text-align: left;
+        width: 100%;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: var(--submenu-hover-background);
+          color: var(--secondary-color);
+        }
 
         &__link {
           text-decoration: none;
-          color: var(--primary-color);
+          color: inherit;
           display: block;
+          width: 100%;
 
           &:hover {
             color: var(--secondary-color);
-            background-color: var(--submenu-hover-background);
           }
         }
+      }
+    }
 
-        &--services {
-          position: relative;
+    &__services-container {
+      position: relative;
+    }
 
-          .header-nav__submenu {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%; // Position to the right of the parent
-            background-color: var(--submenu-background);
-            box-shadow: var(--box-shadow);
-            padding: 1rem;
-            z-index: 1002;
-            width: 20rem; // Set a fixed width
-            border-radius: 0.5rem; // Rounded corners for the submenu
-            border: 1px solid var(--dropdown-border-color); // Border line
-            opacity: 0; // Start with invisible
-            visibility: hidden;
-            transform: translateX(-10px); // Initial position for animation
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; // Smooth animation
+    &__submenu {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%; // Position to the right of the parent
+      background-color: var(--submenu-background);
+      box-shadow: var(--box-shadow);
+      padding: 1rem;
+      z-index: 1002;
+      width: 20rem; // Set a fixed width
+      border-radius: 0.5rem; // Rounded corners for the submenu
+      border: 1px solid var(--dropdown-border-color); // Border line
+      opacity: 0; // Start with invisible
+      visibility: hidden;
+      transform: translateX(-10px); // Initial position for animation
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; // Smooth animation
 
-            &-category {
-              margin-bottom: 1rem;
+      &-category {
+        margin-bottom: 1rem;
 
-              h4 {
-                margin-bottom: 0.5rem;
-                font-size: 1rem;
-                color: var(--primary-color);
-              }
+        h4 {
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+          color: var(--primary-color);
+        }
 
-              ul {
-                list-style: none; // Remove bullet points
-                padding: 0;
-                margin: 0;
+        &-item {
+          background: none;
+          border: none;
+          color: var(--primary-color);
+          font-size: 1rem;
+          cursor: pointer;
+          padding: 0.5rem 1rem;
+          text-align: left;
+          width: 100%;
+          transition: background-color 0.3s ease, color 0.3s ease;
 
-                li {
-                  padding: 0.5rem 0;
-                  text-align: left;
-                  transition: background-color 0.3s ease;
+          &:hover {
+            background-color: var(--submenu-hover-background);
+            color: var(--secondary-color);
+          }
 
-                  a {
-                    text-decoration: none;
-                    color: var(--primary-color);
+          &-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
 
-                    &:hover {
-                      color: var(--secondary-color);
-                      background-color: var(--submenu-hover-background);
-                    }
-                  }
-                }
-              }
+            &:hover {
+              color: var(--secondary-color);
             }
           }
-
-          &--open .header-nav__submenu {
-            display: block;
-            opacity: 1; // Make visible
-            visibility: visible;
-            transform: translateX(0); // Move to final position
-          }
         }
+      }
+
+      &--open {
+        display: block;
+        opacity: 1; // Make visible
+        visibility: visible;
+        transform: translateX(0); // Move to final position
       }
     }
   }
