@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <div className={styles.services}>
       <h1 className={styles["services__title"]}>Our Services</h1>
-      <div className={styles["services__category"]}>
+      <section className={styles["services__category"]}>
         <h2 className={styles["services__category-title"]}>Cosmetic Treatments</h2>
         <div className={styles["services__cards"]}>
           <Link href="/dental-services/teeth-whitening" className={styles["services__card"]}>
@@ -21,8 +21,8 @@ const Services = () => {
             </div>
           </Link>
         </div>
-      </div>
-      <div className={styles["services__category"]}>
+      </section>
+      <section className={styles["services__category"]}>
         <h2 className={styles["services__category-title"]}>Preventive Treatments</h2>
         <div className={styles["services__cards"]}>
           <Link href="/dental-services/teeth-cleaning" className={styles["services__card"]}>
@@ -39,13 +39,13 @@ const Services = () => {
           </Link>
           <Link href="/dental-services/x-rays" className={styles["services__card"]}>
             <div className={styles["services__card-content"]}>
-              <h3 className{styles["services__card-title"]}>X-Rays</h3>
+              <h3 className={styles["services__card-title"]}>X-Rays</h3>
               <p className={styles["services__card-description"]}>Advanced dental x-rays for accurate diagnosis.</p>
             </div>
           </Link>
         </div>
-      </div>
-      <div className={styles["services__category"]}>
+      </section>
+      <section className={styles["services__category"]}>
         <h2 className={styles["services__category-title"]}>Restorative Treatments</h2>
         <div className={styles["services__cards"]}>
           <Link href="/dental-services/dental-implants" className={styles["services__card"]}>
@@ -73,7 +73,7 @@ const Services = () => {
             </div>
           </Link>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

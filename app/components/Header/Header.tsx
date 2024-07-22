@@ -14,48 +14,26 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles["header-hamburger"]} onClick={toggleMenu}>
-        <span
-          className={`${styles["header-hamburger__line"]} ${
-            isMenuOpen ? styles["header-hamburger__line--open-top"] : ""
-          }`}
-        ></span>
-        <span
-          className={`${styles["header-hamburger__line"]} ${
-            isMenuOpen ? styles["header-hamburger__line--open-middle"] : ""
-          }`}
-        ></span>
-        <span
-          className={`${styles["header-hamburger__line"]} ${
-            isMenuOpen ? styles["header-hamburger__line--open-bottom"] : ""
-          }`}
-        ></span>
+        <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open-top"] : ""}`}></span>
+        <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open-middle"] : ""}`}></span>
+        <span className={`${styles["header-hamburger__line"]} ${isMenuOpen ? styles["header-hamburger__line--open-bottom"] : ""}`}></span>
       </div>
       <div className={styles["header-logo"]}>
         <Link href="/" className={styles["header-logo__link"]}>
           Bana Dental Design
         </Link>
       </div>
-      <nav
-        className={`${styles["header-nav"]} ${
-          isMenuOpen ? styles["header-nav--open"] : ""
-        }`}
-      >
+      <nav className={`${styles["header-nav"]} ${isMenuOpen ? styles["header-nav--open"] : ""}`}>
         <div className={styles["header-nav__container"]}>
-          <button className={styles["header-nav__button"]}>
-            <Link href="/about-us" className={styles["header-nav__link"]}>
-              About Us
-            </Link>
-          </button>
-          <button className={styles["header-nav__button"]}>
-            <Link href="/contact-us" className={styles["header-nav__link"]}>
-              Contact Us
-            </Link>
-          </button>
-          <button className={styles["header-nav__button"]}>
-            <Link href="/services" className={styles["header-nav__link"]}>
-              Services
-            </Link>
-          </button>
+          <Link href="/about-us" className={styles["header-nav__button"]}>
+            About Us
+          </Link>
+          <Link href="/contact-us" className={styles["header-nav__button"]}>
+            Contact Us
+          </Link>
+          <Link href="/services" className={styles["header-nav__button"]}>
+            Services
+          </Link>
         </div>
       </nav>
     </header>
