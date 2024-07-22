@@ -1,0 +1,46 @@
+.button {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1); // dropdown background
+    border: none;
+    color: #000000; // primary color
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem; // Adjust padding for spacing
+    text-align: center;
+    width: 100%;
+    max-width: 200px; // Ensure buttons are of uniform width
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); // Add border line between buttons
+    transition: background-color 0.3s ease, color 0.3s ease, border-bottom 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // box shadow
+    backdrop-filter: blur(10px); // For glassmorphic effect
+  
+    &:last-child {
+      border-bottom: none; // Remove border from the last button
+    }
+  
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2); // submenu hover background
+      color: #ff0000; // secondary color
+      border-bottom: 4px solid #ff0000; // Thicker border on hover
+    }
+  }
+  
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background-color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    width: 0;
+    height: 0;
+  }
+  
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import MyButton from "../MyButton/MyButton";
 import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
@@ -25,14 +26,20 @@ const Header: React.FC = () => {
       </div>
       <nav className={`${styles["header-nav"]} ${isMenuOpen ? styles["header-nav--open"] : ""}`}>
         <div className={styles["header-nav__container"]}>
-          <Link href="/about-us" className={styles["header-nav__button"]}>
-            About Us
+          <Link href="/about-us">
+            <MyButton className={styles["header-nav__button"]}>
+              About Us
+            </MyButton>
           </Link>
-          <Link href="/contact-us" className={styles["header-nav__button"]}>
-            Contact Us
+          <Link href="/contact-us">
+            <MyButton className={styles["header-nav__button"]}>
+              Contact Us
+            </MyButton>
           </Link>
-          <Link href="/services" className={styles["header-nav__button"]}>
-            Services
+          <Link href="/services">
+            <MyButton className={styles["header-nav__button"]}>
+              Services
+            </MyButton>
           </Link>
         </div>
       </nav>
