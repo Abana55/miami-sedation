@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import MyButton from "../MyButton/MyButton";
 import styles from "./Header.module.scss";
 
@@ -32,8 +33,14 @@ const Header: React.FC = () => {
         ></span>
       </div>
       <div className={styles["header-logo"]}>
-        <Link href="/" className={styles["header-logo__link"]}>
-          Bana Dental Design
+        <Link href="/" passHref>
+          <Image
+            src="/images/1x/3Artboard 1_1.png"
+            alt="Bana Dental Design Logo"
+            width={96} // Corresponding to 6rem (16px * 6 = 96px)
+            height={96} // Corresponding to 6rem (16px * 6 = 96px)
+            className={styles["header-logo__img"]}
+          />
         </Link>
       </div>
       <nav

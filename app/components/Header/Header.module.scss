@@ -42,10 +42,19 @@
     order: 2;
     font-size: 1.5rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
 
     &__link {
       text-decoration: none;
       color: var(--primary-color); // Primary color from global styles
+
+      img {
+        width: 1rem; // Use rem units for the logo size, twice as big
+        height: 1rem; // Maintain aspect ratio
+        border-radius: 50%; // Optional: Add border radius to the logo image
+        margin-right: 0.5rem; // Optional: Add some margin to the right of the logo
+      }
     }
   }
 
@@ -76,13 +85,28 @@
       flex-direction: column;
       align-items: center;
       padding: 1rem;
-      border-bottom: .0625rem black;
 
       // Add border between buttons
       &__button:not(:last-child) {
         margin-bottom: 0.5rem; // Space between buttons
         border-bottom: 1px solid rgba(0, 0, 0, 0.1); // Border between buttons
       }
+    }
+  }
+
+  // Media query for mobile responsiveness
+  @media (max-width: 768px) {
+    &-logo {
+      &__link {
+        img {
+          width: 4rem; // Adjust logo size for mobile, twice as big
+          height: 4rem; // Maintain aspect ratio
+        }
+      }
+    }
+
+    &-nav {
+      width: 50vw; // Adjust dropdown width for mobile
     }
   }
 }
