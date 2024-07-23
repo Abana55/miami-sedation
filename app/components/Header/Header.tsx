@@ -35,12 +35,22 @@ const Header: React.FC = () => {
       <div className={styles["header-logo"]}>
         <Link href="/" passHref>
           <Image
-            src="/images/1x/3Artboard 1_1.png"
+            src="/images/1x/Logos.jpg"
             alt="Bana Dental Design Logo"
             width={96} // Corresponding to 6rem (16px * 6 = 96px)
             height={96} // Corresponding to 6rem (16px * 6 = 96px)
             className={styles["header-logo__img"]}
           />
+        </Link>
+      </div>
+      <div className={styles["header-end"]}>
+        <div className={styles["header-end__phone"]}>
+          Call us: (305) 555-5555
+        </div>
+        <Link href="/contact-us" passHref>
+          <MyButton className={styles["header-end__button"]}>
+            Contact Us
+          </MyButton>
         </Link>
       </div>
       <nav

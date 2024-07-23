@@ -3,12 +3,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--background-color); // Use background color from global styles
+  background-color: var(
+    --background-color
+  ); // Use background color from global styles
   position: relative;
   z-index: 1001; // Ensure it's above other content
 
   &-hamburger {
-    order: 1;
+    order: 1; // Ensure the hamburger icon appears first
     width: 2rem;
     height: 2rem;
     display: flex;
@@ -21,7 +23,9 @@
     &__line {
       width: 100%;
       height: 0.25rem;
-      background-color: var(--primary-color); // Primary color from global styles
+      background-color: var(
+        --primary-color
+      ); // Primary color from global styles
       transition: all 0.3s ease;
 
       &--open-top {
@@ -39,22 +43,56 @@
   }
 
   &-logo {
-    order: 2;
+    order: 2; // Ensure the logo appears second
     font-size: 1.5rem;
     font-weight: bold;
     display: flex;
+    justify-content: center; // Center the logo horizontally
     align-items: center;
 
     &__link {
       text-decoration: none;
       color: var(--primary-color); // Primary color from global styles
 
-      img {
-        width: 1rem; // Use rem units for the logo size, twice as big
-        height: 1rem; // Maintain aspect ratio
+      .header-logo__img {
+        width: 6rem; // Use rem units for the logo size
+        height: 6rem; // Maintain aspect ratio
         border-radius: 50%; // Optional: Add border radius to the logo image
-        margin-right: 0.5rem; // Optional: Add some margin to the right of the logo
       }
+    }
+  }
+
+  &-end {
+    order: 3; // Ensure the phone number and button appear third
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; // Align items to the end
+    gap: 1rem; // Add space between items
+
+    &__button {
+      background: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--primary-color);
+        color: #ffffff;
+      }
+    }
+
+    &__phone {
+      background: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -98,7 +136,7 @@
   @media (max-width: 768px) {
     &-logo {
       &__link {
-        img {
+        .header-logo__img {
           width: 4rem; // Adjust logo size for mobile, twice as big
           height: 4rem; // Maintain aspect ratio
         }
