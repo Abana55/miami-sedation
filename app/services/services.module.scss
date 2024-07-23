@@ -1,60 +1,52 @@
-.services {
+.pageContainer {
     padding: 2rem;
-    background-color: var(--background-color);
-    color: var(--primary-color);
+    background-color: var(--background-color); // Use background color from global styles
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
-    &__title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+  .pageTitle {
+    font-size: 2rem;
+    color: var(--primary-color); // Use primary color from global styles
+    margin-bottom: 2rem;
+  }
+  
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .serviceCard {
+    background-color: var(--card-background-color); // Use card background color from global styles
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: translateY(-10px);
     }
+  }
   
-    &__category {
-      margin-bottom: 2rem;
+  .serviceImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
   
-      &-title {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-      }
-    }
+  .serviceTitle {
+    font-size: 1.5rem;
+    color: var(--primary-color); // Use primary color from global styles
+    margin: 1rem 0;
+  }
   
-    &__cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-  
-    &__card {
-      background-color: var(--submenu-background);
-      border: 1px solid var(--dropdown-border-color);
-      border-radius: 0.5rem;
-      box-shadow: var(--box-shadow);
-      padding: 1rem;
-      text-decoration: none;
-      color: var(--primary-color);
-      flex: 1 1 calc(33.333% - 1rem); // 3 cards per row with some spacing
-      max-width: calc(33.333% - 1rem);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      }
-  
-      &-content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-  
-      &-title {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-      }
-  
-      &-description {
-        font-size: 1rem;
-        color: var(--secondary-color);
-      }
-    }
+  .serviceDescription {
+    font-size: 1rem;
+    color: var(--text-color); // Use text color from global styles
+    padding: 0 1rem 1rem;
   }
   
