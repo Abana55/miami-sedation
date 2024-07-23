@@ -12,9 +12,22 @@ function ContactForm() {
     message: "",
     callbackDate: "",
     callbackTime: "",
+    services: [],
   });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
+
+  const servicesList = [
+    "Dental Implants",
+    "Teeth Whitening",
+    "Veneers",
+    "Teeth Cleaning",
+    "Oral Exams",
+    "X-Rays",
+    "Fillings",
+    "Crowns",
+    "Bridges"
+  ];
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -22,6 +35,15 @@ function ContactForm() {
       ...prevState,
       [name]: value,
     }));
+  };
+
+  const handleServiceToggle = (service: string) => {
+    setFormData((prevState) => {
+      const services = prevState.services.includes(service)
+        ? prevState.services.filter(s => s !== service)
+        : [...prevState.services, service];
+      return { ...prevState, services };
+    });
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -46,6 +68,7 @@ function ContactForm() {
           message: "",
           callbackDate: "",
           callbackTime: "",
+          services: [],
         });
       } else {
         setError('Error sending message. Please try again later.');
@@ -72,9 +95,24 @@ function ContactForm() {
       </section>
       <section className={styles.formSection}>
         <div className={styles.formContainer}>
+          <h2 className={styles.formTitle}>HOW CAN WE HELP YOU</h2>
+          <div className={styles.servicesContainer}>
+            <h3>Select Services</h3>
+            <div className={styles.servicesList}>
+              {servicesList.map(service => (
+                <button
+                  type="button"
+                  key={service}
+                  className={`${styles.serviceButton} ${formData.services.includes(service) ? styles.selected : ''}`}
+                  onClick={() => handleServiceToggle(service)}
+                >
+                  {service}
+                </button>
+              ))}
+            </div>
+          </div>
           <form onSubmit={handleSubmit} className={styles.contactForm}>
-            <label>
-              First + Last Name (Required):
+            <div className={styles.inputGroup}>
               <input
                 type="text"
                 name="name"
@@ -82,10 +120,11 @@ function ContactForm() {
                 onChange={handleChange}
                 required
                 className={styles.input}
+                placeholder=" "
               />
-            </label>
-            <label>
-              Email (Required):
+              <label className={styles.label}>First + Last Name (Required)</label>
+            </div>
+            <div className={styles.inputGroup}>
               <input
                 type="email"
                 name="email"
@@ -93,10 +132,11 @@ function ContactForm() {
                 onChange={handleChange}
                 required
                 className={styles.input}
+                placeholder=" "
               />
-            </label>
-            <label>
-              Phone Number (Required):
+              <label className={styles.label}>Email (Required)</label>
+            </div>
+            <div className={styles.inputGroup}>
               <input
                 type="tel"
                 name="phoneNumber"
@@ -104,10 +144,11 @@ function ContactForm() {
                 onChange={handleChange}
                 required
                 className={styles.input}
+                placeholder=" "
               />
-            </label>
-            <label>
-              Select a Doctor (Required):
+              <label className={styles.label}>Phone Number (Required)</label>
+            </div>
+            <div className={styles.inputGroup}>
               <select
                 name="doctor"
                 value={formData.doctor}
@@ -115,26 +156,27 @@ function ContactForm() {
                 required
                 className={styles.select}
               >
-                <option value="">Select a Doctor for your Exam</option>
+                <option value="" disabled>Select a Doctor for your Exam</option>
                 <option value="Dr. Ramon Bana">Dr. Ramon Bana</option>
                 <option value="Dr. Andrew Brattain">Dr. Andrew Brattain</option>
               </select>
-            </label>
-            <label>
-              Message (Required):
+              <label className={styles.label}>Select a Doctor (Required)</label>
+            </div>
+            <div className={styles.inputGroup}>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 required
                 className={styles.textarea}
+                placeholder=" "
               />
-            </label>
-            <label>
-              Request a Call Back (Required):
+              <label className={styles.label}>Message (Required)</label>
+            </div>
+            <div className={styles.inputGroup}>
+              <label className={styles.label}>Request a Call Back (Required)</label>
               <fieldset className={styles.fieldset}>
-                <label>
-                  Date:
+                <div className={styles.inputGroup}>
                   <input
                     type="date"
                     name="callbackDate"
@@ -143,9 +185,9 @@ function ContactForm() {
                     required
                     className={styles.input}
                   />
-                </label>
-                <label>
-                  Time:
+                  <label className={styles.label}>Date</label>
+                </div>
+                <div className={styles.inputGroup}>
                   <input
                     type="time"
                     name="callbackTime"
@@ -154,9 +196,10 @@ function ContactForm() {
                     required
                     className={styles.input}
                   />
-                </label>
+                  <label className={styles.label}>Time</label>
+                </div>
               </fieldset>
-            </label>
+            </div>
             <button type="submit" className={styles.button}>
               Submit
             </button>
