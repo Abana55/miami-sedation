@@ -3,11 +3,32 @@
     color: var(--background-color); // Clean White
     padding: 2rem;
     text-align: center;
-    border-radius: 1rem;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    width: 100vw; // Span the whole view width
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw; // Center align the full width
+  
+    // Adding a ripple background pattern using pseudo-elements
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: radial-gradient(circle, var(--secondary-color) 1%, transparent 1%) center/15px 15px;
+      transform: translate(-50%, -50%);
+      opacity: 0.2;
+      z-index: 0;
+    }
   
     &Content {
+      position: relative;
+      z-index: 1;
       max-width: 800px;
       margin: 0 auto;
     }

@@ -26,7 +26,6 @@ export default function AboutPage() {
         />
         <div className={styles.teamText}>
           <h3>Dr. Ramon Bana</h3>
-          <h3>Dr. Ramon Bana</h3>
           <p>Doctor of Dental Surgery/ Doctor of Smiles</p>
           <p>
             Dr. Bana’s patients describe him as down-to-earth, professional, and
