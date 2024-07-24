@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import ContactBanner from "../components/ContactBanner/ContactBanner"; // Import the ContactBanner component
 import styles from "./services.module.scss";
 
 const servicesList = {
@@ -8,7 +9,7 @@ const servicesList = {
     {
       title: "Teeth Whitening",
       description: "Brighten your smile with our professional teeth whitening services.",
-      image: "/images/teeth-whitening.jpg",
+      image: "/images/5D10A688-BC5F-4D17-9DE7-25F1347CEF64.JPG",
       link: "/dental-services/teeth-whitening",
     },
     {
@@ -112,6 +113,7 @@ const ServicesPage = () => {
           ))}
         </div>
       </section>
+      <ContactBanner /> {/* Add the ContactBanner here */}
     </div>
   );
 };

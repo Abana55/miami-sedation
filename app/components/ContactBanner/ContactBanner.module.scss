@@ -10,13 +10,6 @@
     overflow: hidden;
     backdrop-filter: blur(10px);
     width: 100%;
-  
-    // Make the banner full-width without border-radius
-    border-radius: 0;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
   }
   
   .bannerContent {
