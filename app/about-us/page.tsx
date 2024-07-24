@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ConsultationBanner from "../components/ConsultationBanner/ConsultationBanner";
 import styles from "./AboutUs.module.scss";
 
 export default function AboutPage() {
@@ -84,11 +85,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div>
-        <h2>Request a Consultation</h2>
-        <p>Over 250 Google Reviews</p>
-        <Link href="/contact">Request a Consultation</Link>
-      </div>
+      <ConsultationBanner />
     </div>
   );
 }
