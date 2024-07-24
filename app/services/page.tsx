@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import ContactBanner from "../components/ContactBanner/ContactBanner"; // Import the ContactBanner component
+import ContactBanner from "../components/ContactBanner/ContactBanner"; 
 import styles from "./services.module.scss";
 
 const servicesList = {
@@ -113,7 +113,7 @@ const ServicesPage = () => {
           ))}
         </div>
       </section>
-      <ContactBanner /> {/* Add the ContactBanner here */}
+      <ContactBanner /> 
     </div>
   );
 };
