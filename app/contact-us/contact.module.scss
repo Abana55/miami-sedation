@@ -4,11 +4,11 @@
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
-  background-color: var(--background-color); // Use background color from global styles
+  background-color: var(--background-color);
 }
 
 .infoSection {
-  flex: 1 1 40%; // Adjust as needed
+  flex: 1 1 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,146 +18,26 @@
 
 .headerText {
   font-size: 2rem;
-  color: var(--secondary-color); // Use secondary color from global styles
+  color: var(--secondary-color);
 }
 
 .socialMediaLinks {
   margin-top: 1rem;
 
   a {
-    color: var(--primary-color); // Use primary color from global styles
+    color: var(--primary-color);
     text-decoration: none;
     margin: 0 0.5rem;
     font-size: 1.2rem;
 
     &:hover {
-      color: var(--primary-color-dark); // Use a darker primary color from global styles
+      color: var(--primary-color-dark);
     }
   }
 }
 
 .formSection {
-  flex: 1 1 60%; // Adjust as needed
+  flex: 1 1 60%;
   display: flex;
   justify-content: center;
-}
-
-.formContainer {
-  max-width: 600px;
-  width: 100%;
-  padding: 2rem;
-  background-color: var(--secondary-color); // Use secondary color for background
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Box shadow for subtle depth
-  border-radius: 0.5rem; // Border radius for rounded corners
-}
-
-.formTitle {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color); // Use primary color from global styles
-}
-
-.contactForm {
-  display: flex;
-  flex-direction: column;
-}
-
-.inputGroup {
-  position: relative;
-  margin-bottom: 1.5rem;
-}
-
-.label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.5rem 0;
-  pointer-events: none;
-  transition: 0.2s ease all;
-  color: var(--white-font-color); // Use white font color from global styles
-}
-
-.input,
-.select,
-.textarea {
-  width: 100%;
-  padding: 0.5rem 0;
-  margin-top: 1.5rem;
-  border: none;
-  border-bottom: 1px solid var(--background-color); // Match the bottom border color with the background
-  border-radius: 0;
-  background-color: transparent; // Make background transparent to match the form background
-  color: var(--white-font-color); // Use white font color from global styles
-
-  &:focus {
-    outline: none;
-    border-bottom: 1px solid var(--primary-color); // Change bottom border color on focus
-  }
-
-  &:focus ~ .label,
-  &:not(:placeholder-shown) ~ .label {
-    top: -1.5rem;
-    left: 0;
-    font-size: 0.75rem;
-    color: var(--primary-color); // Change label color when input is focused or filled
-  }
-}
-
-.textarea {
-  height: 100px;
-}
-
-.fieldset {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-
-  label {
-    color: var(--white-font-color); // Use white font color from global styles
-  }
-}
-
-.servicesContainer {
-  margin-bottom: 2rem;
-}
-
-.servicesList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.serviceButton {
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  color: var(--white-font-color); // Use white font color from global styles
-  border: 1px solid var(--primary-color); // Border color for buttons
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  &.selected {
-    background-color: var(--primary-color); // Use primary color for selected state
-    color: #fff;
-  }
-
-  &:hover {
-    background-color: var(--primary-color-dark); // Use darker primary color on hover
-    color: #fff;
-  }
-}
-
-.button {
-  background-color: var(--primary-color); // Use primary color from global styles
-  color: #fff;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: var(--primary-color-dark); // Use a darker primary color from global styles
-  }
 }

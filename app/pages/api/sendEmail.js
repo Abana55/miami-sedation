@@ -15,8 +15,8 @@ export default async function handler(req, res) {
 
     // Email content
     let mailOptions = {
-      from: email,
-      to: process.env.OFFICE_EMAIL,
+      from: process.env.EMAIL_USER, // Send email from your generic email address
+      to: process.env.OFFICE_EMAIL, // Send email to office email address
       subject: 'New Consultation Request',
       text: `You have a new consultation request from:
       
@@ -37,8 +37,8 @@ export default async function handler(req, res) {
       await transporter.sendMail(mailOptions);
       res.status(200).json({ success: true });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Error sending email' });
+      console.error('Error sending email:', error);
+      res.status(500).json({ error: 'Error sending email. Please try again later.' });
     }
   } else {
     res.status(405).json({ error: 'Method not allowed' });
