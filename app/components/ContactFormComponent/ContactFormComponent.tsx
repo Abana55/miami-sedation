@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, ChangeEvent, FormEvent, MouseEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import styles from './ContactFormComponent.module.scss';
 
 interface FormData {
@@ -80,17 +80,6 @@ const ContactFormComponent = () => {
 
   return (
     <div className={styles['contact-form']}>
-      <div className={styles['contact-form__info']}>
-        <h2 className={styles['contact-form__title']}>We're so glad you're here!</h2>
-        <div className={styles['contact-form__social-media']}>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className={styles['contact-form__social-link']}>
-            Instagram
-          </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className={styles['contact-form__social-link']}>
-            Facebook
-          </a>
-        </div>
-      </div>
       <form onSubmit={handleSubmit} className={styles['contact-form__form']}>
         <h2 className={styles['contact-form__form-title']}>HOW CAN WE HELP YOU</h2>
         <div className={styles['contact-form__services']}>
