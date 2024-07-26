@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, phoneNumber, doctor, message, callbackDate, callbackTime } = req.body;
+    const { name, email, phoneNumber, doctor, message, callbackDate, callbackTime, services } = req.body;
 
     // Configure the transporter
     let transporter = nodemailer.createTransport({
@@ -12,6 +12,9 @@ export default async function handler(req, res) {
         pass: process.env.EMAIL_PASS,
       },
     });
+
+    // Format the services as a string
+    const servicesList = services.length > 0 ? services.join(', ') : 'No services selected';
 
     // Email content
     let mailOptions = {
@@ -29,6 +32,8 @@ export default async function handler(req, res) {
       
       Callback Date: ${callbackDate}
       Callback Time: ${callbackTime}
+      
+      Selected Services: ${servicesList}
       `,
     };
 

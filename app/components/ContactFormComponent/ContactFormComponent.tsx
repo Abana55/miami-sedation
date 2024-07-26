@@ -1,10 +1,21 @@
 "use client"
 
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent, MouseEvent } from 'react';
 import styles from './ContactFormComponent.module.scss';
 
+interface FormData {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  doctor: string;
+  message: string;
+  callbackDate: string;
+  callbackTime: string;
+  services: string[];
+}
+
 const ContactFormComponent = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phoneNumber: "",
@@ -16,18 +27,6 @@ const ContactFormComponent = () => {
   });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
-
-  const servicesList = [
-    "Dental Implants",
-    "Teeth Whitening",
-    "Veneers",
-    "Teeth Cleaning",
-    "Oral Exams",
-    "X-Rays",
-    "Fillings",
-    "Crowns",
-    "Bridges"
-  ];
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -81,21 +80,85 @@ const ContactFormComponent = () => {
 
   return (
     <div className={styles['contact-form']}>
+      <div className={styles['contact-form__info']}>
+        <h2 className={styles['contact-form__title']}>We're so glad you're here!</h2>
+        <div className={styles['contact-form__social-media']}>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className={styles['contact-form__social-link']}>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className={styles['contact-form__social-link']}>
+            Facebook
+          </a>
+        </div>
+      </div>
       <form onSubmit={handleSubmit} className={styles['contact-form__form']}>
         <h2 className={styles['contact-form__form-title']}>HOW CAN WE HELP YOU</h2>
         <div className={styles['contact-form__services']}>
           <h3>Select Services</h3>
           <div className={styles['contact-form__services-list']}>
-            {servicesList.map(service => (
-              <button
-                type="button"
-                key={service}
-                className={`${styles['contact-form__service-button']} ${formData.services.includes(service) ? styles['contact-form__service-button--selected'] : ''}`}
-                onClick={() => handleServiceToggle(service)}
-              >
-                {service}
-              </button>
-            ))}
+            <button
+              type="button"
+              className={`${styles['contact-form__service-button']} ${formData.services.includes("Dental Implants") ? styles['contact-form__service-button--selected'] : ''}`}
+              onClick={() => handleServiceToggle("Dental Implants")}
+            >
+              Dental Implants
+            </button>
+            <button
+              type="button"
+              className={`${styles['contact-form__service-button']} ${formData.services.includes("Teeth Whitening") ? styles['contact-form__service-button--selected'] : ''}`}
+              onClick={() => handleServiceToggle("Teeth Whitening")}
+            >
+              Teeth Whitening
+            </button>
+            <button
+              type="button"
+              className={`${styles['contact-form__service-button']} ${formData.services.includes("Veneers") ? styles['contact-form__service-button--selected'] : ''}`}
+              onClick={() => handleServiceToggle("Veneers")}
+            >
+              Veneers
+            </button>
+            <button
+              type="button"
+              className={`${styles['contact-form__service-button']} ${formData.services.includes("Teeth Cleaning") ? styles['contact-form__service-button--selected'] : ''}`}
+              onClick={() => handleServiceToggle("Teeth Cleaning")}
+            >
+              Teeth Cleaning
+            </button>
+            <button
+              type="button"
+              className={`${styles['contact-form__service-button']} ${formData.services.includes("Oral Exams") ? styles['contact-form__service-button--selected'] : ''}`}
+              onClick={() => handleServiceToggle("Oral Exams")}
+            >
+              Oral Exams
+            </button>
+            <button
+              type="button"
+              className={`${styles['contact-form__service-button']} ${formData.services.includes("X-Rays") ? styles['contact-form__service-button--selected'] : ''}`}
+              onClick={() => handleServiceToggle("X-Rays")}
+            >
+              X-Rays
+            </button>
+            <button
+              type="button"
+              className={`${styles['contact-form__service-button']} ${formData.services.includes("Fillings") ? styles['contact-form__service-button--selected'] : ''}`}
+              onClick={() => handleServiceToggle("Fillings")}
+            >
+              Fillings
+            </button>
+            <button
+              type="button"
+              className={`${styles['contact-form__service-button']} ${formData.services.includes("Crowns") ? styles['contact-form__service-button--selected'] : ''}`}
+              onClick={() => handleServiceToggle("Crowns")}
+            >
+              Crowns
+            </button>
+            <button
+              type="button"
+              className={`${styles['contact-form__service-button']} ${formData.services.includes("Bridges") ? styles['contact-form__service-button--selected'] : ''}`}
+              onClick={() => handleServiceToggle("Bridges")}
+            >
+              Bridges
+            </button>
           </div>
         </div>
         <div className={styles['contact-form__input-group']}>
