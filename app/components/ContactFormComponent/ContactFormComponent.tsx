@@ -1,4 +1,5 @@
 "use client"
+
 import { useState, ChangeEvent, FormEvent } from 'react';
 import styles from './ContactFormComponent.module.scss';
 
@@ -79,24 +80,24 @@ const ContactFormComponent = () => {
   };
 
   return (
-    <div className={styles['contact-form-container']}>
-      <h2 className={styles['contact-form__title']}>HOW CAN WE HELP YOU</h2>
-      <div className={styles['contact-form__services-container']}>
-        <h3>Select Services</h3>
-        <div className={styles['contact-form__services-list']}>
-          {servicesList.map(service => (
-            <button
-              type="button"
-              key={service}
-              className={`${styles['contact-form__service-button']} ${formData.services.includes(service) ? styles['contact-form__service-button--selected'] : ''}`}
-              onClick={() => handleServiceToggle(service)}
-            >
-              {service}
-            </button>
-          ))}
+    <div className={styles['contact-form']}>
+      <form onSubmit={handleSubmit} className={styles['contact-form__form']}>
+        <h2 className={styles['contact-form__form-title']}>HOW CAN WE HELP YOU</h2>
+        <div className={styles['contact-form__services']}>
+          <h3>Select Services</h3>
+          <div className={styles['contact-form__services-list']}>
+            {servicesList.map(service => (
+              <button
+                type="button"
+                key={service}
+                className={`${styles['contact-form__service-button']} ${formData.services.includes(service) ? styles['contact-form__service-button--selected'] : ''}`}
+                onClick={() => handleServiceToggle(service)}
+              >
+                {service}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
-      <form onSubmit={handleSubmit} className={styles['contact-form']}>
         <div className={styles['contact-form__input-group']}>
           <input
             type="text"
@@ -188,9 +189,9 @@ const ContactFormComponent = () => {
         <button type="submit" className={styles['contact-form__button']}>
           Submit
         </button>
+        {success && <p className={styles['contact-form__success']}>Your message has been sent successfully!</p>}
+        {error && <p className={styles['contact-form__error']}>{error}</p>}
       </form>
-      {success && <p>Your message has been sent successfully!</p>}
-      {error && <p>{error}</p>}
     </div>
   );
 };
