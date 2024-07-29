@@ -11,19 +11,22 @@ const teamMembers = [
     name: "Dr. Ramon Bana",
     title: "Dentist",
     photo: "/images/5D10A688-BC5F-4D17-9DE7-25F1347CEF64.JPG",
-    description: "Dr. Ramon Bana is an experienced dentist specializing in cosmetic and restorative dentistry. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Dr. Ramon Bana is an experienced dentist specializing in cosmetic and restorative dentistry. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     name: "Dr. Andrew Brattain",
     title: "Dentist",
     photo: "/images/IMG_6450.jpeg",
-    description: "Dr. Andrew Brattain focuses on preventative care and oral health education. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Dr. Andrew Brattain focuses on preventative care and oral health education. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     name: "Jane Doe",
     title: "Hygienist",
     photo: "/images/jane-doe.jpg",
-    description: "Jane Doe is a dedicated hygienist with a passion for patient care and comfort. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Jane Doe is a dedicated hygienist with a passion for patient care and comfort. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   // Add more team members as needed
 ];
@@ -33,22 +36,32 @@ const Home = () => {
     <div className={styles.container}>
       <Head>
         <title>Bana Dental Design</title>
-        <meta name="description" content="Providing expert dental care with a gentle touch." />
+        <meta
+          name="description"
+          content="Providing expert dental care with a gentle touch."
+        />
       </Head>
       <div className={styles.hero}>
         <video className={styles.heroVideo} autoPlay muted loop>
-          <source src="/path/to/your/video.mp4" type="video/mp4" />
+          <source src="/videos/C0535.MP4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className={styles.heroContent}>
           <Link href="/contact-us">
-            <button className={styles.heroButton}>Request a Consultation</button>
+            <button className={styles.heroButton}>
+              Request a Consultation
+            </button>
           </Link>
         </div>
       </div>
       <section className={styles.welcomeSection}>
-        <h1 className={styles.welcomeTitle}>Welcome to Bana Dental Design</h1>
-        <p className={styles.welcomeText}>Providing expert dental care with a gentle touch.</p>
+        <div className={styles.welcomeText}>
+          <h1 className={styles.welcomeTitle}>Welcome to Bana Dental Design</h1>
+          <p className={styles.welcomeDescription}>Providing expert dental care with a gentle touch.</p>
+        </div>
+        <div className={styles.welcomeImage}>
+          <img src="/images/office-welcome.jpg" alt="Welcome to Bana Dental Design" />
+        </div>
       </section>
       <section className={styles.missionStatement}>
         <h2 className={styles.sectionTitle}>Our Mission</h2>
@@ -64,11 +77,16 @@ const Home = () => {
         <div className={styles.servicesList}>
           <div className={styles.serviceItem}>
             <h3>Cosmetic Dentistry</h3>
-            <p>Enhance your smile with our state-of-the-art cosmetic dental services.</p>
+            <p>
+              Enhance your smile with our state-of-the-art cosmetic dental
+              services.
+            </p>
           </div>
           <div className={styles.serviceItem}>
             <h3>Preventive Care</h3>
-            <p>Regular exams, cleanings, and x-rays to maintain your oral health.</p>
+            <p>
+              Regular exams, cleanings, and x-rays to maintain your oral health.
+            </p>
           </div>
           <div className={styles.serviceItem}>
             <h3>Sedation Dentistry</h3>
@@ -87,7 +105,12 @@ const Home = () => {
           <article className={styles.articleSection}>
             <h2 className={styles.articleTitle}>Additional Information</h2>
             <p className={styles.articleContent}>
-              Here you can add more information about your dental practice, services, or any other relevant details that you want to share with your patients. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Vivamus auctor, mi et luctus vehicula, urna ligula tincidunt risus, sit amet vestibulum lorem ipsum nec arcu.
+              Here you can add more information about your dental practice,
+              services, or any other relevant details that you want to share
+              with your patients. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Phasellus nec iaculis mauris. Vivamus auctor, mi
+              et luctus vehicula, urna ligula tincidunt risus, sit amet
+              vestibulum lorem ipsum nec arcu.
             </p>
           </article>
         </div>
