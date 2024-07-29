@@ -1,14 +1,26 @@
 "use client";
 
-import React, { useState } from 'react';
-import styles from './OurOffice.module.scss';
-import ImageModal from '../ImageModal/ImageModal';
+import React, { useState } from "react";
+import styles from "./OurOffice.module.scss";
+import ImageModal from "../ImageModal/ImageModal";
 
 const officeImages = [
-  { src: '/images/office1.jpg', alt: 'Office Image 1' },
-  { src: '/images/office2.jpg', alt: 'Office Image 2' },
-  { src: '/images/office3.jpg', alt: 'Office Image 3' },
-  { src: '/images/office4.jpg', alt: 'Office Image 4' },
+  {
+    src: "/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG",
+    alt: "Office Image 1",
+  },
+  {
+    src: "/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG",
+    alt: "Office Image 2",
+  },
+  {
+    src: "/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG",
+    alt: "Office Image 3",
+  },
+  {
+    src: "/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG",
+    alt: "Office Image 4",
+  },
 ];
 
 const OurOffice = () => {
@@ -34,7 +46,10 @@ const OurOffice = () => {
               className={styles.officeImage}
               onClick={() => openImageModal(image)}
             />
-            <div className={styles.imageOverlay}>
+            <div
+              className={styles.imageOverlay}
+              onClick={() => openImageModal(image)}
+            >
               <span className={styles.plusIcon}>+</span>
             </div>
           </div>

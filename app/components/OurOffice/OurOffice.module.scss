@@ -1,56 +1,63 @@
 .ourOffice {
-    padding: 2rem;
-    text-align: center;
+  text-align: center;
+  padding: 2rem;
+
+  .sectionTitle {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
   }
-  
+
   .officeImages {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 1rem;
-  }
-  
-  .imageContainer {
-    position: relative;
-    width: 23%;
-    margin: 0.5rem;
-    overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-  
-  .officeImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .imageOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
+    gap: 1rem;
     justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  
-    &:hover {
-      opacity: 1;
+
+    .imageContainer {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .officeImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+
+      .imageOverlay {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary-color);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+
+        &:hover .plusIcon {
+          transform: rotate(45deg);
+        }
+      }
+
+      .plusIcon {
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
     }
   }
-  
-  .plusIcon {
-    color: white;
-    font-size: 2rem;
-  }
-  
+}
