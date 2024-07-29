@@ -23,16 +23,22 @@
 
 .socialMediaLinks {
   margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
 
   a {
     color: var(--primary-color);
     text-decoration: none;
-    margin: 0 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 
     &:hover {
       color: var(--primary-color-dark);
     }
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
   }
 }
 
