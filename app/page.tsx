@@ -33,25 +33,23 @@ const Home = () => {
     <div className={styles.container}>
       <Head>
         <title>Bana Dental Design</title>
-        <meta
-          name="description"
-          content="Providing expert dental care with a gentle touch."
-        />
+        <meta name="description" content="Providing expert dental care with a gentle touch." />
       </Head>
       <div className={styles.hero}>
-        <div className={styles.glassBox}>
-          <h1 className={styles.heroTitle}>Welcome to Bana Dental Design</h1>
-          <p className={styles.heroTagline}>
-            Providing expert dental care with a gentle touch.
-          </p>
-          <div className={styles.contactBox}>
-            <p>Call us: (123) 456-7890</p>
-            <Link href="/contact-us">
-              <button className={styles.contactButton}>Contact Us</button>
-            </Link>
-          </div>
+        <video className={styles.heroVideo} autoPlay muted loop>
+          <source src="/path/to/your/video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className={styles.heroContent}>
+          <Link href="/contact-us">
+            <button className={styles.heroButton}>Request a Consultation</button>
+          </Link>
         </div>
       </div>
+      <section className={styles.welcomeSection}>
+        <h1 className={styles.welcomeTitle}>Welcome to Bana Dental Design</h1>
+        <p className={styles.welcomeText}>Providing expert dental care with a gentle touch.</p>
+      </section>
       <section className={styles.missionStatement}>
         <h2 className={styles.sectionTitle}>Our Mission</h2>
         <p className={styles.sectionContent}>
@@ -66,16 +64,11 @@ const Home = () => {
         <div className={styles.servicesList}>
           <div className={styles.serviceItem}>
             <h3>Cosmetic Dentistry</h3>
-            <p>
-              Enhance your smile with our state-of-the-art cosmetic dental
-              services.
-            </p>
+            <p>Enhance your smile with our state-of-the-art cosmetic dental services.</p>
           </div>
           <div className={styles.serviceItem}>
             <h3>Preventive Care</h3>
-            <p>
-              Regular exams, cleanings, and x-rays to maintain your oral health.
-            </p>
+            <p>Regular exams, cleanings, and x-rays to maintain your oral health.</p>
           </div>
           <div className={styles.serviceItem}>
             <h3>Sedation Dentistry</h3>

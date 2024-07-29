@@ -1,294 +1,189 @@
+.container {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .hero {
   position: relative;
-  z-index: 1; 
   width: 100%;
-  height: 90vh;
-  background: url('/images/IMG_3948.jpeg') no-repeat center center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  height: 100vh;
+  overflow: hidden;
 
-.glassBox {
-  background: var(--glass-background);
-  border: 1px solid var(--glass-border);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px var(--glass-shadow);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  text-align: center;
-  color: var(--text-color);
-  max-width: 600px;
-  width: 90%;
-}
+  .heroVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
 
-.heroTitle {
-  font-family: var(--font-heading);
-  color: var(--primary-color);
-  margin: 0;
-}
+  .heroContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 
-.heroTagline {
-  font-family: var(--font-body);
-  color: var(--text-color);
-  margin: 0.5rem 0 0 0;
-}
+    .heroButton {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: #fff;
+      border-radius: 0.5rem;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 
-.contactBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.contactBox p {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--text-color);
-  margin-right: 1rem;
-}
-
-.contactButton {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-family: var(--font-body);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: var(--secondary-color);
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+    }
   }
 }
 
-.missionStatement {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.welcomeSection {
+  text-align: center;
   padding: 2rem;
-  text-align: left;
-}
+  background-color: var(--background-color);
 
-.missionContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-}
+  .welcomeTitle {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
 
-.textContent {
-  max-width: 50%;
-}
-
-.welcomeTitle {
-  font-family: var(--font-heading);
-  color: var(--primary-color);
-  font-size: 2rem;
-}
-
-.differentButton {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: var(--secondary-color);
+  .welcomeText {
+    font-size: 1.2rem;
+    color: var(--text-color);
   }
 }
 
-.imageContent {
-  max-width: 50%;
-}
-
-.missionImage {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.banner {
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
+.missionStatement, .services, .teamSection, .testimonials, .callToAction {
   padding: 2rem;
   text-align: center;
+
+  .sectionTitle {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionContent {
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
 }
 
-.bannerTitle {
-  font-family: var(--font-heading);
-  font-size: 5.75rem;
-  margin: 0;
-  color: var(--secondary-color);
-  font-weight: 100;
-}
+.services {
+  .servicesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 
-.bannerSubtitle {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  color: var(--secondary-color);
-}
+    .serviceItem {
+      flex: 1 1 30%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: left;
 
-.description {
-  padding: 2rem;
-  text-align: left;
-}
+      h3 {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+      }
 
-.descriptionText {
-  font-family: var(--font-body);
-  color: var(--secondary-color);
-  margin-bottom: 1rem;
-}
-
-.services, .testimonials, .callToAction {
-  padding: 2rem;
-  text-align: center;
-}
-
-.sectionTitle {
-  font-family: var(--font-heading);
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.sectionContent, .servicesList, .testimonialItem {
-  font-family: var(--font-body);
-  color: var(--text-color);
-}
-
-.servicesList {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1rem;
-}
-
-.serviceItem {
-  width: 30%;
+      p {
+        font-size: 1rem;
+        color: var(--text-color);
+      }
+    }
+  }
 }
 
 .teamSection {
-  padding: 2rem;
-}
+  .teamContent {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 
-.teamContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
+    .team {
+      flex: 1;
+    }
 
-.team {
-  width: 60%;
-}
+    .articleSection {
+      flex: 1;
 
-.articleSection {
-  width: 35%;
-  background-color: var(--background-color);
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+      .articleTitle {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
 
-.articleTitle {
-  font-family: var(--font-heading);
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.articleContent {
-  font-family: var(--font-body);
-  color: var(--text-color);
-}
-
-.ourOffice {
-  padding: 2rem;
-  text-align: center;
-}
-
-.officeImages {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.imageContainer {
-  position: relative;
-  width: 23%;
-  margin: 0.5rem;
-  overflow: hidden;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.05);
+      .articleContent {
+        font-size: 1rem;
+        color: var(--text-color);
+      }
+    }
   }
 }
 
-.officeImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
+.testimonials {
+  .testimonialItem {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
 
-.imageOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  
-  &:hover {
-    opacity: 1;
+    cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+    }
   }
-}
-
-.plusIcon {
-  color: white;
-  font-size: 2rem;
 }
 
 .callToAction {
-  background-color: var(--secondary-color);
-  color: white;
-  padding: 2rem;
-  border-radius: 10px;
-}
+  .ctaButton {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 
-.ctaButton {
-  padding: 0.75rem 1.5rem;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-family: var(--font-body);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: var(--accent-color);
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
   }
 }
 
-.footerImage img {
+.footerImage {
   width: 100%;
   height: auto;
-  display: block;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
