@@ -57,10 +57,16 @@ const Home = () => {
       <section className={styles.welcomeSection}>
         <div className={styles.welcomeText}>
           <h1 className={styles.welcomeTitle}>Welcome to Bana Dental Design</h1>
-          <p className={styles.welcomeDescription}>Providing expert dental care with a gentle touch.</p>
+          <p className={styles.welcomeDescription}>
+            Providing expert dental care with a gentle touch.
+          </p>
+          <button className={styles.welcomeButton}>What Makes Us Different</button>
         </div>
         <div className={styles.welcomeImage}>
-          <img src="/images/office-welcome.jpg" alt="Welcome to Bana Dental Design" />
+          <img
+            src="/images/OFFICCE/Bana Website Smiling.jpg"
+            alt="Welcome to Bana Dental Design"
+          />
         </div>
       </section>
       <section className={styles.missionStatement}>
@@ -69,6 +75,7 @@ const Home = () => {
           Our mission is to provide compassionate and comprehensive dental care
           to our patients, ensuring their comfort and well-being at every visit.
         </p>
+        
       </section>
 
       {/* Services Section */}
