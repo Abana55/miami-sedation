@@ -145,13 +145,10 @@ const Home = () => {
         <button className={styles.ctaButton}>Book Appointment</button>
       </section>
 
-      {/* Footer Image or Banner */}
-      <div className={styles.footerImage}>
-        <img
-          src="/path/to/dental-office-photo.jpg"
-          alt="Our Modern Dental Office"
-        />
+      <div className={styles.imageBanner}>
+        <img src="/images/LOGOS/LOGOS.png" alt="Dr. Banas associated organizations" />
       </div>
+
     </div>
   );
 };

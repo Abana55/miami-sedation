@@ -245,3 +245,13 @@
     display: block;
   }
 }
+.imageBanner {
+  margin-top: 2rem; /* Add spacing above the banner */
+  text-align: center;
+
+  img {
+    max-width: 85%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+}

@@ -1,92 +1,100 @@
 /* Footer.module.scss */
 .footer {
-  background-color: #D9D9D9; /* Light grey background */
+  background-image: url('/path/to/pattern.png'); /* Add your pattern image path here */
+  background-size: cover;
+  background-repeat: repeat;
   padding: 2rem;
   color: #333; /* Darker text color for contrast */
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
   text-align: left;
-  border-radius: 5.5rem; /* Updated border radius */
+  border-radius: 0.5rem;
   position: relative;
-  margin: 5rem; /* Margin for spacing around the footer */
 
-  &__left {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
+  .footerLeft {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
 
-  &__logo {
-    max-width: 100%;
-    height: auto;
+  .footerLogo {
+    object-fit: cover;
   }
 
-  &__right {
-    flex: 1 1 auto;
+  .footerRight {
+    flex: 2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-left: 2rem; /* Added margin to separate the logo and content */
+    justify-content: space-between;
+    padding-left: 2rem;
   }
 
-  &__social-media {
+  .footerColumn {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    padding: 1rem;
 
-    &__icon {
-      font-size: 1.25rem;
+    h3 {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0.25rem 0;
+    }
+
+    a {
       color: #333;
-      border: 1px solid #ddd;
-      border-radius: 50%;
-      padding: 0.25rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+      text-decoration: none;
 
       &:hover {
-        color: #555;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        text-decoration: underline;
       }
     }
   }
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-
-    @media (min-width: 768px) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  }
-
-  &__section {
-    margin-bottom: 1rem;
-
-    &--copyright {
-      margin-top: 1rem;
-      font-size: 0.875rem;
-    }
-
-    &-title {
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-    }
-  }
-
-  &__text {
-    margin: 0.25rem 0;
-  }
-
-  &__link {
-    color: #333;
-    text-decoration: none;
+  .footerButton {
+    background-color: #0070f3;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
     &:hover {
-      text-decoration: underline;
+      background-color: #005bb5;
+    }
+  }
+
+  .footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    border-top: 1px solid #ccc;
+    padding-top: 1rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .footerSocialMedia {
+    display: flex;
+    gap: 0.5rem;
+
+    .footerIcon {
+      font-size: 1.5rem;
+      color: #333;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #555;
+      }
     }
   }
 }
