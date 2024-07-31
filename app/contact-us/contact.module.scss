@@ -1,10 +1,13 @@
+/* contact.module.scss */
 .pageContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
-  background-color: var(--background-color);
+  background-image: url('/pattern1.jpg'); /* Path to your pattern image */
+  background-size: cover;
+  background-repeat: repeat;
 }
 
 .infoSection {

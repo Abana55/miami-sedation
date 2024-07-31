@@ -1,29 +1,50 @@
+/* Footer.module.scss */
 .footer {
-  background-color: var(--footer-background-color);
+  background-color: #D9D9D9; /* Light grey background */
   padding: 2rem;
-  color: var(--footer-text-color);
-  text-align: center;
-  border-radius: 0.5rem;
-  position: relative; 
+  color: #333; /* Darker text color for contrast */
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  border-radius: 5.5rem; /* Updated border radius */
+  position: relative;
+  margin: 5rem; /* Margin for spacing around the footer */
+
+  &__left {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__right {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2rem; /* Added margin to separate the logo and content */
+  }
 
   &__social-media {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
     display: flex;
     gap: 0.5rem;
+    margin-bottom: 1rem;
 
     &__icon {
-      font-size: 1.25rem; 
-      color: var(--footer-icon-color);
+      font-size: 1.25rem;
+      color: #333;
       border: 1px solid #ddd;
       border-radius: 50%;
-      padding: 0.25rem; 
+      padding: 0.25rem;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
 
       &:hover {
-        color: var(--footer-icon-hover-color);
+        color: #555;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       }
     }
@@ -32,12 +53,13 @@
   &__content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
 
     @media (min-width: 768px) {
       flex-direction: row;
-      justify-content: space-around;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
   }
 
@@ -60,7 +82,7 @@
   }
 
   &__link {
-    color: var(--footer-link-color);
+    color: #333;
     text-decoration: none;
 
     &:hover {

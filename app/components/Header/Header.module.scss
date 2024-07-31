@@ -1,16 +1,17 @@
+/* Header.module.scss */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(
-    --background-color
-  ); // Use background color from global styles
-  position: relative;
-  z-index: 1001; // Ensure it's above other content
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1001; /* Ensure it's above other content */
 
   &-hamburger {
-    order: 1; // Ensure the hamburger icon appears first
+    order: 1;
     width: 2rem;
     height: 2rem;
     display: flex;
@@ -23,9 +24,7 @@
     &__line {
       width: 100%;
       height: 0.25rem;
-      background-color: var(
-        --primary-color
-      ); // Primary color from global styles
+      background-color: var(--primary-color);
       transition: all 0.3s ease;
 
       &--open-top {
@@ -43,31 +42,31 @@
   }
 
   &-logo {
-    order: 2; // Ensure the logo appears second
+    order: 2;
     font-size: 1.5rem;
     font-weight: bold;
     display: flex;
-    justify-content: center; // Center the logo horizontally
+    justify-content: center;
     align-items: center;
 
     &__link {
       text-decoration: none;
-      color: var(--primary-color); // Primary color from global styles
+      color: var(--primary-color);
 
       .header-logo__img {
-        width: 6rem; // Use rem units for the logo size
-        height: 6rem; // Maintain aspect ratio
-        border-radius: 50%; // Optional: Add border radius to the logo image
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
       }
     }
   }
 
   &-end {
-    order: 3; // Ensure the phone number and button appear third
+    order: 3;
     display: flex;
     align-items: center;
-    justify-content: flex-end; // Align items to the end
-    gap: 1rem; // Add space between items
+    justify-content: flex-end;
+    gap: 1rem;
 
     &__button {
       background: transparent;
@@ -100,20 +99,20 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.1); // Dropdown background
-    width: 25vw; // Adjust to take 25% of the viewport width
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent dropdown background */
+    width: 25vw;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-    backdrop-filter: blur(10px); // For glassmorphic effect
-    border: 1px solid rgba(255, 255, 255, 0.3); // Dropdown border color
-    border-radius: 0.5rem; // Add border radius
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Box shadow
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
     &--open {
-      max-height: 20rem; // Adjust this as needed to fit the content
+      max-height: 20rem;
       opacity: 1;
       visibility: visible;
     }
@@ -124,27 +123,25 @@
       align-items: center;
       padding: 1rem;
 
-      // Add border between buttons
       &__button:not(:last-child) {
-        margin-bottom: 0.5rem; // Space between buttons
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1); // Border between buttons
+        margin-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
     }
   }
 
-  // Media query for mobile responsiveness
   @media (max-width: 768px) {
     &-logo {
       &__link {
         .header-logo__img {
-          width: 4rem; // Adjust logo size for mobile, twice as big
-          height: 4rem; // Maintain aspect ratio
+          width: 4rem;
+          height: 4rem;
         }
       }
     }
 
     &-nav {
-      width: 50vw; // Adjust dropdown width for mobile
+      width: 50vw;
     }
   }
 }
