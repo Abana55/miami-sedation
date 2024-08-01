@@ -58,7 +58,7 @@ const Home = () => {
         <div className={styles.welcomeText}>
           <h1 className={styles.welcomeTitle}>Welcome to Bana Dental Design</h1>
           <p className={styles.welcomeDescription}>
-            Providing expert dental care with a gentle touch.
+            Encounter an elegant, artistry, and inspiring dental experience
           </p>
           <button className={styles.welcomeButton}>What Makes Us Different</button>
         </div>
@@ -69,9 +69,11 @@ const Home = () => {
           />
         </div>
       </section>
+
       <section className={styles.missionStatement}>
         <img className={styles.bannerImage} src="/images/Figma 97b407c020051452.gif" alt="Mission Banner" />
         <div className={styles.textContainer}>
+          <div className={styles.goldLine}>|</div>
           <p className={styles.sectionContent}>
             Our mission is to provide compassionate and comprehensive dental care to our patients, ensuring their comfort and well-being at every visit.
           </p>

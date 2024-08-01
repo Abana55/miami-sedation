@@ -10,21 +10,24 @@ function ContactPage() {
         <h2 className={styles.headerText}>We're so glad you're here!</h2>
         <div className={styles.socialMediaLinks}>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faInstagram} size="2x" />
+            <FontAwesomeIcon icon={faInstagram} size="2x" className={styles.socialIcon} />
           </a>
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faFacebook} size="2x" />
+            <FontAwesomeIcon icon={faFacebook} size="2x" className={styles.socialIcon} />
           </a>
           <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faTwitter} size="2x" />
+            <FontAwesomeIcon icon={faTwitter} size="2x" className={styles.socialIcon} />
           </a>
           <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+            <FontAwesomeIcon icon={faLinkedin} size="2x" className={styles.socialIcon} />
           </a>
           <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faYoutube} size="2x" />
+            <FontAwesomeIcon icon={faYoutube} size="2x" className={styles.socialIcon} />
           </a>
         </div>
+        <p className={styles.additionalInfo}>
+          Feel free to connect with us on social media for the latest updates and promotions.
+        </p>
       </section>
       <section className={styles.formSection}>
         <ContactFormComponent />

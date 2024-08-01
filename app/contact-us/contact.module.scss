@@ -1,13 +1,11 @@
-/* contact.module.scss */
+
 .pageContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
-  background-image: url('/pattern1.jpg'); /* Path to your pattern image */
-  background-size: cover;
-  background-repeat: repeat;
+  background-color: var(--background-color);
 }
 
 .infoSection {
@@ -30,19 +28,32 @@
   gap: 1rem;
 
   a {
-    color: var(--primary-color);
+    color: #fff;
     text-decoration: none;
     font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: background-color 0.3s;
 
     &:hover {
-      color: var(--primary-color-dark);
+      background-color: #997556; /* Use a manually darkened version of the secondary color */
     }
   }
 
-  svg {
-    width: 2rem;
-    height: 2rem;
+  .socialIcon {
+    color: #fff;
   }
+}
+
+.additionalInfo {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: var(--text-color);
 }
 
 .formSection {
