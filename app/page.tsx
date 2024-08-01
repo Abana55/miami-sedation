@@ -90,8 +90,9 @@ const Home = () => {
           </p>
           <p className={styles.sectionContent}>
             Our skilled dentist harnesses cutting-edge digital workflows,
-            conservative biomimetic techniques, and state-of-the-art 3D
-            printing & design to address your cosmetic and general dentistry requirements seamlessly.
+            conservative biomimetic techniques, and state-of-the-art 3D printing
+            & design to address your cosmetic and general dentistry requirements
+            seamlessly.
           </p>
         </div>
       </section>
@@ -128,15 +129,9 @@ const Home = () => {
             <TeamAccordion teamMembers={teamMembers} />
           </div>
           <article className={styles.articleSection}>
-            <h2 className={styles.articleTitle}>Additional Information</h2>
-            <p className={styles.articleContent}>
-              Here you can add more information about your dental practice,
-              services, or any other relevant details that you want to share
-              with your patients. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Phasellus nec iaculis mauris. Vivamus auctor, mi
-              et luctus vehicula, urna ligula tincidunt risus, sit amet
-              vestibulum lorem ipsum nec arcu.
-            </p>
+            <h2 className={styles.articleTitle}>
+              EXPERIENCE THE PINNACLE OF DENTAL EXCELLENCE WITH US.
+            </h2>
           </article>
         </div>
       </section>
