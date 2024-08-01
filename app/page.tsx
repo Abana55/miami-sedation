@@ -43,7 +43,10 @@ const Home = () => {
       </Head>
       <div className={styles.hero}>
         <video className={styles.heroVideo} autoPlay muted loop>
-          <source src="/videos/Background stock video preview (1).mov" type="video/mp4" />
+          <source
+            src="/videos/Background stock video preview (1).mov"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
         <div className={styles.heroContent}>
@@ -60,7 +63,9 @@ const Home = () => {
           <p className={styles.welcomeDescription}>
             Encounter an elegant, artistry, and inspiring dental experience
           </p>
-          <button className={styles.welcomeButton}>What Makes Us Different</button>
+          <button className={styles.welcomeButton}>
+            What Makes Us Different
+          </button>
         </div>
         <div className={styles.welcomeImage}>
           <img
@@ -71,14 +76,22 @@ const Home = () => {
       </section>
 
       <section className={styles.missionStatement}>
-        <img className={styles.bannerImage} src="/images/Figma 97b407c020051452.gif" alt="Mission Banner" />
+        <img
+          className={styles.bannerImage}
+          src="/images/Figma 97b407c020051452.gif"
+          alt="Mission Banner"
+        />
         <div className={styles.textContainer}>
           <div className={styles.goldLine}>|</div>
           <p className={styles.sectionContent}>
-            Our mission is to provide compassionate and comprehensive dental care to our patients, ensuring their comfort and well-being at every visit.
+            Discover Bana Dental Design, your top-tier modern dental destination
+            nestled in vibrant Miami, Florida. Elevate your dental experience
+            with our innovative services and concierge-level care.
           </p>
           <p className={styles.sectionContent}>
-            We strive to create a welcoming environment and use state-of-the-art techniques to deliver the best possible care.
+            Our skilled dentist harnesses cutting-edge digital workflows,
+            conservative biomimetic techniques, and state-of-the-art 3D
+            printing & design to address your cosmetic and general dentistry requirements seamlessly.
           </p>
         </div>
       </section>
@@ -151,9 +164,11 @@ const Home = () => {
       </section>
 
       <div className={styles.imageBanner}>
-        <img src="/images/LOGOS/LOGOS.png" alt="Dr. Banas associated organizations" />
+        <img
+          src="/images/LOGOS/LOGOS.png"
+          alt="Dr. Banas associated organizations"
+        />
       </div>
-
     </div>
   );
 };

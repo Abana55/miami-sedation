@@ -8,6 +8,9 @@ function ContactPage() {
     <div className={styles.pageContainer}>
       <section className={styles.infoSection}>
         <h2 className={styles.headerText}>We're so glad you're here!</h2>
+        <p className={styles.additionalInfo}>
+          This may be the first step in your oral health journey - And we want to make your experience with us <span>the best you've ever had.</span>
+        </p>
         <div className={styles.socialMediaLinks}>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faInstagram} size="2x" className={styles.socialIcon} />
@@ -25,9 +28,6 @@ function ContactPage() {
             <FontAwesomeIcon icon={faYoutube} size="2x" className={styles.socialIcon} />
           </a>
         </div>
-        <p className={styles.additionalInfo}>
-          Feel free to connect with us on social media for the latest updates and promotions.
-        </p>
       </section>
       <section className={styles.formSection}>
         <ContactFormComponent />

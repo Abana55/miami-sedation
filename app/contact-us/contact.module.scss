@@ -1,3 +1,4 @@
+/* contact.module.scss */
 
 .pageContainer {
   display: flex;
@@ -22,13 +23,24 @@
   color: var(--secondary-color);
 }
 
+.additionalInfo {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: var(--text-color);
+
+  span {
+    color: var(--secondary-color);
+    font-style: italic;
+    font-weight: bold;
+  }
+}
+
 .socialMediaLinks {
   margin-top: 1rem;
   display: flex;
   gap: 1rem;
 
   a {
-    color: #fff;
     text-decoration: none;
     font-size: 1.5rem;
     display: flex;
@@ -36,24 +48,18 @@
     align-items: center;
     width: 3rem;
     height: 3rem;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Background color gold */
     border-radius: 50%;
     transition: background-color 0.3s;
 
     &:hover {
       background-color: #997556; /* Use a manually darkened version of the secondary color */
     }
-  }
 
-  .socialIcon {
-    color: #fff;
+    .socialIcon {
+      color: #fff; /* Icon color white */
+    }
   }
-}
-
-.additionalInfo {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  color: var(--text-color);
 }
 
 .formSection {
