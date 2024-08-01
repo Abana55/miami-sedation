@@ -121,7 +121,33 @@
     }
   }
 }
+.missionStatement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
 
+  .bannerImage {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+
+    .sectionContent {
+      margin: 1rem 0;
+      line-height: 1.6;
+    }
+  }
+}
 .missionStatement, .services, .teamSection, .testimonials, .callToAction {
   padding: 2rem;
   text-align: center;

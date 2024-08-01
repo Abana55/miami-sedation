@@ -70,12 +70,15 @@ const Home = () => {
         </div>
       </section>
       <section className={styles.missionStatement}>
-        <h2 className={styles.sectionTitle}>Our Mission</h2>
-        <p className={styles.sectionContent}>
-          Our mission is to provide compassionate and comprehensive dental care
-          to our patients, ensuring their comfort and well-being at every visit.
-        </p>
-        
+        <img className={styles.bannerImage} src="/images/Figma 97b407c020051452.gif" alt="Mission Banner" />
+        <div className={styles.textContainer}>
+          <p className={styles.sectionContent}>
+            Our mission is to provide compassionate and comprehensive dental care to our patients, ensuring their comfort and well-being at every visit.
+          </p>
+          <p className={styles.sectionContent}>
+            We strive to create a welcoming environment and use state-of-the-art techniques to deliver the best possible care.
+          </p>
+        </div>
       </section>
 
       {/* Services Section */}
