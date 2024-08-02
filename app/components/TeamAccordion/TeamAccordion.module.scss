@@ -7,11 +7,12 @@
   flex: 1;
   transition: flex 0.5s ease;
   position: relative;
-  height: 300px; /* Adjust height as needed */
+  height: 25rem; /* Adjust height as needed */
   border-radius: 10px;
   overflow: hidden;
   margin: 0 10px; /* Adjust spacing as needed */
   cursor: pointer;
+  background: transparent; /* Clear background */
 
   &.active {
     flex: 3;
@@ -40,32 +41,35 @@
   left: 0;
   width: 100%;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  transition: background 0.3s ease;
+  color: white; 
+  transition: background 0.5s ease;
+  
 
   h3 {
     margin: 0;
     font-size: 1.5rem;
+    color: white; /* Font color white */
   }
 
   p {
     margin: 0.5rem 0 0 0;
-    font-size: 1rem;
+    font-size: 0.5rem;
+    color: white;
+    overflow:auto;
   }
 }
 
 .cardTitle {
   font-family: var(--font-heading);
-  color: var(--primary-color);
+  color: white; /* Font color white */
 }
 
 .cardSubtitle {
   font-family: var(--font-body);
-  color: var(--secondary-color);
+  color: white; /* Font color white */
 }
 
 .cardDescription {
   font-family: var(--font-body);
-  color: var(--text-color);
+  color: white; /* Font color white */
 }

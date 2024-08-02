@@ -218,9 +218,12 @@
       flex: 1;
 
       .articleTitle {
-        font-size: 1.5rem;
-        color: var(--primary-color);
+        font-size: 3.5rem;
+        color: var(--secondary-color);
         margin-bottom: 1rem;
+        font-weight: 100;
+        font: var(font-heading);
+        
       }
 
       .articleContent {

@@ -123,7 +123,7 @@ const Home = () => {
 
       {/* Team Section */}
       <section className={styles.teamSection}>
-        <h2 className={styles.sectionTitle}>Meet Our Team</h2>
+        
         <div className={styles.teamContent}>
           <div className={styles.team}>
             <TeamAccordion teamMembers={teamMembers} />
