@@ -1,31 +1,60 @@
+/* AboutUs.module.scss */
+
 .aboutContainer {
-    background-color: #fbf7ef; 
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-    color: #333; 
-    font-family: 'Helvetica', 'Arial', sans-serif;
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.title {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.teamMember {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
   
-    h1, h2 {
-      color: #004885; 
-      margin: 24px 0;
-    }
-  
-    .teamMember {
-      display: flex;
-      align-items: center;
-      margin-bottom: 30px;
-      &:nth-child(even) {
-        flex-direction: row-reverse;
-      }
-      img {
-        width: 200px; 
-        height: auto;
-        border-radius: 10px;
-        margin: 0 20px;
-      }
-    }
-  
-    .teamText {
-      flex: 1;
-    }
+  &:nth-child(even) .teamText {
+    order: -1;
   }
+}
+
+.image {
+  border-radius: 10px;
+  margin: 0 1.5rem;
+}
+
+.teamText {
+  flex: 1;
+  max-width: 600px;
+
+  .name {
+    font-size: 1.75rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .position {
+    font-weight: bold;
+  }
+
+  .bio {
+    margin-bottom: 1rem;
+  }
+}
