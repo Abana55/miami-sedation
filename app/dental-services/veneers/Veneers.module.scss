@@ -1,0 +1,166 @@
+/* Veneers.module.scss */
+
+.veneersPage {
+    padding: 2rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  
+    &__header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  
+    &__title {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+    }
+  
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  
+    &__articles {
+      flex: 1 1 60%;
+    }
+  
+    &__text {
+      margin-bottom: 1.5rem;
+    }
+  
+    &__subheader {
+      font-size: 2rem;
+      color: var(--secondary-color);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+  
+    &__subsubheader {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-top: 1.5rem;
+    }
+  
+    &__list {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    &__listItem {
+      list-style-type: disc;
+      margin-bottom: 0.5rem;
+    }
+  
+    &__contactButton {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+  
+      &:hover {
+        background-color: var(--primary-color-dark);
+      }
+    }
+  
+    &__imageSlider {
+      flex: 1 1 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .slider__mainImage {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  
+    .slider__thumbnails {
+      display: flex;
+      gap: 0.5rem;
+  
+      .thumbnail {
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        border-radius: 5px;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  
+    &__portfolio {
+      margin-top: 2rem;
+    }
+  
+    .portfolio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+  
+      &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 300px;
+      }
+  
+      &__imageContainer {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 0.5rem;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+  
+        &::after {
+          content: attr(data-label);
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          background-color: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          padding: 0.25rem 0.5rem;
+          border-radius: 5px;
+        }
+      }
+  
+      &__label {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 0.25rem 0.5rem;
+        border-radius: 5px;
+      }
+    }
+  }
+  

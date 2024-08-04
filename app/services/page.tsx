@@ -1,8 +1,8 @@
-"use client";
-
+import React from "react";
+import Head from "next/head";
 import Link from "next/link";
-import ContactBanner from "../components/ContactBanner/ContactBanner"; 
-import styles from "./services.module.scss";
+import ContactBanner from "../components/ContactBanner/ContactBanner";
+import styles from "./Services.module.scss";
 
 const servicesList = {
   cosmetic: [
@@ -69,52 +69,67 @@ const servicesList = {
 
 const ServicesPage = () => {
   return (
-    <div className={styles.services}>
-      <h1 className={styles.services__title}>Our Services</h1>
-      <section className={styles.services__category}>
-        <h2 className={styles.services__category__title}>Cosmetic Treatments</h2>
-        <div className={styles.services__category__cards}>
-          {servicesList.cosmetic.map((service, index) => (
-            <Link href={service.link} key={index} className={styles.services__category__card}>
-              <div className={styles.services__category__card__content}>
-                <img src={service.image} alt={service.title} className={styles.services__category__card__content__image} />
-                <h3 className={styles.services__category__card__content__title}>{service.title}</h3>
-                <p className={styles.services__category__card__content__description}>{service.description}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section className={styles.services__category}>
-        <h2 className={styles.services__category__title}>Preventive Treatments</h2>
-        <div className={styles.services__category__cards}>
-          {servicesList.preventive.map((service, index) => (
-            <Link href={service.link} key={index} className={styles.services__category__card}>
-              <div className={styles.services__category__card__content}>
-                <img src={service.image} alt={service.title} className={styles.services__category__card__content__image} />
-                <h3 className={styles.services__category__card__content__title}>{service.title}</h3>
-                <p className={styles.services__category__card__content__description}>{service.description}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section className={styles.services__category}>
-        <h2 className={styles.services__category__title}>Restorative Treatments</h2>
-        <div className={styles.services__category__cards}>
-          {servicesList.restorative.map((service, index) => (
-            <Link href={service.link} key={index} className={styles.services__category__card}>
-              <div className={styles.services__category__card__content}>
-                <img src={service.image} alt={service.title} className={styles.services__category__card__content__image} />
-                <h3 className={styles.services__category__card__content__title}>{service.title}</h3>
-                <p className={styles.services__category__card__content__description}>{service.description}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <ContactBanner /> 
-    </div>
+    <>
+      <Head>
+        <title>Our Services | Bana Dental Design</title>
+        <meta
+          name="description"
+          content="Explore the various dental services offered by Bana Dental Design, including cosmetic, preventive, and restorative treatments."
+        />
+        <meta
+          name="keywords"
+          content="dental services, cosmetic dentistry, preventive dentistry, restorative dentistry, Bana Dental Design"
+        />
+      </Head>
+      <main className={styles.servicesPage}>
+        <header className={styles.servicesPage__header}>
+          <h1 className={styles.servicesPage__title}>Our Services</h1>
+        </header>
+        <section className={styles.servicesPage__category}>
+          <h2 className={styles.servicesPage__categoryTitle}>Cosmetic Treatments</h2>
+          <div className={styles.servicesPage__cards}>
+            {servicesList.cosmetic.map((service, index) => (
+              <Link href={service.link} key={index} className={styles.servicesPage__card}>
+                <div className={styles.servicesPage__cardContent}>
+                  <img src={service.image} alt={service.title} className={styles.servicesPage__cardImage} />
+                  <h3 className={styles.servicesPage__cardTitle}>{service.title}</h3>
+                  <p className={styles.servicesPage__cardDescription}>{service.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+        <section className={styles.servicesPage__category}>
+          <h2 className={styles.servicesPage__categoryTitle}>Preventive Treatments</h2>
+          <div className={styles.servicesPage__cards}>
+            {servicesList.preventive.map((service, index) => (
+              <Link href={service.link} key={index} className={styles.servicesPage__card}>
+                <div className={styles.servicesPage__cardContent}>
+                  <img src={service.image} alt={service.title} className={styles.servicesPage__cardImage} />
+                  <h3 className={styles.servicesPage__cardTitle}>{service.title}</h3>
+                  <p className={styles.servicesPage__cardDescription}>{service.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+        <section className={styles.servicesPage__category}>
+          <h2 className={styles.servicesPage__categoryTitle}>Restorative Treatments</h2>
+          <div className={styles.servicesPage__cards}>
+            {servicesList.restorative.map((service, index) => (
+              <Link href={service.link} key={index} className={styles.servicesPage__card}>
+                <div className={styles.servicesPage__cardContent}>
+                  <img src={service.image} alt={service.title} className={styles.servicesPage__cardImage} />
+                  <h3 className={styles.servicesPage__cardTitle}>{service.title}</h3>
+                  <p className={styles.servicesPage__cardDescription}>{service.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+        <ContactBanner />
+      </main>
+    </>
   );
 };
 
