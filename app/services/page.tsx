@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import ContactBanner from "../components/ContactBanner/ContactBanner";
-import styles from "./Services.module.scss";
+import styles from "./services.module.scss";
 
 const servicesList = {
   cosmetic: [
@@ -15,7 +15,7 @@ const servicesList = {
     {
       title: "Veneers",
       description: "Get the perfect smile with custom veneers.",
-      image: "/images/veneers.jpg",
+      image: "/images/Teeth Whitening Karolina Grabowska.jpg",
       link: "/dental-services/veneers",
     },
   ],
@@ -23,19 +23,19 @@ const servicesList = {
     {
       title: "Teeth Cleaning",
       description: "Maintain your oral health with regular teeth cleaning.",
-      image: "/images/teeth-cleaning.jpg",
+      image: "/images/IMG_3696.JPG",
       link: "/dental-services/teeth-cleaning",
     },
     {
       title: "Oral Exams",
       description: "Comprehensive oral exams to ensure your dental health.",
-      image: "/images/oral-exams.jpg",
+      image: "/images/Implant Photos Shvetsa.jpg",
       link: "/dental-services/oral-exams",
     },
     {
       title: "X-Rays",
       description: "Advanced dental x-rays for accurate diagnosis.",
-      image: "/images/x-rays.jpg",
+      image: "/images/Shiny Diamond.jpg",
       link: "/dental-services/x-rays",
     },
   ],
@@ -94,6 +94,7 @@ const ServicesPage = () => {
                   <img src={service.image} alt={service.title} className={styles.servicesPage__cardImage} />
                   <h3 className={styles.servicesPage__cardTitle}>{service.title}</h3>
                   <p className={styles.servicesPage__cardDescription}>{service.description}</p>
+                  <button className={styles.servicesPage__button}>Learn More</button>
                 </div>
               </Link>
             ))}
@@ -108,6 +109,7 @@ const ServicesPage = () => {
                   <img src={service.image} alt={service.title} className={styles.servicesPage__cardImage} />
                   <h3 className={styles.servicesPage__cardTitle}>{service.title}</h3>
                   <p className={styles.servicesPage__cardDescription}>{service.description}</p>
+                  <button className={styles.servicesPage__button}>Learn More</button>
                 </div>
               </Link>
             ))}
@@ -122,6 +124,7 @@ const ServicesPage = () => {
                   <img src={service.image} alt={service.title} className={styles.servicesPage__cardImage} />
                   <h3 className={styles.servicesPage__cardTitle}>{service.title}</h3>
                   <p className={styles.servicesPage__cardDescription}>{service.description}</p>
+                  <button className={styles.servicesPage__button}>Learn More</button>
                 </div>
               </Link>
             ))}

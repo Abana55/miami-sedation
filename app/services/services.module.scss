@@ -1,3 +1,4 @@
+/* Services.module.scss */
 
 .servicesPage {
   padding: 2rem;
@@ -38,7 +39,6 @@
     align-items: center;
     text-decoration: none;
     background-color: #fff;
-    border: 1px solid var(--accent-color);
     border-radius: 10px;
     box-shadow: 0 8px 16px var(--box-shadow);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -70,6 +70,8 @@
     height: 200px;
     object-fit: cover;
     border-bottom: 1px solid var(--accent-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
   &__cardTitle {
@@ -81,5 +83,20 @@
   &__cardDescription {
     font-size: 1rem;
     color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--secondary-color-dark);
+    }
   }
 }
