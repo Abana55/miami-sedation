@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import ContactBanner from "../../components/ContactBanner/ContactBanner";
-import styles from "./DentalServices.module.scss";
+import styles from "../../DentalServices.module.scss";
 
 const Veneers = () => {
   const portfolioImages = [
