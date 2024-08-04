@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import ContactForm from ".."; 
 import styles from "../../DentalServices.module.scss";
 
 const Veneers = () => {
@@ -8,7 +9,6 @@ const Veneers = () => {
     { before: "/images/veneers-before1.jpg", after: "/images/veneers-after1.jpg" },
     { before: "/images/veneers-before2.jpg", after: "/images/veneers-after2.jpg" },
     { before: "/images/veneers-before3.jpg", after: "/images/veneers-after3.jpg" },
-    
   ];
 
   return (
@@ -25,7 +25,9 @@ const Veneers = () => {
         />
       </Head>
       <main className={`${styles["service-page"]} ${styles["service-page--cosmetic"]}`}>
-        <h1 className={styles["service-page__header"]}>Dental Veneers</h1>
+        <header>
+          <h1 className={styles["service-page__header"]}>Dental Veneers</h1>
+        </header>
         <section className={styles["service-page__content"]}>
           <article className={styles["service-page__articles"]}>
             <p className={styles["service-page__text"]}>
@@ -123,6 +125,11 @@ const Veneers = () => {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className={styles["service-page__contact"]}>
+          <h2 className={styles["service-page__subheader"]}>Get in Touch</h2>
+          <ContactForm />
         </section>
       </main>
     </>
