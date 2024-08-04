@@ -72,42 +72,42 @@ const ServicesPage = () => {
     <div className={styles.services}>
       <h1 className={styles.services__title}>Our Services</h1>
       <section className={styles.services__category}>
-        <h2 className={styles.services__category-title}>Cosmetic Treatments</h2>
-        <div className={styles.services__cards}>
+        <h2 className={styles.services__category__title}>Cosmetic Treatments</h2>
+        <div className={styles.services__category__cards}>
           {servicesList.cosmetic.map((service, index) => (
-            <Link href={service.link} key={index} className={styles.services__card}>
-              <div className={styles.services__card-content}>
-                <img src={service.image} alt={service.title} className={styles.services__card-content__image} />
-                <h3 className={styles.services__card-content__title}>{service.title}</h3>
-                <p className={styles.services__card-content__description}>{service.description}</p>
+            <Link href={service.link} key={index} className={styles.services__category__card}>
+              <div className={styles.services__category__card__content}>
+                <img src={service.image} alt={service.title} className={styles.services__category__card__content__image} />
+                <h3 className={styles.services__category__card__content__title}>{service.title}</h3>
+                <p className={styles.services__category__card__content__description}>{service.description}</p>
               </div>
             </Link>
           ))}
         </div>
       </section>
       <section className={styles.services__category}>
-        <h2 className={styles.services__category-title}>Preventive Treatments</h2>
-        <div className={styles.services__cards}>
+        <h2 className={styles.services__category__title}>Preventive Treatments</h2>
+        <div className={styles.services__category__cards}>
           {servicesList.preventive.map((service, index) => (
-            <Link href={service.link} key={index} className={styles.services__card}>
-              <div className={styles.services__card-content}>
-                <img src={service.image} alt={service.title} className={styles.services__card-content__image} />
-                <h3 className={styles.services__card-content__title}>{service.title}</h3>
-                <p className={styles.services__card-content__description}>{service.description}</p>
+            <Link href={service.link} key={index} className={styles.services__category__card}>
+              <div className={styles.services__category__card__content}>
+                <img src={service.image} alt={service.title} className={styles.services__category__card__content__image} />
+                <h3 className={styles.services__category__card__content__title}>{service.title}</h3>
+                <p className={styles.services__category__card__content__description}>{service.description}</p>
               </div>
             </Link>
           ))}
         </div>
       </section>
       <section className={styles.services__category}>
-        <h2 className={styles.services__category-title}>Restorative Treatments</h2>
-        <div className={styles.services__cards}>
+        <h2 className={styles.services__category__title}>Restorative Treatments</h2>
+        <div className={styles.services__category__cards}>
           {servicesList.restorative.map((service, index) => (
-            <Link href={service.link} key={index} className={styles.services__card}>
-              <div className={styles.services__card-content}>
-                <img src={service.image} alt={service.title} className={styles.services__card-content__image} />
-                <h3 className={styles.services__card-content__title}>{service.title}</h3>
-                <p className={styles.services__card-content__description}>{service.description}</p>
+            <Link href={service.link} key={index} className={styles.services__category__card}>
+              <div className={styles.services__category__card__content}>
+                <img src={service.image} alt={service.title} className={styles.services__category__card__content__image} />
+                <h3 className={styles.services__category__card__content__title}>{service.title}</h3>
+                <p className={styles.services__category__card__content__description}>{service.description}</p>
               </div>
             </Link>
           ))}
