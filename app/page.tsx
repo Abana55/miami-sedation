@@ -123,7 +123,6 @@ const Home = () => {
 
       {/* Team Section */}
       <section className={styles.teamSection}>
-        
         <div className={styles.teamContent}>
           <div className={styles.team}>
             <TeamAccordion teamMembers={teamMembers} />
@@ -135,10 +134,73 @@ const Home = () => {
           </article>
         </div>
       </section>
-
+      <section className={styles.connectBanner}>
+        <h2 className={styles.bannerTitle}>Connect with Us</h2>
+        <div className={styles.bannerContent}>
+          <p>
+            Follow us on social media to stay updated with our latest news and
+            offers!
+          </p>
+          <div className={styles.socialLinks}>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Twitter
+            </a>
+          </div>
+        </div>
+      </section>
       {/* Our Office Section */}
       <OurOffice />
-
+      <section className={styles.magazineSection}>
+        <h2 className={styles.sectionTitle}>In the Press</h2>
+        <div className={styles.magazineArticles}>
+          <article className={styles.magazineArticle}>
+            <a
+              href="https://www.example.com/article1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/magazine1.jpg" alt="Magazine Article 1" />
+              <h3>Exclusive Interview with Dr. Ramon Bana</h3>
+              <p>
+                Read about Dr. Bana's journey in the latest issue of Luxury
+                Dental Magazine.
+              </p>
+            </a>
+          </article>
+          <article className={styles.magazineArticle}>
+            <a
+              href="https://www.example.com/article2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/magazine2.jpg" alt="Magazine Article 2" />
+              <h3>Top 10 Cosmetic Dentists</h3>
+              <p>
+                Discover why Bana Dental Design is listed among the top 10
+                cosmetic dentists in the country.
+              </p>
+            </a>
+          </article>
+        </div>
+      </section>
       {/* Testimonials Section */}
       <section className={styles.testimonials}>
         <h2 className={styles.sectionTitle}>What Our Patients Say</h2>
