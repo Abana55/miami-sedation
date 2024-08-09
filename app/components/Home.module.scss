@@ -275,17 +275,22 @@
   background: linear-gradient(135deg, rgba(255, 192, 203, 0.4), rgba(173, 216, 230, 0.4));
   border-radius: 20px;
   text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .magazineArticles {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem; /* Add gap between the articles for better spacing */
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
   }
 
   .magazineArticle {
-    max-width: 45%;
-    margin-bottom: 2rem;
+    flex: 1;
     background: rgba(255, 255, 255, 0.3); /* Glassmorphism effect */
     border-radius: 20px; /* Rounded corners for glassmorphic effect */
     padding: 1rem;
@@ -306,7 +311,7 @@
         width: 100%;
         height: auto;
         border-radius: 10px;
-        margin-bottom: 1rem; /* Added margin for spacing */
+        margin-bottom: 1rem;
       }
 
       .magazineTitle {
