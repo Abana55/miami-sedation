@@ -37,8 +37,8 @@ const Header: React.FC = () => {
           <Image
             src="/images/1x/3Artboard 1_1.png"
             alt="Bana Dental Design Logo"
-            width={96} // Corresponding to 6rem (16px * 6 = 96px)
-            height={96} // Corresponding to 6rem (16px * 6 = 96px)
+            width={124} // Corresponding to 6rem (16px * 6 = 96px)
+            height={124} // Corresponding to 6rem (16px * 6 = 96px)
             className={styles["header-logo__img"]}
           />
         </Link>
