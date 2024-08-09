@@ -98,7 +98,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className={styles.services}>
+      {/* <section className={styles.services}>
         <h2 className={styles.sectionTitle}>Our Services</h2>
         <div className={styles.servicesList}>
           <div className={styles.serviceItem}>
@@ -119,7 +119,7 @@ const Home = () => {
             <p>Experience pain-free dentistry with our sedation techniques.</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Team Section */}
       <section className={styles.teamSection}>
@@ -167,7 +167,7 @@ const Home = () => {
         </div>
       </div>
       {/* Testimonials Section */}
-      <section className={styles.testimonials}>
+      {/* <section className={styles.testimonials}>
         <h2 className={styles.sectionTitle}>What Our Patients Say</h2>
         <div className={styles.testimonialItem}>
           <p>
@@ -176,7 +176,7 @@ const Home = () => {
           </p>
           <cite>— John Doe</cite>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action for Appointments */}
       <section className={styles.callToAction}>
