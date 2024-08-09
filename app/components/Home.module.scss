@@ -275,25 +275,13 @@
   background: linear-gradient(135deg, rgba(255, 192, 203, 0.4), rgba(173, 216, 230, 0.4));
   border-radius: 20px;
   text-align: center;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  .magazineArticles {
+  .glassmorphicContainer {
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-  }
-
-  .magazineArticle {
-    flex: 1;
+    align-items: center;
     background: rgba(255, 255, 255, 0.3); /* Glassmorphism effect */
-    border-radius: 20px; /* Rounded corners for glassmorphic effect */
-    padding: 1rem;
+    border-radius: 20px;
+    padding: 2rem;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -302,28 +290,51 @@
       transform: translateY(-5px);
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
+  }
 
-    .magazineLink {
-      text-decoration: none;
+  .magazineArticle {
+    flex: 1;
+    padding: 0 2rem;
+    text-align: left;
+
+    .magazineImage {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .magazineTitle {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin: 0.5rem 0;
+    }
+
+    .magazineDescription {
+      font-size: 1rem;
       color: var(--text-color);
+    }
+  }
 
-      .magazineImage {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-bottom: 1rem;
-      }
+  .verticalDivider {
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+  }
 
-      .magazineTitle {
-        font-size: 1.5rem;
-        color: var(--primary-color);
-        margin: 0.5rem 0;
-      }
+  .learnMoreButton {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: blue;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-      .magazineDescription {
-        font-size: 1rem;
-        color: var(--text-color);
-      }
+    &:hover {
+      background-color: darkblue;
     }
   }
 }

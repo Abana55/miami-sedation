@@ -170,53 +170,46 @@ const Home = () => {
         </div>
       </div>
       {/* Our Office Section */}
+
       <OurOffice />
+
       <div className={styles.magazineSection}>
         <h2 className={styles.sectionTitle}>In the Press</h2>
         <div className={styles.glassmorphicContainer}>
-          <div className={styles.magazineArticles}>
-            <article className={styles.magazineArticle}>
-              <a
-                href="https://www.example.com/article1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.magazineLink}
-              >
-                <img
-                  src="/images/magazine1.jpg"
-                  alt="Magazine Article 1"
-                  className={styles.magazineImage}
-                />
-                <h3 className={styles.magazineTitle}>
-                  Exclusive Interview with Dr. Ramon Bana
-                </h3>
-                <p className={styles.magazineDescription}>
-                  Read about Dr. Bana's journey in the latest issue of Luxury
-                  Dental Magazine.
-                </p>
-              </a>
-            </article>
-            <article className={styles.magazineArticle}>
-              <a
-                href="https://www.example.com/article2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.magazineLink}
-              >
-                <img
-                  src="/images/magazine2.jpg"
-                  alt="Magazine Article 2"
-                  className={styles.magazineImage}
-                />
-                <h3 className={styles.magazineTitle}>
-                  Top 10 Cosmetic Dentists
-                </h3>
-                <p className={styles.magazineDescription}>
-                  Discover why Bana Dental Design is listed among the top 10
-                  cosmetic dentists in the country.
-                </p>
-              </a>
-            </article>
+          <div className={styles.magazineArticle}>
+            <img
+              src="/images/magazine1.jpg"
+              alt="Magazine Article 1"
+              className={styles.magazineImage}
+            />
+            <h3 className={styles.magazineTitle}>
+              Exclusive Interview with Dr. Ramon Bana
+            </h3>
+            <p className={styles.magazineDescription}>
+              Read about Dr. Bana's journey in the latest issue of Luxury Dental
+              Magazine.
+            </p>
+            <Link href="https://www.example.com/article1">
+              <button className={styles.learnMoreButton}>Learn More</button>
+            </Link>
+          </div>
+
+          <div className={styles.verticalDivider}></div>
+
+          <div className={styles.magazineArticle}>
+            <img
+              src="/images/magazine2.jpg"
+              alt="Magazine Article 2"
+              className={styles.magazineImage}
+            />
+            <h3 className={styles.magazineTitle}>Top 10 Cosmetic Dentists</h3>
+            <p className={styles.magazineDescription}>
+              Discover why Bana Dental Design is listed among the top 10
+              cosmetic dentists in the country.
+            </p>
+            <Link href="https://www.example.com/article2">
+              <button className={styles.learnMoreButton}>Learn More</button>
+            </Link>
           </div>
         </div>
       </div>
