@@ -137,11 +137,35 @@ const Home = () => {
       <div className={styles.connectBanner}>
         <h2 className={styles.bannerTitle}>Connect with Us</h2>
         <div className={styles.bannerContent}>
-          <p className={styles.bannerText}>Follow us on social media to stay updated with our latest news and offers!</p>
+          <p className={styles.bannerText}>
+            Follow us on social media to stay updated with our latest news and
+            offers!
+          </p>
           <div className={styles.socialLinks}>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Instagram</a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Facebook</a>
-            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Twitter</a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              Facebook
+            </a>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              Twitter
+            </a>
           </div>
         </div>
       </div>
@@ -149,21 +173,51 @@ const Home = () => {
       <OurOffice />
       <div className={styles.magazineSection}>
         <h2 className={styles.sectionTitle}>In the Press</h2>
-        <div className={styles.magazineArticles}>
-          <article className={styles.magazineArticle}>
-            <a href="https://www.example.com/article1" target="_blank" rel="noopener noreferrer" className={styles.magazineLink}>
-              <img src="/images/magazine1.jpg" alt="Magazine Article 1" className={styles.magazineImage} />
-              <h3 className={styles.magazineTitle}>Exclusive Interview with Dr. Ramon Bana</h3>
-              <p className={styles.magazineDescription}>Read about Dr. Bana's journey in the latest issue of Luxury Dental Magazine.</p>
-            </a>
-          </article>
-          <article className={styles.magazineArticle}>
-            <a href="https://www.example.com/article2" target="_blank" rel="noopener noreferrer" className={styles.magazineLink}>
-              <img src="/images/magazine2.jpg" alt="Magazine Article 2" className={styles.magazineImage} />
-              <h3 className={styles.magazineTitle}>Top 10 Cosmetic Dentists</h3>
-              <p className={styles.magazineDescription}>Discover why Bana Dental Design is listed among the top 10 cosmetic dentists in the country.</p>
-            </a>
-          </article>
+        <div className={styles.backgroundPattern}>
+          <div className={styles.magazineArticles}>
+            <article className={styles.magazineArticle}>
+              <a
+                href="https://www.example.com/article1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.magazineLink}
+              >
+                <img
+                  src="/images/magazine1.jpg"
+                  alt="Magazine Article 1"
+                  className={styles.magazineImage}
+                />
+                <h3 className={styles.magazineTitle}>
+                  Exclusive Interview with Dr. Ramon Bana
+                </h3>
+                <p className={styles.magazineDescription}>
+                  Read about Dr. Bana's journey in the latest issue of Luxury
+                  Dental Magazine.
+                </p>
+              </a>
+            </article>
+            <article className={styles.magazineArticle}>
+              <a
+                href="https://www.example.com/article2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.magazineLink}
+              >
+                <img
+                  src="/images/magazine2.jpg"
+                  alt="Magazine Article 2"
+                  className={styles.magazineImage}
+                />
+                <h3 className={styles.magazineTitle}>
+                  Top 10 Cosmetic Dentists
+                </h3>
+                <p className={styles.magazineDescription}>
+                  Discover why Bana Dental Design is listed among the top 10
+                  cosmetic dentists in the country.
+                </p>
+              </a>
+            </article>
+          </div>
         </div>
       </div>
       {/* Testimonials Section */}
