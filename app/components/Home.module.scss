@@ -237,22 +237,24 @@
 
 .connectBanner {
   background-image: url('../../public/images/CONNECT/1.png');
-  background-size: cover; 
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
-  padding: 20px; 
-  text-align: center; 
-  color: #fff; 
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
 }
 
 .bannerTitle {
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 5rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
 }
 
 .bannerContent {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
 }
 
 .bannerText {
@@ -266,14 +268,45 @@
 }
 
 .socialLink {
-  color: #fff; 
+  color: #fff;
   text-decoration: none;
   font-size: 1.2em;
   transition: color 0.3s ease;
 }
 
 .socialLink:hover {
-  color: #ff9900; 
+  color: var(--secondary-color);
+}
+
+.contactInfo {
+  background: var(--glass-background);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.officeNumber {
+  font-size: 1.2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.scheduleButton {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.scheduleButton:hover {
+  background-color: var(--primary-color-dark);
 }
 
 .magazineSection {
