@@ -250,6 +250,8 @@
   font-size: 5rem;
   color: var(--secondary-color);
   margin-bottom: 20px;
+  font-family: var(--font-body);
+  font-weight: 100;
 }
 
 .bannerContent {
@@ -260,6 +262,8 @@
 .bannerText {
   font-size: 1.2em;
   margin-bottom: 20px;
+  font-family: var(--font-body);
+  font-weight: 100;
 }
 
 .socialLinks {
@@ -285,29 +289,36 @@
   backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 10px;
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .officeNumber {
   font-size: 1.2em;
   color: #fff;
-  margin-bottom: 10px;
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 100;
 }
 
 .scheduleButton {
   display: inline-block;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  margin-left: 20px;
 }
 
 .scheduleButton:hover {
-  background-color: var(--primary-color-dark);
+  background-color: var(--secondary-color-dark);
 }
+
 
 .magazineSection {
   padding: 2rem;
