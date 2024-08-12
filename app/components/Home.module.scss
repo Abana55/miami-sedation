@@ -236,38 +236,44 @@
 }
 
 .connectBanner {
-  padding: 2rem;
-  background-color: var(--secondary-color);
-  color: #fff;
-  text-align: center;
-  border-radius: 10px;
+  background-image: url('../../public/images/CONNECT/1.png');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+  padding: 20px; 
+  text-align: center; 
+  color: #fff; 
+}
 
-  .bannerTitle {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
+.bannerTitle {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
 
-  .bannerContent {
-    font-size: 1.25rem;
-  }
+.bannerContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-  .socialLinks {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+.bannerText {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
 
-    .socialLink {
-      color: #fff;
-      font-size: 1.25rem;
-      text-decoration: none;
-      transition: color 0.3s;
+.socialLinks {
+  display: flex;
+  justify-content: space-around;
+}
 
-      &:hover {
-        color: var(--background-color);
-      }
-    }
-  }
+.socialLink {
+  color: #fff; 
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.socialLink:hover {
+  color: #ff9900; 
 }
 
 .magazineSection {

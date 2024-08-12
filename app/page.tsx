@@ -174,7 +174,7 @@ const Home = () => {
       <OurOffice />
 
       <div className={styles.magazineSection}>
-        <h2 className={styles.sectionTitle}>In the Press</h2>
+        {/* <h2 className={styles.sectionTitle}>In the Press</h2> */}
         <div className={styles.glassmorphicContainer}>
           <div className={styles.magazineArticle}>
             <img
