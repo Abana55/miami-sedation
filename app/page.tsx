@@ -135,40 +135,43 @@ const Home = () => {
         </div>
       </section>
       <div className={styles.connectBanner}>
-        <h2 className={styles.bannerTitle}>Connect with Us</h2>
-        <div className={styles.bannerContent}>
-          <p className={styles.bannerText}>
-            Follow us on social media to stay updated with our latest news and
-            offers!
-          </p>
-          <div className={styles.socialLinks}>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialLink}
-            >
-              Instagram
-            </a>
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialLink}
-            >
-              Facebook
-            </a>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialLink}
-            >
-              Twitter
-            </a>
-          </div>
-        </div>
-      </div>
+  <h1 className={styles.bannerTitle}>Connect with Us</h1>
+  <div className={styles.bannerContent}>
+    <p className={styles.bannerText}>
+      Follow us on social media to stay updated with our latest news and offers!
+    </p>
+    <div className={styles.socialLinks}>
+      <a
+        href="https://www.instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.socialLink}
+      >
+        Instagram
+      </a>
+      <a
+        href="https://www.facebook.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.socialLink}
+      >
+        Facebook
+      </a>
+      <a
+        href="https://www.twitter.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.socialLink}
+      >
+        Twitter
+      </a>
+    </div>
+  </div>
+  <div className={styles.contactInfo}>
+    <p className={styles.officeNumber}>Call us: (123) 456-7890</p>
+    <a href="/contact" className={styles.scheduleButton}>Schedule an Appointment</a>
+  </div>
+</div>
       {/* Our Office Section */}
 
       <OurOffice />
