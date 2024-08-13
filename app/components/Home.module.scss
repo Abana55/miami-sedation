@@ -237,49 +237,75 @@
 
 .connectBanner {
   background-image: url('../../public/images/CONNECT/1.png');
-  background-size: cover;
-  background-position: center;
+  background-size: cover; 
+  background-position: right center; 
   background-repeat: no-repeat;
-  padding: 40px 20px;
+  padding: 20px;
   text-align: center;
-  color: #fff;
+  color: var(--secondary-color); 
   position: relative;
+  margin: 1.25rem; 
+  border-radius: 1.25rem; 
+  overflow: hidden; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .bannerTitle {
-  font-size: 5rem;
+  font-size: 2em;
+  margin-bottom: 10px;
   color: var(--secondary-color);
-  margin-bottom: 20px;
-  font-family: var(--font-body);
-  font-weight: 100;
 }
 
 .bannerContent {
   max-width: 600px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto;
 }
 
 .bannerText {
   font-size: 1.2em;
   margin-bottom: 20px;
-  font-family: var(--font-body);
-  font-weight: 100;
+  color: var(--secondary-color);
 }
 
 .socialLinks {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   display: flex;
-  justify-content: space-around;
+  gap: 15px;
 }
 
 .socialLink {
   color: #fff;
-  text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.5em; 
   transition: color 0.3s ease;
 }
 
 .socialLink:hover {
-  color: var(--secondary-color);
+  color: var(--secondary-color); 
+}
+
+.contactInfo {
+  margin-top: 20px;
+}
+
+.officeNumber {
+  color: var(--secondary-color); 
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.scheduleButton {
+  color: #fff;
+  background-color: var(--secondary-color);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.scheduleButton:hover {
+  background-color: #ff9900; 
 }
 
 .contactInfo {

@@ -4,7 +4,10 @@ import Link from "next/link";
 import styles from "./components/Home.module.scss";
 import "./styles/globals.scss";
 import TeamAccordion from "./components/TeamAccordion/TeamAccordion";
-import OurOffice from "./components/OurOffice/OurOffice"; // Correct import path
+import OurOffice from "./components/OurOffice/OurOffice"; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 
 const teamMembers = [
   {
@@ -147,7 +150,7 @@ const Home = () => {
         rel="noopener noreferrer"
         className={styles.socialLink}
       >
-        Instagram
+        <FontAwesomeIcon icon={faInstagram} />
       </a>
       <a
         href="https://www.facebook.com"
@@ -155,7 +158,7 @@ const Home = () => {
         rel="noopener noreferrer"
         className={styles.socialLink}
       >
-        Facebook
+        <FontAwesomeIcon icon={faFacebook} />
       </a>
       <a
         href="https://www.twitter.com"
@@ -163,7 +166,7 @@ const Home = () => {
         rel="noopener noreferrer"
         className={styles.socialLink}
       >
-        Twitter
+        <FontAwesomeIcon icon={faTwitter} />
       </a>
     </div>
   </div>
