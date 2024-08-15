@@ -32,6 +32,18 @@ function ContactPage() {
       <section className={styles.formSection}>
         <ContactFormComponent />
       </section>
+      <div className={styles.connectBanner}>
+  <h1 className={styles.bannerTitle}>PERFECTION IN EVERY SMILE</h1>
+  <div className={styles.bannerContent}>
+    <p className={styles.bannerText}>
+      Our team is dedicated to providing top-notch dental care. Contact us to schedule an appointment today!
+    </p>
+  </div>
+  <div className={styles.contactInfo}>
+    <p className={styles.officeNumber}>Call us: (123) 456-7890</p>
+    <a href="/contact" className={styles.scheduleButton}>Schedule an Appointment</a>
+  </div>
+</div>
     </div>
   );
 }
