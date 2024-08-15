@@ -56,11 +56,11 @@
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: #997556; /* Use a manually darkened version of the secondary color */
+      background-color: #997556; 
     }
 
     .socialIcon {
-      color: #fff; /* Icon color white */
+      color: #fff; 
     }
   }
 }
@@ -73,25 +73,29 @@
 
 .connectBanner {
   background-image: url('/images/CONNECT/Figma\ Pic.jpg');
-  background-size: contain; 
-  background-position: center center; 
+  background-size: contain; /* Ensure the whole image fits */
+  background-position: center center; /* Center the image */
   background-repeat: no-repeat;
-  padding: 20px;
+  padding: 40px 20px; /* Increase padding for more spacing */
   text-align: center;
   color: #fff; 
   position: relative;
-  margin: 0;
+  margin-top: 2rem;
   width: 100%;
-  height: auto; 
-  min-height: 400px; 
+  height: auto; /* Allow height to adjust based on content */
+  min-height: 500px; /* Increase minimum height for larger content */
   border-radius: 0;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
 }
 
 .bannerTitle {
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 3em; /* Increase font size for the title */
+  margin-bottom: 20px;
   color: #fff;
 }
 
@@ -100,13 +104,14 @@
 }
 
 .bannerContent {
-  max-width: 600px;
+  max-width: 800px; /* Allow more space for content */
   margin: 0 auto;
+  margin-bottom: 50px; /* Add spacing between sections */
 }
 
 .bannerText {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+  font-size: 1.5em; /* Increase font size for the text */
+  margin-bottom: 30px;
   color: #fff;
 }
 
@@ -117,16 +122,15 @@
   backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 10px;
-  max-width: 600px;
+  max-width: 800px; /* Increase max width to better fit content */
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
 }
 
 .officeNumber {
-  font-size: 1.2em;
+  font-size: 1.5em; /* Increase font size for the office number */
   color: #fff;
   margin: 0;
   font-family: var(--font-body);
@@ -137,7 +141,7 @@
   display: inline-block;
   background-color: var(--secondary-color);
   color: #fff;
-  padding: 10px 20px;
+  padding: 15px 30px; /* Increase padding for the button */
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease;
