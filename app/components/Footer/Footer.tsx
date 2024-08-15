@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerLeft}>
         <Image
-          src="/images/1x/3Artboard 1_1.png" // Update with your logo image path
+          src="/images/LOGO ICON/Bana Website Logo.png" 
           alt="Company Logo"
           layout="responsive"
           width={96}
