@@ -83,12 +83,7 @@ function ContactPage() {
         <h1 className={styles.bannerTitle}>
           PERFECTION IN EVERY <span className={styles.goldText}>SMILE</span>
         </h1>
-        <div className={styles.bannerContent}>
-          {/* <p className={styles.bannerText}>
-            Our team is dedicated to providing top-notch dental care. Contact us
-            to schedule an appointment today!
-          </p> */}
-        </div>
+        <div className={styles.bannerContent}></div>
         <div className={styles.contactInfo}>
           <p className={styles.officeNumber}>Call us: (123) 456-7890</p>
           <a href="/contact" className={styles.scheduleButton}>
