@@ -1,15 +1,24 @@
 .pageContainer {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 2rem;
   background-color: var(--background-color);
   gap: 2rem;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2rem;
+}
+
 .infoSection {
-  flex: 1 1 40%;
+  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,15 +26,15 @@
   margin-bottom: 2rem;
 
   .headerText {
-    font-size: 5rem; /* Increased font size */
-    font-weight: 100; /* Lighter font weight */
+    font-size: 5rem; /* Large font size */
+    font-weight: 100; /* Light font weight */
     color: var(--secondary-color);
-    margin-bottom: 1.5rem; /* Adequate spacing below */
+    margin-bottom: 1.5rem;
   }
 
   .additionalInfo {
     font-size: 1.25rem;
-    margin-bottom: 2rem; /* Adequate spacing below */
+    margin-bottom: 2rem;
     color: var(--text-color);
 
     span {
@@ -36,7 +45,7 @@
   }
 
   .socialMediaLinks {
-    margin-top: 2rem; /* Adequate spacing above */
+    margin-top: 2rem;
 
     a {
       text-decoration: none;
@@ -47,12 +56,12 @@
       align-items: center;
       width: 3rem;
       height: 3rem;
-      background-color: var(--secondary-color); /* Gold background */
+      background-color: var(--secondary-color);
       border-radius: 50%;
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: var(--secondary-color-dark); /* Darker gold on hover */
+        background-color: var(--secondary-color-dark);
       }
 
       .socialIcon {
@@ -63,7 +72,77 @@
 }
 
 .formSection {
-  flex: 1 1 60%;
+  flex: 1 1 45%;
   display: flex;
   justify-content: center;
+}
+
+.connectBanner {
+  width: 100%;
+  background-image: url('/images/CONTACT/1.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  height: auto;
+  min-height: 500px;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .bannerTitle {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .goldText {
+    color: var(--secondary-color);
+  }
+
+  .contactInfo {
+    background: var(--glass-background);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+
+    .officeNumber {
+      font-size: 1.5em;
+      color: #fff;
+      margin: 0;
+      font-family: var(--font-body);
+      font-weight: 100;
+    }
+
+    .scheduleButton {
+      background-color: var(--secondary-color);
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-left: 20px;
+      display: inline-block;
+
+      &:hover {
+        background-color: var(--secondary-color-dark);
+        transform: translateY(-2px);
+      }
+    }
+  }
 }
