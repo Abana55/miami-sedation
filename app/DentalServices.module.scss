@@ -118,3 +118,63 @@
   margin-top: 2rem;
   text-align: center;
 }
+.oralExamsPage {
+  padding: 2rem;
+  background-color: #ffffff;
+  color: var(--text-color);
+  max-width: 800px;
+  margin: 2rem auto;
+  line-height: 1.6;
+}
+
+.oralExamsTitle {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.oralExamsContent {
+  font-size: 1.2rem;
+}
+
+.oralExamsIntro {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.oralExamsSectionTitle {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.oralExamsText {
+  margin-bottom: 1.5rem;
+}
+
+.oralExamsConclusion {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  text-align: center;
+}
+.teethCleaningImagePlaceholder,
+.oralExamsImagePlaceholder {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teethCleaningImage,
+.oralExamsImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
