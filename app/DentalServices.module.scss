@@ -1,4 +1,3 @@
-/* Services.module.scss */
 
 .servicesPage {
   padding: 2rem;
@@ -75,4 +74,47 @@
     font-size: 1rem;
     color: var(--text-color);
   }
+}
+.teethCleaningPage {
+  padding: 2rem;
+  background-color: #ffffff;
+  color: var(--text-color);
+  max-width: 800px;
+  margin: 2rem auto;
+  line-height: 1.6;
+}
+
+.teethCleaningTitle {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.teethCleaningContent {
+  font-size: 1.2rem;
+}
+
+.teethCleaningIntro {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.teethCleaningSectionTitle {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.teethCleaningText {
+  margin-bottom: 1.5rem;
+}
+
+.teethCleaningConclusion {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  text-align: center;
 }
