@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../../styles/ServicePage.module.css';
+import styles from '../../DentalServices.module.scss';
 
 const Xrays: React.FC = () => {
   return (
