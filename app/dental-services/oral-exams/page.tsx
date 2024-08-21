@@ -1,13 +1,25 @@
-import React from "react";
-import styles from "../../DentalServices.module.scss";
+import React from 'react';
+import Head from 'next/head'; 
+import styles from '../../DentalServices.module.scss';
 
 const OralExams: React.FC = () => {
   return (
-    <div className={styles.oralExamsPage}>
-      <h1 className={styles.oralExamsTitle}>
-        The Importance of Regular Oral Exams
-      </h1>
-      <div className={styles.oralExamsContent}>
+    <>
+      <Head>
+        <title>Oral Exams | Your Dental Office</title>
+        <meta name="description" content="Regular oral exams are crucial for maintaining your oral health. Learn what to expect during an oral exam and why it's important to schedule them regularly." />
+        <meta name="keywords" content="Oral Exams, Dental Exams, Oral Health, Preventive Dentistry" />
+        <meta name="author" content="Your Dental Office" />
+        <meta property="og:title" content="Oral Exams | Your Dental Office" />
+        <meta property="og:description" content="Regular oral exams are crucial for maintaining your oral health. Learn what to expect during an oral exam and why it's important to schedule them regularly." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/services/oral-exams" />
+        <meta property="og:image" content="https://yourdomain.com/images/oral-exam-1.jpg" />
+        <link rel="canonical" href="https://yourdomain.com/services/oral-exams" />
+      </Head>
+      <div className={styles.oralExamsPage}>
+        <h1 className={styles.oralExamsTitle}>The Importance of Regular Oral Exams</h1>
+        <div className={styles.oralExamsContent}>
         <p className={styles.oralExamsIntro}>
           Regular oral exams are a crucial part of maintaining not only your
           oral health but your overall well-being. Early detection of dental
@@ -64,6 +76,7 @@ const OralExams: React.FC = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

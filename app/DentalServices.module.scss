@@ -178,3 +178,69 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.xraysPage {
+  width: 100%;
+  min-height: 100vh;
+  padding: 3rem;
+  background-color: #ffffff;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.xraysTitle {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.xraysContent {
+  width: 100%;
+  max-width: 1200px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.xraysIntro {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.xraysSectionTitle {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.xraysText {
+  margin-bottom: 1.5rem;
+}
+
+.xraysConclusion {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.xraysImagePlaceholder {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xraysImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

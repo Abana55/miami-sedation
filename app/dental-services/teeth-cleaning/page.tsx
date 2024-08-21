@@ -1,13 +1,25 @@
-import React from "react";
-import styles from "../../DentalServices.module.scss";
+import React from 'react';
+import Head from 'next/head'; // Make sure Head is imported
+import styles from '../../DentalServices.module.scss';
 
 const TeethCleaning: React.FC = () => {
   return (
-    <div className={styles.teethCleaningPage}>
-      <h1 className={styles.teethCleaningTitle}>
-        Why Teeth Cleaning is Essential for Your Oral Health
-      </h1>
-      <div className={styles.teethCleaningContent}>
+    <>
+      <Head>
+        <title>Teeth Cleaning | Your Dental Office</title>
+        <meta name="description" content="Learn why regular teeth cleaning is essential for your oral health. Our professional teeth cleaning services help prevent cavities, gum disease, and maintain your smile." />
+        <meta name="keywords" content="Teeth Cleaning, Dental Cleaning, Oral Health, Preventive Dentistry" />
+        <meta name="author" content="Your Dental Office" />
+        <meta property="og:title" content="Teeth Cleaning | Your Dental Office" />
+        <meta property="og:description" content="Learn why regular teeth cleaning is essential for your oral health. Our professional teeth cleaning services help prevent cavities, gum disease, and maintain your smile." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/services/teeth-cleaning" />
+        <meta property="og:image" content="https://yourdomain.com/images/teeth-cleaning-1.jpg" />
+        <link rel="canonical" href="https://yourdomain.com/services/teeth-cleaning" />
+      </Head>
+      <div className={styles.teethCleaningPage}>
+        <h1 className={styles.teethCleaningTitle}>Why Teeth Cleaning is Essential for Your Oral Health</h1>
+        <div className={styles.teethCleaningContent}>
         <p className={styles.teethCleaningIntro}>
           Regular teeth cleaning is a fundamental part of maintaining your oral
           health. It helps prevent cavities, gum disease, and other oral issues,
@@ -62,6 +74,7 @@ const TeethCleaning: React.FC = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 
