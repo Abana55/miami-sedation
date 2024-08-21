@@ -76,23 +76,26 @@
   }
 }
 .teethCleaningPage {
+  width: 100%;
+  overflow-x: hidden; 
   padding: 2rem;
-  background-color: #ffffff;
-  color: var(--text-color);
-  max-width: 800px;
-  margin: 2rem auto;
-  line-height: 1.6;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1200px; 
 }
 
 .teethCleaningTitle {
   font-size: 2.5rem;
   color: var(--primary-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
 .teethCleaningContent {
+  width: 100%;
+  max-width: 1200px;
   font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 .teethCleaningIntro {
@@ -118,24 +121,45 @@
   margin-top: 2rem;
   text-align: center;
 }
+
+.teethCleaningImagePlaceholder {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teethCleaningImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 .oralExamsPage {
+  width: 100%;
+  overflow-x: hidden; 
   padding: 2rem;
-  background-color: #ffffff;
-  color: var(--text-color);
-  max-width: 800px;
-  margin: 2rem auto;
-  line-height: 1.6;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1200px; 
 }
 
 .oralExamsTitle {
   font-size: 2.5rem;
   color: var(--primary-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
 .oralExamsContent {
+  width: 100%;
+  max-width: 1200px;
   font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 .oralExamsIntro {
@@ -161,7 +185,7 @@
   margin-top: 2rem;
   text-align: center;
 }
-.teethCleaningImagePlaceholder,
+
 .oralExamsImagePlaceholder {
   width: 100%;
   height: auto;
@@ -171,7 +195,6 @@
   justify-content: center;
 }
 
-.teethCleaningImage,
 .oralExamsImage {
   max-width: 100%;
   height: auto;
@@ -181,11 +204,11 @@
 
 .xraysPage {
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-x: hidden; 
   padding: 2rem;
-  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+  box-sizing: border-box;
   margin: 0 auto;
-  max-width: 1200px; /* Optional: Control the maximum width */
+  max-width: 1200px; 
 }
 
 .xraysTitle {
