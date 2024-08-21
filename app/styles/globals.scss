@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Neue+Haas+Grotesk+Display+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
+
 :root {
   --primary-color: #0d283d; /* Deep Blue */
   --primary-color-dark: #0b2335; /* Darker version of Deep Blue */
@@ -6,8 +9,8 @@
   --accent-color: #d4d9de; /* Lux Grey */
   --background-color: #f5f5f5; /* Clean White */
   --text-color: #0d283d; /* Deep Blue */
-  --font-heading: 'Quattrocento', serif;
-  --font-body: 'Neue Haas Grotesk', sans-serif;
+  --font-heading: 'Quattrocento', serif; /* Font for headings */
+  --font-body: 'Neue Haas Grotesk Display Pro', sans-serif; /* Font for body text */
   --glass-background: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-shadow: rgba(0, 0, 0, 0.2);
@@ -17,7 +20,6 @@
   --submenu-hover-background: #f0f0f0;
   --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
 
 body {
   font-family: var(--font-body);
@@ -29,9 +31,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading); 
   color: var(--primary-color);
 }
+
 p {
   font-family: var(--font-body);
   color: var(--text-color);

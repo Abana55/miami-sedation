@@ -15,7 +15,7 @@ function ContactPage() {
       <div className={styles.row}>
         {/* Info Section */}
         <section className={styles.infoSection}>
-          <h2 className={styles.headerText}>We're so glad you're here!</h2>
+          <h2 className={styles.headerText}>WE'RE SO GLAD YOU'RE HERE!</h2>
           <p className={styles.additionalInfo}>
             This may be the first step in your oral health journey - And we want
             to make your experience with us <span>the best you've ever had.</span>
@@ -81,7 +81,9 @@ function ContactPage() {
 
         {/* Form Section */}
         <section className={styles.formSection}>
-          <ContactFormComponent />
+          <div className={styles.formContainer}>
+            <ContactFormComponent />
+          </div>
         </section>
       </div>
 
