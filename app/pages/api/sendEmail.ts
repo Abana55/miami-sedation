@@ -1,6 +1,7 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { name, email, phoneNumber, doctor, message, callbackDate, callbackTime, services } = req.body;
 
@@ -18,8 +19,8 @@ export default async function handler(req, res) {
 
     // Email content
     let mailOptions = {
-      from: process.env.EMAIL_USER, // Send email from your generic email address
-      to: process.env.OFFICE_EMAIL, // Send email to office email address
+      from: process.env.EMAIL_USER,
+      to: process.env.OFFICE_EMAIL,
       subject: 'New Consultation Request',
       text: `You have a new consultation request from:
       
@@ -33,8 +34,7 @@ export default async function handler(req, res) {
       Callback Date: ${callbackDate}
       Callback Time: ${callbackTime}
       
-      Selected Services: ${servicesList}
-      `,
+      Selected Services: ${servicesList}`,
     };
 
     try {

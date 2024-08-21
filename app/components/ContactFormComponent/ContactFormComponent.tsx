@@ -82,8 +82,6 @@ const ContactFormComponent = () => {
 
   return (
     <div className={styles["form-container"]}>
-      {" "}
-      {/* New container for the entire form */}
       <h2 className={styles["contact-form__title"]}>HOW CAN WE HELP YOU</h2>
       <div className={styles["contact-form__services"]}>
         <h3>Select Services</h3>
