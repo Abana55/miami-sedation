@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../DentalServices.module.scss";
 import Head from 'next/head';
+import ConsultationBanner from "@/app/components/ConsultationBanner/ConsultationBanner";
 
 
 const Xrays: React.FC = () => {
@@ -76,7 +77,9 @@ const Xrays: React.FC = () => {
           services or to schedule your next appointment.
         </p>
       </div>
+      <ConsultationBanner />
     </div>
+    
     </>
   );
 };

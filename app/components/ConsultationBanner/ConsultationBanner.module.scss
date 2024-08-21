@@ -1,65 +1,62 @@
 .banner {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 0; // No border radius for full-width rectangle
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    text-align: center;
-    margin: 2rem 0;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    width: 100vw; // Full view width
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 100%; /* Ensure the banner doesn't exceed the viewport */
+  box-sizing: border-box; /* Include padding in width calculation */
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
     left: 50%;
-    right: 50%;
-    margin-left: -50vw; // Center align full width
-  
-    // Adding a ripple background pattern using pseudo-elements
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 300%;
-      height: 300%;
-      background: radial-gradient(circle, var(--secondary-color) 1%, transparent 1%) center/15px 15px;
-      transform: translate(-50%, -50%);
-      opacity: 0.2;
-      z-index: 0;
-    }
-  
-    &Content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-  
-    .title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-  
-    .description {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-  
-    .contactButton {
-      background-color: var(--primary-color);
-      color: var(--background-color);
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
-      &:hover {
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-      }
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, var(--secondary-color) 1%, transparent 1%) center/15px 15px;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+    z-index: 0;
+  }
+
+  &Content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contactButton {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
     }
   }
-  
+}

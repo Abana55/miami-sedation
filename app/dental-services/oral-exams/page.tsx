@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head'; 
 import styles from '../../DentalServices.module.scss';
+import ContactBanner from '@/app/components/ContactBanner/ContactBanner';
+
 
 const OralExams: React.FC = () => {
   return (
@@ -75,6 +77,7 @@ const OralExams: React.FC = () => {
           today.
         </p>
       </div>
+      <ContactBanner/>
     </div>
     </>
   );
