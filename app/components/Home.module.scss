@@ -348,7 +348,11 @@
 
 .magazineSection {
   padding: 2rem;
-  background: linear-gradient(135deg, rgba(255, 192, 203, 0.4), rgba(173, 216, 230, 0.4));
+  background-color: var(--secondary-color); /* Gold Background */
+  background-image: url('/images/CONNECT/Pattern (1).jpg'), linear-gradient(135deg, rgba(255, 192, 203, 0.4), rgba(173, 216, 230, 0.4));
+  background-size: cover; /* Ensure the pattern covers the entire section */
+  background-repeat: no-repeat; /* Prevent the pattern from repeating */
+  background-position: center center; /* Center the pattern */
   border-radius: 20px;
   text-align: center;
 
@@ -402,7 +406,7 @@
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: blue;
+    background-color: var(--primary-color); /* Use the blue provided in the globals */
     color: #fff;
     border-radius: 5px;
     border: none;
@@ -410,7 +414,7 @@
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: darkblue;
+      background-color: var(--primary-color-dark); /* Darker blue on hover */
     }
   }
 }
