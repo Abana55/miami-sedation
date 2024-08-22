@@ -232,11 +232,11 @@ const Home = () => {
       </section> */}
 
       {/* Call to Action for Appointments */}
-      <section className={styles.callToAction}>
+      {/* <section className={styles.callToAction}>
         <h2 className={styles.sectionTitle}>Ready to Smile?</h2>
         <p>Book your next appointment with us today!</p>
         <button className={styles.ctaButton}>Book Appointment</button>
-      </section>
+      </section> */}
 
       <div className={styles.imageBanner}>
         <img
