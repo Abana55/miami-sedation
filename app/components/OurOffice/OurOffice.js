@@ -1,25 +1,13 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import styles from "./OurOffice.module.scss";
+import React, { useState } from 'react';
+import styles from './OurOffice.module.scss';
 
 const officeImages = [
-  {
-    src: "/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG",
-    alt: "Office Image 1",
-  },
-  {
-    src: "/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG",
-    alt: "Office Image 2",
-  },
-  {
-    src: "/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG",
-    alt: "Office Image 3",
-  },
-  {
-    src: "/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG",
-    alt: "Office Image 4",
-  },
+  { src: '/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG', alt: 'Office Image 1' },
+  { src: '/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG', alt: 'Office Image 2' },
+  { src: '/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG', alt: 'Office Image 3' },
+  { src: '/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG', alt: 'Office Image 4' },
 ];
 
 const OurOffice = () => {
@@ -34,55 +22,49 @@ const OurOffice = () => {
 
   return (
     <section className={styles.ourOffice}>
-      <h2 className={styles.sectionTitle}>THE OFFICE</h2>
-      <p className={styles.sectionBody}>See our office</p>
-      <div className={styles.imagesSection}>
-        {leftImages.map((image, index) => (
-          <div
-            key={index}
-            className={`${styles.imageContainer} ${
-              selectedImageIndex === index ? styles.enlarged : ""
-            }`}
-            onClick={() => toggleImageSize(index)}
-          >
-            <img
-              src={image.src}
-              alt={image.alt}
-              className={styles.officeImage}
-            />
+      <div className={styles.imagesContainer}>
+        <div className={styles.imagesSection}>
+          {leftImages.map((image, index) => (
             <div
-              className={`${styles.imageOverlay} ${
-                selectedImageIndex === index ? styles.noBorder : ""
-              }`}
+              key={index}
+              className={`${styles.imageContainer} ${selectedImageIndex === index ? styles.enlarged : ''}`}
+              onClick={() => toggleImageSize(index)}
             >
-              <span className={styles.plusIcon}>+</span>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className={styles.officeImage}
+              />
+              <div className={`${styles.imageOverlay} ${selectedImageIndex === index ? styles.noBorder : ''}`}>
+                <span className={styles.plusIcon}>+</span>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className={styles.imagesSection}>
-        {rightImages.map((image, index) => (
-          <div
-            key={index + 2}
-            className={`${styles.imageContainer} ${
-              selectedImageIndex === index + 2 ? styles.enlarged : ""
-            }`}
-            onClick={() => toggleImageSize(index + 2)}
-          >
-            <img
-              src={image.src}
-              alt={image.alt}
-              className={styles.officeImage}
-            />
+          ))}
+        </div>
+
+        <div className={styles.textSection}>
+          <h2 className={styles.sectionTitle}>THE OFFICE</h2>
+          <p className={styles.sectionBody}>See our office</p>
+        </div>
+
+        <div className={styles.imagesSection}>
+          {rightImages.map((image, index) => (
             <div
-              className={`${styles.imageOverlay} ${
-                selectedImageIndex === index + 2 ? styles.noBorder : ""
-              }`}
+              key={index + 2}
+              className={`${styles.imageContainer} ${selectedImageIndex === index + 2 ? styles.enlarged : ''}`}
+              onClick={() => toggleImageSize(index + 2)}
             >
-              <span className={styles.plusIcon}>+</span>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className={styles.officeImage}
+              />
+              <div className={`${styles.imageOverlay} ${selectedImageIndex === index + 2 ? styles.noBorder : ''}`}>
+                <span className={styles.plusIcon}>+</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
