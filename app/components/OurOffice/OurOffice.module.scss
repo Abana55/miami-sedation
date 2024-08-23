@@ -14,23 +14,23 @@
 
   .textSection {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 30%; 
+    width: 20%; 
     padding: 0 2rem;
 
     .sectionTitle {
       font-size: 2.5rem;
-      color: var(--secondary-color); 
+      color: var(--secondary-color);
       margin-bottom: 1rem;
-      font-family: var(--font-heading);
+      font-family: var(--font-heading); 
     }
 
     .sectionBody {
       font-size: 1.2rem;
-      color: var(--text-color);
+      color: var(--secondary-color);
     }
   }
 
@@ -39,30 +39,36 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 25%; 
-    gap: 1rem;
+    width: 30%; 
+    gap: 2rem;
+    position: relative; 
 
     .imageContainer {
       position: relative;
-      width: 100%;
-      height: 200px; 
+      width: 150%; 
+      height: 18.75rem; 
       cursor: pointer;
       overflow: hidden;
       border-radius: 0.5rem;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-out, width 0.3s ease-out; 
+      transition: width 0.2s ease-out, transform 0.2s ease-out, z-index 0.2s ease-out; /* Smooth transition */
       z-index: 1;
 
-      &.enlarged {
-        transform: scaleX(1.1); 
+      &:hover {
+        width: 700%; 
         z-index: 10;
+      }
+
+      &:hover ~ .imageContainer {
+        width: 130%; /* Shrink the adjacent image */
       }
 
       .officeImage {
         width: 100%;
-        height: 100%; 
-        object-fit: cover; 
-        border-radius: 0.5rem;
+        height: 100%; /* Ensure the image covers the container */
+        object-fit: cover; /* Ensure the image covers the entire container */
+        border-radius: 0.75rem;
+        transition: transform 0.3s ease-out; /* Smooth transition for the image */
       }
 
       .imageOverlay {
