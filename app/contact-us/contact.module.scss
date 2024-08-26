@@ -46,6 +46,8 @@
 
   .socialMediaLinks {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
 
     a {
       text-decoration: none;
@@ -79,7 +81,7 @@
 
 .connectBanner {
   width: 100%;
-  background-image: url('/images/CONTACT/1.png');
+  background-image: url('/images/CONNECT/Figma\ Pic.jpg');
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
