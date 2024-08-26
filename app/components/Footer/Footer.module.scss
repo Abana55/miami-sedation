@@ -1,105 +1,64 @@
-
 .footer {
-  background-color: #d9d9d9; 
-  padding: 2rem;
-  color: #333; 
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  text-align: left;
-  border-radius: 50px; 
-  margin: 2rem; 
-  position: relative;
-  background-image: url('/images/CONNECT/Pattern (1).jpg'), linear-gradient(rgba(217, 217, 217, 0.5), rgba(217, 217, 217, 0.5)); 
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center center; 
-  .footerLeft {
-    flex: 0 0 auto;
-    position: relative;
-    width: 96px; 
-    height: 96px; 
-  }
+  padding: 2rem;
+  background-color: #d9d9d9;
+  color: #333;
+  border-radius: 50px;
+  margin: 2rem;
 
-  .footerLogo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  .footerLeft {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .footerLogo {
+      max-width: 150px;
+    }
   }
 
   .footerRight {
-    flex: 1;
+    flex: 2;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding-left: 2rem;
-  }
+    align-items: flex-end;
+    gap: 1rem;
 
-  .footerSections {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem; /* Space between sections and bottom part */
-  }
+    .footerSections {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
 
-  .footerColumn {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-
-    h3 {
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-    }
-
-    p {
-      margin: 0.25rem 0;
-    }
-
-    a {
-      color: #333;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
+      .footerColumn {
+        flex: 1;
+        h3 {
+          margin-bottom: 0.5rem;
+        }
       }
     }
-  }
 
-  .footerButton {
-    background-color: #0070f3;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: #005bb5;
-    }
-  }
-
-  .footerBottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-
-    p {
-      margin: 0;
-    }
-
-    .footerSocialMedia {
+    .footerBottom {
       display: flex;
-      gap: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-size: 0.875rem;
 
-      .footerIcon {
-        font-size: 1.5rem;
-        color: #333;
-        transition: color 0.3s ease;
+      .footerSocialMedia {
+        display: flex;
+        gap: 1rem;
 
-        &:hover {
-          color: #555;
+        .footerIcon {
+          font-size: 2rem; /* Larger icon size */
+          color: var(--primary-color); /* Use the blue color from globals */
+          transition: color 0.3s;
+
+          &:hover {
+            color: var(--secondary-color);
+          }
         }
       }
     }
