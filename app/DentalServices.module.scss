@@ -53,15 +53,15 @@
   }
 
   &__image-inline {
-    width: 100%;
-    height: auto;
-    margin: 2rem 0;
+    width: 80%; /* Reduced width */
+    max-width: 800px; /* Max width to keep the image responsive */
+    margin: 1.5rem auto; /* Centering the image and adjusting margins */
     display: flex;
     align-items: center;
     justify-content: center;
 
     img {
-      max-width: 100%;
+      width: 100%; /* Ensuring the image fits within its container */
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

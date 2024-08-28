@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../../DentalServices.module.scss";
+import ConsultationBanner from "@/app/components/ConsultationBanner/ConsultationBanner";
 
 const TeethWhitening = () => {
   return (
@@ -43,7 +44,9 @@ const TeethWhitening = () => {
         className={`${styles["service-page"]} ${styles["service-page--cosmetic"]}`}
       >
         <h1 className={styles["service-page__header"]}>Teeth Whitening</h1>
+
         <section className={styles["service-page__content"]}>
+          {/* Introduction */}
           <article className={styles["service-page__articles"]}>
             <p className={styles["service-page__text"]}>
               Teeth whitening is a popular cosmetic dental procedure designed to
@@ -51,15 +54,12 @@ const TeethWhitening = () => {
               discoloration. It is a safe and effective way to achieve a
               brighter smile and boost your confidence.
             </p>
-            <div className={styles["service-page__image-inline"]}>
-              <img
-                src="/images/Teeth Whitening Cottonbro.jpg"
-                alt="Teeth Whitening Procedure"
-              />
-            </div>
+
+            {/* Types of Teeth Whitening */}
             <h2 className={styles["service-page__subheader"]}>
               Types of Teeth Whitening
             </h2>
+
             <section className={styles["service-page__text"]}>
               <h3>In-Office Teeth Whitening</h3>
               <p>
@@ -72,9 +72,10 @@ const TeethWhitening = () => {
               <div className={styles["service-page__image-inline"]}>
                 <img
                   src="/images/Teeth Whitening Karolina Grabowska.jpg"
-                  alt="Teeth Whitening Before and After"
+                  alt="Teeth Whitening Procedure"
                 />
               </div>
+
               <h3>Take-Home Whitening Kits</h3>
               <p>
                 Take-home whitening kits are custom-made for you by your
@@ -83,6 +84,7 @@ const TeethWhitening = () => {
                 results in a few weeks by wearing the trays for a specified
                 amount of time each day.
               </p>
+
               <h3>Over-the-Counter Whitening Products</h3>
               <p>
                 Over-the-counter whitening products, such as whitening
@@ -92,6 +94,8 @@ const TeethWhitening = () => {
                 to show results.
               </p>
             </section>
+
+            {/* Benefits of Teeth Whitening */}
             <h2 className={styles["service-page__subheader"]}>
               Benefits of Teeth Whitening
             </h2>
@@ -117,6 +121,8 @@ const TeethWhitening = () => {
                 alt="Patient with Whiter Teeth"
               />
             </div>
+
+            {/* Procedure Overview */}
             <h2 className={styles["service-page__subheader"]}>
               Procedure Overview
             </h2>
@@ -155,6 +161,8 @@ const TeethWhitening = () => {
                 stays bright and healthy.
               </p>
             </section>
+
+            {/* Why Choose Us */}
             <h2 className={styles["service-page__subheader"]}>
               Why Choose Us?
             </h2>
@@ -173,6 +181,9 @@ const TeethWhitening = () => {
             </Link>
           </article>
         </section>
+
+        {/* Consultation Banner */}
+        <ConsultationBanner />
       </main>
     </>
   );
