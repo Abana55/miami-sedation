@@ -1,266 +1,87 @@
-
-.servicesPage {
+.service-page {
+  width: 100%;
+  overflow-x: hidden;
   padding: 2rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1200px;
   background-color: var(--background-color);
   color: var(--text-color);
+  font-family: var(--font-body);
+
+  &--cosmetic {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
 
   &__header {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--primary-color);
     text-align: center;
     margin-bottom: 2rem;
   }
 
-  &__title {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-  }
-
-  &__category {
-    margin-bottom: 3rem;
-  }
-
-  &__categoryTitle {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-
-  &__cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  &__card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid var(--accent-color);
-    border-radius: 10px;
-    box-shadow: 0 8px 16px var(--box-shadow);
-    transition: transform 0.3s, box-shadow 0.3s;
-    overflow: hidden;
+  &__content {
     width: 100%;
-    max-width: 300px;
+    max-width: 1200px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px var(--box-shadow);
+  &__text {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-body);
+  }
+
+  &__subheader {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+  }
+
+  &__list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    &__item {
+      margin-bottom: 0.75rem;
     }
   }
 
-  &__cardContent {
-    padding: 1rem;
-    text-align: center;
-  }
-
-  &__cardImage {
+  &__image-inline {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid var(--accent-color);
+    height: auto;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
   }
 
-  &__cardTitle {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin: 1rem 0;
-  }
-
-  &__cardDescription {
+  &__contact-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
     font-size: 1rem;
-    color: var(--text-color);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--primary-color-dark);
+    }
   }
-}
-.teethCleaningPage {
-  width: 100%;
-  overflow-x: hidden; 
-  padding: 2rem;
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1200px; 
-}
-
-.teethCleaningTitle {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.teethCleaningContent {
-  width: 100%;
-  max-width: 1200px;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.teethCleaningIntro {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  font-weight: bold;
-}
-
-.teethCleaningSectionTitle {
-  font-size: 1.8rem;
-  color: var(--secondary-color);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.teethCleaningText {
-  margin-bottom: 1.5rem;
-}
-
-.teethCleaningConclusion {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.teethCleaningImagePlaceholder {
-  width: 100%;
-  height: auto;
-  margin: 2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.teethCleaningImage {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-.oralExamsPage {
-  width: 100%;
-  overflow-x: hidden; 
-  padding: 2rem;
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1200px; 
-}
-
-.oralExamsTitle {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.oralExamsContent {
-  width: 100%;
-  max-width: 1200px;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.oralExamsIntro {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  font-weight: bold;
-}
-
-.oralExamsSectionTitle {
-  font-size: 1.8rem;
-  color: var(--secondary-color);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.oralExamsText {
-  margin-bottom: 1.5rem;
-}
-
-.oralExamsConclusion {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.oralExamsImagePlaceholder {
-  width: 100%;
-  height: auto;
-  margin: 2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.oralExamsImage {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.xraysPage {
-  width: 100%;
-  overflow-x: hidden; 
-  padding: 2rem;
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1200px; 
-}
-
-.xraysTitle {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.xraysContent {
-  width: 100%;
-  max-width: 1200px;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.xraysIntro {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  font-weight: bold;
-}
-
-.xraysSectionTitle {
-  font-size: 1.8rem;
-  color: var(--secondary-color);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.xraysText {
-  margin-bottom: 1.5rem;
-}
-
-.xraysConclusion {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.xraysImagePlaceholder {
-  width: 100%;
-  height: auto;
-  margin: 2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.xraysImage {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
