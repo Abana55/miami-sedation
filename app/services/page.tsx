@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import ContactBanner from "../components/ContactBanner/ContactBanner";
@@ -51,7 +52,7 @@ const servicesList = {
     {
       title: "Fillings",
       description: "Restore your teeth with durable fillings.",
-      image: "/images/fallback-image.jpg", // Fallback image for missing images
+      image: "/images/fallback-image.jpg",
       link: "/dental-services/fillings",
     },
     {
@@ -70,6 +71,27 @@ const servicesList = {
 };
 
 const ServicesPage = () => {
+  useEffect(() => {
+    const cards = document.querySelectorAll(`.${styles.servicesPage__card}`);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles["servicesPage__card--visible"]);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -87,26 +109,35 @@ const ServicesPage = () => {
         <header className={styles.servicesPage__header}>
           <h1 className={styles.servicesPage__title}>Our Services</h1>
         </header>
+
+        {/* Cosmetic Treatments Section */}
         <section className={styles.servicesPage__category}>
           <h2 className={styles.servicesPage__categoryTitle}>
             Cosmetic Treatments
           </h2>
+          <p className={styles.servicesPage__description}>
+            Cosmetic dentistry focuses on enhancing the appearance of your
+            smile. These treatments can improve the color, shape, position, and
+            alignment of your teeth, giving you a more confident smile.
+          </p>
           <div className={styles.servicesPage__cards}>
             {servicesList.cosmetic.map((service, index) => (
               <Link
                 href={service.link}
                 key={index}
-                className={styles.servicesPage__card}
+                className={`${styles.servicesPage__card} ${styles["card-inner"]}`}
               >
                 <div className={styles.servicesPage__cardContent}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className={styles.servicesPage__cardImage}
-                  />
-                  <h3 className={styles.servicesPage__cardTitle}>
-                    {service.title}
-                  </h3>
+                  <div className={styles.servicesPage__cardImage}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className={styles["image-element"]}
+                    />
+                    <h3 className={styles.servicesPage__cardTitle}>
+                      {service.title}
+                    </h3>
+                  </div>
                   <p className={styles.servicesPage__cardDescription}>
                     {service.description}
                   </p>
@@ -118,26 +149,36 @@ const ServicesPage = () => {
             ))}
           </div>
         </section>
+
+        {/* Preventive Treatments Section */}
         <section className={styles.servicesPage__category}>
           <h2 className={styles.servicesPage__categoryTitle}>
             Preventive Treatments
           </h2>
+          <p className={styles.servicesPage__description}>
+            Preventive dentistry is the practice of caring for your teeth to
+            keep them healthy. This helps to avoid cavities, gum disease, enamel
+            wear, and more. Regular check-ups, cleanings, and screenings are
+            essential to maintaining your oral health.
+          </p>
           <div className={styles.servicesPage__cards}>
             {servicesList.preventive.map((service, index) => (
               <Link
                 href={service.link}
                 key={index}
-                className={styles.servicesPage__card}
+                className={`${styles.servicesPage__card} ${styles["card-inner"]}`}
               >
                 <div className={styles.servicesPage__cardContent}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className={styles.servicesPage__cardImage}
-                  />
-                  <h3 className={styles.servicesPage__cardTitle}>
-                    {service.title}
-                  </h3>
+                  <div className={styles.servicesPage__cardImage}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className={styles["image-element"]}
+                    />
+                    <h3 className={styles.servicesPage__cardTitle}>
+                      {service.title}
+                    </h3>
+                  </div>
                   <p className={styles.servicesPage__cardDescription}>
                     {service.description}
                   </p>
@@ -149,26 +190,36 @@ const ServicesPage = () => {
             ))}
           </div>
         </section>
+
+        {/* Restorative Treatments Section */}
         <section className={styles.servicesPage__category}>
           <h2 className={styles.servicesPage__categoryTitle}>
             Restorative Treatments
           </h2>
+          <p className={styles.servicesPage__description}>
+            Restorative dentistry is focused on repairing and restoring your
+            teeth to full health and functionality. Whether you're dealing with
+            cavities, missing teeth, or damaged teeth, these treatments will
+            help you regain a healthy smile.
+          </p>
           <div className={styles.servicesPage__cards}>
             {servicesList.restorative.map((service, index) => (
               <Link
                 href={service.link}
                 key={index}
-                className={styles.servicesPage__card}
+                className={`${styles.servicesPage__card} ${styles["card-inner"]}`}
               >
                 <div className={styles.servicesPage__cardContent}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className={styles.servicesPage__cardImage}
-                  />
-                  <h3 className={styles.servicesPage__cardTitle}>
-                    {service.title}
-                  </h3>
+                  <div className={styles.servicesPage__cardImage}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className={styles["image-element"]}
+                    />
+                    <h3 className={styles.servicesPage__cardTitle}>
+                      {service.title}
+                    </h3>
+                  </div>
                   <p className={styles.servicesPage__cardDescription}>
                     {service.description}
                   </p>
@@ -180,6 +231,7 @@ const ServicesPage = () => {
             ))}
           </div>
         </section>
+
         <ContactBanner />
       </main>
     </>
