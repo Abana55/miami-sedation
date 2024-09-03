@@ -1,15 +1,9 @@
-"use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 import ContactBanner from "../components/ContactBanner/ContactBanner";
+import ServiceCard from "../components/ServiceCard/ServiceCard"; 
 import styles from "./services.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTooth,
-  faSmile,
-  faShieldAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faTooth, faSmile, faShieldAlt } from "@fortawesome/free-solid-svg-icons";
 
 const servicesList = {
   cosmetic: [
@@ -86,27 +80,6 @@ const servicesList = {
 };
 
 const ServicesPage = () => {
-  useEffect(() => {
-    const cards = document.querySelectorAll(`.${styles.servicesPage__card}`);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles["servicesPage__card--visible"]);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    cards.forEach((card) => {
-      observer.observe(card);
-    });
-  }, []);
-
   return (
     <>
       <Head>
@@ -127,134 +100,39 @@ const ServicesPage = () => {
 
         {/* Cosmetic Treatments Section */}
         <section className={styles.servicesPage__category}>
-          <h2 className={styles.servicesPage__categoryTitle}>
-            Cosmetic Treatments
-          </h2>
+          <h2 className={styles.servicesPage__categoryTitle}>Cosmetic Treatments</h2>
           <p className={styles.servicesPage__description}>
-            Cosmetic dentistry focuses on enhancing the appearance of your
-            smile. These treatments can improve the color, shape, position, and
-            alignment of your teeth, giving you a more confident smile.
+            Cosmetic dentistry focuses on enhancing the appearance of your smile. These treatments can improve the color, shape, position, and alignment of your teeth, giving you a more confident smile.
           </p>
           <div className={styles.servicesPage__cards}>
             {servicesList.cosmetic.map((service, index) => (
-              <Link
-                href={service.link}
-                key={index}
-                className={`${styles.servicesPage__card} ${styles["card-inner"]}`}
-              >
-                <div className={styles.servicesPage__cardContent}>
-                  <FontAwesomeIcon
-                    icon={service.icon}
-                    className={styles.servicesPage__icon}
-                  />
-                  <div className={styles.servicesPage__cardImage}>
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className={styles["image-element"]}
-                    />
-                    <h3 className={styles.servicesPage__cardTitle}>
-                      {service.title}
-                    </h3>
-                  </div>
-                  <p className={styles.servicesPage__cardDescription}>
-                    {service.description}
-                  </p>
-                  <button className={styles.servicesPage__button}>
-                    Learn More
-                  </button>
-                </div>
-              </Link>
+              <ServiceCard key={index} service={service} />
             ))}
           </div>
         </section>
 
         {/* Preventive Treatments Section */}
         <section className={styles.servicesPage__category}>
-          <h2 className={styles.servicesPage__categoryTitle}>
-            Preventive Treatments
-          </h2>
+          <h2 className={styles.servicesPage__categoryTitle}>Preventive Treatments</h2>
           <p className={styles.servicesPage__description}>
-            Preventive dentistry is the practice of caring for your teeth to
-            keep them healthy. This helps to avoid cavities, gum disease, enamel
-            wear, and more. Regular check-ups, cleanings, and screenings are
-            essential to maintaining your oral health.
+            Preventive dentistry is the practice of caring for your teeth to keep them healthy. This helps to avoid cavities, gum disease, enamel wear, and more. Regular check-ups, cleanings, and screenings are essential to maintaining your oral health.
           </p>
           <div className={styles.servicesPage__cards}>
             {servicesList.preventive.map((service, index) => (
-              <Link
-                href={service.link}
-                key={index}
-                className={`${styles.servicesPage__card} ${styles["card-inner"]}`}
-              >
-                <div className={styles.servicesPage__cardContent}>
-                  <FontAwesomeIcon
-                    icon={service.icon}
-                    className={styles.servicesPage__icon}
-                  />
-                  <div className={styles.servicesPage__cardImage}>
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className={styles["image-element"]}
-                    />
-                    <h3 className={styles.servicesPage__cardTitle}>
-                      {service.title}
-                    </h3>
-                  </div>
-                  <p className={styles.servicesPage__cardDescription}>
-                    {service.description}
-                  </p>
-                  <button className={styles.servicesPage__button}>
-                    Learn More
-                  </button>
-                </div>
-              </Link>
+              <ServiceCard key={index} service={service} />
             ))}
           </div>
         </section>
 
         {/* Restorative Treatments Section */}
         <section className={styles.servicesPage__category}>
-          <h2 className={styles.servicesPage__categoryTitle}>
-            Restorative Treatments
-          </h2>
+          <h2 className={styles.servicesPage__categoryTitle}>Restorative Treatments</h2>
           <p className={styles.servicesPage__description}>
-            Restorative dentistry is focused on repairing and restoring your
-            teeth to full health and functionality. Whether you're dealing with
-            cavities, missing teeth, or damaged teeth, these treatments will
-            help you regain a healthy smile.
+            Restorative dentistry is focused on repairing and restoring your teeth to full health and functionality. Whether you're dealing with cavities, missing teeth, or damaged teeth, these treatments will help you regain a healthy smile.
           </p>
           <div className={styles.servicesPage__cards}>
             {servicesList.restorative.map((service, index) => (
-              <Link
-                href={service.link}
-                key={index}
-                className={`${styles.servicesPage__card} ${styles["card-inner"]}`}
-              >
-                <div className={styles.servicesPage__cardContent}>
-                  <FontAwesomeIcon
-                    icon={service.icon}
-                    className={styles.servicesPage__icon}
-                  />
-                  <div className={styles.servicesPage__cardImage}>
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className={styles["image-element"]}
-                    />
-                    <h3 className={styles.servicesPage__cardTitle}>
-                      {service.title}
-                    </h3>
-                  </div>
-                  <p className={styles.servicesPage__cardDescription}>
-                    {service.description}
-                  </p>
-                  <button className={styles.servicesPage__button}>
-                    Learn More
-                  </button>
-                </div>
-              </Link>
+              <ServiceCard key={index} service={service} />
             ))}
           </div>
         </section>

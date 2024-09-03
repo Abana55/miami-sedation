@@ -1,7 +1,6 @@
-// components/ServiceCard/ServiceCard.tsx
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
@@ -21,8 +20,9 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
+  const cardRef = useRef<HTMLAnchorElement | null>(null);
+
   useEffect(() => {
-    const card = document.querySelector(`.${styles.serviceCard}`);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -37,13 +37,20 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       }
     );
 
-    if (card) {
-      observer.observe(card);
+    const cardElement = cardRef.current;
+    if (cardElement) {
+      observer.observe(cardElement);
     }
+
+    return () => {
+      if (cardElement) {
+        observer.unobserve(cardElement);
+      }
+    };
   }, []);
 
   return (
-    <Link href={service.link} className={styles.serviceCard}>
+    <Link href={service.link} className={styles.serviceCard} ref={cardRef}>
       <div className={styles.cardContent}>
         <FontAwesomeIcon icon={service.icon} className={styles.icon} />
         <div className={styles.cardImage}>
