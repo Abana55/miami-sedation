@@ -1,9 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import styles from "./ServiceCard.module.scss";
 
 interface Service {
@@ -11,7 +9,6 @@ interface Service {
   description: string;
   image: string;
   link: string;
-  icon: IconDefinition;
 }
 
 interface ServiceCardProps {
@@ -20,9 +17,8 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
-  const cardRef = useRef<HTMLAnchorElement | null>(null);
-
   useEffect(() => {
+    const card = document.querySelector(`.${styles.serviceCard}`);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -37,27 +33,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       }
     );
 
-    const cardElement = cardRef.current;
-    if (cardElement) {
-      observer.observe(cardElement);
+    if (card) {
+      observer.observe(card);
     }
-
-    return () => {
-      if (cardElement) {
-        observer.unobserve(cardElement);
-      }
-    };
   }, []);
 
   return (
-    <Link href={service.link} className={styles.serviceCard} ref={cardRef}>
+    <Link href={service.link} className={styles.serviceCard}>
       <div className={styles.cardContent}>
-        <FontAwesomeIcon icon={service.icon} className={styles.icon} />
         <div className={styles.cardImage}>
           <img
             src={service.image}
             alt={service.title}
-            className={styles.imageElement}
+            className={styles["image-element"]}
           />
           <h3 className={styles.cardTitle}>{service.title}</h3>
         </div>

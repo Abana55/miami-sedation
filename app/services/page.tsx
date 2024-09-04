@@ -1,9 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import ContactBanner from "../components/ContactBanner/ContactBanner";
-import ServiceCard from "../components/ServiceCard/ServiceCard"; 
+import ServiceCard from "../components/ServiceCard/ServiceCard";
 import styles from "./services.module.scss";
-import { faTooth, faSmile, faShieldAlt } from "@fortawesome/free-solid-svg-icons";
 
 const servicesList = {
   cosmetic: [
@@ -13,14 +12,12 @@ const servicesList = {
         "Brighten your smile with our professional teeth whitening services.",
       image: "/images/5D10A688-BC5F-4D17-9DE7-25F1347CEF64.JPG",
       link: "/dental-services/teeth-whitening",
-      icon: faSmile,
     },
     {
       title: "Veneers",
       description: "Get the perfect smile with custom veneers.",
       image: "/images/Teeth Whitening Karolina Grabowska.jpg",
       link: "/dental-services/veneers",
-      icon: faSmile,
     },
   ],
   preventive: [
@@ -29,21 +26,18 @@ const servicesList = {
       description: "Maintain your oral health with regular teeth cleaning.",
       image: "/images/IMG_3696.JPG",
       link: "/dental-services/teeth-cleaning",
-      icon: faTooth,
     },
     {
       title: "Oral Exams",
       description: "Comprehensive oral exams to ensure your dental health.",
       image: "/images/Implant Photos Shvetsa.jpg",
       link: "/dental-services/oral-exams",
-      icon: faShieldAlt,
     },
     {
       title: "X-Rays",
       description: "Advanced dental x-rays for accurate diagnosis.",
       image: "/images/Shiny Diamond.jpg",
       link: "/dental-services/x-rays",
-      icon: faTooth,
     },
   ],
   restorative: [
@@ -53,28 +47,24 @@ const servicesList = {
         "Permanent solutions for missing teeth with dental implants.",
       image: "/images/dental-implants.jpg",
       link: "/dental-services/dental-implants",
-      icon: faTooth,
     },
     {
       title: "Fillings",
       description: "Restore your teeth with durable fillings.",
       image: "/images/fallback-image.jpg",
       link: "/dental-services/fillings",
-      icon: faTooth,
     },
     {
       title: "Crowns",
       description: "Protect and strengthen your teeth with crowns.",
       image: "/images/crowns.jpg",
       link: "/dental-services/crowns",
-      icon: faTooth,
     },
     {
       title: "Bridges",
       description: "Replace missing teeth with dental bridges.",
       image: "/images/bridges.jpg",
       link: "/dental-services/bridges",
-      icon: faTooth,
     },
   ],
 };

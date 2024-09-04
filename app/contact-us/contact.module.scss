@@ -26,8 +26,8 @@
   margin-bottom: 2rem;
 
   .headerText {
-    font-size: 5rem; /* Large font size */
-    font-weight: 100; /* Light font weight */
+    font-size: 5rem; 
+    font-weight: 100; 
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
   }
@@ -48,26 +48,30 @@
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
-
+    justify-content: center; 
+  
     a {
       text-decoration: none;
-      margin: 0 0.5rem;
+      margin: 0 1rem;
       font-size: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 3rem;
       height: 3rem;
-      background-color: var(--secondary-color);
+      background-color: var(--primary-color); 
       border-radius: 50%;
-      transition: background-color 0.3s;
-
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  
       &:hover {
-        background-color: var(--secondary-color-dark);
+        background-color: var(--secondary-color); /* Color on hover */
+        transform: translateY(-3px); /* Small lift effect on hover */
       }
-
+  
       .socialIcon {
-        color: #fff; /* White icon */
+        color: #fff; /* White icon for contrast */
+        font-size: 1.5rem; 
       }
     }
   }
