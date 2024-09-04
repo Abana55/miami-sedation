@@ -55,19 +55,18 @@ const ContactFormComponent = () => {
   
     try {
       const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+        'service_dcorcwd', 
+        'template_1sbzrj7', 
         {
-          from_name: formData.name, // Name from form
-          user_email: formData.email, // Email from form
-          user_phone: formData.phoneNumber, // Phone from form
-          doctor: formData.doctor, // Selected doctor from form
-          message: formData.message, // Message from form
-          callback_date: formData.callbackDate, // Callback date from form
-          callback_time: formData.callbackTime, // Callback time from form
-          services: formData.services.join(', '), // Selected services from form
-        },
-        process.env.NEXT_PUBLIC_PUBLIC_KEY // Public key from .env.local
+          from_name: formData.name, 
+          user_email: formData.email,
+          user_phone: formData.phoneNumber,
+          doctor: formData.doctor, 
+          message: formData.message, 
+          callback_date: formData.callbackDate, 
+          callback_time: formData.callbackTime, 
+          services: formData.services.join(', '), 
+        }
       );
   
       if (result.status === 200) {
