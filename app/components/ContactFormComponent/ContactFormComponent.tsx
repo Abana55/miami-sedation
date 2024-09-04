@@ -52,25 +52,24 @@ const ContactFormComponent = () => {
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+  
     try {
-      // Using Email.js to send the form data
       const result = await emailjs.send(
         process.env.NEXT_PUBLIC_SERVICE_ID!,
         process.env.NEXT_PUBLIC_TEMPLATE_ID!,
         {
-          from_name: formData.name,
-          user_email: formData.email,
-          user_phone: formData.phoneNumber,
-          doctor: formData.doctor,
-          message: formData.message,
-          callback_date: formData.callbackDate,
-          callback_time: formData.callbackTime,
-          services: formData.services.join(', '), // Join services as a string
+          from_name: formData.name, // Name from form
+          user_email: formData.email, // Email from form
+          user_phone: formData.phoneNumber, // Phone from form
+          doctor: formData.doctor, // Selected doctor from form
+          message: formData.message, // Message from form
+          callback_date: formData.callbackDate, // Callback date from form
+          callback_time: formData.callbackTime, // Callback time from form
+          services: formData.services.join(', '), // Selected services from form
         },
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_PUBLIC_KEY // Public key from .env.local
       );
-
+  
       if (result.status === 200) {
         setSuccess(true);
         setFormData({
