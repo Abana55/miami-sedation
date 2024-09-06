@@ -141,7 +141,7 @@ const Home = () => {
   <h1 className={styles.bannerTitle}>Connect with Us</h1>
   <div className={styles.bannerContent}>
     <p className={styles.bannerText}>
-      Follow us on social media to stay updated with our latest news and offers!
+      we look foward to meeting you.
     </p>
     <div className={styles.socialLinks}>
       <a
