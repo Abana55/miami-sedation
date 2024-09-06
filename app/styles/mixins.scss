@@ -1,0 +1,114 @@
+@use "variables" as *;
+
+// Breakpoints for responsiveness
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// Text Mixins
+@mixin header-text($size) {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: $size;
+
+  @include tablet {
+    font-size: $size * 1.2;
+  }
+
+  @include desktop {
+    font-size: $size * 1.4;
+  }
+}
+
+@mixin body-text($size, $color) {
+  font-family: var(--font-body);
+  font-size: $size;
+  color: $color;
+
+  @include tablet {
+    font-size: $size * 1.1;
+  }
+
+  @include desktop {
+    font-size: $size * 1.2;
+  }
+}
+
+// Button Mixins
+@mixin button-style($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten($bg-color, 10%);
+  }
+
+  @include tablet {
+    padding: 1rem 2rem;
+  }
+
+  @include desktop {
+    padding: 1.25rem 2.5rem;
+  }
+}
+
+// Glassmorphism Mixins
+@mixin glassmorphic {
+  background: var(--glass-background);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--box-shadow);
+}
+
+// Form Field Mixins
+@mixin form-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+
+  @include tablet {
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+  }
+
+  @include desktop {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+// Section Padding Mixins
+@mixin section-padding {
+  padding: 2rem 1rem;
+
+  @include tablet {
+    padding: 3rem 2rem;
+  }
+
+  @include desktop {
+    padding: 4rem 3rem;
+  }
+}
+
+// Divider Mixins
+@mixin divider {
+  border-bottom: 1px solid var(--secondary-color);
+  margin: 2rem 0;
+}
