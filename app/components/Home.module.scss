@@ -29,30 +29,16 @@
     text-align: center;
 
     .heroButton {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      color: #fff;
-      border-radius: 0.5rem;
-      padding: 1rem 2rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-color: rgba(255, 255, 255, 0.3);
-      }
+      @include glassmorphism(rgba(255, 255, 255, 0.1));
+      @include button-style(rgba(255, 255, 255, 0.1), #fff, rgba(255, 255, 255, 0.2), #fff);
     }
   }
 }
 
 .welcomeSection {
-  display: flex;
-  align-items: center;
-  padding: 2rem;
+  @include section-padding(2rem);
   background-color: var(--background-color);
+  @include flex-center;
 
   .welcomeText {
     flex: 1;
@@ -71,44 +57,8 @@
     }
 
     .welcomeButton {
-      position: relative;
-      overflow: hidden;
-      background: transparent;
-      border: 1px solid var(--primary-color);
-      color: var(--primary-color);
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      text-align: center;
-      width: 10rem;
-      max-width: 200px;
-      border-radius: 2rem;
-      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      @include button-style(transparent, var(--primary-color), var(--primary-color), #fff, 0.5rem 1rem, 1rem);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      margin-top: 1rem;
-
-      &:hover {
-        background-color: var(--primary-color); // Match primary color for background on hover
-        color: #ffffff; // Change text color to white on hover
-      }
-
-      .ripple {
-        position: absolute;
-        border-radius: 50%;
-        transform: scale(0);
-        animation: ripple 0.6s linear;
-        background-color: rgba(255, 255, 255, 0.7); // Ripple color
-        pointer-events: none;
-        width: 0;
-        height: 0;
-      }
-
-      @keyframes ripple {
-        to {
-          transform: scale(4);
-          opacity: 0;
-        }
-      }
     }
   }
 
@@ -119,17 +69,14 @@
     img {
       max-width: 100%;
       border-radius: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
     }
   }
 }
 
 .missionStatement {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 2rem 0;
+  @include section-padding(2rem);
+  @include flex-center(column);
 
   .bannerImage {
     width: 90%;
@@ -144,24 +91,24 @@
     align-items: center;
     text-align: center;
     width: 50%;
-    color: var(--secondary-color); /* Use the muted gold color from the global theme */
+    color: var(--secondary-color);
 
     .goldLine {
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: var(--secondary-color); /* Use the muted gold color from the global theme */
+      color: var(--secondary-color);
     }
 
     .sectionContent {
       margin: 1rem 0;
       line-height: 1.6;
-      color: var(--secondary-color); /* Apply the muted gold color to the paragraphs */
+      color: var(--secondary-color);
     }
   }
 }
 
 .services, .teamSection, .testimonials, .callToAction {
-  padding: 2rem;
+  @include section-padding(2rem);
   text-align: center;
 
   .sectionTitle {
@@ -185,11 +132,7 @@
 
     .serviceItem {
       flex: 1 1 30%;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 0.5rem;
+      @include glassmorphism(rgba(255, 255, 255, 0.1));
       padding: 1rem;
       text-align: left;
 
@@ -205,7 +148,6 @@
     }
   }
 }
-
 .teamSection {
   .teamContent {
     display: flex;
@@ -226,7 +168,6 @@
         font-weight: 100;
         font: var(font-heading);
         text-align: left;
-
       }
 
       .articleContent {
@@ -239,18 +180,17 @@
 
 .connectBanner {
   background-image: url('../../public/images/CONNECT/Bana\ Website\ Mock\ Up\ Foto.png');
-  background-size: cover; 
-  background-position: right center; 
+  background-size: cover;
+  background-position: right center;
   background-repeat: no-repeat;
-  padding: 20px;
+  @include section-padding(20px);
   text-align: center;
-  color: var(--secondary-color); 
+  color: var(--secondary-color);
   position: relative;
-  margin: 1.25rem; 
-  border-radius: 1.25rem; 
-  overflow: hidden; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  align-items: start;
+  margin: 1.25rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  @include glassmorphism(var(--glass-background), 10px, var(--glass-border), var(--box-shadow));
 }
 
 .bannerTitle {
@@ -280,43 +220,18 @@
 
 .socialLink {
   color: #fff;
-  font-size: 1.5em; 
-  transition: color 0.3s ease;
-}
-
-.socialLink:hover {
-  color: var(--secondary-color); 
-}
-
-.contactInfo {
-  margin-top: 20px;
-}
-
-.officeNumber {
-  color: var(--secondary-color); 
   font-size: 1.5em;
-  margin-bottom: 10px;
-}
+  transition: color 0.3s ease;
 
-.scheduleButton {
-  color: #fff;
-  background-color: var(--secondary-color);
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.scheduleButton:hover {
-  background-color: #ff9900; 
+  &:hover {
+    color: var(--secondary-color);
+  }
 }
 
 .contactInfo {
-  background: var(--glass-background);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--box-shadow);
-  backdrop-filter: blur(10px);
-  padding: 20px;
+  @include section-padding(20px);
+  margin-top: 20px;
+  @include glassmorphism(var(--glass-background), 10px, var(--glass-border), var(--box-shadow));
   border-radius: 10px;
   max-width: 600px;
   margin: 0 auto;
@@ -334,44 +249,28 @@
 }
 
 .scheduleButton {
-  display: inline-block;
-  background-color: var(--secondary-color);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  @include button-style(var(--secondary-color), #fff, var(--secondary-color-dark), #fff);
   margin-left: 20px;
 }
 
-.scheduleButton:hover {
-  background-color: var(--secondary-color-dark);
-}
-
-
 .magazineSection {
-  padding: 2rem;
-  background-color: var(--secondary-color); /* Gold Background */
+  @include section-padding(2rem);
+  background-color: var(--secondary-color);
   background-image: url('/images/CONNECT/Pattern (1).jpg'), linear-gradient(135deg, rgba(255, 192, 203, 0.4), rgba(173, 216, 230, 0.4));
-  background-size: cover; /* Ensure the pattern covers the entire section */
-  background-repeat: no-repeat; /* Prevent the pattern from repeating */
-  background-position: center center; /* Center the pattern */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   border-radius: 20px;
   text-align: center;
 
   .glassmorphicContainer {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.3); /* Glassmorphism effect */
-    border-radius: 20px;
+    @include glassmorphism(rgba(255, 255, 255, 0.3), 10px);
     padding: 2rem;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      @include box-shadow(0 6px 15px rgba(0, 0, 0, 0.2));
     }
   }
 
@@ -406,29 +305,14 @@
   }
 
   .learnMoreButton {
-    display: inline-block;
+    @include button-style(var(--primary-color), #fff, var(--primary-color-dark), #fff);
     margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color); /* Use the blue provided in the globals */
-    color: #fff;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: var(--primary-color-dark); /* Darker blue on hover */
-    }
   }
 }
 
 .testimonials {
   .testimonialItem {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
+    @include glassmorphism(rgba(255, 255, 255, 0.1), 10px);
     padding: 1rem;
     margin-bottom: 1rem;
     color: var(--text-color);
@@ -444,21 +328,8 @@
 
 .callToAction {
   .ctaButton {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: #fff;
-    border-radius: 0.5rem;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
+    @include glassmorphism(rgba(255, 255, 255, 0.1), 10px);
+    @include button-style(rgba(255, 255, 255, 0.1), #fff, rgba(255, 255, 255, 0.2), #fff);
   }
 }
 
@@ -474,7 +345,7 @@
 }
 
 .imageBanner {
-  margin-top: 2rem; /* Add spacing above the banner */
+  margin-top: 2rem;
   text-align: center;
 
   img {
