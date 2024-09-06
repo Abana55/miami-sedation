@@ -1,6 +1,8 @@
-@use "variables" as *;
-
-// Breakpoints for responsiveness
+@mixin mobile {
+    @media (max-width: 428px) {
+      @content;
+    }
+  }
 @mixin tablet {
   @media (min-width: 768px) {
     @content;
@@ -43,28 +45,34 @@
   }
 }
 
-// Button Mixins
 @mixin button-style($bg-color, $text-color) {
-  background-color: $bg-color;
-  color: $text-color;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  font-family: var(--font-body);
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: lighten($bg-color, 10%);
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  
+   
+    @if type-of($bg-color) == 'color' {
+      &:hover {
+        background-color: lighten($bg-color, 10%);
+      }
+    } @else {
+      &:hover {
+        background-color: var(--primary-color-dark); 
+      }
+    }
+  
+    @include tablet {
+      padding: 1rem 2rem;
+    }
+  
+    @include desktop {
+      padding: 1.25rem 2.5rem;
+    }
   }
-
-  @include tablet {
-    padding: 1rem 2rem;
-  }
-
-  @include desktop {
-    padding: 1.25rem 2.5rem;
-  }
-}
 
 // Glassmorphism Mixins
 @mixin glassmorphic {
