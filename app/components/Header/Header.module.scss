@@ -58,8 +58,9 @@
     gap: 1rem;
     margin-right: 2rem;
 
+
     &__button {
-      @include button-style(var(--primary-color), var(--primary-color), var(--primary-color), #fff, 0.75rem, 1.5rem, 1rem);
+      @include my-button-style();
     }
 
     &__phone {
