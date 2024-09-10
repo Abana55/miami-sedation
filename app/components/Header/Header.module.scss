@@ -59,11 +59,11 @@
     margin-right: 2rem;
 
     &__button {
-      @include button-style(var(--primary-color), var(--primary-color), var(--primary-color), #fff, 0.75rem 1.5rem, 1rem);
+      @include button-style(var(--primary-color), var(--primary-color), var(--primary-color), #fff, 0.75rem, 1.5rem, 1rem);
     }
 
     &__phone {
-      @include button-style(var(--primary-color), var(--primary-color), lighten(var(--primary-color), 10%), #fff, 0.75rem 1.5rem, 1rem);
+      @include button-style(#0d283d, #0d283d, lighten(#0d283d, 10%), #fff, 0.75rem, 1.5rem, 1rem);
       @include flex-center(row, center, center);
     }
   }
@@ -72,7 +72,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    @include glassmorphism();
+    @include glassmorphism(rgba(255, 255, 255, 0.1));
     width: 25vw;
     max-height: 0;
     overflow: hidden;

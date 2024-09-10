@@ -1,3 +1,4 @@
+@use '../styles/mixins.scss' as *;
 
 .container {
   padding: 0;
@@ -264,7 +265,7 @@
   text-align: center;
 
   .glassmorphicContainer {
-    @include glassmorphism(rgba(255, 255, 255, 0.3), 10px);
+    @include glassmorphism(rgba(255, 255, 255, 0.1));
     padding: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
