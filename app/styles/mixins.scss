@@ -1,4 +1,4 @@
-// Media Query Mixins
+
 @mixin mobile {
     @media (max-width: 428px) {
       @content;
@@ -6,7 +6,7 @@
   }
   
   @mixin tablet {
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 1279px) {
       @content;
     }
   }
@@ -17,7 +17,7 @@
     }
   }
   
-  // Text Mixins
+
   @mixin header-text($size) {
     font-family: var(--font-heading);
     color: var(--primary-color);
@@ -25,11 +25,11 @@
     font-size: $size;
   
     @include tablet {
-      font-size: calc(#{$size} * 1.2); // Fixed: using calc for arithmetic in SCSS
+      font-size: 2rem; 
     }
   
     @include desktop {
-      font-size: calc(#{$size} * 1.4); // Fixed: using calc for arithmetic in SCSS
+      font-size: 2.5rem; 
     }
   }
   
@@ -39,25 +39,27 @@
     color: $color;
   
     @include tablet {
-      font-size: calc(#{$size} * 1.1); // Fixed: using calc for arithmetic in SCSS
+      font-size: 1.5rem; 
     }
   
     @include desktop {
-      font-size: calc(#{$size} * 1.2); // Fixed: using calc for arithmetic in SCSS
+      font-size: 2rem;
     }
   }
   
+
   @mixin button-style(
     $bg-color,
     $text-color,
     $hover-bg-color: lighten($bg-color, 10%),
     $hover-text-color: #fff,
-    $padding: 0.75rem 1.5rem,
+    $padding-top-bottom: 0.75rem,
+    $padding-left-right: 1.5rem,
     $font-size: 1rem
   ) {
     background-color: $bg-color;
     color: $text-color;
-    padding: $padding;
+    padding: $padding-top-bottom $padding-left-right;
     font-size: $font-size;
     border-radius: 5px;
     font-family: var(--font-body);
@@ -70,15 +72,17 @@
     }
   
     @include tablet {
-      padding: calc($padding * 1.2);
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
     }
   
     @include desktop {
-      padding: calc($padding * 1.5);
+      padding: 1.25rem 2.5rem; 
+      font-size: 1.4rem; 
     }
   }
   
-  // Glassmorphism Mixin
+ 
   @mixin glassmorphism($background: rgba(255, 255, 255, 0.1), $blur: 10px, $border: rgba(255, 255, 255, 0.2), $shadow: 0 4px 6px rgba(0, 0, 0, 0.1)) {
     background: $background;
     backdrop-filter: blur($blur);
@@ -86,7 +90,7 @@
     box-shadow: $shadow;
   }
   
-  // Form Field Mixin
+
   @mixin form-field {
     width: 100%;
     padding: 0.75rem 1rem;
@@ -96,41 +100,40 @@
     font-size: 1rem;
   
     @include tablet {
-      padding: 1rem 1.25rem;
-      font-size: 1.1rem;
+      padding: 1rem 1.25rem; 
+      font-size: 1.1rem; 
     }
   
     @include desktop {
-      padding: 1.25rem 1.5rem;
-      font-size: 1.2rem;
+      padding: 1.25rem 1.5rem; 
+      font-size: 1.2rem; 
     }
   }
   
-  // Section Padding Mixin
+
   @mixin section-padding($padding: 2rem) {
     padding: $padding 1rem;
   
     @include tablet {
-      padding: calc(#{$padding} * 1.5) 2rem; // Fixed: using calc for arithmetic in SCSS
+      padding: 3rem 2rem;
     }
   
     @include desktop {
-      padding: calc(#{$padding} * 2) 3rem; // Fixed: using calc for arithmetic in SCSS
+      padding: 4rem 3rem; 
     }
   }
   
-  // Divider Mixin
+
   @mixin divider {
     border-bottom: 1px solid var(--secondary-color);
     margin: 2rem 0;
   }
   
-  // Box Shadow Mixin
+
   @mixin box-shadow($shadow: 0 4px 6px rgba(0, 0, 0, 0.1)) {
     box-shadow: $shadow;
   }
-  
-  // Flexbox Centering Mixin
+
   @mixin flex-center($direction: row, $justify: center, $align: center) {
     display: flex;
     flex-direction: $direction;
@@ -138,7 +141,7 @@
     align-items: $align;
   }
   
-  // Sticky Header Mixin
+
   @mixin sticky-header {
     position: sticky;
     top: 0;
