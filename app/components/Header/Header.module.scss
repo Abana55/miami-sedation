@@ -83,16 +83,21 @@
     position: absolute;
     top: 100%;
     left: 0;
-    @include glassmorphism();
-    width: 25vw;
+    width: 100vw; 
     max-height: 0;
-    overflow: hidden;
     opacity: 0;
     visibility: hidden;
+    overflow: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9); 
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
     &--open {
-      max-height: 20rem;
+      max-height: 15rem; 
       opacity: 1;
       visibility: visible;
     }

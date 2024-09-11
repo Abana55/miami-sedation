@@ -31,7 +31,7 @@ const ContactFormComponent = () => {
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Initialize EmailJS with the public key
+  
   useEffect(() => {
     emailjs.init("Zcyqv-C11KRN3W1ti"); // Replace with your actual public key
   }, []);
