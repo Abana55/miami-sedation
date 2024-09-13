@@ -33,7 +33,7 @@ const ContactFormComponent = () => {
 
   
   useEffect(() => {
-    emailjs.init("Zcyqv-C11KRN3W1ti"); // Replace with your actual public key
+    emailjs.init("Zcyqv-C11KRN3W1ti"); 
   }, []);
 
   const handleChange = (
@@ -61,16 +61,16 @@ const ContactFormComponent = () => {
 
     try {
       const result = await emailjs.send(
-        "service_dcorcwd", // Replace with your actual Service ID
-        "template_1sbzrj7", // Replace with your actual Template ID
+        "service_dcorcwd", 
+        "template_1sbzrj7", 
         {
-          from_name: formData.name, // Name from form
-          user_email: formData.email, // Email from form
-          user_phone: formData.phoneNumber, // Phone from form
-          doctor: formData.doctor, // Doctor from form
-          message: formData.message, // Message from form
-          callback_date: formData.callbackDate, // Callback date from form
-          callback_time: formData.callbackTime, // Callback time from form
+          from_name: formData.name,
+          user_email: formData.email, 
+          user_phone: formData.phoneNumber, 
+          doctor: formData.doctor,
+          message: formData.message, 
+          callback_date: formData.callbackDate, 
+          callback_time: formData.callbackTime, 
           services: formData.services.join(", "), // Selected services from form
         }
       );
