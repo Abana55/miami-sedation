@@ -39,10 +39,11 @@
 .welcomeSection {
   @include section-padding(2rem);
   background-color: var(--background-color);
-  @include flex-center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 
   .welcomeText {
-    flex: 1;
     text-align: center;
 
     .welcomeTitle {
@@ -64,8 +65,8 @@
   }
 
   .welcomeImage {
-    flex: 1;
     text-align: center;
+
 
     img {
       max-width: 100%;
@@ -77,7 +78,9 @@
 
 .missionStatement {
   @include section-padding(2rem);
-  @include flex-center(column);
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
 
   .bannerImage {
     width: 90%;
@@ -87,16 +90,14 @@
   }
 
   .textContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     width: 50%;
     color: var(--secondary-color);
+    text-align: center;
 
     .goldLine {
       font-size: 2rem;
       margin-bottom: 1rem;
+      font-weight: 100;
       color: var(--secondary-color);
     }
 
@@ -126,13 +127,12 @@
 
 .services {
   .servicesList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
 
+
     .serviceItem {
-      flex: 1 1 30%;
       @include glassmorphism(rgba(255, 255, 255, 0.1));
       padding: 1rem;
       text-align: left;
@@ -141,7 +141,6 @@
         font-size: 1.5rem;
         color: var(--primary-color);
       }
-
       .serviceDescription {
         font-size: 1rem;
         color: var(--text-color);
@@ -151,24 +150,24 @@
 }
 .teamSection {
   .teamContent {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
 
     .team {
-      flex: 1;
+      text-align: center;
     }
 
-    .articleSection {
-      flex: 1;
+   .articleSection {
+      text-align: left;
 
+      
       .articleTitle {
         font-size: 3rem;
         color: var(--secondary-color);
         margin-bottom: 1rem;
         font-weight: 100;
         font: var(font-heading);
-        text-align: left;
       }
 
       .articleContent {
