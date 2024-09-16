@@ -11,37 +11,6 @@
   padding: 1rem;
   z-index: 1001;
 
-  &-hamburger {
-    order: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-    margin-left: 2rem;
-
-    &__line {
-      width: 2rem;
-      height: 0.25rem;
-      background-color: var(--primary-color);
-      transition: all 0.3s ease;
-
-      &--open-top {
-        transform: rotate(45deg) translate(0.4rem, 0.4rem);
-      }
-
-      &--open-middle {
-        opacity: 0;
-      }
-
-      &--open-bottom {
-        transform: rotate(-45deg) translate(0.4rem, -0.4rem);
-      }
-    }
-  }
-
   &-logo {
     order: 2;
     font-size: 1.5rem;
@@ -61,7 +30,34 @@
       }
     }
   }
-
+  .header-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    z-index: 1002;
+  
+    &__line {
+      width: 100%;
+      height: 0.25rem;
+      background-color: var(--primary-color);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+  
+    &__line--open-top {
+      transform: rotate(45deg) translate(0.4rem, 0.4rem);
+    }
+  
+    &__line--open-middle {
+      opacity: 0;
+    }
+  
+    &__line--open-bottom {
+      transform: rotate(-45deg) translate(0.4rem, -0.4rem);
+    }
+  }
   .header-end {
     order: 3;
     display: flex;

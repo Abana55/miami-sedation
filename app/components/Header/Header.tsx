@@ -12,6 +12,9 @@ const Header: React.FC = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const closeMenu = () => {
+    setIsMenuOpen(false); 
+  };
 
   return (
     <header className={styles.header}>
