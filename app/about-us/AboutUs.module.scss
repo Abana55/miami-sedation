@@ -1,43 +1,101 @@
-/* AboutUs.module.scss */
-
 .aboutContainer {
-  padding: 2rem;
+  padding: 3rem;
   background-color: var(--background-color);
   color: var(--text-color);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 }
 
 .title {
   text-align: center;
   color: var(--primary-color);
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 }
 
 .subtitle {
   text-align: center;
   color: var(--primary-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 }
 
 .text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75;
+  margin-bottom: 3rem;
+  color: var(--secondary-color);
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 }
 
 .teamMember {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
   align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--light-background); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
   margin-bottom: 3rem;
-  flex-wrap: wrap;
-  
+
   &:nth-child(even) .teamText {
-    order: -1;
+    background-color: var(--primary-color-light); 
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; 
+    text-align: center;
+
+    &:nth-child(even) .teamText {
+      order: unset;
+    }
   }
 }
 
 .image {
   border-radius: 10px;
   margin: 0 1.5rem;
+  max-width: 200px;
+
+  @media (max-width: 768px) {
+    margin: 0 auto 1rem;
+    width: 150px;
+    height: auto;
+  }
+
+  @media (max-width: 480px) {
+    width: 120px;
+  }
 }
 
 .teamText {
@@ -48,13 +106,30 @@
     font-size: 1.75rem;
     color: var(--secondary-color);
     margin-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.25rem;
+    }
   }
 
   .position {
     font-weight: bold;
+    margin-bottom: 0.5rem;
   }
 
   .bio {
     margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
   }
 }
