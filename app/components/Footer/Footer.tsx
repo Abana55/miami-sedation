@@ -10,12 +10,13 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerLeft}>
         <Image
-          src="/images/LOGO ICON/Bana Website Logo.png" 
-          alt="Company Logo"
-          layout="responsive"
-          width={96}
-          height={96}
-          className={styles.footerLogo}
+          src="/images/LOGO ICON/Bana Website Logo.png"
+          alt="Bana Website Logo"
+          width={100}   
+          height={160}  
+          className={styles["logo-image"]}
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className={styles.footerRight}>
