@@ -36,12 +36,12 @@ const Header: React.FC = () => {
         ></span>
       </div>
       <div className={styles["header-logo"]}>
-        <Link href="/" passHref>
+      <Link href="/" passHref>
           <Image
             src="/images/1x/3Artboard 1_1.png"
             alt="Bana Dental Design Logo"
-            width={124} // Corresponding to 6rem (16px * 6 = 96px)
-            height={124} // Corresponding to 6rem (16px * 6 = 96px)
+            width={124}
+            height={124}
             className={styles["header-logo__img"]}
           />
         </Link>
@@ -62,17 +62,17 @@ const Header: React.FC = () => {
         }`}
       >
         <div className={styles["header-nav__container"]}>
-          <Link href="/about-us" passHref>
+          <Link href="/about-us" passHref onClick={closeMenu}>
             <MyButton className={styles["header-nav__button"]}>
               About Us
             </MyButton>
           </Link>
-          <Link href="/contact-us" passHref>
+          <Link href="/contact-us" passHref onClick={closeMenu}>
             <MyButton className={styles["header-nav__button"]}>
               Contact Us
             </MyButton>
           </Link>
-          <Link href="/services" passHref>
+          <Link href="/services" passHref onClick={closeMenu}>
             <MyButton className={styles["header-nav__button"]}>
               Services
             </MyButton>

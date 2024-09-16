@@ -47,7 +47,7 @@
     }
   
     &__line--open-top {
-      transform: rotate(45deg) translate(0.4rem, 0.4rem);
+      transform: rotate(45deg) translate(0.5rem, 0.5rem);
     }
   
     &__line--open-middle {
@@ -55,7 +55,7 @@
     }
   
     &__line--open-bottom {
-      transform: rotate(-45deg) translate(0.4rem, -0.4rem);
+      transform: rotate(-45deg) translate(0.5rem, -0.5rem);
     }
   }
   .header-end {
