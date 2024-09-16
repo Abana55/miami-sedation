@@ -43,6 +43,7 @@ const Header: React.FC = () => {
             width={124}
             height={124}
             className={styles["header-logo__img"]}
+            priority 
           />
         </Link>
       </div>
