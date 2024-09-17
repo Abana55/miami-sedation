@@ -40,7 +40,7 @@ const TeethWhitening = () => {
         <title>Teeth Whitening | Bana Dental Design</title>
         <meta
           name="description"
-          content="Learn about professional teeth whitening services provided by Bana Dental Design. Achieve a brighter smile with our safe and effective teeth whitening options."
+          content="Discover professional teeth whitening services at Bana Dental Design. Achieve a radiant smile with our customized whitening treatments."
         />
         <meta
           name="keywords"
@@ -53,7 +53,7 @@ const TeethWhitening = () => {
         />
         <meta
           property="og:description"
-          content="Learn about professional teeth whitening services provided by Bana Dental Design. Achieve a brighter smile with our safe and effective teeth whitening options."
+          content="Learn about professional teeth whitening services at Bana Dental Design. Brighten your smile with our expert care."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -76,9 +76,9 @@ const TeethWhitening = () => {
           <div className={styles["service-page__hero-overlay"]}>
             <h1 className={styles["service-page__header"]}>Teeth Whitening</h1>
             <p className={styles["service-page__intro-text"]}>
-              Brighten your smile with our professional teeth whitening
-              services. Safe, effective, and designed to give you the confidence
-              to smile again.
+              Brighten your smile with our safe, professional, and effective
+              teeth whitening services. Transform your smile and boost your
+              confidence with the brilliance it deserves.
             </p>
             <Link href="#contact" passHref>
               <button className={styles["service-page__cta-button"]}>
@@ -87,7 +87,7 @@ const TeethWhitening = () => {
             </Link>
           </div>
           <img
-            src="/images/Shiny Diamond.jpg"
+            src="/images/TeethWhiteningHero.jpg"
             alt="Teeth Whitening Hero"
             className={styles["service-page__hero-image"]}
           />
@@ -101,14 +101,15 @@ const TeethWhitening = () => {
           <div className={styles["service-page__two-column"]}>
             <img
               src="/images/teeth-whitening-diagram.jpg"
-              alt="Teeth Whitening Diagram"
+              alt="Teeth Whitening Process"
               className={styles["service-page__image"]}
             />
             <p className={styles["service-page__text"]}>
-              Teeth whitening is a cosmetic dental procedure that lightens the
-              color of your teeth and removes stains caused by food, drinks,
-              smoking, or aging. It is one of the most effective ways to achieve
-              a bright, white smile.
+              Teeth whitening is a non-invasive cosmetic dental procedure
+              designed to lighten the color of teeth by removing stains and
+              discoloration caused by coffee, tea, smoking, and aging. At Bana
+              Dental Design, we offer state-of-the-art whitening options to help
+              you achieve a radiant smile.
             </p>
           </div>
         </section>
@@ -116,19 +117,20 @@ const TeethWhitening = () => {
         {/* Types of Teeth Whitening */}
         <section className={styles["service-page__types"]}>
           <h2 className={styles["service-page__subheader"]}>
-            Types of Teeth Whitening
+            Our Teeth Whitening Services
           </h2>
           <div className={styles["service-page__types-grid"]}>
             <div className={styles["service-page__type-card"]}>
               <h3>In-Office Whitening</h3>
               <p>
-                Performed by a professional, in-office whitening can
-                dramatically whiten your teeth in just one session using
-                high-strength bleaching agents activated by light.
+                Our in-office whitening treatments provide fast and dramatic
+                results, lightening your teeth by several shades in just one
+                visit. Using cutting-edge technology, this treatment guarantees
+                a safe, effective transformation.
               </p>
               <img
                 src="/images/in-office-whitening.jpg"
-                alt="In-Office Teeth Whitening"
+                alt="In-Office Whitening"
                 className={styles["service-page__image"]}
               />
             </div>
@@ -136,13 +138,14 @@ const TeethWhitening = () => {
             <div className={styles["service-page__type-card"]}>
               <h3>Take-Home Whitening Kits</h3>
               <p>
-                Custom-made trays fitted by your dentist with professional-grade
-                whitening gel. Achieve gradual but effective results in the
-                comfort of your home.
+                Customized take-home whitening kits allow you to whiten your
+                teeth at your convenience. These kits include custom-fitted
+                trays and a professional-grade whitening gel for long-lasting
+                results.
               </p>
               <img
                 src="/images/take-home-kit.jpg"
-                alt="Take-Home Whitening Kits"
+                alt="Take-Home Whitening Kit"
                 className={styles["service-page__image"]}
               />
             </div>
@@ -150,13 +153,13 @@ const TeethWhitening = () => {
             <div className={styles["service-page__type-card"]}>
               <h3>Over-the-Counter Products</h3>
               <p>
-                Available at drugstores, over-the-counter products are
-                affordable but may not deliver the same results as professional
-                treatments.
+                While less effective than professional treatments, we also
+                provide guidance on over-the-counter products for maintaining
+                your results and extending the longevity of your brighter smile.
               </p>
               <img
                 src="/images/otc-whitening-products.jpg"
-                alt="Over-the-Counter Whitening Products"
+                alt="Over-the-Counter Whitening"
                 className={styles["service-page__image"]}
               />
             </div>
@@ -166,78 +169,100 @@ const TeethWhitening = () => {
         {/* Benefits of Teeth Whitening */}
         <section className={styles["service-page__benefits"]}>
           <h2 className={styles["service-page__subheader"]}>
-            Benefits of Teeth Whitening
+            The Benefits of Teeth Whitening
           </h2>
           <ul className={styles["service-page__list"]}>
-            <li>Removes deep-set stains and discoloration.</li>
-            <li>Enhances the appearance of your smile.</li>
-            <li>Boosts your self-confidence.</li>
-            <li>Safe, quick, and effective.</li>
+            <li>Whiter, more radiant smile in just one treatment.</li>
+            <li>Boosts self-esteem and confidence.</li>
+            <li>Removes deep stains that regular cleaning can’t remove.</li>
+            <li>Non-invasive, pain-free procedure.</li>
           </ul>
+          <img
+            src="/images/TeethWhiteningResults.jpg"
+            alt="Teeth Whitening Results"
+            className={styles["service-page__image--center"]}
+          />
+        </section>
+
+        {/* Who is a Candidate */}
+        <section className={styles["service-page__candidates"]}>
+          <h2 className={styles["service-page__subheader"]}>
+            Who is a Good Candidate for Teeth Whitening?
+          </h2>
+          <p className={styles["service-page__text"]}>
+            Teeth whitening is ideal for individuals looking to enhance their
+            smile and remove surface stains caused by daily habits or age. It’s
+            important to have good oral health before whitening, as untreated
+            cavities or gum disease can affect the outcome. We recommend
+            scheduling a consultation to determine the best whitening solution
+            for your needs.
+          </p>
         </section>
 
         {/* Procedure Overview */}
         <section className={styles["service-page__procedure"]}>
           <h2 className={styles["service-page__subheader"]}>
-            Procedure Overview
+            The Whitening Procedure
           </h2>
           <div className={styles["service-page__procedure-steps"]}>
-            <h3>Initial Consultation</h3>
+            <h3>Step 1: Consultation</h3>
             <p>
-              During the consultation, your dentist will evaluate your oral
-              health and discuss which whitening method suits you best.
+              Your journey begins with a personalized consultation to discuss
+              your whitening goals. We will assess your oral health and
+              determine the most suitable treatment.
             </p>
 
-            <h3>Whitening Procedure</h3>
+            <h3>Step 2: The Whitening Process</h3>
             <p>
-              In-office whitening includes cleaning, protecting the gums,
-              applying the gel, and activating it with light. Take-home kits
-              involve custom trays and a whitening solution for gradual
-              whitening over weeks.
+              During the procedure, we apply a protective barrier to your gums,
+              followed by the application of a whitening gel activated by a
+              special light. This process is repeated until the desired result
+              is achieved.
             </p>
 
-            <h3>Post-Whitening Care</h3>
+            <h3>Step 3: Post-Care Instructions</h3>
             <p>
-              After the procedure, avoid foods and drinks that stain teeth (like
-              coffee, wine, and dark sauces). Regular touch-ups and good oral
-              hygiene will help maintain your new bright smile.
+              After whitening, we will provide post-care instructions to help
+              you maintain your results. Avoid staining foods and drinks for a
+              few days and use a whitening toothpaste to extend your bright
+              smile.
             </p>
           </div>
         </section>
 
         {/* Why Choose Us */}
         <section className={styles["service-page__why-choose-us"]}>
-          <h2 className={styles["service-page__subheader"]}>Why Choose Us?</h2>
+          <h2 className={styles["service-page__subheader"]}>
+            Why Choose Bana Dental Design?
+          </h2>
           <p className={styles["service-page__text"]}>
-            At Bana Dental Design, we provide professional, safe, and
-            long-lasting teeth whitening treatments. With years of experience
-            and state-of-the-art technology, we ensure each patient achieves the
-            bright smile they deserve.
+            At Bana Dental Design, we use the latest technology and
+            evidence-based techniques to ensure you get the best whitening
+            results. Our professional team is committed to making your
+            experience comfortable and ensuring that you walk out with a smile
+            you’ll love.
           </p>
           <ul className={styles["service-page__why-list"]}>
-            <li>Highly trained cosmetic dental team</li>
-            <li>Custom treatment plans for optimal results</li>
-            <li>Latest technology for safe and effective whitening</li>
+            <li>Highly experienced cosmetic dental team.</li>
+            <li>Customizable treatment plans for each patient.</li>
+            <li>State-of-the-art technology and techniques.</li>
           </ul>
         </section>
 
-        {/* Contact Form Banner */}
+        {/* Call to Action Banner */}
         <section
-          className={styles["service-page__contact-banner"]}
           id="contact"
+          className={styles["service-page__contact-banner"]}
         >
-          <h3>Ready to Brighten Your Smile?</h3>
-          <p>
-            Book your consultation today and discover how professional teeth
-            whitening can transform your smile.
-          </p>
+          <h2>Ready for a Whiter Smile?</h2>
           <Link href="/contact-us" passHref>
             <button className={styles["service-page__contact-button"]}>
-              Contact Us
+              Contact Us Today
             </button>
           </Link>
         </section>
 
+        {/* Consultation Banner */}
         <ConsultationBanner />
       </main>
     </>

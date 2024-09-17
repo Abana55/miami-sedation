@@ -50,10 +50,28 @@
     margin-bottom: 1rem;
   }
 
-  &__text {
+  &__text, &__list {
     font-size: 1.2rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    padding-left: 2rem;
+    list-style-type: disc;
+  }
+  &__types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    &__type-card {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
   }
 
   &__benefits-grid {
@@ -79,7 +97,7 @@
   &__contact-banner {
     background-color: var(--secondary-color);
     color: #fff;
-    padding: 3rem 2rem;
+    padding: 3rem;
     text-align: center;
 
     &__contact-button {
@@ -88,6 +106,16 @@
       padding: 1rem 2rem;
       border-radius: 0.5rem;
 
+      &:hover {
+        background-color: var(--primary-color-dark);
+      }
+    }
+    &-button {
+      background-color: var(--primary-color);
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      color: #fff;
+      transition: background-color 0.3s ease;
       &:hover {
         background-color: var(--primary-color-dark);
       }
