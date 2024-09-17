@@ -1,147 +1,185 @@
 /* Veneers.module.scss */
 
 .veneersPage {
-    padding: 2rem;
-    background-color: var(--background-color);
-    color: var(--text-color);
-  
-    &__header {
-      text-align: center;
-      margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--primary-color-light);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  /* Articles with fade-in scroll effect */
+  &__articles {
+    flex: 1 1 60%;
+    padding: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-  
-    &__title {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-    }
-  
-    &__content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-  
-    &__articles {
-      flex: 1 1 60%;
-    }
-  
-    &__text {
-      margin-bottom: 1.5rem;
-    }
-  
-    &__subheader {
+
+    .subheader {
       font-size: 2rem;
       color: var(--secondary-color);
       margin-top: 2rem;
       margin-bottom: 1rem;
+      text-transform: uppercase;
     }
-  
-    &__subsubheader {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      margin-top: 1.5rem;
-    }
-  
-    &__list {
-      padding-left: 1.5rem;
+
+    .text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-color-dark);
       margin-bottom: 1.5rem;
     }
-  
-    &__listItem {
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
+  }
+
+  &__contactButton {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      background-color: var(--primary-color-dark);
+      transform: scale(1.05);
     }
-  
-    &__contactButton {
-      display: inline-block;
-      background-color: var(--primary-color);
-      color: #fff;
-      padding: 0.75rem 2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-decoration: none;
-  
-      &:hover {
-        background-color: var(--primary-color-dark);
-      }
-    }
-  
-    &__imageSlider {
-      flex: 1 1 40%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
+  }
+
+  /* Image Slider */
+  &__imageSlider {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .slider__mainImage {
       width: 100%;
       height: 300px;
       overflow: hidden;
       border-radius: 10px;
       margin-bottom: 1rem;
-  
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
     }
-  
+
     .slider__thumbnails {
       display: flex;
       gap: 0.5rem;
-  
+
       .thumbnail {
         width: 80px;
         height: 80px;
         overflow: hidden;
         border-radius: 5px;
-  
+        cursor: pointer;
+        transition: transform 0.3s;
+
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
-  
-    &__portfolio {
-      margin-top: 2rem;
+  }
+
+  /* Portfolio Section */
+  &__portfolio {
+    margin-top: 3rem;
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
     }
-  
+
     .portfolio {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
-  
+
       &__item {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
         max-width: 300px;
-      }
-  
-      &__imageContainer {
-        position: relative;
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
+        padding: 1rem;
+        background-color: #fff;
         border-radius: 10px;
-        margin-bottom: 0.5rem;
-  
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+        box-shadow: var(--box-shadow);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: var(--box-shadow-hover);
         }
-  
-        &::after {
-          content: attr(data-label);
+
+        &__imageContainer {
+          position: relative;
+          width: 100%;
+          height: 200px;
+          overflow: hidden;
+          border-radius: 10px;
+          margin-bottom: 0.5rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          &::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 5px;
+          }
+        }
+
+        &__label {
           position: absolute;
           bottom: 10px;
           left: 10px;
@@ -151,16 +189,34 @@
           border-radius: 5px;
         }
       }
-  
-      &__label {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        padding: 0.25rem 0.5rem;
-        border-radius: 5px;
+    }
+  }
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__imageSlider {
+      flex: 1 1 100%;
+    }
+
+    &__articles {
+      flex: 1 1 100%;
+    }
+
+    .slider__mainImage {
+      height: 250px;
+    }
+
+    .slider__thumbnails {
+      gap: 0.3rem;
+
+      .thumbnail {
+        width: 70px;
+        height: 70px;
       }
     }
   }
-  
+}
