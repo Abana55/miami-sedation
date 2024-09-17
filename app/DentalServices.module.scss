@@ -1,88 +1,96 @@
 .service-page {
-  width: 100%;
-  overflow-x: hidden;
   padding: 2rem;
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1200px;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--font-body);
+  background-color: #f9f9f9;
 
-  &--cosmetic {
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
-
-  &__header {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    text-align: center;
+  &__hero {
+    position: relative;
+    height: 500px;
     margin-bottom: 2rem;
+
+    &-image {
+      object-fit: cover;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    &__cta-button {
+      margin-top: 1rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--primary-color-dark);
+      }
+    }
   }
 
-  &__content {
-    width: 100%;
-    max-width: 1200px;
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-
-  &__text {
-    margin-bottom: 1.5rem;
-    font-family: var(--font-body);
+  &__details, &__purpose-facts, &__benefits, &__before-after, &__why-choose-us {
+    margin-bottom: 3rem;
   }
 
   &__subheader {
-    font-size: 1.8rem;
-    color: var(--secondary-color);
-    margin-top: 2rem;
+    font-size: 2rem;
+    color: var(--primary-color);
     margin-bottom: 1rem;
-    font-family: var(--font-heading);
   }
 
-  &__list {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
-
-    &__item {
-      margin-bottom: 0.75rem;
-    }
+  &__text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
   }
 
-  &__image-inline {
-    width: 80%; 
-    max-width: 800px; 
-    margin: 1.5rem auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      width: 100%; 
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+  &__benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
   }
 
-  &__contact-button {
-    display: inline-block;
-    margin-top: 2rem;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--primary-color);
-    color: #fff;
+  &__benefit-card {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+  }
 
-    &:hover {
-      background-color: var(--primary-color-dark);
+  &__before-after-images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  &__contact-banner {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+
+    &__contact-button {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+
+      &:hover {
+        background-color: var(--primary-color-dark);
+      }
     }
   }
-  
 }
