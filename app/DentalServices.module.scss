@@ -122,3 +122,97 @@
     }
   }
 }
+.teethCleaningPage {
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.headerSection {
+  text-align: center;
+  background-color: var(--primary-color-light);
+  padding: 2rem;
+}
+
+.benefitsSection, .processSection, .risksSection, .whyUsSection {
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.teethCleaningSectionTitle {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.benefitsContainer, .risksContainer {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.benefitCard, .riskCard {
+  background-color: var(--secondary-color-light);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1 1 30%;
+}
+
+.benefitCard h3, .riskCard h3 {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.benefitCard img, .riskCard img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.risksSection {
+  background-color: var(--background-color-light);
+}
+
+.teethCleaningImagePlaceholder {
+  margin: 2rem 0;
+}
+
+.teethCleaningImage {
+  width: 100%;
+  border-radius: 8px;
+}
+.waveContainer {
+  margin-bottom: -5px; // Adjust to overlap sections smoothly
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.benefitsSection {
+  padding: 4rem 2rem;
+  background-color: #f0f4f8; // Match the wave color or use another color
+  text-align: center;
+}
+@keyframes waveMotion {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.waveContainer svg {
+  animation: waveMotion 5s infinite linear;
+}

@@ -1,7 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import styles from "../../DentalServices.module.scss";
+import ScrollFadeIn from "@/app/components/ScrollFadeIn/ScrollFadeIn"; 
 import ConsultationBanner from "@/app/components/ConsultationBanner/ConsultationBanner";
+import styles from "../../DentalServices.module.scss";
 
 const TeethCleaning: React.FC = () => {
   return (
@@ -39,66 +40,50 @@ const TeethCleaning: React.FC = () => {
           href="https://yourdomain.com/services/teeth-cleaning"
         />
       </Head>
+      
       <div className={styles.teethCleaningPage}>
-        <h1 className={styles.teethCleaningTitle}>
-          Why Teeth Cleaning is Essential for Your Oral Health
-        </h1>
-        <div className={styles.teethCleaningContent}>
-          <p className={styles.teethCleaningIntro}>
-            Regular teeth cleaning is a fundamental part of maintaining your
-            oral health. It helps prevent cavities, gum disease, and other oral
-            issues, ensuring your smile stays bright and healthy.
-          </p>
+        {/* Header Section */}
+        <section className={styles.headerSection}>
+          <ScrollFadeIn>
+            <h1 className={styles.teethCleaningTitle}>
+              Why Teeth Cleaning is Essential for Your Oral Health
+            </h1>
+            <p className={styles.teethCleaningIntro}>
+              Regular teeth cleaning is a fundamental part of maintaining your oral health.
+              It helps prevent cavities, gum disease, and other oral issues, ensuring your
+              smile stays bright and healthy.
+            </p>
+          </ScrollFadeIn>
+        </section>
 
-          <h2 className={styles.teethCleaningSectionTitle}>
-            The Importance of Professional Teeth Cleaning
-          </h2>
-          <div className={styles.teethCleaningImagePlaceholder}>
-            <img
-              src="/images/teeth-cleaning-1.jpg"
-              alt="Teeth Cleaning"
-              className={styles.teethCleaningImage}
-            />
-          </div>
-          <p className={styles.teethCleaningText}>
-            Even with good oral hygiene at home, plaque and tartar can build up
-            in hard-to-reach areas of your mouth. Professional teeth cleaning
-            removes these deposits, reducing the risk of cavities and gum
-            disease.
-          </p>
+        {/* Benefits Section */}
+        <section className={styles.benefitsSection}>
+          <ScrollFadeIn>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.teethCleaningSectionTitle}>
+                Benefits of Regular Teeth Cleaning
+              </h2>
+            </div>
+            <div className={styles.benefitsContainer}>
+              <div className={styles.benefitCard}>
+                <img src="/icons/prevent-cavities.png" alt="Prevent Cavities" />
+                <h3>Prevents Cavities</h3>
+                <p>Professional cleanings remove plaque that can lead to tooth decay.</p>
+              </div>
+              <div className={styles.benefitCard}>
+                <img src="/icons/gum-health.png" alt="Gum Health" />
+                <h3>Maintains Gum Health</h3>
+                <p>Regular cleanings help reduce the risk of gum disease and infection.</p>
+              </div>
+              <div className={styles.benefitCard}>
+                <img src="/icons/fresh-breath.png" alt="Fresh Breath" />
+                <h3>Freshens Breath</h3>
+                <p>Cleanings help eliminate bad breath caused by plaque buildup.</p>
+              </div>
+            </div>
+          </ScrollFadeIn>
+        </section>
 
-          <h2 className={styles.teethCleaningSectionTitle}>
-            What Happens During a Teeth Cleaning Appointment?
-          </h2>
-          <p className={styles.teethCleaningText}>
-            During your appointment, our dental hygienists will thoroughly clean
-            your teeth, removing plaque and tartar, polishing your teeth, and
-            providing personalized advice on how to maintain oral hygiene at
-            home.
-          </p>
-          <div className={styles.teethCleaningImagePlaceholder}>
-            <img
-              src="/images/teeth-cleaning-2.jpg"
-              alt="Dental Hygienist Cleaning Teeth"
-              className={styles.teethCleaningImage}
-            />
-          </div>
-
-          <h2 className={styles.teethCleaningSectionTitle}>
-            How Often Should You Get Your Teeth Cleaned?
-          </h2>
-          <p className={styles.teethCleaningText}>
-            We recommend that you visit us for a professional teeth cleaning
-            every six months. This frequency helps keep your teeth and gums
-            healthy and allows us to monitor your oral health for any signs of
-            potential issues.
-          </p>
-          <p className={styles.teethCleaningConclusion}>
-            Don’t wait until you have a problem—regular teeth cleaning is a
-            proactive step towards maintaining a healthy smile. Contact us today
-            to schedule your appointment.
-          </p>
-        </div>
         <ConsultationBanner />
       </div>
     </>
