@@ -4,10 +4,13 @@ import Link from "next/link";
 import styles from "./components/Home.module.scss";
 import "./styles/globals.scss";
 import TeamAccordion from "./components/TeamAccordion/TeamAccordion";
-import OurOffice from "./components/OurOffice/OurOffice"; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
-
+import OurOffice from "./components/OurOffice/OurOffice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faFacebook,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const teamMembers = [
   {
@@ -138,49 +141,48 @@ const Home = () => {
         </div>
       </section>
       <div className={styles.connectBanner}>
-  <h1 className={styles.bannerTitle}>Connect with Us</h1>
-  <div className={styles.bannerContent}>
-    <p className={styles.bannerText}>
-      we look foward to meeting you.
-    </p>
-    <div className={styles.socialLinks}>
-      <a
-        href="https://www.instagram.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.socialLink}
-      >
-        <FontAwesomeIcon icon={faInstagram} />
-      </a>
-      <a
-        href="https://www.facebook.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.socialLink}
-      >
-        <FontAwesomeIcon icon={faFacebook} />
-      </a>
-      <a
-        href="https://www.twitter.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.socialLink}
-      >
-        <FontAwesomeIcon icon={faTwitter} />
-      </a>
-    </div>
-  </div>
-  <div className={styles.contactInfo}>
-    <p className={styles.officeNumber}>Call us: (123) 456-7890</p>
-    <a href="/contact" className={styles.scheduleButton}>Schedule an Appointment</a>
-  </div>
-</div>
+        <h1 className={styles.bannerTitle}>Connect with Us</h1>
+        <div className={styles.bannerContent}>
+          <p className={styles.bannerText}>we look foward to meeting you.</p>
+          <div className={styles.socialLinks}>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              <FontAwesomeIcon icon={faFacebook} />
+            </a>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+          </div>
+        </div>
+        <div className={styles.contactInfo}>
+          <p className={styles.officeNumber}>Call us: (123) 456-7890</p>
+          <a href="/contact" className={styles.scheduleButton}>
+            Schedule an Appointment
+          </a>
+        </div>
+      </div>
       {/* Our Office Section */}
 
       <OurOffice />
 
       <div className={styles.magazineSection}>
-        {/* <h2 className={styles.sectionTitle}>In the Press</h2> */}
         <div className={styles.glassmorphicContainer}>
           <div className={styles.magazineArticle}>
             <img
