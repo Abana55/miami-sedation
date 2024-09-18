@@ -140,6 +140,7 @@ const Home = () => {
           </article>
         </div>
       </section>
+
       <div className={styles.connectBanner}>
         <h1 className={styles.bannerTitle}>Connect with Us</h1>
         <div className={styles.bannerContent}>
@@ -178,6 +179,7 @@ const Home = () => {
           </a>
         </div>
       </div>
+      
       {/* Our Office Section */}
 
       <OurOffice />

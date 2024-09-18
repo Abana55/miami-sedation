@@ -181,7 +181,8 @@
 }
 
 .connectBanner {
-  background-image: url('../../public/images/CONNECT/Bana\ Website\ Mock\ Up\ Foto.png');
+  background-image: url('/images/CONNECT/connectBanner.png');
+  background-color: var(--primary-color); // Fallback color
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
