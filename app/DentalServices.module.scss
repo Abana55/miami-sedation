@@ -216,3 +216,86 @@
 .waveContainer svg {
   animation: waveMotion 5s infinite linear;
 }
+.oralExamsPage {
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+
+  /* Header Section */
+  .headerSection {
+    text-align: center;
+    margin-bottom: 3rem;
+    background: var(--header-background);
+    padding: 3rem;
+    border-radius: 10px;
+  }
+
+  .oralExamsTitle {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .oralExamsIntro {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-color-light);
+  }
+
+  /* Section Styling */
+  .oralExamsSection {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background-color: var(--section-background);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+
+    &Title {
+      font-size: 2rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    &Text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--text-color);
+    }
+
+    &List {
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+
+      &Item {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        list-style-type: disc;
+        color: var(--primary-color-dark);
+      }
+    }
+
+    &ImageContainer {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+
+      &Image {
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        width: 80%;
+      }
+    }
+  }
+
+  .oralExamsConclusion {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 2rem;
+  }
+}
