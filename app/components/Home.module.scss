@@ -180,80 +180,94 @@
   }
 }
 
-.connectBanner {
-  background-image: url('/images/CONNECT/connectBanner.png');
-  background-color: var(--primary-color); // Fallback color
+.banner {
+  background-image: url('/images/CONNECT/connectBanner.png'); // Ensure the correct path
   background-size: cover;
-  background-position: right center;
+  background-position: center;
   background-repeat: no-repeat;
-  @include section-padding(20px);
+  background-color: var(--fallback-color);
+  padding: 20px;
   text-align: center;
   color: var(--secondary-color);
   position: relative;
   margin: 1.25rem;
   border-radius: 1.25rem;
   overflow: hidden;
-  @include glassmorphism(var(--glass-background), 10px, var(--glass-border), var(--box-shadow));
-}
+  height: 400px;
 
-.bannerTitle {
-  font-size: 6rem;
-  margin-bottom: 10px;
-  color: var(--secondary-color);
-}
-
-.bannerContent {
-  max-width: 37.5rem;
-  margin: 0 auto;
-}
-
-.bannerText {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  color: var(--secondary-color);
-}
-
-.socialLinks {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  gap: 15px;
-}
-
-.socialLink {
-  color: #fff;
-  font-size: 1.5em;
-  transition: color 0.3s ease;
-
-  &:hover {
+  &__title {
+    font-size: 6rem;
+    margin-bottom: 10px;
     color: var(--secondary-color);
   }
-}
 
-.contactInfo {
-  @include section-padding(20px);
-  margin-top: 20px;
-  @include glassmorphism(var(--glass-background), 10px, var(--glass-border), var(--box-shadow));
-  border-radius: 10px;
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  &__content {
+    max-width: 37.5rem;
+    margin: 0 auto;
+  }
 
-.officeNumber {
-  font-size: 1.2em;
-  color: #fff;
-  margin: 0;
-  font-family: var(--font-body);
-  font-weight: 100;
-}
+  &__text {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+  }
 
-.scheduleButton {
-  @include button-style(var(--secondary-color), #fff, var(--secondary-color-dark), #fff);
-  margin-left: 20px;
+  &__social-links {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+  }
+
+  &__social-link {
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+
+  &__contact-info {
+    padding: 20px;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &__office-number {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: 100;
+  }
+
+  &__schedule-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--primary-color-dark);
+    }
+  }
 }
 
 .magazineSection {

@@ -140,17 +140,18 @@ const Home = () => {
           </article>
         </div>
       </section>
-
-      <div className={styles.connectBanner}>
-        <h1 className={styles.bannerTitle}>Connect with Us</h1>
-        <div className={styles.bannerContent}>
-          <p className={styles.bannerText}>we look foward to meeting you.</p>
-          <div className={styles.socialLinks}>
+      <div className={styles.banner}>
+        <h1 className={styles["banner__title"]}>Connect with Us</h1>
+        <div className={styles["banner__content"]}>
+          <p className={styles["banner__text"]}>
+            We look forward to meeting you.
+          </p>
+          <div className={styles["banner__social-links"]}>
             <a
               href="https://www.instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.socialLink}
+              className={styles["banner__social-link"]}
             >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
@@ -158,7 +159,7 @@ const Home = () => {
               href="https://www.facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.socialLink}
+              className={styles["banner__social-link"]}
             >
               <FontAwesomeIcon icon={faFacebook} />
             </a>
@@ -166,20 +167,22 @@ const Home = () => {
               href="https://www.twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.socialLink}
+              className={styles["banner__social-link"]}
             >
               <FontAwesomeIcon icon={faTwitter} />
             </a>
           </div>
         </div>
-        <div className={styles.contactInfo}>
-          <p className={styles.officeNumber}>Call us: (123) 456-7890</p>
-          <a href="/contact" className={styles.scheduleButton}>
+        <div className={styles["banner__contact-info"]}>
+          <p className={styles["banner__office-number"]}>
+            Call us: (123) 456-7890
+          </p>
+          <a href="/contact" className={styles["banner__schedule-button"]}>
             Schedule an Appointment
           </a>
         </div>
       </div>
-      
+
       {/* Our Office Section */}
 
       <OurOffice />
