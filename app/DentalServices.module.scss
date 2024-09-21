@@ -40,7 +40,11 @@
     }
   }
 
-  &__details, &__purpose-facts, &__benefits, &__before-after, &__why-choose-us {
+  &__details,
+  &__purpose-facts,
+  &__benefits,
+  &__before-after,
+  &__why-choose-us {
     margin-bottom: 3rem;
   }
 
@@ -50,7 +54,8 @@
     margin-bottom: 1rem;
   }
 
-  &__text, &__list {
+  &__text,
+  &__list {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -135,7 +140,10 @@
   padding: 2rem;
 }
 
-.benefitsSection, .processSection, .risksSection, .whyUsSection {
+.benefitsSection,
+.processSection,
+.risksSection,
+.whyUsSection {
   padding: 2rem;
   margin-bottom: 2rem;
 }
@@ -150,14 +158,16 @@
   color: var(--primary-color);
 }
 
-.benefitsContainer, .risksContainer {
+.benefitsContainer,
+.risksContainer {
   display: flex;
   justify-content: space-around;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
-.benefitCard, .riskCard {
+.benefitCard,
+.riskCard {
   background-color: var(--secondary-color-light);
   padding: 1rem;
   border-radius: 8px;
@@ -166,13 +176,15 @@
   flex: 1 1 30%;
 }
 
-.benefitCard h3, .riskCard h3 {
+.benefitCard h3,
+.riskCard h3 {
   margin-top: 0.5rem;
   font-size: 1.25rem;
   color: var(--primary-color);
 }
 
-.benefitCard img, .riskCard img {
+.benefitCard img,
+.riskCard img {
   width: 50px;
   height: 50px;
   margin-bottom: 0.5rem;
@@ -230,6 +242,7 @@
     background: var(--header-background);
     padding: 3rem;
     border-radius: 10px;
+    box-shadow: var(--box-shadow-header);
   }
 
   .oralExamsTitle {
@@ -269,14 +282,44 @@
     }
 
     &List {
-      padding-left: 1.5rem;
-      margin: 1.5rem 0;
+      padding-left: 2rem;
+      margin: 2rem 0;
+      list-style-type: none; /* Remove default bullets */
+      counter-reset: list-counter;
 
       &Item {
-        margin-bottom: 1rem;
+        position: relative;
+        padding-left: 2.5rem;
+        margin-bottom: 1.2rem;
         font-size: 1.1rem;
-        list-style-type: disc;
         color: var(--primary-color-dark);
+        line-height: 1.5;
+        background-color: var(--background-color-alt);
+        border-left: 4px solid var(--primary-color);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow-light);
+
+        /* Custom bullet design */
+        &::before {
+          content: counter(list-counter) ".";
+          counter-increment: list-counter;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.2rem;
+          color: var(--secondary-color);
+          background-color: var(--primary-color);
+          border-radius: 50%;
+          padding: 0.5rem;
+          width: 2rem;
+          height: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+        }
       }
     }
 
@@ -293,6 +336,7 @@
     }
   }
 
+  /* Conclusion text */
   .oralExamsConclusion {
     font-weight: bold;
     color: var(--primary-color);
