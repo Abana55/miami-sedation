@@ -343,3 +343,81 @@
     margin-top: 2rem;
   }
 }
+.xraysPage {
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  
+  /* Header Section */
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--primary-color-light);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+  }
+
+  &__intro {
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Content Section */
+  &__content {
+    margin-bottom: 4rem;
+  }
+
+  &__article {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: var(--background-color-alt);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-light);
+    text-align: center;
+  }
+
+  &__subheader {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__imageContainer {
+    margin: 2rem 0;
+    text-align: center;
+
+    &__image {
+      border-radius: 10px;
+      max-width: 100%;
+      box-shadow: var(--box-shadow-light);
+    }
+  }
+
+  /* Conclusion */
+  &__conclusion {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 2rem;
+    background-color: var(--primary-color-light);
+    color: var(--primary-color-dark);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin-top: 4rem;
+  }
+}
