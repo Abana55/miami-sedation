@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import ScrollFadeIn from "@/app/components/ScrollFadeIn/ScrollFadeIn";
 import ConsultationBanner from "@/app/components/ConsultationBanner/ConsultationBanner";
 import styles from "../../DentalServices.module.scss";
 
@@ -27,119 +28,169 @@ const Fillings = () => {
         <title>Fillings | Your Dental Practice</title>
         <meta
           name="description"
-          content="Learn about dental fillings provided by Your Dental Practice. Fillings are used to repair cavities and restore tooth function and integrity."
+          content="Learn about dental fillings at Your Dental Practice. Fillings are used to repair cavities and restore tooth function with advanced techniques for a seamless look."
         />
         <meta
           name="keywords"
-          content="dental fillings, cavities, tooth repair, oral health"
+          content="dental fillings, cavity repair, tooth restoration, oral health"
         />
       </Head>
 
       <main className={styles.fillingsPage}>
         {/* Header Section */}
         <header className={styles.fillingsPage__header}>
-          <h1 className={styles.fillingsPage__title}>Dental Fillings</h1>
-          <p className={styles.fillingsPage__intro}>
-            Dental fillings are an effective solution for repairing cavities and
-            restoring your tooth’s strength and function. Our advanced materials
-            and techniques ensure a seamless look that matches the natural color
-            of your teeth.
-          </p>
+          <ScrollFadeIn>
+            <h1 className={styles.fillingsPage__title}>Dental Fillings</h1>
+            <p className={styles.fillingsPage__intro}>
+              Dental fillings are a critical part of modern dentistry, helping
+              to restore the structure of your teeth after cavities. Our
+              practice uses advanced materials for a natural, long-lasting look
+              and function.
+            </p>
+          </ScrollFadeIn>
         </header>
 
         {/* Grid Layout */}
         <section className={styles.fillingsPage__grid}>
           {/* Article Section */}
           <article className={styles.fillingsPage__content}>
-            <h2 className={styles.fillingsPage__subheader}>
-              What Are Dental Fillings?
-            </h2>
-            <p className={styles.fillingsPage__text}>
-              Fillings are used to restore a tooth damaged by decay, returning
-              it to its normal function and shape. When a dentist gives you a
-              filling, they first remove the decayed tooth material, clean the
-              affected area, and then fill the cleaned-out cavity with a filling
-              material.
-            </p>
-
-            <h2 className={styles.fillingsPage__subheader}>
-              Procedure Overview
-            </h2>
-            <section className={styles.fillingsPage__text}>
-              <h3>1. Consultation and Diagnosis</h3>
-              <p>
-                The process begins with a thorough dental exam where we identify
-                any cavities or areas of concern. X-rays are typically taken to
-                assess the severity of decay. After diagnosis, you and your
-                dentist will discuss the best options for treatment.
+            <ScrollFadeIn>
+              <h2 className={styles.fillingsPage__subheader}>
+                What Are Dental Fillings?
+              </h2>
+              <p className={styles.fillingsPage__text}>
+                Fillings are used to restore a tooth that has been damaged by
+                decay. Once the decayed portion is removed, the filling material
+                is placed to bring the tooth back to its original shape and
+                function. At our practice, we offer a variety of filling
+                materials, including composite resins that closely match the
+                natural color of your teeth.
               </p>
+            </ScrollFadeIn>
 
-              <h3>2. Filling Placement</h3>
-              <p>
-                The decayed portion of the tooth is carefully removed, and the
-                tooth is prepared for the filling material. The material is
-                applied in layers and hardened with a special curing light to
-                ensure durability and protection.
-              </p>
+            <ScrollFadeIn>
+              <h2 className={styles.fillingsPage__subheader}>The Procedure</h2>
+              <div className={styles.fillingsPage__divider}>
+                <span className={styles.fillingsPage__line}>|</span>
+              </div>
+              <section className={styles.fillingsPage__text}>
+                <h3>Initial Consultation</h3>
+                <p>
+                  The process begins with a thorough dental examination where we
+                  detect any cavities or damage to your teeth. X-rays are
+                  typically taken to understand the extent of decay and plan the
+                  treatment accordingly.
+                </p>
 
-              <h3>3. Final Adjustments</h3>
-              <p>
-                After the filling has hardened, your dentist will polish it to
-                ensure a smooth finish. Adjustments are made to make sure the
-                filling fits perfectly with your bite, ensuring comfort and
-                function.
+                <div className={styles.fillingsPage__divider}>
+                  <span className={styles.fillingsPage__line}>|</span>
+                </div>
+
+                <h3>Removing the Decay</h3>
+                <p>
+                  During the procedure, the decayed area of the tooth is
+                  carefully removed, and the remaining tooth is cleaned and
+                  prepared for the filling. Local anesthesia is typically used
+                  to ensure your comfort throughout the process.
+                </p>
+
+                <div className={styles.fillingsPage__divider}>
+                  <span className={styles.fillingsPage__line}>|</span>
+                </div>
+
+                <h3>Applying the Filling</h3>
+                <p>
+                  Composite resin or another appropriate material is placed in
+                  layers into the cleaned cavity. Each layer is hardened using a
+                  special curing light, ensuring the strength and durability of
+                  the filling.
+                </p>
+
+                <div className={styles.fillingsPage__divider}>
+                  <span className={styles.fillingsPage__line}>|</span>
+                </div>
+
+                <h3>Final Adjustments</h3>
+                <p>
+                  The filling is shaped and polished to match the natural
+                  contours of your tooth, restoring its appearance and function.
+                  The dentist will make adjustments to ensure the filling fits
+                  comfortably with your bite.
+                </p>
+              </section>
+            </ScrollFadeIn>
+
+            <ScrollFadeIn>
+              <h2 className={styles.fillingsPage__subheader}>
+                Types of Fillings We Offer
+              </h2>
+              <ul className={styles.fillingsPage__list}>
+                <li className={styles.fillingsPage__listItem}>
+                  <strong>Composite Fillings:</strong> Tooth-colored fillings
+                  that blend seamlessly with your natural teeth for a more
+                  aesthetic result.
+                </li>
+                <li className={styles.fillingsPage__listItem}>
+                  <strong>Amalgam Fillings:</strong> A durable option used
+                  primarily for back teeth where strength is a priority.
+                </li>
+                <li className={styles.fillingsPage__listItem}>
+                  <strong>Gold Fillings:</strong> Extremely durable and
+                  long-lasting, though more expensive.
+                </li>
+              </ul>
+            </ScrollFadeIn>
+
+            <ScrollFadeIn>
+              <h2 className={styles.fillingsPage__subheader}>
+                Why Choose Our Dental Fillings?
+              </h2>
+              <p className={styles.fillingsPage__text}>
+                At our practice, we prioritize quality and patient comfort. We
+                use the latest techniques to ensure that your filling is both
+                functional and aesthetically pleasing. Our fillings are designed
+                to last, helping you maintain a healthy, strong smile for years
+                to come.
               </p>
-            </section>
+              <Link
+                href="/contact-us"
+                className={styles.fillingsPage__contactButton}
+              >
+                Schedule an Appointment
+              </Link>
+            </ScrollFadeIn>
           </article>
 
           {/* Image Slider Section */}
           <aside className={styles.fillingsPage__imageSlider}>
-            <div className={styles.slider__mainImage}>
-              <img
-                src={images[currentImage]}
-                alt={`Filling ${currentImage + 1}`}
-              />
-            </div>
-            <div className={styles.slider__thumbnails}>
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  className={`${styles.slider__thumbnail} ${
-                    currentImage === index ? styles.active : ""
-                  }`}
-                  onClick={() => setCurrentImage(index)}
-                >
-                  <img src={image} alt={`Thumbnail ${index + 1}`} />
-                </div>
-              ))}
-            </div>
-            <button
-              className={styles.slider__nextButton}
-              onClick={handleNextImage}
-            >
-              Next
-            </button>
+            <ScrollFadeIn>
+              <div className={styles.slider__mainImage}>
+                <img
+                  src={images[currentImage]}
+                  alt={`Filling ${currentImage + 1}`}
+                />
+              </div>
+              <div className={styles.slider__thumbnails}>
+                {images.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`${styles.slider__thumbnail} ${
+                      currentImage === index ? styles.active : ""
+                    }`}
+                    onClick={() => setCurrentImage(index)}
+                  >
+                    <img src={image} alt={`Thumbnail ${index + 1}`} />
+                  </div>
+                ))}
+              </div>
+              <button
+                className={styles.slider__nextButton}
+                onClick={handleNextImage}
+              >
+                Next
+              </button>
+            </ScrollFadeIn>
           </aside>
-        </section>
-
-        {/* Why Choose Us Section */}
-        <section className={styles.fillingsPage__whyUs}>
-          <h2 className={styles.fillingsPage__subheader}>
-            Why Choose Our Fillings?
-          </h2>
-          <p className={styles.fillingsPage__text}>
-            At Your Dental Practice, we are committed to providing our patients
-            with the best possible care. Our fillings are designed to last,
-            using advanced techniques and high-quality materials that ensure
-            durability and a natural look. We prioritize your comfort and the
-            health of your teeth.
-          </p>
-          <Link
-            href="/contact-us"
-            className={styles.fillingsPage__contactButton}
-          >
-            Contact Us
-          </Link>
         </section>
 
         {/* Consultation Banner */}

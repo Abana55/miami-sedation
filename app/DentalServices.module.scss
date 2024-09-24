@@ -600,125 +600,156 @@
 .servicePageListItem {
   margin-bottom: 0.5rem;
 }
-
 .fillingsPage {
-  display: grid;
-  grid-template-columns: 1fr 1fr; // Two-column grid for main content and image slider
-  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
 
   &__header {
-    grid-column: 1 / -1; // Header spans both columns
     text-align: center;
     margin-bottom: 2rem;
   }
 
   &__title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--primary-color);
+    font-family: var(--font-heading);
   }
 
   &__intro {
     font-size: 1.2rem;
-    color: var(--text-color);
+    color: var(--secondary-color);
+    font-family: var(--font-body);
+    margin-bottom: 1.5rem;
   }
 
   &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    padding: 2rem;
   }
 
   &__content {
-    grid-column: 1 / span 1; // Article stays in the first column until after the slider
-    font-size: 1.1rem;
-  }
-
-  &__imageSlider {
-    grid-column: 2 / span 1; // Image slider stays in the second column
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__contactUs {
-    grid-column: 2 / span 1; // "Contact Us" banner in the second column
-    text-align: center;
-    background: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 10px;
-  }
-
-  &__whyUs {
-    grid-column: 1 / -1; // "Why Choose Us" spans the entire width
-    margin-top: 2rem;
+    font-family: var(--font-body);
+    padding-right: 2rem;
   }
 
   &__subheader {
     font-size: 2rem;
     color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
   }
 
   &__text {
     margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
   }
 
-  &__contactButton {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s;
-
-    &:hover {
-      background: var(--primary-color-dark);
-    }
-  }
-
-  /* Image Slider Styles */
-  .slider__mainImage {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .slider__thumbnails {
+  &__divider {
+    margin: 2rem 0;
     display: flex;
-    gap: 0.5rem;
-    
-    .slider__thumbnail {
-      width: 80px;
-      height: 80px;
-      border-radius: 5px;
-      overflow: hidden;
+    justify-content: center;
+    align-items: center;
 
-      &.active {
-        border: 2px solid var(--primary-color);
+    &__line {
+      font-size: 2rem;
+      color: var(--gold-color);
+      padding: 0 1rem;
+    }
+  }
+
+  &__list {
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+
+    &__listItem {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      list-style: none;
+
+      &::before {
+        content: "|";
+        position: absolute;
+        left: 0;
+        color: var(--gold-color);
       }
+    }
+  }
+
+  &__imageSlider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .slider__mainImage {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      overflow: hidden;
 
       img {
         width: 100%;
-        height: 100%;
         object-fit: cover;
+      }
+    }
+
+    .slider__thumbnails {
+      display: flex;
+      gap: 10px;
+
+      .slider__thumbnail {
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+        cursor: pointer;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        &.active {
+          border: 2px solid var(--gold-color);
+        }
+      }
+    }
+
+    .slider__nextButton {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: var(--primary-color-dark);
       }
     }
   }
 
-  .slider__nextButton {
+  &__contactButton {
+    display: inline-block;
     background-color: var(--primary-color);
     color: white;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--primary-color-dark);
+    }
   }
 }
