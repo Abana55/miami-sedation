@@ -8,20 +8,24 @@ const OralExams: React.FC = () => {
   return (
     <>
       <Head>
+        {/* Primary Meta Tags */}
         <title>Oral Exams | Your Dental Office</title>
         <meta
           name="description"
-          content="Regular oral exams are crucial for maintaining your oral health. Learn what to expect during an oral exam and why it's important to schedule them regularly."
+          content="Regular oral exams are essential for maintaining your oral health. Learn about the importance of dental exams, what happens during an oral exam, and how they can prevent serious dental issues."
         />
         <meta
           name="keywords"
-          content="Oral Exams, Dental Exams, Oral Health, Preventive Dentistry"
+          content="Oral Exams, Dental Exams, Oral Health, Preventive Dentistry, early detection, gum disease, cavity prevention"
         />
         <meta name="author" content="Your Dental Office" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* Open Graph / Facebook Meta Tags */}
         <meta property="og:title" content="Oral Exams | Your Dental Office" />
         <meta
           property="og:description"
-          content="Regular oral exams are crucial for maintaining your oral health. Learn what to expect during an oral exam and why it's important to schedule them regularly."
+          content="Regular oral exams are essential for maintaining your oral health. Discover what to expect during an oral exam and how they can help prevent serious dental issues."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -32,10 +36,74 @@ const OralExams: React.FC = () => {
           property="og:image"
           content="https://yourdomain.com/images/oral-exam-1.jpg"
         />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Your Dental Office" />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Oral Exams | Your Dental Office" />
+        <meta
+          name="twitter:description"
+          content="Learn why regular oral exams are crucial for your oral health. Understand the process, benefits, and what to expect at Your Dental Office."
+        />
+        <meta
+          name="twitter:image"
+          content="https://yourdomain.com/images/oral-exam-1.jpg"
+        />
+        <meta name="twitter:site" content="@YourDentalOffice" />
+
+        {/* Canonical URL */}
         <link
           rel="canonical"
           href="https://yourdomain.com/services/oral-exams"
         />
+
+        {/* Structured Data for Rich Snippets */}
+        <script type="application/ld+json">
+          {`{
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Oral Exams",
+      "provider": {
+        "@type": "Dentist",
+        "name": "Your Dental Office",
+        "image": "https://yourdomain.com/images/oral-exam-1.jpg",
+        "description": "Regular oral exams help detect dental issues early, maintain oral health, and prevent gum disease and cavities. Learn about the process and benefits.",
+        "logo": "https://yourdomain.com/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/YourDentalOffice",
+          "https://twitter.com/YourDentalOffice",
+          "https://www.instagram.com/YourDentalOffice"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Main St",
+          "addressLocality": "City",
+          "addressRegion": "State",
+          "postalCode": "12345",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-123-456-7890",
+          "contactType": "Customer Service"
+        }
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "City, State"
+      },
+      "url": "https://yourdomain.com/services/oral-exams",
+      "image": "https://yourdomain.com/images/oral-exam-1.jpg",
+      "description": "Learn about oral exams, the process, and how regular exams help prevent serious dental issues like cavities and gum disease."
+    }`}
+        </script>
+
+        {/* Additional Meta Tags */}
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#00447C" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       </Head>
 
       <div className={styles.oralExamsPage}>

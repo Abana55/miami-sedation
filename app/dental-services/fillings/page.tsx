@@ -6,9 +6,9 @@ import Link from "next/link";
 import styles from "../../DentalServices.module.scss";
 
 const images = [
-  "../../../public/images/IMG_3696.JPG",
-  "../../../public/images/IMG_3948.jpeg",
-  "../../../public/images/IMG_6450.jpeg",
+  "/images/IMG_3696.JPG",
+  "/images/IMG_3948.jpeg",
+  "/images/IMG_6450.jpeg",
 ];
 
 const Fillings = () => {
@@ -33,51 +33,146 @@ const Fillings = () => {
           content="dental fillings, cavities, tooth repair, oral health"
         />
       </Head>
-      <main className={`${styles["service-page"]} ${styles["service-page--restoration"]}`}>
-        <h1 className={styles["service-page__header"]}>Fillings</h1>
-        <section className={styles["service-page__content"]}>
-          <article className={styles["service-page__articles"]}>
-            <p className={styles["service-page__text"]}>
-              Dental fillings are used to treat cavities and restore the function and integrity of your teeth.
+      <main
+        className={`${styles["servicePage"]} ${styles["servicePageRestoration"]}`}
+      >
+        <h1 className={styles["servicePageHeader"]}>Dental Fillings</h1>
+
+        {/* Intro Section */}
+        <section className={styles["fillingsIntro"]}>
+          <p className={styles["fillingsText"]}>
+            Dental fillings are used to treat cavities and repair teeth affected
+            by decay. They help restore the tooth's normal function and shape
+            while preventing further decay by sealing spaces where bacteria can
+            enter.
+          </p>
+        </section>
+
+        {/* Detailed Procedure */}
+        <section className={styles["fillingsProcedure"]}>
+          <h2 className={styles["fillingsSubheader"]}>Procedure Overview</h2>
+          <section className={styles["fillingsText"]}>
+            <h3>1. Initial Consultation</h3>
+            <p>
+              During the initial consultation, your dentist will thoroughly
+              examine your teeth, take X-rays if needed, and create a
+              personalized treatment plan. You’ll be guided through the
+              available filling options based on the size and location of the
+              cavity.
             </p>
-            <h2 className={styles["service-page__subheader"]}>Procedure Overview</h2>
-            <section className={styles["service-page__text"]}>
-              <h3>Initial Consultation</h3>
-              <p>The initial consultation involves a thorough examination, discussion of findings, and creation of a personalized treatment plan. The dentist will take X-rays, explain the available filling options, and answer any questions you may have.</p>
-              
-              <h3>Filling Placement</h3>
-              <p>The filling placement process includes administering local anesthesia, removing decay, preparing the tooth, applying the filling material, and shaping and polishing the filling. The dentist will ensure the cavity is clean before filling it in layers and curing each layer for composite fillings.</p>
-              
-              <h3>Post-Procedure Care</h3>
-              <p>Post-procedure care includes specific instructions on caring for your new filling, follow-up appointments to check the filling, and maintaining good oral hygiene practices to ensure the longevity of your filling. Regular dental check-ups and proper oral hygiene are essential.</p>
-            </section>
-            <h2 className={styles["service-page__subheader"]}>Why Choose Us?</h2>
-            <p className={styles["service-page__text"]}>
-              Our dental practice offers high-quality fillings and personalized care to ensure the best outcomes for our patients.
+
+            <h3>2. Filling Placement</h3>
+            <p>
+              The filling process begins with administering local anesthesia to
+              ensure comfort. The decayed area of the tooth is cleaned out, and
+              the dentist then fills the space with the selected material.
+              Composite fillings are applied in layers, each hardened with a
+              special curing light.
             </p>
-            <Link href="/contact-us" className={styles["service-page__contact-button"]}>
-              Contact Us
-            </Link>
-          </article>
-          <aside className={styles["service-page__image-slider"]}>
-            <div className={styles["slider__main-image"]}>
-              <img src={images[currentImage]} alt={`Filling ${currentImage + 1}`} />
-            </div>
-            <div className={styles["slider__thumbnails"]}>
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  className={`${styles["thumbnail"]} ${currentImage === index ? styles["active"] : ""}`}
-                  onClick={() => setCurrentImage(index)}
-                >
-                  <img src={image} alt={`Thumbnail ${index + 1}`} />
-                </div>
-              ))}
-            </div>
-            <button className={styles["slider__next-button"]} onClick={handleNextImage}>
-              Next
-            </button>
-          </aside>
+
+            <h3>3. Post-Procedure Care</h3>
+            <p>
+              After the procedure, you will receive aftercare instructions,
+              including advice on maintaining the filling and promoting oral
+              health. It's important to brush and floss regularly, and come in
+              for routine checkups to ensure the filling remains intact.
+            </p>
+          </section>
+        </section>
+
+        {/* Types of Fillings */}
+        <section className={styles["fillingsTypes"]}>
+          <h2 className={styles["fillingsSubheader"]}>Types of Fillings</h2>
+          <section className={styles["fillingsText"]}>
+            <h3>Composite Fillings</h3>
+            <p>
+              Composite fillings are tooth-colored and made of a durable resin
+              material. They are aesthetically pleasing and blend seamlessly
+              with your natural teeth, making them ideal for visible areas like
+              the front teeth.
+            </p>
+
+            <h3>Amalgam Fillings</h3>
+            <p>
+              Amalgam fillings are made from a mixture of metals, including
+              silver, mercury, and copper. They are extremely durable and can
+              withstand the pressure of chewing, making them a popular choice
+              for molars.
+            </p>
+
+            <h3>Ceramic Fillings</h3>
+            <p>
+              Ceramic fillings are made of porcelain and are more resistant to
+              staining than composite fillings. They are also aesthetically
+              pleasing and can last for many years, but are typically more
+              expensive.
+            </p>
+
+            <h3>Gold Fillings</h3>
+            <p>
+              Gold fillings are highly durable and can last over 20 years.
+              Though more expensive, gold fillings provide long-term value for
+              patients seeking a durable option. They are biocompatible and do
+              not corrode.
+            </p>
+          </section>
+        </section>
+
+        {/* Benefits of Fillings */}
+        <section className={styles["fillingsBenefits"]}>
+          <h2 className={styles["fillingsSubheader"]}>
+            Benefits of Dental Fillings
+          </h2>
+          <ul className={styles["fillingsList"]}>
+            <li>Restores the natural function of the tooth.</li>
+            <li>Prevents further decay by sealing off bacteria.</li>
+            <li>Minimally invasive compared to other dental procedures.</li>
+            <li>Composite fillings blend with the natural tooth color.</li>
+            <li>Amalgam fillings offer long-lasting durability.</li>
+          </ul>
+        </section>
+
+        {/* Image Slider Section */}
+        <aside className={styles["fillingsImageSlider"]}>
+          <div className={styles["fillingsMainImage"]}>
+            <img
+              src={images[currentImage]}
+              alt={`Filling ${currentImage + 1}`}
+            />
+          </div>
+          <div className={styles["fillingsThumbnails"]}>
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`${styles["fillingsThumbnail"]} ${
+                  currentImage === index ? styles["fillingsActive"] : ""
+                }`}
+                onClick={() => setCurrentImage(index)}
+              >
+                <img src={image} alt={`Thumbnail ${index + 1}`} />
+              </div>
+            ))}
+          </div>
+          <button
+            className={styles["fillingsNextButton"]}
+            onClick={handleNextImage}
+          >
+            Next
+          </button>
+        </aside>
+
+        {/* Why Choose Us Section */}
+        <section className={styles["fillingsWhyUs"]}>
+          <h2 className={styles["fillingsSubheader"]}>Why Choose Us?</h2>
+          <p className={styles["fillingsText"]}>
+            Our experienced dental team uses the latest technologies and
+            highest-quality materials to ensure your fillings are durable,
+            comfortable, and aesthetically pleasing. We prioritize patient care,
+            ensuring you have a positive and comfortable experience.
+          </p>
+          <Link href="/contact-us" className={styles["fillingsContactButton"]}>
+            Contact Us
+          </Link>
         </section>
       </main>
     </>
