@@ -24,17 +24,37 @@ const Fillings = () => {
 
   return (
     <>
-      <Head>
-        <title>Fillings | Your Dental Practice</title>
-        <meta
-          name="description"
-          content="Learn about dental fillings at Your Dental Practice. Fillings are used to repair cavities and restore tooth function with advanced techniques for a seamless look."
-        />
-        <meta
-          name="keywords"
-          content="dental fillings, cavity repair, tooth restoration, oral health"
-        />
-      </Head>
+ <Head>
+  <title>Dental Fillings in [Your City] | Restore Your Smile at Your Dental Practice</title>
+  <meta
+    name="description"
+    content="Looking for dental fillings in [Your City]? At Your Dental Practice, we offer advanced cavity repair and tooth restoration services. Restore your smile with our natural-looking fillings. Schedule an appointment today!"
+  />
+  <meta
+    name="keywords"
+    content="dental fillings, cavity repair, tooth restoration, composite fillings, amalgam fillings, dental care, oral health, [Your City]"
+  />
+  <meta property="og:title" content="Dental Fillings in [Your City] | Restore Your Smile" />
+  <meta
+    property="og:description"
+    content="Repair cavities and restore your tooth's function with advanced dental fillings at Your Dental Practice in [Your City]. Contact us to schedule your appointment."
+  />
+  <meta property="og:image" content="[URL to an image representing your service]" />
+  <meta property="og:url" content="[URL of the fillings page]" />
+  <meta property="og:type" content="website" />
+
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dental Fillings in [Your City] | Restore Your Smile" />
+  <meta
+    name="twitter:description"
+    content="Repair cavities and restore your tooth's function with advanced dental fillings at Your Dental Practice in [Your City]. Contact us to schedule your appointment."
+  />
+  <meta name="twitter:image" content="[URL to an image representing your service]" />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="[URL of the fillings page]" />
+</Head>
 
       <main className={styles.fillingsPage}>
         {/* Header Section */}
