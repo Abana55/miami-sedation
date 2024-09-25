@@ -1,25 +1,11 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import ContactBanner from "../components/ContactBanner/ContactBanner";
 import ServiceCard from "../components/ServiceCard/ServiceCard";
 import styles from "./services.module.scss";
 
 const servicesList = {
-  cosmetic: [
-    {
-      title: "Teeth Whitening",
-      description:
-        "Brighten your smile with our professional teeth whitening services.",
-      image: "/images/5D10A688-BC5F-4D17-9DE7-25F1347CEF64.JPG",
-      link: "/dental-services/teeth-whitening",
-    },
-    {
-      title: "Veneers",
-      description: "Get the perfect smile with custom veneers.",
-      image: "/images/Teeth Whitening Karolina Grabowska.jpg",
-      link: "/dental-services/veneers",
-    },
-  ],
   preventive: [
     {
       title: "Teeth Cleaning",
@@ -42,29 +28,74 @@ const servicesList = {
   ],
   restorative: [
     {
-      title: "Dental Implants",
-      description:
-        "Permanent solutions for missing teeth with dental implants.",
-      image: "/images/dental-implants.jpg",
-      link: "/dental-services/dental-implants",
-    },
-    {
-      title: "Fillings",
-      description: "Restore your teeth with durable fillings.",
-      image: "/images/fallback-image.jpg",
-      link: "/dental-services/fillings",
-    },
-    {
-      title: "Crowns",
+      title: "Dental Crowns",
       description: "Protect and strengthen your teeth with crowns.",
-      image: "/images/crowns.jpg",
-      link: "/dental-services/crowns",
+      image: "/images/dental-crowns.jpg",
+      link: "/dental-services/restorative-care#crowns",
     },
     {
       title: "Bridges",
       description: "Replace missing teeth with dental bridges.",
-      image: "/images/bridges.jpg",
-      link: "/dental-services/bridges",
+      image: "/images/dental-bridges.jpg",
+      link: "/dental-services/restorative-care#bridges",
+    },
+    {
+      title: "Fillings",
+      description: "Restore your teeth with durable fillings.",
+      image: "/images/fillings.jpg",
+      link: "/dental-services/restorative-care#fillings",
+    },
+    {
+      title: "Dental Implants",
+      description: "Permanent solutions for missing teeth with implants.",
+      image: "/images/dental-implants.jpg",
+      link: "/dental-services/restorative-care#implants",
+    },
+  ],
+  cosmetic: [
+    {
+      title: "Teeth Whitening",
+      description: "Brighten your smile with professional teeth whitening.",
+      image: "/images/teeth-whitening.jpg",
+      link: "/dental-services/cosmetic-care#teeth-whitening",
+    },
+    {
+      title: "Veneers",
+      description: "Get the perfect smile with custom veneers.",
+      image: "/images/veneers.jpg",
+      link: "/dental-services/cosmetic-care#veneers",
+    },
+    {
+      title: "Smile Makeovers",
+      description: "Combine cosmetic treatments to achieve your ideal smile.",
+      image: "/images/smile-makeover.jpg",
+      link: "/dental-services/cosmetic-care#smile-makeover",
+    },
+    {
+      title: "Gum Contouring",
+      description: "Improve the shape and appearance of your gums.",
+      image: "/images/gum-contouring.jpg",
+      link: "/dental-services/cosmetic-care#gum-contouring",
+    },
+  ],
+  specialized: [
+    {
+      title: "Emergency Dentistry",
+      description: "Get urgent dental care for emergencies.",
+      image: "/images/emergency-dentistry.jpg",
+      link: "/dental-services/specialized-care#emergency-dentistry",
+    },
+    {
+      title: "Pediatric Dentistry",
+      description: "Specialized dental care for children.",
+      image: "/images/pediatric-dentistry.jpg",
+      link: "/dental-services/specialized-care#pediatric-dentistry",
+    },
+    {
+      title: "Sedation Dentistry",
+      description: "Relax during your dental procedures with sedation options.",
+      image: "/images/sedation-dentistry.jpg",
+      link: "/dental-services/specialized-care#sedation-dentistry",
     },
   ],
 };
@@ -86,45 +117,104 @@ const ServicesPage = () => {
       <main className={styles.servicesPage}>
         <header className={styles.servicesPage__header}>
           <h1 className={styles.servicesPage__title}>Our Services</h1>
+          <p className={styles.servicesPage__intro}>
+            We offer a wide range of dental services to meet your needs, from
+            preventive care to restorative and cosmetic treatments. Explore our
+            services to see how we can help you maintain a healthy, beautiful
+            smile.
+          </p>
         </header>
 
-        {/* Cosmetic Treatments Section */}
+        {/* Preventive Care Section */}
         <section className={styles.servicesPage__category}>
-          <h2 className={styles.servicesPage__categoryTitle}>Cosmetic Treatments</h2>
+          <h2 className={styles.servicesPage__categoryTitle}>
+            Preventive Care
+          </h2>
           <p className={styles.servicesPage__description}>
-            Cosmetic dentistry focuses on enhancing the appearance of your smile. These treatments can improve the color, shape, position, and alignment of your teeth, giving you a more confident smile.
-          </p>
-          <div className={styles.servicesPage__cards}>
-            {servicesList.cosmetic.map((service, index) => (
-              <ServiceCard key={index} service={service} />
-            ))}
-          </div>
-        </section>
-
-        {/* Preventive Treatments Section */}
-        <section className={styles.servicesPage__category}>
-          <h2 className={styles.servicesPage__categoryTitle}>Preventive Treatments</h2>
-          <p className={styles.servicesPage__description}>
-            Preventive dentistry is the practice of caring for your teeth to keep them healthy. This helps to avoid cavities, gum disease, enamel wear, and more. Regular check-ups, cleanings, and screenings are essential to maintaining your oral health.
+            Preventive care is essential for maintaining your oral health and
+            catching potential issues early. Our preventive services help you
+            keep your teeth and gums healthy.
           </p>
           <div className={styles.servicesPage__cards}>
             {servicesList.preventive.map((service, index) => (
               <ServiceCard key={index} service={service} />
             ))}
           </div>
+          <Link
+            href="/dental-services/preventive-care"
+            className={styles.servicesPage__moreLink}
+          >
+            Learn more about Preventive Care
+          </Link>
         </section>
 
-        {/* Restorative Treatments Section */}
+        {/* Restorative Care Section */}
         <section className={styles.servicesPage__category}>
-          <h2 className={styles.servicesPage__categoryTitle}>Restorative Treatments</h2>
+          <h2 className={styles.servicesPage__categoryTitle}>
+            Restorative Dental Treatments
+          </h2>
           <p className={styles.servicesPage__description}>
-            Restorative dentistry is focused on repairing and restoring your teeth to full health and functionality. Whether you're dealing with cavities, missing teeth, or damaged teeth, these treatments will help you regain a healthy smile.
+            Our restorative treatments focus on repairing damaged teeth and
+            restoring function. Whether you're dealing with cavities or missing
+            teeth, we have solutions to bring back your healthy smile.
           </p>
           <div className={styles.servicesPage__cards}>
             {servicesList.restorative.map((service, index) => (
               <ServiceCard key={index} service={service} />
             ))}
           </div>
+          <Link
+            href="/dental-services/restorative-care"
+            className={styles.servicesPage__moreLink}
+          >
+            Learn more about Restorative Dental Treatments
+          </Link>
+        </section>
+
+        {/* Cosmetic Dentistry Section */}
+        <section className={styles.servicesPage__category}>
+          <h2 className={styles.servicesPage__categoryTitle}>
+            Cosmetic Dentistry
+          </h2>
+          <p className={styles.servicesPage__description}>
+            Cosmetic dentistry can enhance the appearance of your teeth and
+            gums, giving you a more confident smile. From whitening to veneers,
+            we offer a range of services to improve your smile.
+          </p>
+          <div className={styles.servicesPage__cards}>
+            {servicesList.cosmetic.map((service, index) => (
+              <ServiceCard key={index} service={service} />
+            ))}
+          </div>
+          <Link
+            href="/dental-services/cosmetic-care"
+            className={styles.servicesPage__moreLink}
+          >
+            Learn more about Cosmetic Dentistry
+          </Link>
+        </section>
+
+        {/* Specialized Care Section */}
+        <section className={styles.servicesPage__category}>
+          <h2 className={styles.servicesPage__categoryTitle}>
+            Specialized Care
+          </h2>
+          <p className={styles.servicesPage__description}>
+            Our specialized care services ensure you receive the best treatment
+            for complex dental needs, including emergency, pediatric, and
+            sedation dentistry.
+          </p>
+          <div className={styles.servicesPage__cards}>
+            {servicesList.specialized.map((service, index) => (
+              <ServiceCard key={index} service={service} />
+            ))}
+          </div>
+          <Link
+            href="/dental-services/specialized-care"
+            className={styles.servicesPage__moreLink}
+          >
+            Learn more about Specialized Care
+          </Link>
         </section>
 
         <ContactBanner />
