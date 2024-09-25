@@ -8,19 +8,10 @@ import ConsultationBanner from "@/app/components/ConsultationBanner/Consultation
 import styles from "../../DentalServices.module.scss";
 
 const Crowns = () => {
-  const images = [
-    "/images/crown1.jpg",
-    "/images/crown2.jpg",
-    "/images/crown3.jpg",
+  const beforeAfterImages = [
+    { before: "/images/crown-before1.jpg", after: "/images/crown-after1.jpg" },
+    { before: "/images/crown-before2.jpg", after: "/images/crown-after2.jpg" },
   ];
-
-  const [currentImage, setCurrentImage] = React.useState(0);
-
-  const handleNextImage = () => {
-    setCurrentImage((prevImage) =>
-      prevImage === images.length - 1 ? 0 : prevImage + 1
-    );
-  };
 
   return (
     <>
@@ -68,7 +59,7 @@ const Crowns = () => {
           </ScrollFadeIn>
         </header>
 
-        {/* Article Section with Image Slider */}
+        {/* Article Section */}
         <section className={styles.crownsPage__content}>
           <article className={styles.crownsPage__article}>
             <ScrollFadeIn>
@@ -87,30 +78,8 @@ const Crowns = () => {
               {/* Image Slider Section */}
               <div className={styles.crownsPage__imageSlider}>
                 <div className={styles.slider__mainImage}>
-                  <img
-                    src={images[currentImage]}
-                    alt={`Crown ${currentImage + 1}`}
-                  />
+                  <img src="/images/crown1.jpg" alt="Crown Procedure" />
                 </div>
-                <div className={styles.slider__thumbnails}>
-                  {images.map((image, index) => (
-                    <div
-                      key={index}
-                      className={`${styles.slider__thumbnail} ${
-                        currentImage === index ? styles.active : ""
-                      }`}
-                      onClick={() => setCurrentImage(index)}
-                    >
-                      <img src={image} alt={`Thumbnail ${index + 1}`} />
-                    </div>
-                  ))}
-                </div>
-                <button
-                  className={styles.slider__nextButton}
-                  onClick={handleNextImage}
-                >
-                  Next
-                </button>
               </div>
             </ScrollFadeIn>
 
@@ -174,6 +143,35 @@ const Crowns = () => {
               </Link>
             </ScrollFadeIn>
           </article>
+        </section>
+
+        {/* Before and After Section */}
+        <section className={styles.crownsPage__beforeAfter}>
+          <ScrollFadeIn>
+            <h2 className={styles.crownsPage__subheader}>Before & After</h2>
+            <div className={styles.beforeAfterGrid}>
+              {beforeAfterImages.map((image, index) => (
+                <div key={index} className={styles.beforeAfterItem}>
+                  <div className={styles.beforeAfter__imageContainer}>
+                    <img
+                      src={image.before}
+                      alt={`Before Crown ${index + 1}`}
+                      className={styles.beforeAfter__image}
+                    />
+                    <span className={styles.beforeAfter__label}>Before</span>
+                  </div>
+                  <div className={styles.beforeAfter__imageContainer}>
+                    <img
+                      src={image.after}
+                      alt={`After Crown ${index + 1}`}
+                      className={styles.beforeAfter__image}
+                    />
+                    <span className={styles.beforeAfter__label}>After</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollFadeIn>
         </section>
 
         {/* Consultation Banner */}
