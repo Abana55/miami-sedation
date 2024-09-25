@@ -8,6 +8,20 @@ import ConsultationBanner from "@/app/components/ConsultationBanner/Consultation
 import styles from "../../DentalServices.module.scss";
 
 const Crowns = () => {
+  const images = [
+    "/images/crown1.jpg",
+    "/images/crown2.jpg",
+    "/images/crown3.jpg",
+  ];
+
+  const [currentImage, setCurrentImage] = React.useState(0);
+
+  const handleNextImage = () => {
+    setCurrentImage((prevImage) =>
+      prevImage === images.length - 1 ? 0 : prevImage + 1
+    );
+  };
+
   return (
     <>
       <Head>
@@ -40,12 +54,12 @@ const Crowns = () => {
         />
       </Head>
 
-      <main className={styles.fillingsPage}>
+      <main className={styles.crownsPage}>
         {/* Header Section */}
-        <header className={styles.fillingsPage__header}>
+        <header className={styles.crownsPage__header}>
           <ScrollFadeIn>
-            <h1 className={styles.fillingsPage__title}>Dental Crowns</h1>
-            <p className={styles.fillingsPage__intro}>
+            <h1 className={styles.crownsPage__title}>Dental Crowns</h1>
+            <p className={styles.crownsPage__intro}>
               At Miami Sedation Dentistry, we offer high-quality dental crowns
               that restore both the function and aesthetics of your teeth. Our
               crowns are designed for durability and comfort, using the latest
@@ -54,15 +68,14 @@ const Crowns = () => {
           </ScrollFadeIn>
         </header>
 
-        {/* Content and Image Slider */}
-        <section className={styles.fillingsPage__grid}>
-          {/* Article Section */}
-          <article className={styles.fillingsPage__content}>
+        {/* Article Section with Image Slider */}
+        <section className={styles.crownsPage__content}>
+          <article className={styles.crownsPage__article}>
             <ScrollFadeIn>
-              <h2 className={styles.fillingsPage__subheader}>
+              <h2 className={styles.crownsPage__subheader}>
                 What Are Dental Crowns?
               </h2>
-              <p className={styles.fillingsPage__text}>
+              <p className={styles.crownsPage__text}>
                 Dental crowns are custom-made caps that cover and protect a
                 damaged tooth. Crowns are typically used for teeth that have
                 been weakened by decay, fractures, or extensive restorations. At
@@ -70,11 +83,40 @@ const Crowns = () => {
                 such as porcelain and ceramic, which blend seamlessly with your
                 natural teeth.
               </p>
+
+              {/* Image Slider Section */}
+              <div className={styles.crownsPage__imageSlider}>
+                <div className={styles.slider__mainImage}>
+                  <img
+                    src={images[currentImage]}
+                    alt={`Crown ${currentImage + 1}`}
+                  />
+                </div>
+                <div className={styles.slider__thumbnails}>
+                  {images.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`${styles.slider__thumbnail} ${
+                        currentImage === index ? styles.active : ""
+                      }`}
+                      onClick={() => setCurrentImage(index)}
+                    >
+                      <img src={image} alt={`Thumbnail ${index + 1}`} />
+                    </div>
+                  ))}
+                </div>
+                <button
+                  className={styles.slider__nextButton}
+                  onClick={handleNextImage}
+                >
+                  Next
+                </button>
+              </div>
             </ScrollFadeIn>
 
             <ScrollFadeIn>
-              <h2 className={styles.fillingsPage__subheader}>The Procedure</h2>
-              <section className={styles.fillingsPage__text}>
+              <h2 className={styles.crownsPage__subheader}>The Procedure</h2>
+              <section className={styles.crownsPage__text}>
                 <h3>Initial Consultation</h3>
                 <p>
                   Your dentist will perform a thorough examination, including
@@ -114,10 +156,10 @@ const Crowns = () => {
             </ScrollFadeIn>
 
             <ScrollFadeIn>
-              <h2 className={styles.fillingsPage__subheader}>
+              <h2 className={styles.crownsPage__subheader}>
                 Why Choose Our Dental Crowns?
               </h2>
-              <p className={styles.fillingsPage__text}>
+              <p className={styles.crownsPage__text}>
                 Our dental crowns are designed for longevity and aesthetics.
                 Using the latest materials and techniques, we ensure your crown
                 not only restores your tooth’s function but also blends
@@ -126,33 +168,12 @@ const Crowns = () => {
               </p>
               <Link
                 href="/contact-us"
-                className={styles.fillingsPage__contactButton}
+                className={styles.crownsPage__contactButton}
               >
                 Schedule Your Appointment
               </Link>
             </ScrollFadeIn>
           </article>
-
-          {/* Image Slider Section */}
-          <aside className={styles.fillingsPage__imageSlider}>
-            <ScrollFadeIn>
-              <div className={styles.slider__mainImage}>
-                <img src="/images/crown1.jpg" alt="Dental Crown Procedure" />
-              </div>
-              <div className={styles.slider__thumbnails}>
-                <div className={styles.slider__thumbnail}>
-                  <img src="/images/crown2.jpg" alt="Dental Crown Example" />
-                </div>
-                <div className={styles.slider__thumbnail}>
-                  <img
-                    src="/images/crown3.jpg"
-                    alt="Patient with Dental Crown"
-                  />
-                </div>
-              </div>
-              <button className={styles.slider__nextButton}>Next</button>
-            </ScrollFadeIn>
-          </aside>
         </section>
 
         {/* Consultation Banner */}
