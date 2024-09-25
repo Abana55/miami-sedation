@@ -1,110 +1,282 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import ScrollFadeIn from "@/app/components/ScrollFadeIn/ScrollFadeIn";
+import ConsultationBanner from "@/app/components/ConsultationBanner/ConsultationBanner";
 import styles from "../../DentalServices.module.scss";
 
 const Bridges = () => {
+  const images = [
+    "/images/bridge1.jpg",
+    "/images/bridge2.jpg",
+    "/images/bridge3.jpg",
+  ];
+
+  const beforeAfterImages = [
+    {
+      before: "/images/bridge-before1.jpg",
+      after: "/images/bridge-after1.jpg",
+    },
+    {
+      before: "/images/bridge-before2.jpg",
+      after: "/images/bridge-after2.jpg",
+    },
+  ];
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const handleNextImage = () => {
+    setCurrentImage((prevImage) =>
+      prevImage === images.length - 1 ? 0 : prevImage + 1
+    );
+  };
+
   return (
     <>
       <Head>
-        <title>Dental Bridges | Bana Dental Design</title>
+        <title>Dental Bridges in [Your City] | Bana Dental Design</title>
         <meta
           name="description"
-          content="Learn about the different types of dental bridges provided by Bana Dental Design. Dental bridges are used to replace missing teeth and restore your smile."
+          content="Restore your smile with dental bridges at Bana Dental Design in [Your City]. Learn about the different types of dental bridges and how they can replace missing teeth."
         />
         <meta
           name="keywords"
-          content="dental bridges, tooth replacement, dental care, oral health, Bana Dental Design"
+          content="dental bridges, tooth replacement, dental care, oral health, Bana Dental Design, missing teeth, restorative dentistry, [Your City]"
+        />
+        <meta
+          property="og:title"
+          content="Dental Bridges in [Your City] | Bana Dental Design"
+        />
+        <meta
+          property="og:description"
+          content="Learn how dental bridges at Bana Dental Design can replace missing teeth and restore your smile. Contact us today for a consultation."
+        />
+        <meta property="og:image" content="/images/bridge1.jpg" />
+        <meta
+          property="og:url"
+          content="https://banadentaldesign.com/services/bridges"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link
+          rel="canonical"
+          href="https://banadentaldesign.com/services/bridges"
         />
       </Head>
-      <main className={`${styles["service-page"]} ${styles["service-page--restoration"]}`}>
-        <h1 className={styles["service-page__header"]}>Dental Bridges</h1>
-        <section className={styles["service-page__content"]}>
-          <article className={styles["service-page__articles"]}>
-            <p className={styles["service-page__text"]}>
-              Dental bridges are used to replace one or more missing teeth by bridging the gap created by the missing teeth. A dental bridge consists of two or more crowns for the teeth on either side of the gap and a false tooth/teeth in between.
+      <main className={styles.bridgesPage}>
+        {/* Header Section */}
+        <header className={styles.bridgesPage__header}>
+          <ScrollFadeIn>
+            <h1 className={styles.bridgesPage__title}>Dental Bridges</h1>
+            <p className={styles.bridgesPage__intro}>
+              At Bana Dental Design, we specialize in providing high-quality
+              dental bridges to help you restore your smile and confidence. Our
+              experienced team uses the latest techniques to replace missing
+              teeth and improve your oral health.
             </p>
-            <h2 className={styles["service-page__subheader"]}>Types of Dental Bridges</h2>
-            <section className={styles["service-page__text"]}>
-              <h3>Traditional Dental Bridges</h3>
-              <p>
-                Traditional dental bridges are the most common type of bridge. They are made of porcelain fused to metal or ceramics. Traditional bridges consist of one or more false teeth held in place by dental crowns that have been cemented onto the abutment teeth.
+          </ScrollFadeIn>
+        </header>
+
+        {/* Article Section */}
+        <section className={styles.bridgesPage__content}>
+          <article className={styles.bridgesPage__article}>
+            <ScrollFadeIn>
+              <h2 className={styles.bridgesPage__subheader}>
+                What Are Dental Bridges?
+              </h2>
+              <p className={styles.bridgesPage__text}>
+                Dental bridges are custom-made restorations that fill the gap
+                left by one or more missing teeth. A bridge consists of
+                artificial teeth anchored to adjacent natural teeth or implants,
+                effectively restoring your smile and functionality.
               </p>
 
-              <h3>Maryland Bonded Bridges</h3>
-              <p>
-                Maryland bonded bridges, also known as resin-bonded bridges, are made of porcelain or porcelain fused to metal supported by a framework. The framework has wings that are bonded to the back of the existing teeth.
-              </p>
+              {/* Image Slider */}
+              <div className={styles.bridgesPage__imageSlider}>
+                <div className={styles.slider__mainImage}>
+                  <img
+                    src={images[currentImage]}
+                    alt={`Dental Bridge ${currentImage + 1}`}
+                  />
+                </div>
+                <div className={styles.slider__thumbnails}>
+                  {images.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`${styles.slider__thumbnail} ${
+                        currentImage === index ? styles.active : ""
+                      }`}
+                      onClick={() => setCurrentImage(index)}
+                    >
+                      <img src={image} alt={`Thumbnail ${index + 1}`} />
+                    </div>
+                  ))}
+                </div>
+                <button
+                  className={styles.slider__nextButton}
+                  onClick={handleNextImage}
+                >
+                  Next
+                </button>
+              </div>
+            </ScrollFadeIn>
 
-              <h3>Cantilever Bridges</h3>
-              <p>
-                Cantilever bridges are used when there are adjacent teeth on only one side of the missing tooth or teeth. They are not very common and are typically used for the front teeth.
-              </p>
+            <ScrollFadeIn>
+              <h2 className={styles.bridgesPage__subheader}>
+                Types of Dental Bridges
+              </h2>
+              <section className={styles.bridgesPage__text}>
+                <h3>Traditional Dental Bridges</h3>
+                <p>
+                  The most common type, traditional bridges, involve creating a
+                  crown for the tooth or implant on either side of the missing
+                  tooth, with a pontic (false tooth) in between. They are made
+                  from porcelain fused to metal or ceramics.
+                </p>
 
-              <h3>Implant-Supported Bridges</h3>
-              <p>
-                Implant-supported bridges are similar to traditional bridges, but they are supported by dental implants instead of crowns. These are used when you have more than one tooth missing. Implants are surgically placed for every missing tooth, and this bridge is then placed over them.
+                <h3>Maryland Bonded Bridges</h3>
+                <p>
+                  Also known as resin-bonded bridges, these use a metal or
+                  porcelain framework bonded to the backs of adjacent teeth.
+                  Maryland bridges are typically used for front teeth.
+                </p>
+
+                <h3>Cantilever Bridges</h3>
+                <p>
+                  Cantilever bridges are used when there are adjacent teeth on
+                  only one side of the missing tooth or teeth. They are less
+                  common and generally not recommended in areas of the mouth
+                  that receive a lot of stress.
+                </p>
+
+                <h3>Implant-Supported Bridges</h3>
+                <p>
+                  These bridges are supported by dental implants rather than
+                  crowns or frameworks. They are ideal when multiple teeth are
+                  missing and provide a secure and long-lasting solution.
+                </p>
+              </section>
+            </ScrollFadeIn>
+
+            <ScrollFadeIn>
+              <h2 className={styles.bridgesPage__subheader}>
+                Benefits of Dental Bridges
+              </h2>
+              <p className={styles.bridgesPage__text}>
+                Choosing a dental bridge to replace missing teeth offers several
+                advantages:
               </p>
-            </section>
-            <h2 className={styles["service-page__subheader"]}>Why Choose a Dental Bridge?</h2>
-            <section className={styles["service-page__text"]}>
-              <p>Choosing a dental bridge to replace missing teeth can have several benefits:</p>
-              <ul className={styles["service-page__list"]}>
-                <li className={styles["service-page__list__item"]}>Restore your smile and the ability to properly chew and speak.</li>
-                <li className={styles["service-page__list__item"]}>Maintain the shape of your face.</li>
-                <li className={styles["service-page__list__item"]}>Prevent remaining teeth from drifting out of position.</li>
-                <li className={styles["service-page__list__item"]}>Distribute the forces in your bite properly by replacing missing teeth.</li>
+              <ul className={styles.bridgesPage__list}>
+                <li className={styles.bridgesPage__listItem}>
+                  Restore your smile and confidence.
+                </li>
+                <li className={styles.bridgesPage__listItem}>
+                  Improve chewing and speaking abilities.
+                </li>
+                <li className={styles.bridgesPage__listItem}>
+                  Maintain facial shape and prevent sagging.
+                </li>
+                <li className={styles.bridgesPage__listItem}>
+                  Prevent remaining teeth from shifting out of position.
+                </li>
+                <li className={styles.bridgesPage__listItem}>
+                  Distribute bite forces properly by replacing missing teeth.
+                </li>
               </ul>
-            </section>
-            <h2 className={styles["service-page__subheader"]}>Procedure Overview</h2>
-            <section className={styles["service-page__text"]}>
-              <h3>Initial Consultation</h3>
-              <p>
-                During the initial consultation, your dentist will examine your teeth and gums, take X-rays, and discuss your treatment options. The dentist will also explain the procedure and answer any questions you may have.
-              </p>
+            </ScrollFadeIn>
 
-              <h3>Tooth Preparation</h3>
-              <p>
-                For traditional and cantilever bridges, the abutment teeth need to be prepared by removing a portion of enamel to make room for the crowns. For implant-supported bridges, implants will be surgically placed in the jawbone.
-              </p>
+            <ScrollFadeIn>
+              <h2 className={styles.bridgesPage__subheader}>The Procedure</h2>
+              <section className={styles.bridgesPage__text}>
+                <h3>Initial Consultation</h3>
+                <p>
+                  During your initial visit, we'll perform a comprehensive
+                  examination, including X-rays, to determine the best type of
+                  bridge for your situation. We'll discuss your options and
+                  develop a personalized treatment plan.
+                </p>
 
-              <h3>Impressions and Temporary Bridge</h3>
-              <p>
-                Impressions of your teeth will be taken to create a custom bridge. A temporary bridge may be placed to protect the exposed teeth and gums while the permanent bridge is being made.
-              </p>
+                <h3>Tooth Preparation</h3>
+                <p>
+                  For traditional bridges, the adjacent teeth (abutments) are
+                  prepared by removing a small amount of enamel to accommodate
+                  the crowns. For implant-supported bridges, implants are
+                  surgically placed into the jawbone.
+                </p>
 
-              <h3>Permanent Bridge Placement</h3>
-              <p>
-                Once the permanent bridge is ready, the temporary bridge will be removed, and the new bridge will be fitted and adjusted for comfort and proper bite. The bridge is then permanently cemented into place.
-              </p>
+                <h3>Impressions and Temporary Bridge</h3>
+                <p>
+                  We take impressions of your teeth to create a custom bridge
+                  that fits perfectly. A temporary bridge may be placed to
+                  protect your teeth and gums while the permanent bridge is
+                  being fabricated.
+                </p>
 
-              <h3>Post-Procedure Care</h3>
-              <p>
-                After the procedure, you will receive instructions on how to care for your new bridge. This includes maintaining good oral hygiene, avoiding certain foods, and attending regular dental check-ups to ensure the bridge remains in good condition.
+                <h3>Permanent Bridge Placement</h3>
+                <p>
+                  Once your custom bridge is ready, we'll fit and adjust it to
+                  ensure comfort and proper bite alignment. The bridge is then
+                  permanently cemented or attached to the implants.
+                </p>
+
+                <h3>Post-Procedure Care</h3>
+                <p>
+                  We'll provide detailed instructions on how to care for your
+                  new bridge. Good oral hygiene and regular dental check-ups are
+                  essential to maintain the longevity of your bridge.
+                </p>
+              </section>
+            </ScrollFadeIn>
+
+            <ScrollFadeIn>
+              <h2 className={styles.bridgesPage__subheader}>Before & After</h2>
+              <div className={styles.beforeAfterGrid}>
+                {beforeAfterImages.map((image, index) => (
+                  <div key={index} className={styles.beforeAfterItem}>
+                    <div className={styles.beforeAfter__imageContainer}>
+                      <img
+                        src={image.before}
+                        alt={`Before Dental Bridge ${index + 1}`}
+                        className={styles.beforeAfter__image}
+                      />
+                      <span className={styles.beforeAfter__label}>Before</span>
+                    </div>
+                    <div className={styles.beforeAfter__imageContainer}>
+                      <img
+                        src={image.after}
+                        alt={`After Dental Bridge ${index + 1}`}
+                        className={styles.beforeAfter__image}
+                      />
+                      <span className={styles.beforeAfter__label}>After</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </ScrollFadeIn>
+
+            <ScrollFadeIn>
+              <h2 className={styles.bridgesPage__subheader}>
+                Why Choose Bana Dental Design?
+              </h2>
+              <p className={styles.bridgesPage__text}>
+                At Bana Dental Design, our skilled team is committed to
+                providing personalized care and high-quality dental bridges
+                tailored to your needs. We use state-of-the-art technology to
+                ensure optimal results and patient satisfaction.
               </p>
-            </section>
-            <h2 className={styles["service-page__subheader"]}>Why Choose Us?</h2>
-            <p className={styles["service-page__text"]}>
-              Bana Dental Design offers high-quality dental bridges and personalized care to ensure the best outcomes for our patients. Our experienced team is dedicated to restoring your smile and improving your oral health.
-            </p>
-            <Link href="/contact-us" className={styles["service-page__contact-button"]}>
-              Contact Us
-            </Link>
+              <Link
+                href="/contact-us"
+                className={styles.bridgesPage__contactButton}
+              >
+                Schedule a Consultation
+              </Link>
+            </ScrollFadeIn>
           </article>
-          <aside className={styles["service-page__image-slider"]}>
-            <div className={styles["slider__main-image"]}>
-              <img src="/images/bridge1.jpg" alt="Dental Bridge Procedure" />
-            </div>
-            <div className={styles["slider__thumbnails"]}>
-              <div className={styles["thumbnail"]}>
-                <img src="/images/bridge2.jpg" alt="Dental Bridge Example" />
-              </div>
-              <div className={styles["thumbnail"]}>
-                <img src="/images/bridge3.jpg" alt="Patient with Dental Bridge" />
-              </div>
-            </div>
-          </aside>
         </section>
+
+        {/* Consultation Banner */}
+        <ConsultationBanner />
       </main>
     </>
   );
