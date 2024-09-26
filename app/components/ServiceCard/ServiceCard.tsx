@@ -13,7 +13,6 @@ interface Service {
 
 interface ServiceCardProps {
   service: Service;
-  index: number;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
