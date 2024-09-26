@@ -50,7 +50,7 @@ const Home = () => {
       <div className={styles.hero}>
         <video className={styles.heroVideo} autoPlay muted loop>
           <source
-            src="/videos/Background stock video preview (1).mov"
+            src="/videos/Website Video 2.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
