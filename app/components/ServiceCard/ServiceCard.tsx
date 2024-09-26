@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import styles from "./ServiceCard.module.scss";
 
@@ -16,32 +16,13 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
-  useEffect(() => {
-    const card = document.querySelector(`.${styles.serviceCard}`);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles["serviceCard--visible"]);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    if (card) {
-      observer.observe(card);
-    }
-  }, []);
-
   return (
     <Link href={service.link} className={styles.serviceCard}>
       <div className={styles.cardContent}>
+        {/* Lazy-load the image */}
         <div className={styles.cardImage}>
           <img
+            loading="lazy" // Ensuring images are lazy-loaded
             src={service.image}
             alt={service.title}
             className={styles["image-element"]}
