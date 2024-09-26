@@ -20,6 +20,7 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    background-color: #000; 
   }
 
   .heroContent {
@@ -28,10 +29,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    color: #fff;
 
     .heroButton {
       @include glassmorphism(rgba(255, 255, 255, 0.1));
       @include button-style(rgba(255, 255, 255, 0.1), #fff, rgba(255, 255, 255, 0.2), #fff);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .heroContent {
+      padding: 1rem;
     }
   }
 }
