@@ -1,7 +1,5 @@
-"use client";
-
-import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./ServiceCard.module.scss";
 
 interface Service {
@@ -19,12 +17,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   return (
     <Link href={service.link} className={styles.serviceCard}>
       <div className={styles.cardContent}>
-        {/* Lazy-load the image */}
         <div className={styles.cardImage}>
-          <img
-            loading="lazy" // Ensuring images are lazy-loaded
+          <Image
             src={service.image}
             alt={service.title}
+            layout="fill" // Optimized for responsive and lazy-loaded images
+            objectFit="cover"
             className={styles["image-element"]}
           />
           <h3 className={styles.cardTitle}>{service.title}</h3>

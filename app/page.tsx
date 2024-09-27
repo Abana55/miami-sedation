@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./components/Home.module.scss";
-import "./styles/globals.scss";
 import TeamAccordion from "./components/TeamAccordion/TeamAccordion";
 import OurOffice from "./components/OurOffice/OurOffice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -41,79 +41,52 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <Head>
-  <title>Bana Dental Design | Miami, FL - Expert Dental Care with a Gentle Touch</title>
-  <meta
-    name="description"
-    content="Bana Dental Design offers expert dental care with a gentle touch in Miami, FL. Specializing in cosmetic, restorative, and preventive dental treatments."
-  />
-  <meta
-    name="keywords"
-    content="Bana Dental Design, Miami dentist, cosmetic dentistry, restorative dentistry, preventive dental care, teeth whitening, dental implants, veneers, crowns, oral exams, X-rays, dental bridges"
-  />
-  <meta name="author" content="Dr. Ramon Bana" />
-  <meta property="og:title" content="Bana Dental Design | Miami, FL - Expert Dental Care with a Gentle Touch" />
-  <meta property="og:description" content="Bana Dental Design in Miami, FL, offers professional and gentle cosmetic, restorative, and preventive dental treatments for the entire family." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.banadental.com" />
-  <meta property="og:image" content="https://www.banadental.com/images/hero-image.jpg" />
-  <meta property="og:site_name" content="Bana Dental Design" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bana Dental Design | Expert Dental Care in Miami, FL" />
-  <meta name="twitter:description" content="Providing expert cosmetic, restorative, and preventive dental care in Miami. Contact us to book your consultation today." />
-  <meta name="twitter:image" content="https://www.banadental.com/images/hero-image.jpg" />
-  <link rel="canonical" href="https://www.banadental.com" />
-  <meta name="robots" content="index, follow" />
+        {/* Preload Critical Fonts */}
+        <link
+          rel="preload"
+          href="/fonts/YourFont.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
 
-  <!-- Local Business Structured Data for SEO -->
-  <script type="application/ld+json">
-    {`
-      {
-        "@context": "https://schema.org",
-        "@type": "Dentist",
-        "name": "Bana Dental Design",
-        "image": "https://www.banadental.com/images/hero-image.jpg",
-        "url": "https://www.banadental.com",
-        "telephone": "(786) 625-5550",
-        "email": "info@banadental.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "2461 Coral Way, Suite 100",
-          "addressLocality": "Miami",
-          "addressRegion": "FL",
-          "postalCode": "33145",
-          "addressCountry": "US"
-        },
-        "openingHours": [
-          "Mo 09:30-19:00",
-          "Tu-Th 08:45-18:00",
-          "Fr 09:00-17:00"
-        ],
-        "priceRange": "$$",
-        "description": "Bana Dental Design in Miami provides cosmetic, preventive, and restorative dental care with a gentle touch. Services include teeth whitening, dental implants, crowns, and more.",
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 25.7505,
-          "longitude": -80.2356
-        },
-        "sameAs": [
-          "https://www.instagram.com/banadental",
-          "https://www.facebook.com/banadental",
-          "https://twitter.com/banadental"
-        ]
-      }
-    `}
-  </script>
-</Head>
+        <title>
+          Bana Dental Design | Miami, FL - Expert Dental Care with a Gentle
+          Touch
+        </title>
+        <meta
+          name="description"
+          content="Bana Dental Design offers expert dental care with a gentle touch in Miami, FL. Specializing in cosmetic, restorative, and preventive dental treatments."
+        />
+        <meta
+          name="keywords"
+          content="Bana Dental Design, Miami dentist, cosmetic dentistry, restorative dentistry, preventive dental care, teeth whitening, dental implants, veneers, crowns, oral exams, X-rays, dental bridges"
+        />
+        {/* OpenGraph and Twitter */}
+        <meta
+          property="og:title"
+          content="Bana Dental Design | Miami, FL - Expert Dental Care with a Gentle Touch"
+        />
+        <meta
+          property="og:image"
+          content="https://www.banadental.com/images/hero-image.jpg"
+        />
+        <meta
+          property="twitter:image"
+          content="https://www.banadental.com/images/hero-image.jpg"
+        />
+      </Head>
 
+      {/* Hero Section */}
       <div className={styles.hero}>
         <video
           className={styles.heroVideo}
           autoPlay
           muted
           loop
-          preload="auto" 
-          playsInline 
-          poster="/images/fallback-image.jpg" 
+          preload="auto"
+          playsInline
+          poster="/images/fallback-image.jpg"
         >
           <source src="/videos/Website Video 2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -127,20 +100,25 @@ const Home = () => {
           </Link>
         </div>
       </div>
+
+      {/* Welcome Section */}
       <section className={styles.welcomeSection}>
         <div className={styles.welcomeText}>
           <h1 className={styles.welcomeTitle}>Welcome to Bana Dental Design</h1>
           <p className={styles.welcomeDescription}>
-            Encounter an elegant, artistry, and inspiring dental experience
+            Encounter an elegant, artistry, and inspiring dental experience.
           </p>
           <button className={styles.welcomeButton}>
             What Makes Us Different
           </button>
         </div>
         <div className={styles.welcomeImage}>
-          <img
+          <Image
             src="/images/OFFICCE/Bana Website Smiling.jpg"
             alt="Welcome to Bana Dental Design"
+            width={800}
+            height={600}
+            className={styles.heroImage}
           />
         </div>
       </section>
