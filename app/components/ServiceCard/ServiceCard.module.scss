@@ -15,8 +15,7 @@
   margin: 1rem;
   padding: 1rem;
   border: 2px solid transparent;
-
-  /* Gradient Border */
+  
   background-clip: padding-box, border-box;
   border-image: linear-gradient(45deg, #ff6f61, #34568b) 1;
 
@@ -27,7 +26,7 @@
     border-image: linear-gradient(45deg, #ff6f61, #ffcc00) 1;
   }
 
-  /* Responsive Design */
+
   @media (max-width: 768px) {
     max-width: 45%; /* 2 cards per row on smaller screens */
   }
