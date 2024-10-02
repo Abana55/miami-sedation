@@ -1,4 +1,3 @@
-
 import React from "react";
 import Image from "next/image";
 import styles from "./TeamMember.module.scss";
@@ -9,7 +8,7 @@ interface TeamMemberProps {
   name: string;
   position: string;
   bio: string[];
-  reverse?: boolean; 
+  reverse?: boolean;
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({
@@ -22,13 +21,6 @@ const TeamMember: React.FC<TeamMemberProps> = ({
 }) => {
   return (
     <div className={`${styles.teamMember} ${reverse ? styles.reverse : ""}`}>
-      <Image
-        src={imageSrc}
-        alt={altText}
-        width={200}
-        height={300}
-        className={styles.image}
-      />
       <div className={styles.teamText}>
         <h3 className={styles.name}>{name}</h3>
         <p className={styles.position}>{position}</p>
@@ -37,6 +29,14 @@ const TeamMember: React.FC<TeamMemberProps> = ({
             {paragraph}
           </p>
         ))}
+      </div>
+      <div className={styles.imageContainer}>
+        <Image
+          src={imageSrc}
+          alt={altText}
+          layout="fill" 
+          className={styles.image}
+        />
       </div>
     </div>
   );

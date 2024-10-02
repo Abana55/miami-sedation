@@ -43,7 +43,7 @@ const AboutPage: NextPage = () => {
     // Judy (Hygienist)
     {
       id: 3,
-      imageSrc: "/images/judy.jpg",
+      imageSrc: "/images/aboutUs/Judy.jpg",
       altText: "Judy Martinez",
       name: "Judy Martinez",
       position: "Dental Hygienist",
@@ -54,7 +54,7 @@ const AboutPage: NextPage = () => {
     // Sandra (Dental Assistant)
     {
       id: 4,
-      imageSrc: "/images/sandra.jpg",
+      imageSrc: "/images/aboutUs/Sandra.jpg",
       altText: "Sandra Lopez",
       name: "Sandra Lopez",
       position: "Dental Assistant",
@@ -65,7 +65,7 @@ const AboutPage: NextPage = () => {
     // Araceli (Dental Assistant)
     {
       id: 5,
-      imageSrc: "/images/araceli.jpg",
+      imageSrc: "/images/aboutUs/Ara.jpg",
       altText: "Araceli Gomez",
       name: "Araceli Gomez",
       position: "Dental Assistant",
@@ -76,7 +76,7 @@ const AboutPage: NextPage = () => {
     // Jackie (Dental Assistant)
     {
       id: 6,
-      imageSrc: "/images/jackie.jpg",
+      imageSrc: "/images/aboutUs/Jackie.jpg",
       altText: "Jackie Nguyen",
       name: "Jackie Nguyen",
       position: "Dental Assistant",
@@ -87,9 +87,9 @@ const AboutPage: NextPage = () => {
     // Lauren (Social Media Manager)
     {
       id: 7,
-      imageSrc: "/images/lauren.jpg",
-      altText: "Lauren Smith",
-      name: "Lauren Smith",
+      imageSrc: "/images/aboutUs/Lauren.jpg",
+      altText: "Lauren Bana",
+      name: "Lauren Bana",
       position: "Social Media Manager",
       bio: [
         "Lauren is the creative force behind our online presence. With a background in digital marketing and a passion for storytelling, she connects with our patients through engaging content and community outreach.",
@@ -98,7 +98,7 @@ const AboutPage: NextPage = () => {
     // Lourdes (Community Relations)
     {
       id: 8,
-      imageSrc: "/images/lourdes.jpg",
+      imageSrc: "/images/aboutUs/LordesBana.jpg",
       altText: "Lourdes Bana",
       name: "Lourdes Bana",
       position: "Community Relations",
@@ -109,34 +109,12 @@ const AboutPage: NextPage = () => {
     // Yoan (Treatment Coordinator)
     {
       id: 9,
-      imageSrc: "/images/yoan.jpg",
+      imageSrc: "/images/aboutUs/Yoan.jpg",
       altText: "Yoan Perez",
       name: "Yoan Perez",
       position: "Treatment Coordinator",
       bio: [
         "Yoan ensures that every patient understands their treatment options and feels comfortable throughout their dental experience. His attention to detail and compassionate approach make him a valued member of our team.",
-      ],
-    },
-    // John Smith (Dental Hygienist)
-    {
-      id: 10,
-      imageSrc: "/images/hygienist1.jpg",
-      altText: "John Smith",
-      name: "John Smith",
-      position: "Dental Hygienist",
-      bio: [
-        "John has been a hygienist for over 10 years and brings a wealth of knowledge and experience to our practice. He is dedicated to helping patients achieve optimal oral health through regular cleanings and patient education.",
-      ],
-    },
-    // Emily Johnson (Dental Hygienist)
-    {
-      id: 11,
-      imageSrc: "/images/hygienist2.jpg",
-      altText: "Emily Johnson",
-      name: "Emily Johnson",
-      position: "Dental Hygienist",
-      bio: [
-        "Emily is passionate about dental hygiene and loves working with patients to improve their smiles. She is known for her gentle touch and friendly demeanor, making every visit a pleasant experience.",
       ],
     },
   ];

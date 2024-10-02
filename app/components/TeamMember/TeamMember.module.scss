@@ -1,88 +1,87 @@
+/* components/TeamMember/TeamMember.module.scss */
 
 .teamMember {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
+    grid-template-columns: 2fr 1fr;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 1.5rem;
     background-color: var(--light-background);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin-bottom: 3rem;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 2rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--light-background-hover); 
+    }
   
     @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
+        .teamMember {
+          text-align: left;
+          padding: 1rem;
+        }
+      }
   }
   
-  
-  .reverse {
-    grid-template-columns: 2fr 1fr;
-  
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
-  
-
-    .image {
-      order: 2;
-    }
-  
-    .teamText {
-      order: 1;
-    }
+  .imageContainer {
+    height: 100%;
+    position: relative;
   }
   
   .image {
-    border-radius: 10px;
-    max-width: 200px;
-    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+  }
   
-    @media (max-width: 768px) {
-      margin: 0 auto 1rem;
-      width: 150px;
-      height: auto;
+  .reverse {
+    grid-template-columns: 1fr 2fr;
+  
+    .imageContainer {
+      order: 1;
     }
   
-    @media (max-width: 480px) {
-      width: 120px;
+    .teamText {
+      order: 2;
     }
   }
   
   .teamText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
     .name {
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       color: var(--secondary-color);
       margin-bottom: 0.5rem;
   
       @media (max-width: 768px) {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
   
       @media (max-width: 480px) {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
       }
     }
   
     .position {
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 1rem;
     }
   
     .bio {
       margin-bottom: 1.5rem;
-      line-height: 1.75;
-      font-size: 1.1rem;
+      line-height: 1.6;
+      font-size: 1rem;
       color: var(--text-color);
   
       @media (max-width: 768px) {
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
   
       @media (max-width: 480px) {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
     }
   }
