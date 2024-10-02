@@ -22,7 +22,7 @@ export default function AboutPage() {
 
         <div className={styles.teamMember}>
           <Image
-            src="/images/5D10A688-BC5F-4D17-9DE7-25F1347CEF64.JPG"
+            src="/images/aboutUs/DrBana.jpg"
             alt="Dr. Ramon Bana"
             width={200}
             height={300}
@@ -52,7 +52,7 @@ export default function AboutPage() {
 
         <div className={styles.teamMember}>
           <Image
-            src="/images/IMG_6450.jpeg"
+            src="/images/aboutUs/DrBrittain.jpg"
             alt="Dr. Andrew Brattain"
             width={200}
             height={300}
