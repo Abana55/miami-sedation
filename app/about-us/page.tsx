@@ -1,4 +1,3 @@
-
 import { NextPage } from "next";
 import ConsultationBanner from "../components/ConsultationBanner/ConsultationBanner";
 import TeamMember from "../components/TeamMember/TeamMember";
@@ -50,7 +49,9 @@ const AboutPage: NextPage = () => {
       altText: "Judy Martinez",
       name: "Judy Martinez",
       position: "Dental Hygienist",
-      bio: [], // Empty bio
+      bio: [
+        "Judy has been a dedicated dental hygienist for over 15 years. She is passionate about preventive care and educating patients on maintaining optimal oral health. Her friendly demeanor and gentle approach make patients feel at ease during their visits.",
+      ],
     },
     // Sandra (Dental Assistant)
     {
@@ -59,7 +60,9 @@ const AboutPage: NextPage = () => {
       altText: "Sandra Lopez",
       name: "Sandra Lopez",
       position: "Dental Assistant",
-      bio: [], // Empty bio
+      bio: [
+        "Sandra brings over a decade of experience as a dental assistant. She works closely with our dentists to ensure procedures run smoothly and efficiently. Her commitment to patient comfort and care is evident in everything she does.",
+      ],
     },
     // Araceli (Dental Assistant)
     {
@@ -68,7 +71,9 @@ const AboutPage: NextPage = () => {
       altText: "Araceli Gomez",
       name: "Araceli Gomez",
       position: "Dental Assistant",
-      bio: [], // Empty bio
+      bio: [
+        "Araceli's attention to detail and compassionate nature make her an invaluable member of our team. She assists in a variety of dental procedures and is dedicated to providing exceptional care to every patient.",
+      ],
     },
     // Jackie (Dental Assistant)
     {
@@ -77,7 +82,9 @@ const AboutPage: NextPage = () => {
       altText: "Jackie Nguyen",
       name: "Jackie Nguyen",
       position: "Dental Assistant",
-      bio: [], // Empty bio
+      bio: [
+        "Jackie is known for her cheerful attitude and professionalism. With a background in both general and cosmetic dentistry, she supports our dentists in delivering high-quality care tailored to each patient's needs.",
+      ],
     },
     // Lauren (Social Media Manager)
     {
@@ -86,16 +93,20 @@ const AboutPage: NextPage = () => {
       altText: "Lauren Bana",
       name: "Lauren Bana",
       position: "Social Media Manager",
-      bio: [], // Empty bio
+      bio: [
+        "Lauren is the creative force behind our online presence. With a background in digital marketing and a passion for storytelling, she connects with our patients through engaging content and community outreach.",
+      ],
     },
     // Lourdes (Community Relations)
     {
       id: 8,
-      imageSrc: "/images/aboutUs/LordesBana.jpg",
+      imageSrc: "/images/aboutUs/LourdesBana.jpg",
       altText: "Lourdes Bana",
       name: "Lourdes Bana",
       position: "Community Relations",
-      bio: [], // Empty bio
+      bio: [
+        "As the wife of Dr. Bana, Lourdes plays an integral role in our practice. Her commitment to patient care and community involvement helps us foster strong relationships and provide a welcoming environment for all.",
+      ],
     },
     // Yoan (Treatment Coordinator)
     {
@@ -104,7 +115,9 @@ const AboutPage: NextPage = () => {
       altText: "Yoan Perez",
       name: "Yoan Perez",
       position: "Treatment Coordinator",
-      bio: [], // Empty bio
+      bio: [
+        "Yoan ensures that every patient understands their treatment options and feels comfortable throughout their dental experience. His attention to detail and compassionate approach make him a valued member of our team.",
+      ],
     },
   ];
 
@@ -113,7 +126,11 @@ const AboutPage: NextPage = () => {
       <header>
         <h1 className={styles.title}>Get to Know Us</h1>
         <p className={styles.text}>
-          Our dental team is unlike any you’ve ever met in Miami. We value excellence in patient care, and it shows. We love to laugh and have a good time, but know when it’s time to get down to business. Our team is overflowing with passion and commitment. We hope you get to know us a little bit better here, and we can’t wait to get to know you!
+          Our dental team is unlike any you’ve ever met in Miami. We value
+          excellence in patient care, and it shows. We love to laugh and have a
+          good time, but know when it’s time to get down to business. Our team
+          is overflowing with passion and commitment. We hope you get to know us
+          a little bit better here, and we can’t wait to get to know you!
         </p>
       </header>
 
