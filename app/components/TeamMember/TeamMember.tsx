@@ -8,7 +8,7 @@ interface TeamMemberProps {
   name: string;
   position: string;
   bio: string[];
-  reverse?: boolean;
+  isDoctor?: boolean;
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({
@@ -17,26 +17,31 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   name,
   position,
   bio,
-  reverse = false,
+  isDoctor = false,
 }) => {
   return (
-    <div className={`${styles.teamMember} ${reverse ? styles.reverse : ""}`}>
-      <div className={styles.teamText}>
-        <h3 className={styles.name}>{name}</h3>
-        <p className={styles.position}>{position}</p>
-        {bio.map((paragraph, index) => (
-          <p key={index} className={styles.bio}>
-            {paragraph}
-          </p>
-        ))}
-      </div>
+    <div className={`${styles.teamMember} ${isDoctor ? styles.doctor : ""}`}>
       <div className={styles.imageContainer}>
         <Image
           src={imageSrc}
           alt={altText}
-          layout="fill" 
+          width={isDoctor ? 300 : 150}
+          height={isDoctor ? 400 : 150}
           className={styles.image}
+          priority={isDoctor}
+          loading={isDoctor ? "eager" : "lazy"}
         />
+      </div>
+      <div className={styles.teamInfo}>
+        <h3 className={styles.name}>{name}</h3>
+        <p className={styles.position}>{position}</p>
+        {bio.length > 0 && (
+          <div className={styles.bio}>
+            {bio.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
