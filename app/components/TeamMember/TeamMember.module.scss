@@ -10,13 +10,30 @@
     position: relative;
     overflow: hidden;
     transition: transform 0.3s;
+    cursor: pointer;
   
-    &:hover {
+    &:hover,
+    &:focus {
       transform: translateY(-5px);
     }
   
-    &:hover .bio {
-      max-height: 500px; 
+    .bio {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      text-align: left;
+      margin-top: 0.5rem;
+      color: var(--text-color);
+  
+      p {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+      }
+    }
+  
+    &.showBio .bio {
+      max-height: 1000px; /* Adjust as needed */
       opacity: 1;
     }
   }
@@ -47,21 +64,6 @@
       margin-bottom: 0.5rem;
       color: var(--text-color);
     }
-  
-    .bio {
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease, opacity 0.5s ease;
-      text-align: left;
-      margin-top: 0.5rem;
-      color: var(--text-color);
-  
-      p {
-        margin-bottom: 0.5rem;
-        line-height: 1.5;
-      }
-    }
   }
   
   .doctor {
@@ -85,19 +87,15 @@
       .position {
         font-size: 1.2rem;
       }
-  
-      .bio {
-        max-height: none;
-        opacity: 1;
-      }
     }
   
-    &:hover .bio {
+    .bio {
       max-height: none;
       opacity: 1;
+      overflow: visible;
     }
   }
-  
+
   @media (max-width: 768px) {
     .doctor {
       grid-column: span 1;

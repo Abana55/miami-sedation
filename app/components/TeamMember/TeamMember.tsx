@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import styles from "./TeamMember.module.scss";
 
@@ -19,8 +20,55 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   bio,
   isDoctor = false,
 }) => {
+  const [showBio, setShowBio] = useState(isDoctor);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleCardClick = () => {
+    if (!isDoctor) {
+      setShowBio((prev) => !prev);
+    }
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      if (!isDoctor) {
+        setShowBio((prev) => !prev);
+      }
+    }
+  };
+
+  const handleOutsideClick = (event: MouseEvent) => {
+    if (
+      cardRef.current &&
+      !cardRef.current.contains(event.target as Node) &&
+      !isDoctor
+    ) {
+      setShowBio(false);
+    }
+  };
+
+  useEffect(() => {
+    if (!isDoctor) {
+      document.addEventListener("mousedown", handleOutsideClick);
+      return () => {
+        document.removeEventListener("mousedown", handleOutsideClick);
+      };
+    }
+  }, [isDoctor]);
+
   return (
-    <div className={`${styles.teamMember} ${isDoctor ? styles.doctor : ""}`}>
+    <div
+      className={`${styles.teamMember} ${showBio ? styles.showBio : ""} ${
+        isDoctor ? styles.doctor : ""
+      }`}
+      onClick={handleCardClick}
+      onKeyPress={handleKeyPress}
+      tabIndex={0}
+      role="button"
+      aria-expanded={showBio}
+      ref={cardRef}
+    >
       <div className={styles.imageContainer}>
         <Image
           src={imageSrc}
