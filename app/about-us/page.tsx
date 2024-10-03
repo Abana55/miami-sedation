@@ -100,7 +100,7 @@ const AboutPage: NextPage = () => {
     // Lourdes (Community Relations)
     {
       id: 8,
-      imageSrc: "/images/aboutUs/LourdesBana.jpg",
+      imageSrc: "/images/aboutUs/LordesBana.jpg",
       altText: "Lourdes Bana",
       name: "Lourdes Bana",
       position: "Community Relations",

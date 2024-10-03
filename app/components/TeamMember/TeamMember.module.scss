@@ -33,7 +33,7 @@
     }
   
     &.showBio .bio {
-      max-height: 1000px; /* Adjust as needed */
+      max-height: 1000px; 
       opacity: 1;
     }
   }
@@ -41,13 +41,14 @@
   .imageContainer {
     position: relative;
     width: 100%;
-    max-width: 150px;
-    height: 150px;
+    max-width: 200px;
+    height: 200px;
     margin-bottom: 1rem;
   
     .image {
-      border-radius: 50%;
+      border-radius: 10px; 
       object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
   }
   
@@ -74,8 +75,10 @@
       max-width: 300px;
       height: 400px;
   
+  
       .image {
-        border-radius: 8px;
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
       }
     }
   

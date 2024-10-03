@@ -73,8 +73,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({
         <Image
           src={imageSrc}
           alt={altText}
-          width={isDoctor ? 300 : 150}
-          height={isDoctor ? 400 : 150}
+          width={isDoctor ? 300 : 200} 
+          height={isDoctor ? 400 : 200} 
           className={styles.image}
           priority={isDoctor}
           loading={isDoctor ? "eager" : "lazy"}
