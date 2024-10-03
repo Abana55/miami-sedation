@@ -158,6 +158,37 @@ const AboutPage: NextPage = () => {
 
         {/* Canonical Link */}
         <link rel="canonical" href="https://www.yourwebsite.com/aboutus" />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Your Dental Practice Name",
+      "url": "https://www.yourwebsite.com/",
+      "logo": "https://www.yourwebsite.com/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/yourpractice",
+        "https://www.twitter.com/yourpractice",
+        "https://www.instagram.com/yourpractice",
+        // Add other social profiles
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-555-555-5555",
+        "contactType": "Customer Service",
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Main Street",
+        "addressLocality": "Miami",
+        "addressRegion": "FL",
+        "postalCode": "33101",
+        "addressCountry": "US",
+      },
+    }),
+  }}
+/>
       </Head>
 
       <header>
