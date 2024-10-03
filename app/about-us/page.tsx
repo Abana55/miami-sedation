@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Head from "next/head";
 import ConsultationBanner from "../components/ConsultationBanner/ConsultationBanner";
 import TeamMember from "../components/TeamMember/TeamMember";
 import styles from "./AboutUs.module.scss";
@@ -123,14 +124,49 @@ const AboutPage: NextPage = () => {
 
   return (
     <div className={styles.aboutContainer}>
+      <Head>
+        <title>About Us | Your Dental Practice Name</title>
+        <meta
+          name="description"
+          content="Learn more about our dedicated dental team, our mission, and the exceptional services we provide. We are committed to your oral health and bright smile."
+        />
+        <meta
+          name="keywords"
+          content="Dental Practice, About Us, Dental Team, Oral Health, Dentist, Dental Services"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="About Us | Your Dental Practice Name" />
+        <meta
+          property="og:description"
+          content="Meet our experienced dental team and learn about our commitment to providing top-quality dental care."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.yourwebsite.com/aboutus" />
+        <meta property="og:image" content="https://www.yourwebsite.com/images/og-image.jpg" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Your Dental Practice Name" />
+        <meta
+          name="twitter:description"
+          content="Discover our dedicated dental team and how we prioritize your oral health."
+        />
+        <meta name="twitter:image" content="https://www.yourwebsite.com/images/og-image.jpg" />
+
+        {/* Canonical Link */}
+        <link rel="canonical" href="https://www.yourwebsite.com/aboutus" />
+      </Head>
+
       <header>
         <h1 className={styles.title}>Get to Know Us</h1>
         <p className={styles.text}>
-          Our dental team is unlike any you’ve ever met in Miami. We value
-          excellence in patient care, and it shows. We love to laugh and have a
-          good time, but know when it’s time to get down to business. Our team
-          is overflowing with passion and commitment. We hope you get to know us
-          a little bit better here, and we can’t wait to get to know you!
+          Our dental team is unlike any you’ve ever met in Miami. We value excellence in patient
+          care, and it shows. We love to laugh and have a good time, but know when it’s time to get
+          down to business. Our team is overflowing with passion and commitment. We hope you get to
+          know us a little bit better here, and we can’t wait to get to know you!
         </p>
       </header>
 
