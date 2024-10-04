@@ -16,7 +16,6 @@ interface TeamMemberData {
 
 const AboutPage: NextPage = () => {
   const teamMembers: TeamMemberData[] = [
-    // Doctor Ramon Bana
     {
       id: 1,
       imageSrc: "/images/aboutUs/DrBana.jpg",
@@ -29,7 +28,6 @@ const AboutPage: NextPage = () => {
       ],
       isDoctor: true,
     },
-    // Doctor Andrew Brattain
     {
       id: 2,
       imageSrc: "/images/aboutUs/DrBrittain.jpg",
@@ -43,7 +41,6 @@ const AboutPage: NextPage = () => {
       ],
       isDoctor: true,
     },
-    // Judy (Hygienist)
     {
       id: 3,
       imageSrc: "/images/aboutUs/Judy.jpg",
@@ -54,7 +51,6 @@ const AboutPage: NextPage = () => {
         "Judy has been a dedicated dental hygienist for over 15 years. She is passionate about preventive care and educating patients on maintaining optimal oral health. Her friendly demeanor and gentle approach make patients feel at ease during their visits.",
       ],
     },
-    // Sandra (Dental Assistant)
     {
       id: 4,
       imageSrc: "/images/aboutUs/Sandra.jpg",
@@ -65,7 +61,6 @@ const AboutPage: NextPage = () => {
         "Sandra brings over a decade of experience as a dental assistant. She works closely with our dentists to ensure procedures run smoothly and efficiently. Her commitment to patient comfort and care is evident in everything she does.",
       ],
     },
-    // Araceli (Dental Assistant)
     {
       id: 5,
       imageSrc: "/images/aboutUs/Ara.jpg",
@@ -76,7 +71,6 @@ const AboutPage: NextPage = () => {
         "Araceli's attention to detail and compassionate nature make her an invaluable member of our team. She assists in a variety of dental procedures and is dedicated to providing exceptional care to every patient.",
       ],
     },
-    // Jackie (Dental Assistant)
     {
       id: 6,
       imageSrc: "/images/aboutUs/Jackie.jpg",
@@ -87,7 +81,6 @@ const AboutPage: NextPage = () => {
         "Jackie is known for her cheerful attitude and professionalism. With a background in both general and cosmetic dentistry, she supports our dentists in delivering high-quality care tailored to each patient's needs.",
       ],
     },
-    // Lauren (Social Media Manager)
     {
       id: 7,
       imageSrc: "/images/aboutUs/Lauren.jpg",
@@ -98,7 +91,6 @@ const AboutPage: NextPage = () => {
         "Lauren is the creative force behind our online presence. With a background in digital marketing and a passion for storytelling, she connects with our patients through engaging content and community outreach.",
       ],
     },
-    // Lourdes (Community Relations)
     {
       id: 8,
       imageSrc: "/images/aboutUs/LordesBana.jpg",
@@ -109,7 +101,6 @@ const AboutPage: NextPage = () => {
         "As the wife of Dr. Bana, Lourdes plays an integral role in our practice. Her commitment to patient care and community involvement helps us foster strong relationships and provide a welcoming environment for all.",
       ],
     },
-    // Yoan (Treatment Coordinator)
     {
       id: 9,
       imageSrc: "/images/aboutUs/Yoan.jpg",
@@ -137,67 +128,77 @@ const AboutPage: NextPage = () => {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="About Us | Your Dental Practice Name" />
+        <meta
+          property="og:title"
+          content="About Us | Your Dental Practice Name"
+        />
         <meta
           property="og:description"
           content="Meet our experienced dental team and learn about our commitment to providing top-quality dental care."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.yourwebsite.com/aboutus" />
-        <meta property="og:image" content="https://www.yourwebsite.com/images/og-image.jpg" />
+        <meta
+          property="og:image"
+          content="https://www.yourwebsite.com/images/og-image.jpg"
+        />
 
-        {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | Your Dental Practice Name" />
+        <meta
+          name="twitter:title"
+          content="About Us | Your Dental Practice Name"
+        />
         <meta
           name="twitter:description"
           content="Discover our dedicated dental team and how we prioritize your oral health."
         />
-        <meta name="twitter:image" content="https://www.yourwebsite.com/images/og-image.jpg" />
+        <meta
+          name="twitter:image"
+          content="https://www.yourwebsite.com/images/og-image.jpg"
+        />
 
-        {/* Canonical Link */}
+
         <link rel="canonical" href="https://www.yourwebsite.com/aboutus" />
         <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "name": "Your Dental Practice Name",
-      "url": "https://www.yourwebsite.com/",
-      "logo": "https://www.yourwebsite.com/images/logo.png",
-      "sameAs": [
-        "https://www.facebook.com/yourpractice",
-        "https://www.twitter.com/yourpractice",
-        "https://www.instagram.com/yourpractice",
-        // Add other social profiles
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-555-555-5555",
-        "contactType": "Customer Service",
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Main Street",
-        "addressLocality": "Miami",
-        "addressRegion": "FL",
-        "postalCode": "33101",
-        "addressCountry": "US",
-      },
-    }),
-  }}
-/>
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "http://schema.org",
+              "@type": "Organization",
+              name: "Your Dental Practice Name",
+              url: "https://www.yourwebsite.com/",
+              logo: "https://www.yourwebsite.com/images/logo.png",
+              sameAs: [
+                "https://www.facebook.com/yourpractice",
+                "https://www.twitter.com/yourpractice",
+                "https://www.instagram.com/yourpractice",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+1-555-555-5555",
+                contactType: "Customer Service",
+              },
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "123 Main Street",
+                addressLocality: "Miami",
+                addressRegion: "FL",
+                postalCode: "33101",
+                addressCountry: "US",
+              },
+            }),
+          }}
+        />
       </Head>
 
       <header>
         <h1 className={styles.title}>Get to Know Us</h1>
         <p className={styles.text}>
-          Our dental team is unlike any you’ve ever met in Miami. We value excellence in patient
-          care, and it shows. We love to laugh and have a good time, but know when it’s time to get
-          down to business. Our team is overflowing with passion and commitment. We hope you get to
-          know us a little bit better here, and we can’t wait to get to know you!
+          Our dental team is unlike any you’ve ever met in Miami. We value
+          excellence in patient care, and it shows. We love to laugh and have a
+          good time, but know when it’s time to get down to business. Our team
+          is overflowing with passion and commitment. We hope you get to know us
+          a little bit better here, and we can’t wait to get to know you!
         </p>
       </header>
 
@@ -217,7 +218,6 @@ const AboutPage: NextPage = () => {
           ))}
         </div>
       </section>
-
       <ConsultationBanner />
     </div>
   );
