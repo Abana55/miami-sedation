@@ -24,7 +24,7 @@ const AboutPage: NextPage = () => {
       position: "Doctor of Dental Surgery/Doctor of Smiles",
       bio: [
         "Dr. Bana’s patients describe him as down-to-earth, professional, and full of heart. He is talented and strives to make each patient leave the office feeling better than when they arrived. Patient comfort is his top priority, and patients say they feel like extended family. He is dedicated to his practice, patients, and team – and it shows. Dr. Bana loves coming to work because his work changes people for the better. Patients leave his care healthier, happier, and with brighter smiles.",
-        "As a graduate of Marquette University, Dr. Bana has continued his education for the past 25 years ensuring he is bringing the best of the best to his patients. He promises excellence and does the work to make sure he delivers on that promise.",
+        "As a graduate of Marquette University, Dr. Bana has continued his education for the past 35 years ensuring he is bringing the best of the best to his patients. He promises excellence and does the work to make sure he delivers on that promise.",
       ],
       isDoctor: true,
     },
@@ -156,7 +156,6 @@ const AboutPage: NextPage = () => {
           name="twitter:image"
           content="https://www.yourwebsite.com/images/og-image.jpg"
         />
-
 
         <link rel="canonical" href="https://www.yourwebsite.com/aboutus" />
         <script
