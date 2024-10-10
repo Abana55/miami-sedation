@@ -24,37 +24,51 @@ const Fillings = () => {
 
   return (
     <>
- <Head>
-  <title>Dental Fillings in [Your City] | Restore Your Smile at Your Dental Practice</title>
-  <meta
-    name="description"
-    content="Looking for dental fillings in [Your City]? At Your Dental Practice, we offer advanced cavity repair and tooth restoration services. Restore your smile with our natural-looking fillings. Schedule an appointment today!"
-  />
-  <meta
-    name="keywords"
-    content="dental fillings, cavity repair, tooth restoration, composite fillings, amalgam fillings, dental care, oral health, [Your City]"
-  />
-  <meta property="og:title" content="Dental Fillings in [Your City] | Restore Your Smile" />
-  <meta
-    property="og:description"
-    content="Repair cavities and restore your tooth's function with advanced dental fillings at Your Dental Practice in [Your City]. Contact us to schedule your appointment."
-  />
-  <meta property="og:image" content="[URL to an image representing your service]" />
-  <meta property="og:url" content="[URL of the fillings page]" />
-  <meta property="og:type" content="website" />
+      <Head>
+        <title>
+          Dental Fillings in [Your City] | Restore Your Smile at Your Dental
+          Practice
+        </title>
+        <meta
+          name="description"
+          content="Looking for dental fillings in [Your City]? At Your Dental Practice, we offer advanced cavity repair and tooth restoration services. Restore your smile with our natural-looking fillings. Schedule an appointment today!"
+        />
+        <meta
+          name="keywords"
+          content="dental fillings, cavity repair, tooth restoration, composite fillings, amalgam fillings, dental care, oral health, [Your City]"
+        />
+        <meta
+          property="og:title"
+          content="Dental Fillings in [Your City] | Restore Your Smile"
+        />
+        <meta
+          property="og:description"
+          content="Repair cavities and restore your tooth's function with advanced dental fillings at Your Dental Practice in [Your City]. Contact us to schedule your appointment."
+        />
+        <meta
+          property="og:image"
+          content="[URL to an image representing your service]"
+        />
+        <meta property="og:url" content="[URL of the fillings page]" />
+        <meta property="og:type" content="website" />
 
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dental Fillings in [Your City] | Restore Your Smile" />
-  <meta
-    name="twitter:description"
-    content="Repair cavities and restore your tooth's function with advanced dental fillings at Your Dental Practice in [Your City]. Contact us to schedule your appointment."
-  />
-  <meta name="twitter:image" content="[URL to an image representing your service]" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Dental Fillings in [Your City] | Restore Your Smile"
+        />
+        <meta
+          name="twitter:description"
+          content="Repair cavities and restore your tooth's function with advanced dental fillings at Your Dental Practice in [Your City]. Contact us to schedule your appointment."
+        />
+        <meta
+          name="twitter:image"
+          content="[URL to an image representing your service]"
+        />
 
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="[URL of the fillings page]" />
-</Head>
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="[URL of the fillings page]" />
+      </Head>
 
       <main className={styles.fillingsPage}>
         {/* Header Section */}
@@ -82,9 +96,9 @@ const Fillings = () => {
                 Fillings are used to restore a tooth that has been damaged by
                 decay. Once the decayed portion is removed, the filling material
                 is placed to bring the tooth back to its original shape and
-                function. At our practice, we offer a variety of filling
-                materials, including composite resins that closely match the
-                natural color of your teeth.
+                function. At our practice, we use composite resin materials that
+                closely match the natural color of your teeth when placing
+                fillings.
               </p>
             </ScrollFadeIn>
 
@@ -120,7 +134,7 @@ const Fillings = () => {
 
                 <h3>Applying the Filling</h3>
                 <p>
-                  Composite resin or another appropriate material is placed in
+                  Composite resin is placed in
                   layers into the cleaned cavity. Each layer is hardened using a
                   special curing light, ensuring the strength and durability of
                   the filling.
@@ -140,7 +154,7 @@ const Fillings = () => {
               </section>
             </ScrollFadeIn>
 
-            <ScrollFadeIn>
+            {/* <ScrollFadeIn>
               <h2 className={styles.fillingsPage__subheader}>
                 Types of Fillings We Offer
               </h2>
@@ -159,7 +173,7 @@ const Fillings = () => {
                   long-lasting, though more expensive.
                 </li>
               </ul>
-            </ScrollFadeIn>
+            </ScrollFadeIn> */}
 
             <ScrollFadeIn>
               <h2 className={styles.fillingsPage__subheader}>

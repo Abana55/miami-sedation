@@ -199,15 +199,16 @@ const Bridges = () => {
 
                 <h3>Tooth Preparation</h3>
                 <p>
-                  For traditional bridges, the adjacent teeth (abutments) are
-                  prepared by removing a small amount of enamel to accommodate
-                  the crowns. For implant-supported bridges, implants are
-                  surgically placed into the jawbone.
+                  For traditional bridges, the adjacent teeth are prepared by
+                  removing a small amount of enamel to accommodate the crowns.
+                  For implant-supported bridges, implants are surgically placed
+                  ahead of time and typically used as the structural base for
+                  the bridge itself.
                 </p>
 
                 <h3>Impressions and Temporary Bridge</h3>
                 <p>
-                  We take impressions of your teeth to create a custom bridge
+                  We take  digital impressions of your teeth to create a custom bridge
                   that fits perfectly. A temporary bridge may be placed to
                   protect your teeth and gums while the permanent bridge is
                   being fabricated.

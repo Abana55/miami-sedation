@@ -39,7 +39,7 @@ const DentalImplants = () => {
             </Link>
           </div>
           <Image
-            src="/images/dental-implants-hero.jpg"
+            src="/images/OFFICCE/two-dentists-discussing-about-dental-health-of-the-2023-11-27-05-21-23-utc.jpg"
             alt="Dental Implants"
             layout="fill"
             objectFit="cover"

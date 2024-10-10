@@ -51,10 +51,12 @@ const Crowns = () => {
           <ScrollFadeIn>
             <h1 className={styles.crownsPage__title}>Dental Crowns</h1>
             <p className={styles.crownsPage__intro}>
-              At Miami Sedation Dentistry, we offer high-quality dental crowns
-              that restore both the function and aesthetics of your teeth. Our
-              crowns are designed for durability and comfort, using the latest
-              dental technologies.
+              At Bana Dental Design, we offer high-quality dental crowns that
+              restore both the function and aesthetics of your teeth. Our dental
+              crowns are designed for longevity and aesthetics. Using the latest
+              materials and techniques, we ensure your crown not only restores
+              your tooth’s function but also blends naturally with your other
+              teeth, offering a beautiful, long-lasting solution.
             </p>
           </ScrollFadeIn>
         </header>
@@ -104,8 +106,12 @@ const Crowns = () => {
                 <h3>Impressions and Temporary Crown</h3>
                 <p>
                   We take digital impressions to ensure the crown fits perfectly
-                  with your bite. A temporary crown is placed to protect the
-                  tooth while your permanent crown is being created in the lab.
+                  with your bite. With our same-day crown technology, you can
+                  typically leave with your new porcelain crown on the same day
+                  that the tooth is prepared. If you prefer, a temporary crown
+                  can be placed to protect the tooth while your permanent crown
+                  is fabricated if you prefer to wait to have the permanent
+                  crown delivered.
                 </p>
 
                 <h3>Permanent Crown Placement</h3>
@@ -125,7 +131,7 @@ const Crowns = () => {
             </ScrollFadeIn>
 
             <ScrollFadeIn>
-              <h2 className={styles.crownsPage__subheader}>
+              {/* <h2 className={styles.crownsPage__subheader}>
                 Why Choose Our Dental Crowns?
               </h2>
               <p className={styles.crownsPage__text}>
@@ -134,7 +140,7 @@ const Crowns = () => {
                 not only restores your tooth’s function but also blends
                 naturally with your other teeth, offering a beautiful,
                 long-lasting solution.
-              </p>
+              </p> */}
               <Link
                 href="/contact-us"
                 className={styles.crownsPage__contactButton}
