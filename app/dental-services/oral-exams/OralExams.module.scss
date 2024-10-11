@@ -1,0 +1,139 @@
+// /* OralExams.module.scss */
+
+// /* Import variables and mixins */
+// @import '../../../styles/variables.scss'; /* Adjust the path if needed */
+
+// /* Mobile-First Styles */
+
+// /* Page Wrapper */
+.oralExamsPage {
+  /* Add any page-specific styles here if needed */
+}
+
+/* Hero Image */
+.servicePageHeroImage {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Benefits Section */
+.benefitCard {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-light);
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.5;
+  }
+}
+
+/* FAQs Section */
+.faqItem {
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+}
+
+/* Contact Banner */
+.servicePageContactBanner {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 2rem;
+
+  .servicePageContactText {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .servicePageContactButton {
+    background-color: #fff;
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--primary-color-light);
+    }
+  }
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 600px) {
+  /* Hero Image */
+  .servicePageHeroImage {
+    max-height: 400px;
+  }
+
+  /* Benefits Section */
+  .benefitsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .benefitCard {
+    flex: 1 1 calc(50% - 1rem);
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  /* Hero Image */
+  .servicePageHeroImage {
+    max-height: 500px;
+  }
+
+  /* Benefits Section */
+  .benefitsContainer {
+    gap: 2rem;
+  }
+
+  .benefitCard {
+    flex: 1 1 calc(33.333% - 1.33rem);
+    margin-bottom: 0;
+  }
+
+  /* Contact Banner */
+  .servicePageContactBanner {
+    padding: 3rem;
+
+    .servicePageContactText {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .servicePageContactButton {
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+    }
+  }
+}

@@ -1,272 +1,180 @@
-"use client";
-import React, { useEffect, useRef } from "react";
-import Head from "next/head";
-import Link from "next/link";
-import styles from "../../DentalServices.module.scss";
-import ConsultationBanner from "@/app/components/ConsultationBanner/ConsultationBanner";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Head from 'next/head';
+import commonStyles from '../../DentalServices.module.scss'; // Common styles
+import styles from './TeethWhitening.module.scss'; // Page-specific styles
+import ScrollFadeIn from '../../components/ScrollFadeIn/ScrollFadeIn';
+import FAQs from '../../components/FAQs/FAQs';
 
-const TeethWhitening = () => {
-  const articleRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(
-              styles["service-page__articles--visible"]
-            );
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (articleRef.current) {
-      observer.observe(articleRef.current);
-    }
-
-    return () => {
-      if (articleRef.current) {
-        observer.unobserve(articleRef.current);
-      }
-    };
-  }, []);
+const TeethWhiteningPage: React.FC = () => {
+  const faqs = [
+    {
+      question: 'What is teeth whitening?',
+      answer:
+        'Teeth whitening is a cosmetic dental procedure that lightens teeth by removing stains and discoloration.',
+    },
+    {
+      question: 'Is teeth whitening safe?',
+      answer:
+        'Yes, when performed by dental professionals, teeth whitening is a safe procedure.',
+    },
+    {
+      question: 'How long does the teeth whitening process take?',
+      answer:
+        'In-office teeth whitening typically takes about an hour. At-home treatments may take longer depending on the desired results.',
+    },
+    {
+      question: 'How long do the results last?',
+      answer:
+        'Results can last from several months to a few years, depending on your oral hygiene habits and lifestyle.',
+    },
+    {
+      question: 'Are there any side effects?',
+      answer:
+        'Some people may experience temporary tooth sensitivity or gum irritation after whitening.',
+    },
+    {
+      question: 'Can anyone get their teeth whitened?',
+      answer:
+        'Most people are good candidates, but a consultation is necessary to determine if teeth whitening is right for you.',
+    },
+    // Add more FAQs as needed
+  ];
 
   return (
     <>
       <Head>
-        <title>Teeth Whitening | Bana Dental Design</title>
+        <title>Teeth Whitening | Brighten Your Smile | Bana Dental Design</title>
         <meta
           name="description"
-          content="Discover professional teeth whitening services at Bana Dental Design. Achieve a radiant smile with our customized whitening treatments."
+          content="Achieve a brighter smile with professional teeth whitening services at Bana Dental Design. Learn about the benefits, process, and FAQs."
         />
         <meta
           name="keywords"
-          content="teeth whitening, cosmetic dentistry, smile enhancement, Bana Dental Design"
+          content="Teeth Whitening, Dental Whitening, Cosmetic Dentistry, Bana Dental Design, Smile Brightening, Dental Services"
         />
-        <meta name="author" content="Bana Dental Design" />
-        <meta
-          property="og:title"
-          content="Teeth Whitening | Bana Dental Design"
-        />
+        <meta property="og:title" content="Teeth Whitening | Brighten Your Smile | Bana Dental Design" />
         <meta
           property="og:description"
-          content="Learn about professional teeth whitening services at Bana Dental Design. Brighten your smile with our expert care."
+          content="Achieve a brighter smile with professional teeth whitening services at Bana Dental Design. Learn about the benefits, process, and FAQs."
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://yourdomain.com/services/teeth-whitening"
+          content="https://yourwebsite.com/dental-services/teeth-whitening"
         />
         <meta
           property="og:image"
-          content="https://yourdomain.com/images/TeethWhitening.jpg"
+          content="https://yourwebsite.com/images/teeth-whitening.jpg"
         />
-        <link
-          rel="canonical"
-          href="https://yourdomain.com/services/teeth-whitening"
+        <link rel="canonical" href="https://yourwebsite.com/dental-services/teeth-whitening" />
+
+        {/* FAQ Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.answer,
+                },
+              })),
+            }),
+          }}
         />
       </Head>
-
-      <main className={styles["service-page"]}>
-        {/* Hero Section */}
-        <section className={styles["service-page__hero"]}>
-          <div className={styles["service-page__hero-overlay"]}>
-            <h1 className={styles["service-page__header"]}>Teeth Whitening</h1>
-            <p className={styles["service-page__intro-text"]}>
-              Brighten your smile with our safe, professional, and effective
-              teeth whitening services. Transform your smile and boost your
-              confidence with the brilliance it deserves.
+      <div className={`${commonStyles['service-page']} ${styles['teethWhiteningPage']}`}>
+        {/* Header Section */}
+        <section className={commonStyles.headerSection}>
+          <ScrollFadeIn>
+            <h1 className={commonStyles.servicePageHeaderTitle}>Teeth Whitening</h1>
+            <p className={commonStyles.servicePageIntro}>
+              Brighten your smile with our professional teeth whitening services.
             </p>
-            <Link href="#contact" passHref>
-              <button className={styles["service-page__cta-button"]}>
-                Schedule a Consultation
-              </button>
-            </Link>
-          </div>
-          <img
-            src="/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG"
-            alt="Teeth Whitening Hero"
-            className={styles["service-page__hero-image"]}
+          </ScrollFadeIn>
+        </section>
+
+        {/* Hero Image */}
+        <section className={commonStyles.servicePageHero}>
+          <Image
+            src="/images/teeth-whitening.jpg"
+            alt="Patient receiving teeth whitening at Bana Dental Design"
+            width={800}
+            height={500}
+            className={commonStyles.servicePageHeroImage}
           />
         </section>
 
-        {/* What is Teeth Whitening */}
-        <section className={styles["service-page__details"]}>
-          <h2 className={styles["service-page__subheader"]}>
-            What is Teeth Whitening?
-          </h2>
-          <div className={styles["service-page__two-column"]}>
-            <img
-              src="/images/CONNECT/1.png"
-              alt="Teeth Whitening Process"
-              className={styles["service-page__image"]}
-            />
-            <p className={styles["service-page__text"]}>
-              Teeth whitening is a non-invasive cosmetic dental procedure
-              designed to lighten the color of teeth by removing stains and
-              discoloration caused by coffee, tea, smoking, and aging. At Bana
-              Dental Design, we offer state-of-the-art whitening options to help
-              you achieve a radiant smile.
-            </p>
-          </div>
-        </section>
-
-        {/* Types of Teeth Whitening */}
-        <section className={styles["service-page__types"]}>
-          <h2 className={styles["service-page__subheader"]}>
-            Our Teeth Whitening Services
-          </h2>
-          <div className={styles["service-page__types-grid"]}>
-            <div className={styles["service-page__type-card"]}>
-              <h3>In-Office Whitening</h3>
-              <p>
-                Our in-office whitening treatments provide fast and dramatic
-                results, lightening your teeth by several shades in just one
-                visit. Using cutting-edge technology, this treatment guarantees
-                a safe, effective transformation.
-              </p>
-              <img
-                src="/images/in-office-whitening.jpg"
-                alt="In-Office Whitening"
-                className={styles["service-page__image"]}
-              />
-            </div>
-
-            <div className={styles["service-page__type-card"]}>
-              <h3>Take-Home Whitening Kits</h3>
-              <p>
-                Customized take-home whitening kits allow you to whiten your
-                teeth at your convenience. These kits include custom-fitted
-                trays and a professional-grade whitening gel for long-lasting
-                results.
-              </p>
-              <img
-                src="/images/take-home-kit.jpg"
-                alt="Take-Home Whitening Kit"
-                className={styles["service-page__image"]}
-              />
-            </div>
-
-            <div className={styles["service-page__type-card"]}>
-              <h3>Over-the-Counter Products</h3>
-              <p>
-                While less effective than professional treatments, we also
-                provide guidance on over-the-counter products for maintaining
-                your results and extending the longevity of your brighter smile.
-              </p>
-              <img
-                src="/images/otc-whitening-products.jpg"
-                alt="Over-the-Counter Whitening"
-                className={styles["service-page__image"]}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits of Teeth Whitening */}
-        <section className={styles["service-page__benefits"]}>
-          <h2 className={styles["service-page__subheader"]}>
-            The Benefits of Teeth Whitening
-          </h2>
-          <ul className={styles["service-page__list"]}>
-            <li>Whiter, more radiant smile in just one treatment.</li>
-            <li>Boosts self-esteem and confidence.</li>
-            <li>Removes deep stains that regular cleaning can’t remove.</li>
-            <li>Non-invasive, pain-free procedure.</li>
-          </ul>
-          <img
-            src="/images/TeethWhiteningResults.jpg"
-            alt="Teeth Whitening Results"
-            className={styles["service-page__image--center"]}
-          />
-        </section>
-
-        {/* Who is a Candidate */}
-        <section className={styles["service-page__candidates"]}>
-          <h2 className={styles["service-page__subheader"]}>
-            Who is a Good Candidate for Teeth Whitening?
-          </h2>
-          <p className={styles["service-page__text"]}>
-            Teeth whitening is ideal for individuals looking to enhance their
-            smile and remove surface stains caused by daily habits or age. It’s
-            important to have good oral health before whitening, as untreated
-            cavities or gum disease can affect the outcome. We recommend
-            scheduling a consultation to determine the best whitening solution
-            for your needs.
+        {/* Details Section */}
+        <section className={`${commonStyles.servicePageDetails} ${commonStyles.servicePageSection}`}>
+          <h2 className={commonStyles.servicePageSubheader}>What is Teeth Whitening?</h2>
+          <p className={commonStyles.servicePageText}>
+            Teeth whitening is a cosmetic dental procedure that lightens teeth by removing stains and discoloration. At Bana Dental Design, we offer professional teeth whitening treatments that are safe and effective, giving you a brighter, more confident smile.
           </p>
         </section>
 
-        {/* Procedure Overview */}
-        <section className={styles["service-page__procedure"]}>
-          <h2 className={styles["service-page__subheader"]}>
-            The Whitening Procedure
-          </h2>
-          <div className={styles["service-page__procedure-steps"]}>
-            <h3>Step 1: Consultation</h3>
-            <p>
-              Your journey begins with a personalized consultation to discuss
-              your whitening goals. We will assess your oral health and
-              determine the most suitable treatment.
-            </p>
-
-            <h3>Step 2: The Whitening Process</h3>
-            <p>
-              During the procedure, we apply a protective barrier to your gums,
-              followed by the application of a whitening gel activated by a
-              special light. This process is repeated until the desired result
-              is achieved.
-            </p>
-
-            <h3>Step 3: Post-Care Instructions</h3>
-            <p>
-              After whitening, we will provide post-care instructions to help
-              you maintain your results. Avoid staining foods and drinks for a
-              few days and use a whitening toothpaste to extend your bright
-              smile.
-            </p>
+        {/* Benefits Section */}
+        <section className={`${commonStyles.benefitsSection} ${commonStyles.servicePageSection}`}>
+          <h2 className={commonStyles.servicePageSubheader}>Benefits of Teeth Whitening</h2>
+          <div className={commonStyles.benefitsContainer}>
+            <div className={commonStyles.benefitCard}>
+              <h3>Enhanced Appearance</h3>
+              <p>
+                Achieve a brighter smile that can boost your self-confidence.
+              </p>
+            </div>
+            <div className={commonStyles.benefitCard}>
+              <h3>Quick and Effective</h3>
+              <p>
+                Noticeable results in a single appointment with our in-office treatments.
+              </p>
+            </div>
+            <div className={commonStyles.benefitCard}>
+              <h3>Customized Treatment</h3>
+              <p>
+                Personalized whitening solutions tailored to your needs.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className={styles["service-page__why-choose-us"]}>
-          <h2 className={styles["service-page__subheader"]}>
-            Why Choose Bana Dental Design?
-          </h2>
-          <p className={styles["service-page__text"]}>
-            At Bana Dental Design, we use the latest technology and
-            evidence-based techniques to ensure you get the best whitening
-            results. Our professional team is committed to making your
-            experience comfortable and ensuring that you walk out with a smile
-            you’ll love.
+        {/* Process Section */}
+        <section className={`${commonStyles.processSection} ${commonStyles.servicePageSection}`}>
+          <h2 className={commonStyles.servicePageSubheader}>Our Whitening Process</h2>
+          <p className={commonStyles.servicePageText}>
+            Our teeth whitening process begins with a consultation to determine the best treatment for you. We offer both in-office whitening for immediate results and take-home kits for gradual whitening. Our professional-grade products ensure effective and safe results.
           </p>
-          <ul className={styles["service-page__why-list"]}>
-            <li>Highly experienced cosmetic dental team.</li>
-            <li>Customizable treatment plans for each patient.</li>
-            <li>State-of-the-art technology and techniques.</li>
-          </ul>
         </section>
 
-        {/* Call to Action Banner */}
-        <section
-          id="contact"
-          className={styles["service-page__contact-banner"]}
-        >
-          <h2>Ready for a Whiter Smile?</h2>
-          <Link href="/contact-us" passHref>
-            <button className={styles["service-page__contact-button"]}>
-              Contact Us Today
-            </button>
+        {/* Risks Section */}
+        <section className={`${commonStyles.risksSection} ${commonStyles.servicePageSection}`}>
+          <h2 className={commonStyles.servicePageSubheader}>Possible Risks</h2>
+          <p className={commonStyles.servicePageText}>
+            Teeth whitening is generally safe, but some patients may experience temporary tooth sensitivity or gum irritation. Our team will guide you through precautions to minimize any discomfort.
+          </p>
+        </section>
+
+        {/* FAQs Section */}
+        <FAQs faqs={faqs} />
+
+        {/* Contact Banner */}
+        <section className={commonStyles.servicePageContactBanner}>
+          <p className={commonStyles.servicePageContactText}>
+            Ready to brighten your smile with teeth whitening?
+          </p>
+          <Link href="/contact" className={commonStyles.servicePageContactButton}>
+            Schedule Your Appointment Today
           </Link>
         </section>
-
-        {/* Consultation Banner */}
-        <ConsultationBanner />
-      </main>
+      </div>
     </>
   );
 };
 
-export default TeethWhitening;
+export default TeethWhiteningPage;
