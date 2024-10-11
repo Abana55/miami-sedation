@@ -1,190 +1,203 @@
-"use client";
+// pages/dental-services/crowns/page.tsx
 
 import React from "react";
-import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
-import ScrollFadeIn from "@/app/components/ScrollFadeIn/ScrollFadeIn";
-import ConsultationBanner from "@/app/components/ConsultationBanner/ConsultationBanner";
-import styles from "../../DentalServices.module.scss";
+import Head from "next/head";
+import commonStyles from "../../DentalServices.module.scss"; // Common styles
+import styles from "./Crowns.module.scss"; // Page-specific styles
+import ScrollFadeIn from "../../components/ScrollFadeIn/ScrollFadeIn"; 
+import FAQs from "../../components/FAQs/FAQs"; 
 
-const Crowns = () => {
-  const beforeAfterImages = [
-    { before: "/images/crown-before1.jpg", after: "/images/crown-after1.jpg" },
-    { before: "/images/crown-before2.jpg", after: "/images/crown-after2.jpg" },
+const CrownsPage: React.FC = () => {
+  const faqs = [
+    {
+      question: "What is a dental crown?",
+      answer:
+        "A dental crown is a custom-made cap that covers a damaged or decayed tooth, restoring its shape, size, strength, and appearance.",
+    },
+    {
+      question: "Why might I need a dental crown?",
+      answer:
+        "You may need a crown to protect a weak tooth, restore a broken tooth, cover a dental implant, or improve the appearance of a discolored or misshapen tooth.",
+    },
+    {
+      question: "How long do dental crowns last?",
+      answer:
+        "With proper care, dental crowns can last between 10 to 15 years or even longer.",
+    },
+    {
+      question: "Does getting a crown hurt?",
+      answer:
+        "The procedure is typically performed under local anesthesia, so you should not feel pain during the treatment.",
+    },
+    {
+      question: "How do I care for my dental crown?",
+      answer:
+        "Maintain good oral hygiene by brushing and flossing regularly, and visit your dentist for routine check-ups.",
+    },
+    // Add more FAQs as needed
   ];
 
   return (
     <>
       <Head>
-        <title>Dental Crowns | Miami Sedation Dentistry</title>
+        <title>
+          Dental Crowns | Restore and Protect Your Teeth | Bana Dental Design
+        </title>
         <meta
           name="description"
-          content="Discover how dental crowns at Miami Sedation Dentistry can restore the function, shape, and appearance of damaged teeth with advanced restorative techniques."
+          content="Restore damaged teeth with custom dental crowns at Bana Dental Design. Learn about the benefits, process, and FAQs."
         />
         <meta
           name="keywords"
-          content="dental crowns, tooth restoration, dental care, oral health, Miami Sedation Dentistry, crown placement, cosmetic dentistry"
+          content="Dental Crowns, Tooth Restoration, Bana Dental Design, Dental Services, Tooth Repair"
         />
         <meta
           property="og:title"
-          content="Dental Crowns | Miami Sedation Dentistry"
+          content="Dental Crowns | Restore and Protect Your Teeth | Bana Dental Design"
         />
         <meta
           property="og:description"
-          content="Learn about our dental crowns service at Miami Sedation Dentistry. Dental crowns restore tooth function and aesthetics using the latest materials and technology."
+          content="Restore damaged teeth with custom dental crowns at Bana Dental Design. Learn about the benefits, process, and FAQs."
         />
-        <meta property="og:image" content="/images/crown1.jpg" />
+        <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://miamisedationdentistry.com/services/crowns"
+          content="https://yourwebsite.com/dental-services/crowns"
         />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="og:image"
+          content="https://yourwebsite.com/images/dental-crowns.jpg"
+        />
         <link
           rel="canonical"
-          href="https://miamisedationdentistry.com/services/crowns"
+          href="https://yourwebsite.com/dental-services/crowns"
+        />
+
+        {/* FAQ Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
+            }),
+          }}
         />
       </Head>
-
-      <main className={styles.crownsPage}>
+      <div
+        className={`${commonStyles["service-page"]} ${styles["crownsPage"]}`}
+      >
         {/* Header Section */}
-        <header className={styles.crownsPage__header}>
+        <section className={commonStyles.headerSection}>
           <ScrollFadeIn>
-            <h1 className={styles.crownsPage__title}>Dental Crowns</h1>
-            <p className={styles.crownsPage__intro}>
-              At Bana Dental Design, we offer high-quality dental crowns that
-              restore both the function and aesthetics of your teeth. Our dental
-              crowns are designed for longevity and aesthetics. Using the latest
-              materials and techniques, we ensure your crown not only restores
-              your tooth’s function but also blends naturally with your other
-              teeth, offering a beautiful, long-lasting solution.
+            <h1 className={commonStyles.servicePageHeaderTitle}>
+              Dental Crowns
+            </h1>
+            <p className={commonStyles.servicePageIntro}>
+              Restore and protect your teeth with custom dental crowns.
             </p>
           </ScrollFadeIn>
-        </header>
+        </section>
 
-        {/* Article Section */}
-        <section className={styles.crownsPage__content}>
-          <article className={styles.crownsPage__article}>
-            <ScrollFadeIn>
-              <h2 className={styles.crownsPage__subheader}>
-                What Are Dental Crowns?
-              </h2>
-              <p className={styles.crownsPage__text}>
-                Dental crowns are custom-made caps that cover and protect a
-                damaged tooth. Crowns are typically used for teeth that have
-                been weakened by decay, fractures, or extensive restorations. At
-                our practice, we provide crowns made from high-quality materials
-                such as porcelain and ceramic, which blend seamlessly with your
-                natural teeth.
+        {/* Hero Image */}
+        <section className={commonStyles.servicePageHero}>
+          <Image
+            src="/images/dental-crowns.jpg"
+            alt="Dental Crowns at Bana Dental Design"
+            width={800}
+            height={500}
+            className={commonStyles.servicePageHeroImage}
+          />
+        </section>
+
+        {/* Details Section */}
+        <section
+          className={`${commonStyles.servicePageDetails} ${commonStyles.servicePageSection}`}
+        >
+          <h2 className={commonStyles.servicePageSubheader}>
+            What are Dental Crowns?
+          </h2>
+          <p className={commonStyles.servicePageText}>
+            Dental crowns are custom-made caps that cover damaged or decayed
+            teeth. They restore the tooth's shape, size, strength, and improve
+            its appearance. Crowns are used to protect weak teeth, restore
+            broken teeth, or cover dental implants.
+          </p>
+        </section>
+
+        {/* Benefits Section */}
+        <section
+          className={`${commonStyles.benefitsSection} ${commonStyles.servicePageSection}`}
+        >
+          <h2 className={commonStyles.servicePageSubheader}>
+            Benefits of Dental Crowns
+          </h2>
+          <div className={commonStyles.benefitsContainer}>
+            <div className={commonStyles.benefitCard}>
+              <h3>Restored Function</h3>
+              <p>
+                Enables you to bite and chew properly by restoring damaged
+                teeth.
               </p>
-
-              {/* Image Slider Section */}
-              <div className={styles.crownsPage__imageSlider}>
-                <div className={styles.slider__mainImage}>
-                  <img src="/images/crown1.jpg" alt="Crown Procedure" />
-                </div>
-              </div>
-            </ScrollFadeIn>
-
-            <ScrollFadeIn>
-              <h2 className={styles.crownsPage__subheader}>The Procedure</h2>
-              <section className={styles.crownsPage__text}>
-                <h3>Initial Consultation</h3>
-                <p>
-                  Your dentist will perform a thorough examination, including
-                  X-rays, to assess the health of the tooth. We’ll discuss the
-                  crown placement procedure and answer any questions you may
-                  have.
-                </p>
-
-                <h3>Tooth Preparation</h3>
-                <p>
-                  The damaged tooth is reshaped to ensure a proper fit for the
-                  crown. If the tooth is severely damaged, a core buildup may be
-                  necessary before placement.
-                </p>
-
-                <h3>Impressions and Temporary Crown</h3>
-                <p>
-                  We take digital impressions to ensure the crown fits perfectly
-                  with your bite. With our same-day crown technology, you can
-                  typically leave with your new porcelain crown on the same day
-                  that the tooth is prepared. If you prefer, a temporary crown
-                  can be placed to protect the tooth while your permanent crown
-                  is fabricated if you prefer to wait to have the permanent
-                  crown delivered.
-                </p>
-
-                <h3>Permanent Crown Placement</h3>
-                <p>
-                  Once your permanent crown is ready, it is carefully placed and
-                  adjusted for optimal comfort and bite alignment. The crown is
-                  then bonded securely to the tooth.
-                </p>
-
-                <h3>Post-Procedure Care</h3>
-                <p>
-                  After the crown is placed, it’s important to maintain regular
-                  dental hygiene, including brushing, flossing, and attending
-                  check-ups to ensure the longevity of your crown.
-                </p>
-              </section>
-            </ScrollFadeIn>
-
-            <ScrollFadeIn>
-              {/* <h2 className={styles.crownsPage__subheader}>
-                Why Choose Our Dental Crowns?
-              </h2>
-              <p className={styles.crownsPage__text}>
-                Our dental crowns are designed for longevity and aesthetics.
-                Using the latest materials and techniques, we ensure your crown
-                not only restores your tooth’s function but also blends
-                naturally with your other teeth, offering a beautiful,
-                long-lasting solution.
-              </p> */}
-              <Link
-                href="/contact-us"
-                className={styles.crownsPage__contactButton}
-              >
-                Schedule Your Appointment
-              </Link>
-            </ScrollFadeIn>
-          </article>
-        </section>
-
-        {/* Before and After Section */}
-        <section className={styles.crownsPage__beforeAfter}>
-          <ScrollFadeIn>
-            <h2 className={styles.crownsPage__subheader}>Before & After</h2>
-            <div className={styles.beforeAfterGrid}>
-              {beforeAfterImages.map((image, index) => (
-                <div key={index} className={styles.beforeAfterItem}>
-                  <div className={styles.beforeAfter__imageContainer}>
-                    <img
-                      src={image.before}
-                      alt={`Before Crown ${index + 1}`}
-                      className={styles.beforeAfter__image}
-                    />
-                    <span className={styles.beforeAfter__label}>Before</span>
-                  </div>
-                  <div className={styles.beforeAfter__imageContainer}>
-                    <img
-                      src={image.after}
-                      alt={`After Crown ${index + 1}`}
-                      className={styles.beforeAfter__image}
-                    />
-                    <span className={styles.beforeAfter__label}>After</span>
-                  </div>
-                </div>
-              ))}
             </div>
-          </ScrollFadeIn>
+            <div className={commonStyles.benefitCard}>
+              <h3>Protection</h3>
+              <p>Protects weakened teeth from further damage or decay.</p>
+            </div>
+            <div className={commonStyles.benefitCard}>
+              <h3>Improved Appearance</h3>
+              <p>
+                Enhances the look of your smile by covering discolored or
+                misshapen teeth.
+              </p>
+            </div>
+          </div>
         </section>
 
-        {/* Consultation Banner */}
-        <ConsultationBanner />
-      </main>
+        {/* Process Section */}
+        <section
+          className={`${commonStyles.processSection} ${commonStyles.servicePageSection}`}
+        >
+          <h2 className={commonStyles.servicePageSubheader}>
+            Our Crown Placement Process
+          </h2>
+          <p className={commonStyles.servicePageText}>
+            The crown placement typically requires two visits. During the first
+            visit, we prepare the tooth by removing any decay and shaping it to
+            fit the crown. We'll take impressions to create a custom crown and
+            place a temporary one. On the second visit, we'll remove the
+            temporary crown and cement the permanent one in place.
+          </p>
+        </section>
+
+        {/* FAQs Section */}
+        <FAQs faqs={faqs} />
+
+        {/* Contact Banner */}
+        <section className={commonStyles.servicePageContactBanner}>
+          <p className={commonStyles.servicePageContactText}>
+            Interested in restoring your smile with dental crowns?
+          </p>
+          <Link
+            href="/contact"
+            className={commonStyles.servicePageContactButton}
+          >
+            Schedule a Consultation Today
+          </Link>
+        </section>
+      </div>
     </>
   );
 };
 
-export default Crowns;
+export default CrownsPage;

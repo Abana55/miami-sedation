@@ -1,237 +1,205 @@
-"use client";
+// pages/dental-services/fillings/page.tsx
 
-import React, { useState } from "react";
-import Head from "next/head";
+import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import ScrollFadeIn from "@/app/components/ScrollFadeIn/ScrollFadeIn";
-import ConsultationBanner from "@/app/components/ConsultationBanner/ConsultationBanner";
-import styles from "../../DentalServices.module.scss";
+import Head from "next/head";
+import commonStyles from "../../DentalServices.module.scss"; // Common styles
+import styles from "./Fillings.module.scss"; // Page-specific styles
+import ScrollFadeIn from "../../components/ScrollFadeIn/ScrollFadeIn";
+import FAQs from "../../components/FAQs/FAQs";
 
-const images = [
-  "/images/IMG_3696.JPG",
-  "/images/IMG_3948.jpeg",
-  "/images/IMG_6450.jpeg",
-];
-
-const Fillings = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  const handleNextImage = () => {
-    setCurrentImage((prevImage) =>
-      prevImage === images.length - 1 ? 0 : prevImage + 1
-    );
-  };
+const FillingsPage: React.FC = () => {
+  const faqs = [
+    {
+      question: "What is a dental filling?",
+      answer:
+        "A dental filling is a restorative material used to repair minimal tooth fractures, cavities, or otherwise damaged surfaces of the teeth.",
+    },
+    {
+      question: "What types of fillings are available?",
+      answer:
+        "Common types include amalgam (silver), composite (tooth-colored), gold, and porcelain fillings.",
+    },
+    {
+      question: "How long do dental fillings last?",
+      answer:
+        "The lifespan of a filling depends on the material used and your oral habits, but they can last anywhere from 5 to 15 years or more.",
+    },
+    {
+      question: "Does getting a filling hurt?",
+      answer:
+        "The procedure is typically performed under local anesthesia, so you should not feel pain during the treatment.",
+    },
+    {
+      question: "How do I care for my dental fillings?",
+      answer:
+        "Maintain good oral hygiene by brushing and flossing regularly, and visit your dentist for routine check-ups.",
+    },
+    // Add more FAQs as needed
+  ];
 
   return (
     <>
       <Head>
         <title>
-          Dental Fillings in [Your City] | Restore Your Smile at Your Dental
-          Practice
+          Dental Fillings | Restore Damaged Teeth | Bana Dental Design
         </title>
         <meta
           name="description"
-          content="Looking for dental fillings in [Your City]? At Your Dental Practice, we offer advanced cavity repair and tooth restoration services. Restore your smile with our natural-looking fillings. Schedule an appointment today!"
+          content="Repair cavities and restore damaged teeth with dental fillings at Bana Dental Design. Learn about the types, benefits, process, and FAQs."
         />
         <meta
           name="keywords"
-          content="dental fillings, cavity repair, tooth restoration, composite fillings, amalgam fillings, dental care, oral health, [Your City]"
+          content="Dental Fillings, Tooth Decay, Cavities, Bana Dental Design, Dental Services, Tooth Restoration"
         />
         <meta
           property="og:title"
-          content="Dental Fillings in [Your City] | Restore Your Smile"
+          content="Dental Fillings | Restore Damaged Teeth | Bana Dental Design"
         />
         <meta
           property="og:description"
-          content="Repair cavities and restore your tooth's function with advanced dental fillings at Your Dental Practice in [Your City]. Contact us to schedule your appointment."
+          content="Repair cavities and restore damaged teeth with dental fillings at Bana Dental Design. Learn about the types, benefits, process, and FAQs."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://yourwebsite.com/dental-services/fillings"
         />
         <meta
           property="og:image"
-          content="[URL to an image representing your service]"
+          content="https://yourwebsite.com/images/dental-fillings.jpg"
         />
-        <meta property="og:url" content="[URL of the fillings page]" />
-        <meta property="og:type" content="website" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Dental Fillings in [Your City] | Restore Your Smile"
-        />
-        <meta
-          name="twitter:description"
-          content="Repair cavities and restore your tooth's function with advanced dental fillings at Your Dental Practice in [Your City]. Contact us to schedule your appointment."
-        />
-        <meta
-          name="twitter:image"
-          content="[URL to an image representing your service]"
+        <link
+          rel="canonical"
+          href="https://yourwebsite.com/dental-services/fillings"
         />
 
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="[URL of the fillings page]" />
+        {/* FAQ Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
+            }),
+          }}
+        />
       </Head>
-
-      <main className={styles.fillingsPage}>
+      <div
+        className={`${commonStyles["service-page"]} ${styles["fillingsPage"]}`}
+      >
         {/* Header Section */}
-        <header className={styles.fillingsPage__header}>
+        <section className={commonStyles.headerSection}>
           <ScrollFadeIn>
-            <h1 className={styles.fillingsPage__title}>Dental Fillings</h1>
-            <p className={styles.fillingsPage__intro}>
-              Dental fillings are a critical part of modern dentistry, helping
-              to restore the structure of your teeth after cavities. Our
-              practice uses advanced materials for a natural, long-lasting look
-              and function.
+            <h1 className={commonStyles.servicePageHeaderTitle}>
+              Dental Fillings
+            </h1>
+            <p className={commonStyles.servicePageIntro}>
+              Repair cavities and restore damaged teeth with our dental
+              fillings.
             </p>
           </ScrollFadeIn>
-        </header>
-
-        {/* Grid Layout */}
-        <section className={styles.fillingsPage__grid}>
-          {/* Article Section */}
-          <article className={styles.fillingsPage__content}>
-            <ScrollFadeIn>
-              <h2 className={styles.fillingsPage__subheader}>
-                What Are Dental Fillings?
-              </h2>
-              <p className={styles.fillingsPage__text}>
-                Fillings are used to restore a tooth that has been damaged by
-                decay. Once the decayed portion is removed, the filling material
-                is placed to bring the tooth back to its original shape and
-                function. At our practice, we use composite resin materials that
-                closely match the natural color of your teeth when placing
-                fillings.
-              </p>
-            </ScrollFadeIn>
-
-            <ScrollFadeIn>
-              <h2 className={styles.fillingsPage__subheader}>The Procedure</h2>
-              <div className={styles.fillingsPage__divider}>
-                <span className={styles.fillingsPage__line}>|</span>
-              </div>
-              <section className={styles.fillingsPage__text}>
-                <h3>Initial Consultation</h3>
-                <p>
-                  The process begins with a thorough dental examination where we
-                  detect any cavities or damage to your teeth. X-rays are
-                  typically taken to understand the extent of decay and plan the
-                  treatment accordingly.
-                </p>
-
-                <div className={styles.fillingsPage__divider}>
-                  <span className={styles.fillingsPage__line}>|</span>
-                </div>
-
-                <h3>Removing the Decay</h3>
-                <p>
-                  During the procedure, the decayed area of the tooth is
-                  carefully removed, and the remaining tooth is cleaned and
-                  prepared for the filling. Local anesthesia is typically used
-                  to ensure your comfort throughout the process.
-                </p>
-
-                <div className={styles.fillingsPage__divider}>
-                  <span className={styles.fillingsPage__line}>|</span>
-                </div>
-
-                <h3>Applying the Filling</h3>
-                <p>
-                  Composite resin is placed in
-                  layers into the cleaned cavity. Each layer is hardened using a
-                  special curing light, ensuring the strength and durability of
-                  the filling.
-                </p>
-
-                <div className={styles.fillingsPage__divider}>
-                  <span className={styles.fillingsPage__line}>|</span>
-                </div>
-
-                <h3>Final Adjustments</h3>
-                <p>
-                  The filling is shaped and polished to match the natural
-                  contours of your tooth, restoring its appearance and function.
-                  The dentist will make adjustments to ensure the filling fits
-                  comfortably with your bite.
-                </p>
-              </section>
-            </ScrollFadeIn>
-
-            {/* <ScrollFadeIn>
-              <h2 className={styles.fillingsPage__subheader}>
-                Types of Fillings We Offer
-              </h2>
-              <ul className={styles.fillingsPage__list}>
-                <li className={styles.fillingsPage__listItem}>
-                  <strong>Composite Fillings:</strong> Tooth-colored fillings
-                  that blend seamlessly with your natural teeth for a more
-                  aesthetic result.
-                </li>
-                <li className={styles.fillingsPage__listItem}>
-                  <strong>Amalgam Fillings:</strong> A durable option used
-                  primarily for back teeth where strength is a priority.
-                </li>
-                <li className={styles.fillingsPage__listItem}>
-                  <strong>Gold Fillings:</strong> Extremely durable and
-                  long-lasting, though more expensive.
-                </li>
-              </ul>
-            </ScrollFadeIn> */}
-
-            <ScrollFadeIn>
-              <h2 className={styles.fillingsPage__subheader}>
-                Why Choose Our Dental Fillings?
-              </h2>
-              <p className={styles.fillingsPage__text}>
-                At our practice, we prioritize quality and patient comfort. We
-                use the latest techniques to ensure that your filling is both
-                functional and aesthetically pleasing. Our fillings are designed
-                to last, helping you maintain a healthy, strong smile for years
-                to come.
-              </p>
-              <Link
-                href="/contact-us"
-                className={styles.fillingsPage__contactButton}
-              >
-                Schedule an Appointment
-              </Link>
-            </ScrollFadeIn>
-          </article>
-
-          {/* Image Slider Section */}
-          <aside className={styles.fillingsPage__imageSlider}>
-            <ScrollFadeIn>
-              <div className={styles.slider__mainImage}>
-                <img
-                  src={images[currentImage]}
-                  alt={`Filling ${currentImage + 1}`}
-                />
-              </div>
-              <div className={styles.slider__thumbnails}>
-                {images.map((image, index) => (
-                  <div
-                    key={index}
-                    className={`${styles.slider__thumbnail} ${
-                      currentImage === index ? styles.active : ""
-                    }`}
-                    onClick={() => setCurrentImage(index)}
-                  >
-                    <img src={image} alt={`Thumbnail ${index + 1}`} />
-                  </div>
-                ))}
-              </div>
-              <button
-                className={styles.slider__nextButton}
-                onClick={handleNextImage}
-              >
-                Next
-              </button>
-            </ScrollFadeIn>
-          </aside>
         </section>
 
-        {/* Consultation Banner */}
-        <ConsultationBanner />
-      </main>
+        {/* Hero Image */}
+        <section className={commonStyles.servicePageHero}>
+          <Image
+            src="/images/dental-fillings.jpg"
+            alt="Dental Fillings at Bana Dental Design"
+            width={800}
+            height={500}
+            className={commonStyles.servicePageHeroImage}
+          />
+        </section>
+
+        {/* Details Section */}
+        <section
+          className={`${commonStyles.servicePageDetails} ${commonStyles.servicePageSection}`}
+        >
+          <h2 className={commonStyles.servicePageSubheader}>
+            What are Dental Fillings?
+          </h2>
+          <p className={commonStyles.servicePageText}>
+            Dental fillings are materials used to repair teeth that have been
+            damaged by cavities or trauma. They restore the tooth's shape and
+            function, prevent further decay, and can be made from various
+            materials such as composite resin, amalgam, gold, or porcelain.
+          </p>
+        </section>
+
+        {/* Benefits Section */}
+        <section
+          className={`${commonStyles.benefitsSection} ${commonStyles.servicePageSection}`}
+        >
+          <h2 className={commonStyles.servicePageSubheader}>
+            Benefits of Dental Fillings
+          </h2>
+          <div className={commonStyles.benefitsContainer}>
+            <div className={commonStyles.benefitCard}>
+              <h3>Restore Function</h3>
+              <p>
+                Enables proper chewing and biting by repairing damaged teeth.
+              </p>
+            </div>
+            <div className={commonStyles.benefitCard}>
+              <h3>Prevent Further Decay</h3>
+              <p>
+                Seals off areas where bacteria can enter, preventing further
+                decay.
+              </p>
+            </div>
+            <div className={commonStyles.benefitCard}>
+              <h3>Natural Appearance</h3>
+              <p>
+                Tooth-colored fillings blend with your natural teeth for an
+                aesthetic look.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section
+          className={`${commonStyles.processSection} ${commonStyles.servicePageSection}`}
+        >
+          <h2 className={commonStyles.servicePageSubheader}>
+            Our Filling Procedure
+          </h2>
+          <p className={commonStyles.servicePageText}>
+            The procedure involves removing the decayed portion of the tooth,
+            cleaning the affected area, and filling the cavity with a suitable
+            material. The process is usually quick and performed under local
+            anesthesia to ensure your comfort.
+          </p>
+        </section>
+
+        {/* FAQs Section */}
+        <FAQs faqs={faqs} />
+
+        {/* Contact Banner */}
+        <section className={commonStyles.servicePageContactBanner}>
+          <p className={commonStyles.servicePageContactText}>
+            Need to repair a cavity or damaged tooth?
+          </p>
+          <Link
+            href="/contact"
+            className={commonStyles.servicePageContactButton}
+          >
+            Schedule an Appointment Today
+          </Link>
+        </section>
+      </div>
     </>
   );
 };
 
-export default Fillings;
+export default FillingsPage;

@@ -1,224 +1,202 @@
-import React from "react";
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import styles from "../../DentalServices.module.scss";
+// pages/dental-services/dental-implants/page.tsx
 
-const DentalImplants = () => {
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Head from "next/head";
+import commonStyles from "../../DentalServices.module.scss"; // Common styles
+import styles from "./DentalImplants.module.scss"; // Page-specific styles
+import ScrollFadeIn from "../../components/ScrollFadeIn/ScrollFadeIn"; 
+import FAQs from "../../components/FAQs/FAQs"; 
+
+const DentalImplantsPage: React.FC = () => {
+  // FAQs data
+  const faqs = [
+    {
+      question: "What is a dental implant?",
+      answer:
+        "A dental implant is a titanium post surgically placed into the jawbone beneath the gum line to act as a tooth root. It allows your dentist to mount replacement teeth or a bridge into that area.",
+    },
+    {
+      question: "Who is a good candidate for dental implants?",
+      answer:
+        "Generally, good candidates are individuals with healthy gums and enough bone to support the implant. A consultation is necessary to determine if implants are right for you.",
+    },
+    {
+      question: "How long do dental implants last?",
+      answer:
+        "With proper care, dental implants can last a lifetime, making them a long-term solution for missing teeth.",
+    },
+    {
+      question: "Does getting a dental implant hurt?",
+      answer:
+        "The procedure is performed under local anesthesia, so you should not feel pain during the surgery. Post-operative discomfort can be managed with medication.",
+    },
+    {
+      question: "How do I care for my dental implants?",
+      answer:
+        "Maintain good oral hygiene by brushing and flossing regularly, and visit your dentist for routine check-ups. Dental implants require the same care as natural teeth.",
+    },
+    // Add more FAQs as needed
+  ];
+
   return (
     <>
       <Head>
-        <title>Dental Implants | Your Dental Practice</title>
+        <title>
+          Dental Implants | Permanent Tooth Replacement | Bana Dental Design
+        </title>
         <meta
           name="description"
-          content="Discover the benefits of dental implants at Your Dental Practice. Dental implants are a permanent solution for missing teeth, designed to enhance your smile and improve oral health."
+          content="Replace missing teeth permanently with dental implants at Bana Dental Design. Learn about the benefits, process, and FAQs."
         />
         <meta
           name="keywords"
-          content="dental implants, tooth replacement, missing teeth, dental practice, dental implant benefits"
+          content="Dental Implants, Tooth Replacement, Bana Dental Design, Dental Services, Missing Teeth, Implant Dentistry"
+        />
+        <meta
+          property="og:title"
+          content="Dental Implants | Permanent Tooth Replacement | Bana Dental Design"
+        />
+        <meta
+          property="og:description"
+          content="Replace missing teeth permanently with dental implants at Bana Dental Design. Learn about the benefits, process, and FAQs."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://yourwebsite.com/dental-services/dental-implants"
+        />
+        <meta
+          property="og:image"
+          content="https://yourwebsite.com/images/dental-implants.jpg"
         />
         <link
           rel="canonical"
-          href="https://www.yourdomain.com/dental-implants"
+          href="https://yourwebsite.com/dental-services/dental-implants"
+        />
+
+        {/* FAQ Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
+            }),
+          }}
         />
       </Head>
-
-      <main className={styles["service-page"]}>
-        {/* Hero Section with Image and Overlay */}
-        <section className={styles["service-page__hero"]}>
-          <div className={styles["service-page__hero-overlay"]}>
-            <h1 className={styles["service-page__header"]}>Dental Implants</h1>
-            <p className={styles["service-page__intro-text"]}>
-              A permanent solution for missing teeth, dental implants restore
-              your smile, functionality, and confidence.
+      <div
+        className={`${commonStyles["service-page"]} ${styles["dentalImplantsPage"]}`}
+      >
+        {/* Header Section */}
+        <section className={commonStyles.headerSection}>
+          <ScrollFadeIn>
+            <h1 className={commonStyles.servicePageHeaderTitle}>
+              Dental Implants
+            </h1>
+            <p className={commonStyles.servicePageIntro}>
+              Replace missing teeth permanently with our dental implant
+              solutions.
             </p>
-            <Link href="#contact" passHref>
-              <button className={styles["service-page__cta-button"]}>
-                Book a Consultation
-              </button>
-            </Link>
-          </div>
+          </ScrollFadeIn>
+        </section>
+
+        {/* Hero Image */}
+        <section className={commonStyles.servicePageHero}>
           <Image
-            src="/images/OFFICCE/two-dentists-discussing-about-dental-health-of-the-2023-11-27-05-21-23-utc.jpg"
-            alt="Dental Implants"
-            layout="fill"
-            objectFit="cover"
-            className={styles["service-page__hero-image"]}
-            priority
+            src="/images/dental-implants.jpg"
+            alt="Dental Implants at Bana Dental Design"
+            width={800}
+            height={500}
+            className={commonStyles.servicePageHeroImage}
           />
         </section>
 
-        {/* What Are Dental Implants? */}
-        <section className={styles["service-page__details"]}>
-          <h2 className={styles["service-page__subheader"]}>
-            What Are Dental Implants?
+        {/* Details Section */}
+        <section
+          className={`${commonStyles.servicePageDetails} ${commonStyles.servicePageSection}`}
+        >
+          <h2 className={commonStyles.servicePageSubheader}>
+            What are Dental Implants?
           </h2>
-          <div className={styles["service-page__two-column"]}>
-            <Image
-              src="/images/implants-diagram.jpg"
-              alt="Dental Implants Diagram"
-              width={500}
-              height={300}
-              className={styles["service-page__image"]}
-            />
-            <p className={styles["service-page__text"]}>
-              Dental implants are titanium posts surgically placed into the
-              jawbone, mimicking natural tooth roots. Implants provide a secure
-              base for artificial teeth, such as crowns or bridges. With a
-              natural appearance and exceptional durability, implants are the
-              gold standard for tooth replacement.
-            </p>
-          </div>
+          <p className={commonStyles.servicePageText}>
+            Dental implants are artificial tooth roots made of titanium that
+            provide a permanent base for fixed, replacement teeth. They are the
+            closest solution to natural, healthy teeth and offer a long-term
+            solution for people missing one or more teeth.
+          </p>
         </section>
 
-        {/* Purpose and Key Facts Section */}
-        <section className={styles["service-page__purpose-facts"]}>
-          <div className={styles["service-page__highlight"]}>
-            <h2 className={styles["service-page__subheader"]}>
-              Purpose of Dental Implants
-            </h2>
-            <p className={styles["service-page__text"]}>
-              Dental implants are designed to replace missing teeth, restoring
-              the functionality and appearance of your smile. They help prevent
-              bone loss, improve oral health, and give you the confidence to
-              smile freely.
-            </p>
-          </div>
-
-          <div className={styles["service-page__facts"]}>
-            <h3>Key Facts About Dental Implants</h3>
-            <ul className={styles["service-page__list"]}>
-              <li>
-                <strong>Durability:</strong> Implants can last a lifetime with
-                proper care.
-              </li>
-              <li>
-                <strong>98% Success Rate:</strong> One of the most reliable
-                procedures in modern dentistry.
-              </li>
-              <li>
-                <strong>Bone Preservation:</strong> Helps prevent bone loss by
-                stimulating the jawbone.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Benefits of Dental Implants */}
-        <section className={styles["service-page__benefits"]}>
-          <h2 className={styles["service-page__subheader"]}>
+        {/* Benefits Section */}
+        <section
+          className={`${commonStyles.benefitsSection} ${commonStyles.servicePageSection}`}
+        >
+          <h2 className={commonStyles.servicePageSubheader}>
             Benefits of Dental Implants
           </h2>
-          <div className={styles["service-page__benefits-grid"]}>
-            <div className={styles["service-page__benefit-card"]}>
-              <Image
-                src="/images/implants-benefit1.jpg"
-                alt="Improved Appearance"
-                width={300}
-                height={200}
-                className={styles["service-page__benefit-image"]}
-              />
-              <h3>Improved Appearance</h3>
+          <div className={commonStyles.benefitsContainer}>
+            <div className={commonStyles.benefitCard}>
+              <h3>Permanent Solution</h3>
               <p>
-                Dental implants look and feel like your natural teeth, enhancing
-                your smile.
+                Dental implants are designed to last a lifetime with proper
+                care.
               </p>
             </div>
-            <div className={styles["service-page__benefit-card"]}>
-              <Image
-                src="/images/implants-benefit2.jpg"
-                alt="Improved Functionality"
-                width={300}
-                height={200}
-                className={styles["service-page__benefit-image"]}
-              />
-              <h3>Enhanced Functionality</h3>
-              <p>
-                Restore your ability to eat, speak, and chew comfortably with
-                implants.
-              </p>
+            <div className={commonStyles.benefitCard}>
+              <h3>Natural Look and Feel</h3>
+              <p>They look, feel, and function like your natural teeth.</p>
             </div>
-            <div className={styles["service-page__benefit-card"]}>
-              <Image
-                src="/images/implants-benefit3.jpg"
-                alt="Long-Term Oral Health"
-                width={300}
-                height={200}
-                className={styles["service-page__benefit-image"]}
-              />
-              <h3>Long-Term Oral Health</h3>
-              <p>
-                Implants help maintain bone structure and prevent further tooth
-                loss.
-              </p>
+            <div className={commonStyles.benefitCard}>
+              <h3>Preserve Jawbone</h3>
+              <p>Implants prevent bone loss by stimulating the jawbone.</p>
             </div>
           </div>
         </section>
 
-        {/* Before and After Section */}
-        <section className={styles["service-page__before-after"]}>
-          <h2 className={styles["service-page__subheader"]}>
-            Before and After
-          </h2>
-          <p className={styles["service-page__text"]}>
-            See the remarkable transformations of our patients. Our implants
-            have helped many regain their smiles and confidence.
-          </p>
-          <div className={styles["service-page__before-after-images"]}>
-            <Image
-              src="/images/before.jpg"
-              alt="Before Dental Implants"
-              width={300}
-              height={200}
-              className={styles["service-page__before-image"]}
-            />
-            <Image
-              src="/images/after.jpg"
-              alt="After Dental Implants"
-              width={300}
-              height={200}
-              className={styles["service-page__after-image"]}
-            />
-          </div>
-        </section>
-
-        {/* Why Choose Us? */}
-        <section className={styles["service-page__why-choose-us"]}>
-          <h2 className={styles["service-page__subheader"]}>Why Choose Us?</h2>
-          <p className={styles["service-page__text"]}>
-            Our dental team combines advanced technology with years of expertise
-            to provide personalized dental implant treatments. From consultation
-            to final restoration, we ensure that every step of your implant
-            journey is smooth, comfortable, and successful.
-          </p>
-          <ul className={styles["service-page__why-list"]}>
-            <li>Highly experienced implant specialists</li>
-            <li>State-of-the-art technology</li>
-            <li>Comfort-focused care in a relaxing environment</li>
-          </ul>
-        </section>
-
-        {/* Contact Form Banner */}
+        {/* Process Section */}
         <section
-          className={styles["service-page__contact-banner"]}
-          id="contact"
+          className={`${commonStyles.processSection} ${commonStyles.servicePageSection}`}
         >
-          <div className={styles["service-page__contact-content"]}>
-            <h3>Ready to Transform Your Smile?</h3>
-            <p>
-              Schedule a consultation today and take the first step toward a
-              brighter, healthier smile.
-            </p>
-            <Link href="/contact-us" passHref>
-              <button className={styles["service-page__contact-button"]}>
-                Contact Us
-              </button>
-            </Link>
-          </div>
+          <h2 className={commonStyles.servicePageSubheader}>
+            Our Implant Procedure
+          </h2>
+          <p className={commonStyles.servicePageText}>
+            The implant process involves several steps, including a
+            comprehensive evaluation, surgical placement of the implant, healing
+            time to allow the implant to fuse with the bone, and placement of
+            the custom-made crown. Our team ensures a comfortable and successful
+            treatment journey.
+          </p>
         </section>
-      </main>
+
+        {/* FAQs Section */}
+        <FAQs faqs={faqs} />
+
+        {/* Contact Banner */}
+        <section className={commonStyles.servicePageContactBanner}>
+          <p className={commonStyles.servicePageContactText}>
+            Interested in restoring your smile with dental implants?
+          </p>
+          <Link
+            href="/contact"
+            className={commonStyles.servicePageContactButton}
+          >
+            Schedule a Consultation Today
+          </Link>
+        </section>
+      </div>
     </>
   );
 };
 
-export default DentalImplants;
+export default DentalImplantsPage;
