@@ -2,7 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import styles from "../../DentalServices.module.scss";
+import commonStyles from "../../DentalServices.module.scss";
+import styles from "./SedationDentistry.module.scss";
 
 const SedationDentistryPage = () => {
   return (
@@ -87,43 +88,40 @@ const SedationDentistryPage = () => {
         />
       </Head>
       <div
-        className={`${styles["service-page"]} ${styles["sedationDentistryPage"]}`}
+        className={`${commonStyles["service-page"]} ${styles["sedationDentistryPage"]}`}
       >
         {/* Header Section */}
-        <section className={styles.headerSection}>
-          <h1 className={styles.servicePageHeaderTitle}>Sedation Dentistry</h1>
-          <p className={styles.servicePageIntro}>
-            Dr. Bana
-            has been providing sedation dentistry for his patients for over 30
-            years. His extensive experience has brought comfortable and
+        <section className={commonStyles.headerSection}>
+          <h1 className={commonStyles.servicePageHeaderTitle}>
+            Sedation Dentistry
+          </h1>
+          <p className={commonStyles.servicePageIntro}>
+            Dr. Bana has been providing sedation dentistry for his patients for
+            over 30 years. His extensive experience has brought comfortable and
             stress-free dental care to patients, allowing them to feel at ease
             during their procedures.
           </p>
         </section>
 
-        {/* Hero Image */}
-        <section className={styles.servicePageHero}>
+        <section className={commonStyles.servicePageHero}>
           <Image
             src="/images/sedation-dentistry.jpg"
             alt="Patient relaxing during dental treatment with sedation at Bana Dental Design"
             width={800}
             height={500}
-            className={styles.servicePageHeroImage}
+            className={commonStyles.servicePageHeroImage}
           />
         </section>
 
-        {/* Details Section */}
         <section
-          className={`${styles.servicePageDetails} ${styles.servicePageSection}`}
+          className={`${commonStyles.servicePageDetails} ${commonStyles.servicePageSection}`}
         >
-          <h2 className={styles.servicePageSubheader}>
+          <h2 className={commonStyles.servicePageSubheader}>
             What is Sedation Dentistry?
           </h2>
-          <p className={styles.servicePageText}>
+          <p className={commonStyles.servicePageText}>
             Sedation Dentistry involves the use of medication to help patients
-            relax during dental procedures. It's an excellent option for
-            individuals with dental anxiety, sensitive gag reflexes, difficulty
-            getting numb, or those undergoing extensive treatments.
+            relax during dental procedures...
           </p>
         </section>
 
@@ -152,13 +150,8 @@ const SedationDentistryPage = () => {
           </div>
         </section>
 
-        {/* Types of Sedation Section */}
-        <section
-          className={`${styles.typesOfSedationSection} ${styles.servicePageSection}`}
-        >
-          <h2 className={styles.servicePageSubheader}>
-            Types of Sedation We Offer
-          </h2>
+        <section className={`${styles.typesOfSedationSection} ${commonStyles.servicePageSection}`}>
+          <h2 className={commonStyles.servicePageSubheader}>Types of Sedation We Offer</h2>
           <div className={styles.sedationTypesContainer}>
             <div className={styles.sedationTypeCard}>
               <h3>Nitrous Oxide (Laughing Gas)</h3>

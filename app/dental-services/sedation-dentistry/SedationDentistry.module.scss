@@ -1,0 +1,33 @@
+.typesOfSedationSection {
+    margin-bottom: 3rem;
+  
+    .sedationTypesContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+  
+      .sedationTypeCard {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow-light);
+        flex: 1 1 30%;
+        max-width: 300px;
+        text-align: center;
+  
+        h3 {
+          font-size: 1.5rem;
+          color: var(--primary-color);
+          margin-bottom: 1rem;
+        }
+  
+        p {
+          font-size: 1rem;
+          color: var(--text-color);
+          line-height: 1.5;
+        }
+      }
+    }
+  }

@@ -1,0 +1,36 @@
+.faqSection {
+    margin-bottom: 3rem;
+  }
+  
+  .faqHeader {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .faqContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .faqItem {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-light);
+  
+    h3 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+  }
+  
