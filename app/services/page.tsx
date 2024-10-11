@@ -51,6 +51,12 @@ const servicesList = {
       image: "/images/dental-implants.jpg",
       link: "/dental-services/dental-implants",
     },
+    {
+      title: "Inlays and Onlays",
+      description: "Restore damaged teeth with precision-crafted inlays and onlays.",
+      image: "/images/inlays-onlays.jpg",
+      link: "/dental-services/inlays-onlays",
+    },
   ],
   cosmetic: [
     {
@@ -77,6 +83,12 @@ const servicesList = {
       image: "/images/gum-contouring.jpg",
       link: "/dental-services/gum-contouring",
     },
+    {
+      title: "Full Arch Dentistry",
+      description: "Reconstruct your smile with full arch dentistry solutions.",
+      image: "/images/full-arch-dentistry.jpg",
+      link: "/dental-services/full-arch-dentistry",
+    },
   ],
   specialized: [
     {
@@ -86,17 +98,12 @@ const servicesList = {
       link: "/dental-services/emergency-dentistry",
     },
     {
-      title: "Pediatric Dentistry",
-      description: "Specialized dental care for children.",
-      image: "/images/pediatric-dentistry.jpg",
-      link: "/dental-services/pediatric-dentistry",
-    },
-    {
       title: "Sedation Dentistry",
       description: "Relax during dental treatments with sedation options.",
       image: "/images/sedation-dentistry.jpg",
       link: "/dental-services/sedation-dentistry",
     },
+    // Pediatric Dentistry has been removed as per your request
   ],
 };
 
@@ -201,8 +208,7 @@ const ServicesPage = () => {
           </h2>
           <p className={styles.servicesPage__description}>
             Our specialized care services ensure you receive the best treatment
-            for complex dental needs, including emergency, pediatric, and
-            sedation dentistry.
+            for complex dental needs, including emergency and sedation dentistry.
           </p>
           <div className={styles.servicesPage__cards}>
             {servicesList.specialized.map((service, index) => (

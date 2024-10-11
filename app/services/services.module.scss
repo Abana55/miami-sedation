@@ -11,6 +11,16 @@
   &__title {
     font-size: 2.5rem;
     color: var(--primary-color);
+    font-family: var(--font-heading);
+  }
+
+  &__intro {
+    font-size: 1.2rem;
+    font-family: var(--font-body);
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
   }
 
   &__category {
@@ -22,6 +32,7 @@
     color: var(--secondary-color);
     text-align: center;
     margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
   }
 
   &__description {
@@ -31,75 +42,24 @@
     max-width: 800px;
     margin: 0 auto 2rem auto;
     line-height: 1.6;
+    font-family: var(--font-body);
   }
 
   &__cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-bottom: 2rem;
   }
 
-  &__card {
-    position: relative;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  &__moreLink {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-family: var(--font-body);
+    text-align: center;
     width: 100%;
-    max-width: 320px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-
-    &__icon {
-      font-size: 3rem;
-      color: var(--secondary-color);
-      margin-bottom: 1rem;
-    }
-
-    &__cardContent {
-      padding: 1rem;
-      text-align: center;
-      flex-grow: 1;
-    }
-
-    &__cardImage {
-      width: 100%;
-      height: 60%;
-      overflow: hidden;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      flex-shrink: 0;
-
-      .image-element {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    &__cardTitle {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      margin: 1rem 0;
-      font-weight: 600;
-    }
-
-    &__cardDescription {
-      font-size: 0.875rem;
-      color: var(--text-color);
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-
-    &__button {
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      background-color: var(--secondary-color);
-      color: #fff;
-    }
   }
 }

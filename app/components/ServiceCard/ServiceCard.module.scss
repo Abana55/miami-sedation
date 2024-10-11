@@ -1,70 +1,78 @@
 .serviceCard {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
-  width: 100%;
-  max-width: 700px; 
-  margin: 1rem;
+  align-items: center;
+  background: var(--background-color);
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
-  text-decoration: none; 
-
-
-  background: #ffffff;
-  box-shadow: none;
-  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  margin: 0;
 
   @media (max-width: 768px) {
-    flex-direction: column; 
-    max-width: 100%;
-  }
-
-  .cardImage {
-    width: 50%;
-    height: auto;
-    position: relative;
-
-    .image-element {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .cardContent {
-    width: 50%;
-    padding: 1rem;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+  }
+}
 
-    @media (max-width: 768px) {
-      width: 100%;
-    }
+.cardImage {
+  width: 50%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
 
-    .cardTitle {
-      font-size: 1.5rem;
-      color: #000000;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
+  .image-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    .cardDescription {
-      font-size: 1rem;
-      color: #333333;
-      margin-bottom: 1rem;
-    }
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 200px; /* Adjust height for mobile if needed */
+  }
+}
 
-    .button {
-      align-self: flex-start;
-      background-color: #0070f3;
-      color: #ffffff;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      text-decoration: none;
-    }
+.cardContent {
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .cardDescription {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .button {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    text-decoration: none;
+    cursor: pointer;
+    align-self: center;
   }
 }
