@@ -1075,3 +1075,146 @@
     }
   }
 }
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 2rem;
+  background-color: var(--primary-color-light);
+  padding: 2rem;
+  border-radius: 10px;
+
+  .servicePageHeaderTitle {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  .servicePageIntro {
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* Hero Image */
+.servicePageHero {
+  position: relative;
+  height: 500px;
+  margin-bottom: 2rem;
+
+  .servicePageHeroImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+}
+
+/* Sections */
+.servicePageSection {
+  margin-bottom: 3rem;
+
+  .servicePageSubheader {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .servicePageText {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Benefits Section */
+.benefitsSection {
+  .benefitsContainer {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    .benefitCard {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: var(--box-shadow-light);
+      text-align: center;
+      flex: 1 1 30%;
+
+      h3 {
+        margin-top: 0.5rem;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--text-color);
+      }
+    }
+  }
+}
+
+/* FAQ Section */
+.faqSection {
+  .faqContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .faqItem {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: var(--box-shadow-light);
+
+      h3 {
+        font-size: 1.2rem;
+        color: var(--secondary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--text-color);
+      }
+    }
+  }
+}
+
+/* Contact Banner */
+.servicePageContactBanner {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 10px;
+
+  .servicePageContactText {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .servicePageContactButton {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--primary-color-dark);
+    }
+  }
+}
