@@ -21,10 +21,10 @@ const AboutPage: NextPage = () => {
       imageSrc: "/images/aboutUs/DrBana.jpg",
       altText: "Dr. Ramon Bana",
       name: "Dr. Ramon Bana",
-      position: "Doctor of Dental Surgery/Doctor of Smiles",
+      position: "Doctor of Dental Surgery",
       bio: [
-        "Dr. Bana’s patients describe him as down-to-earth, professional, and full of heart. He is talented and strives to make each patient leave the office feeling better than when they arrived. Patient comfort is his top priority, and patients say they feel like extended family. He is dedicated to his practice, patients, and team – and it shows. Dr. Bana loves coming to work because his work changes people for the better. Patients leave his care healthier, happier, and with brighter smiles.",
-        "As a graduate of Marquette University, Dr. Bana has continued his education for the past 35 years ensuring he is bringing the best of the best to his patients. He promises excellence and does the work to make sure he delivers on that promise.",
+        "Dr. Ramon Bana was born in La Habana, Cuba and came to Miami at as a young boy. He graduated from Hialeah High School (Class of 1981) and went on to study at the number one dental school at the time, Marquette University in Milwaukee, Wisconsin. He graduated as a Doctor of Dental Surgery in 1991. Over the last 33 years, he has taken countless continuing education courses including implant and full arch dentistry courses, orthodontic courses, digital smile design courses, and even therapeutic and cosmetic botox courses to keep up with the ever growing technology in the field of dentistry.", "Bana’s patients describe him as down-to-earth, professional, and full of heart. Patient comfort is his top priority, and patients say they feel like extended family. He always strives to leave patients feeling better than when they arrived. He is dedicated to his practice, patients, and team – and it shows. Dr. Bana's passion for dentistry shows vastly through his work as his goal is always to provide only the top quality dentistry for his patients.",
+        "Dr. Bana has continued his education for the past 33 years ensuring he is bringing the best of the best to his patients. He promises excellence and does the work to make sure he delivers on that promise, and patients always leave his care healthier, happier, and with brighter smiles.",
       ],
       isDoctor: true,
     },
