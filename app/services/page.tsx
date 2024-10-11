@@ -66,7 +66,7 @@ const servicesList = {
       link: "/dental-services/veneers",
     },
     {
-      title: "Smile Makeovers",
+      title: "Full Mouth Rehab",
       description: "Comprehensive cosmetic treatments for a perfect smile.",
       image: "/images/smile-makeovers.jpg",
       link: "/dental-services/smile-makeovers",
