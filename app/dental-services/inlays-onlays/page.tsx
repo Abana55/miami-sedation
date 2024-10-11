@@ -53,7 +53,7 @@ const InlaysOnlaysPage = () => {
         {/* Hero Image */}
         <section className={styles.servicePageHero}>
           <Image
-            src="/images/inlays-onlays.jpg"
+            src="/images/CONNECT/2.jpg"
             alt="Inlays and Onlays"
             width={800}
             height={500}

@@ -40,8 +40,8 @@ const Header: React.FC = () => {
           <Image
             src="/images/1x/3Artboard 1_1.png"
             alt="Bana Dental Design Logo"
-            width={124}
-            height={124}
+            width={100}
+            height={100}
             className={styles["header-logo__img"]}
             priority 
           />

@@ -93,7 +93,11 @@ const SedationDentistryPage = () => {
         <section className={styles.headerSection}>
           <h1 className={styles.servicePageHeaderTitle}>Sedation Dentistry</h1>
           <p className={styles.servicePageIntro}>
-            Comfortable and Stress-Free Dental Care for All Patients
+            Dr. Bana
+            has been providing sedation dentistry for his patients for over 30
+            years. His extensive experience has brought comfortable and
+            stress-free dental care to patients, allowing them to feel at ease
+            during their procedures.
           </p>
         </section>
 

@@ -87,7 +87,7 @@ const TeethWhitening = () => {
             </Link>
           </div>
           <img
-            src="/images/TeethWhiteningHero.jpg"
+            src="/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG"
             alt="Teeth Whitening Hero"
             className={styles["service-page__hero-image"]}
           />
@@ -100,7 +100,7 @@ const TeethWhitening = () => {
           </h2>
           <div className={styles["service-page__two-column"]}>
             <img
-              src="/images/teeth-whitening-diagram.jpg"
+              src="/images/CONNECT/1.png"
               alt="Teeth Whitening Process"
               className={styles["service-page__image"]}
             />
