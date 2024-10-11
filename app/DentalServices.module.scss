@@ -1342,3 +1342,118 @@
     }
   }
 }
+
+.commonEmergenciesSection {
+  .emergencyList {
+    list-style-type: disc;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    line-height: 1.6;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.whatToDoSection {
+  .phoneLink {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+}
+
+.servicePageContactBanner {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 3rem;
+
+  .servicePageContactText {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .servicePageContactButton {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--primary-color-dark);
+    }
+  }
+}
+
+.typesOfSedationSection {
+  .sedationTypesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .sedationTypeCard {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: var(--box-shadow-light);
+      flex: 1 1 30%;
+      max-width: 300px;
+      text-align: center;
+
+      h3 {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--text-color);
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+/* Contact Banner */
+.servicePageContactBanner {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 3rem;
+
+  .servicePageContactText {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .servicePageContactButton {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--primary-color-dark);
+    }
+  }
+}
