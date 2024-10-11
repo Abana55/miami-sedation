@@ -7,8 +7,8 @@
   object-fit: cover;
 }
 
-/* Benefits Section */
-.benefitCard {
+/* Treatments Section */
+.treatmentCard {
   background-color: #fff;
   padding: 1rem;
   border-radius: 8px;
@@ -82,14 +82,14 @@
     max-height: 400px;
   }
 
-  /* Benefits Section */
-  .benefitsContainer {
+  /* Treatments Section */
+  .treatmentsContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
   }
 
-  .benefitCard {
+  .treatmentCard {
     flex: 1 1 calc(50% - 1rem);
     margin-bottom: 1rem;
   }
@@ -101,12 +101,12 @@
     max-height: 500px;
   }
 
-  /* Benefits Section */
-  .benefitsContainer {
+  /* Treatments Section */
+  .treatmentsContainer {
     gap: 2rem;
   }
 
-  .benefitCard {
+  .treatmentCard {
     flex: 1 1 calc(33.333% - 1.33rem);
     margin-bottom: 0;
   }
