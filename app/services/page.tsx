@@ -10,7 +10,7 @@ const servicesList = {
     {
       title: "Teeth Cleaning",
       description: "Maintain your oral health with regular teeth cleaning.",
-      image: "/images/IMG_3696.JPG",
+      image: "/images/Teeth Whitening Photo by Cedric Fauntleroy.jpg",
       link: "/dental-services/teeth-cleaning",
     },
     {
