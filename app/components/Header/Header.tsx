@@ -73,6 +73,11 @@ const Header: React.FC = () => {
               Contact Us
             </MyButton>
           </Link>
+          <Link href="/finance-with-us" passHref onClick={closeMenu}>
+            <MyButton className={styles["header-nav__button"]}>
+              Finance With Us
+            </MyButton>
+          </Link>
           <Link href="/services" passHref onClick={closeMenu}>
             <MyButton className={styles["header-nav__button"]}>
               Services
