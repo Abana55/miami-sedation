@@ -37,9 +37,18 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @include mobile {
+    height: 70vh;
     .heroContent {
       padding: 1rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  @include tablet {
+    height: 80vh;
+    .heroContent {
+      font-size: 1.5rem;
     }
   }
 }
@@ -51,7 +60,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
-
 
   .welcomeText {
     text-align: center;
@@ -77,11 +85,27 @@
   .welcomeImage {
     text-align: center;
 
-
     img {
       max-width: 100%;
       border-radius: 1rem;
       @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    }
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    .welcomeText .welcomeTitle {
+      font-size: 2.5rem;
+    }
+    .welcomeText .welcomeDescription {
+      font-size: 1rem;
+    }
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    .welcomeText .welcomeTitle {
+      font-size: 3rem;
     }
   }
 }
@@ -117,21 +141,19 @@
       color: var(--secondary-color);
     }
   }
-}
 
-.services, .teamSection, .testimonials, .callToAction {
-  @include section-padding(2rem);
-  text-align: center;
-
-  .sectionTitle {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
+  @include mobile {
+    .textContainer {
+      width: 80%;
+      font-size: 1rem;
+    }
   }
 
-  .sectionContent {
-    font-size: 1.2rem;
-    color: var(--text-color);
+  @include tablet {
+    .textContainer {
+      width: 70%;
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -140,7 +162,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
-
 
     .serviceItem {
       @include glassmorphism(rgba(255, 255, 255, 0.1));
@@ -157,7 +178,20 @@
       }
     }
   }
+
+  @include mobile {
+    .servicesList {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include tablet {
+    .servicesList {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
 }
+
 .teamSection {
   .teamContent {
     display: grid;
@@ -168,10 +202,9 @@
       text-align: center;
     }
 
-   .articleSection {
+    .articleSection {
       text-align: left;
 
-      
       .articleTitle {
         font-size: 3rem;
         color: var(--secondary-color);
@@ -186,22 +219,33 @@
       }
     }
   }
+
+  @include mobile {
+    .teamContent {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include tablet {
+    .teamContent {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 }
 
 .banner {
-  background-image: url('/images/CONNECT/connectBanner.png'); // Ensure the correct path
+  background-image: url('/images/CONNECT/connectBanner.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: var(--fallback-color);
-  padding: 20px;
-  text-align: center;
-  color: var(--secondary-color);
-  position: relative;
   margin: 1.25rem;
   border-radius: 1.25rem;
   overflow: hidden;
   height: 400px;
+  text-align: center;
+  color: var(--secondary-color);
+  position: relative;
 
   &__title {
     font-size: 6rem;
@@ -220,175 +264,20 @@
     color: var(--secondary-color);
   }
 
-  &__social-links {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    gap: 15px;
-  }
-
-  &__social-link {
-    color: #fff;
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: var(--secondary-color);
+  @include mobile {
+    height: 300px;
+    &__title {
+      font-size: 4rem;
     }
   }
 
-  &__contact-info {
-    padding: 20px;
-    margin-top: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  &__office-number {
-    font-size: 1.2em;
-    color: #fff;
-    margin: 0;
-    font-family: var(--font-body);
-    font-weight: 100;
-  }
-
-  &__schedule-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: var(--primary-color-dark);
+  @include tablet {
+    height: 350px;
+    &__title {
+      font-size: 5rem;
     }
   }
 }
-
-.magazineSection {
-    padding: 2rem;
-    background-color: var(--secondary-color); 
-    background-image: url('/images/CONNECT/Pattern.jpg'), linear-gradient(135deg, rgba(255, 192, 203, 0.4), rgba(173, 216, 230, 0.4));
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center center; 
-    border-radius: 20px;
-    text-align: center;
-
-    .glassmorphicContainer {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      background: rgba(255, 255, 255, 0.3); 
-      border-radius: 20px;
-      padding: 2rem;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-      }
-      @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    .magazineArticle {
-      flex: 1;
-      padding: 0 2rem;
-      text-align: left;
-  
-      .magazineImage {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-bottom: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .magazineTitle {
-        font-size: 1.5rem;
-        color: var(--primary-color);
-        margin: 0.5rem 0;
-      }
-  
-      .magazineDescription {
-        font-size: 1rem;
-        color: var(--text-color);
-        margin-bottom: 1rem;
-      }
-      .learnMoreButton {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        color: #ffffff;
-        background-color: var(--primary-color);
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-      
-        &:hover {
-          transform: scale(1.05);
-          background-color: var(--primary-color-dark); 
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
-        }
-      
-        &:active {
-          transform: scale(0.98); 
-          background-color: var(--primary-color-darker); 
-        }
-      
-      
-        position: relative;
-        overflow: hidden;
-      
-        &::after {
-          content: "";
-          position: absolute;
-          width: 300%;
-          height: 300%;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) scale(0);
-          background: rgba(255, 255, 255, 0.2);
-          border-radius: 50%;
-          transition: transform 0.5s ease;
-        }
-      
-        &:active::after {
-          transform: translate(-50%, -50%) scale(1);
-          transition: transform 0.3s ease;
-        }
-      }
-    }
-
-    .verticalDivider {
-      width: 2px;
-      background-color: rgba(0, 0, 0, 0.2);
-      height: 100%;
-      margin: 0 2rem;
-  
-      @media (max-width: 768px) {
-        display: none;
-      }
-    }
-  }
 
 .testimonials {
   .testimonialItem {
@@ -404,12 +293,33 @@
       color: var(--secondary-color);
     }
   }
+
+  @include mobile {
+    .testimonialItem {
+      padding: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+  }
 }
 
 .callToAction {
   .ctaButton {
     @include glassmorphism(rgba(255, 255, 255, 0.1), 10px);
     @include button-style(rgba(255, 255, 255, 0.1), #fff, rgba(255, 255, 255, 0.2), #fff);
+  }
+
+  @include mobile {
+    .ctaButton {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  @include tablet {
+    .ctaButton {
+      padding: 1.25rem;
+      font-size: 1.25rem;
+    }
   }
 }
 
@@ -432,5 +342,17 @@
     max-width: 85%;
     height: auto;
     border-radius: 0.5rem;
+  }
+
+  @include mobile {
+    img {
+      max-width: 95%;
+    }
+  }
+
+  @include tablet {
+    img {
+      max-width: 90%;
+    }
   }
 }
