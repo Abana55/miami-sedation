@@ -70,7 +70,7 @@ const Header: React.FC = () => {
         <div className={styles["header-nav__container"]}>
           <MyButton
             href="/about-us"
-            variant="secondary"
+            variant="primary"
             className={styles["header-nav__button"]}
             onClick={closeMenu}
           >
@@ -78,7 +78,7 @@ const Header: React.FC = () => {
           </MyButton>
           <MyButton
             href="/services"
-            variant="secondary"
+            variant="primary"
             className={styles["header-nav__button"]}
             onClick={closeMenu}
           >
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
           </MyButton>
           <MyButton
             href="/finance-with-us"
-            variant="secondary"
+            variant="primary"
             className={styles["header-nav__button"]}
             onClick={closeMenu}
           >
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
           </MyButton>
           <MyButton
             href="/contact-us"
-            variant="secondary"
+            variant="primary"
             className={styles["header-nav__button"]}
             onClick={closeMenu}
           >

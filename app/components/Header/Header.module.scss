@@ -1,4 +1,4 @@
-@use '../../styles/mixins.scss' as *;
+@use "../../styles/mixins.scss" as *;
 
 .header {
   @include sticky-header;
@@ -7,7 +7,6 @@
   grid-template-columns: auto 1fr auto;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1rem;
   z-index: 1001;
 
   &-logo {
@@ -36,6 +35,7 @@
   }
 
   .header-hamburger {
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -78,10 +78,18 @@
     }
 
     &__phone {
-      /* Styling for phone number */
-      @include body-text(1rem, var(--text-color));
-      font-weight: 600;
-      box-shadow: var(--box-shadow);
+      border-radius: 1.5rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 8rem;
+      height: 2rem;
+      font-family: var(--font-body);
+      font-weight: 400;
     }
   }
 

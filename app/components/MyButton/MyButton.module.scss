@@ -2,16 +2,19 @@
   position: relative;
   overflow: hidden;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+  padding: 0px;
+  border-radius: 1.5rem;
+  font-size: .75rem;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   text-decoration: none;
-  display: inline-block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 2rem;
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 400;
 
   &:focus {
     outline: 2px solid var(--primary-color-dark);
@@ -47,16 +50,18 @@
   color: #fff; /* White font */
 
   &:hover {
-    background-color: var(--primary-color-dark);
+    background-color: var(--accent-color); /* Grey background on hover */
+    color: var(--secondary-color); /* Gold font on hover */
   }
 }
 
 /* Secondary Variant */
 .secondary {
-  background-color: var(--accent-color); /* Lux Grey */
-  color: var(--secondary-color); /* Muted Gold font */
+  background-color: var(--accent-color); /* Grey */
+  color: var(--secondary-color); /* Gold font */
 
   &:hover {
-    background-color: var(--accent-color-light); /* Light Lux Grey for hover */
+    background-color: var(--primary-color); /* Deep Blue on hover */
+    color: #fff; /* White font on hover */
   }
 }
