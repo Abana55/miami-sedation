@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import MyButton from "../MyButton/MyButton";
 import styles from "./Header.module.scss";
+import MyButton from "../MyButton/MyButton"; 
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +13,7 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   const closeMenu = () => {
-    setIsMenuOpen(false); 
+    setIsMenuOpen(false);
   };
 
   return (
@@ -36,14 +36,14 @@ const Header: React.FC = () => {
         ></span>
       </div>
       <div className={styles["header-logo"]}>
-      <Link href="/" passHref>
+        <Link href="/">
           <Image
             src="/images/1x/3Artboard 1_1.png"
             alt="Bana Dental Design Logo"
             width={100}
             height={100}
             className={styles["header-logo__img"]}
-            priority 
+            priority
           />
         </Link>
       </div>
@@ -51,11 +51,9 @@ const Header: React.FC = () => {
         <div className={styles["header-end__phone"]}>
           Call us: (305) 555-5555
         </div>
-        <Link href="/contact-us" passHref>
-          <MyButton className={styles["header-end__button"]}>
-            Contact Us
-          </MyButton>
-        </Link>
+        <MyButton href="/contact-us" className={styles["header-end__button"]}>
+          Contact Us
+        </MyButton>
       </div>
       <nav
         className={`${styles["header-nav"]} ${
@@ -63,26 +61,34 @@ const Header: React.FC = () => {
         }`}
       >
         <div className={styles["header-nav__container"]}>
-          <Link href="/about-us" passHref onClick={closeMenu}>
-            <MyButton className={styles["header-nav__button"]}>
-              About Us
-            </MyButton>
-          </Link>
-          <Link href="/contact-us" passHref onClick={closeMenu}>
-            <MyButton className={styles["header-nav__button"]}>
-              Contact Us
-            </MyButton>
-          </Link>
-          <Link href="/finance-with-us" passHref onClick={closeMenu}>
-            <MyButton className={styles["header-nav__button"]}>
-              Finance With Us
-            </MyButton>
-          </Link>
-          <Link href="/services" passHref onClick={closeMenu}>
-            <MyButton className={styles["header-nav__button"]}>
-              Services
-            </MyButton>
-          </Link>
+          <MyButton
+            href="/about-us"
+            className={styles["header-nav__button"]}
+            onClick={closeMenu}
+          >
+            About Us
+          </MyButton>
+          <MyButton
+            href="/services"
+            className={styles["header-nav__button"]}
+            onClick={closeMenu}
+          >
+            Services
+          </MyButton>
+          <MyButton
+            href="/finance-with-us"
+            className={styles["header-nav__button"]}
+            onClick={closeMenu}
+          >
+            Finance with Us
+          </MyButton>
+          <MyButton
+            href="/contact-us"
+            className={styles["header-nav__button"]}
+            onClick={closeMenu}
+          >
+            Contact Us
+          </MyButton>
         </div>
       </nav>
     </header>

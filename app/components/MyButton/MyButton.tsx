@@ -1,48 +1,73 @@
+"use client";
+
 import React, { forwardRef, useRef } from "react";
+import Link from "next/link";
 import styles from "./MyButton.module.scss";
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  href?: string;
+}
 
-const MyButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const rippleRef = useRef<HTMLSpanElement>(null);
+const MyButton = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, href, className, ...props }, ref) => {
+    const rippleRef = useRef<HTMLSpanElement>(null);
 
-  const createRipple = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const button = event.currentTarget;
-    const ripple = document.createElement("span");
-    const diameter = Math.max(button.clientWidth, button.clientHeight);
-    const radius = diameter / 2;
+    const createRipple = (
+      event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+    ) => {
+      const element = event.currentTarget as HTMLElement;
+      const ripple = document.createElement("span");
+      const diameter = Math.max(element.clientWidth, element.clientHeight);
+      const radius = diameter / 2;
 
-    ripple.style.width = ripple.style.height = `${diameter}px`;
-    ripple.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-    ripple.style.top = `${event.clientY - button.offsetTop - radius}px`;
-    ripple.classList.add(styles.ripple);
+      ripple.style.width = ripple.style.height = `${diameter}px`;
+      ripple.style.left = `${event.clientX - element.offsetLeft - radius}px`;
+      ripple.style.top = `${event.clientY - element.offsetTop - radius}px`;
+      ripple.classList.add(styles.ripple);
 
-    const rippleContainer = button.getElementsByClassName(styles.ripple)[0];
+      const rippleContainer = element.getElementsByClassName(styles.ripple)[0];
 
-    if (rippleContainer) {
-      rippleContainer.remove();
+      if (rippleContainer) {
+        rippleContainer.remove();
+      }
+
+      element.appendChild(ripple);
+    };
+
+    if (href) {
+      return (
+        <Link
+          href={href}
+          className={`${styles.button} ${className}`}
+          onClick={(e) => {
+            createRipple(e as any);
+            props.onClick && props.onClick(e);
+          }}
+          {...props}
+        >
+          {children}
+          <span className={styles.ripple}></span>
+        </Link>
+      );
     }
 
-    button.appendChild(ripple);
-  };
-
-  return (
-    
-    <button
-      ref={ref}
-      {...props}
-      className={`${styles.button} ${props.className}`}
-      onClick={(e) => {
-        createRipple(e);
-        props.onClick && props.onClick(e);
-      }}
-    >
-      {props.children}
-      <span ref={rippleRef} className={styles.ripple}></span>
-    </button>
-  );
-});
+    return (
+      <button
+        ref={ref}
+        className={`${styles.button} ${className}`}
+        onClick={(e) => {
+          createRipple(e);
+          props.onClick && props.onClick(e);
+        }}
+        {...props}
+      >
+        {children}
+        <span className={styles.ripple}></span>
+      </button>
+    );
+  }
+);
 
 MyButton.displayName = "MyButton";
 

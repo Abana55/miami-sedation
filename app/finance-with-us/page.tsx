@@ -1,11 +1,9 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import commonStyles from "../DentalServices.module.scss"; // Common styles
-import styles from "./FinanceWithUs.module.scss"; // Page-specific styles
+import commonStyles from "../DentalServices.module.scss";
+import styles from "./FinanceWithUs.module.scss";
 import ScrollFadeIn from "../components/ScrollFadeIn/ScrollFadeIn";
 import FAQs from "../components/FAQs/FAQs";
 import MyButton from "../components/MyButton/MyButton";
@@ -16,7 +14,7 @@ const FinanceWithUsPage: React.FC = () => {
     {
       question: "What financing options are available?",
       answer:
-        "We offer various financing options including Alphaeon, Sunbit, CareCredit, and Financials to help you manage the cost of your dental procedures.",
+        "We offer various financing options including Alphaeon, Sunbit, CareCredit, and Proceed Finance to help you manage the cost of your dental procedures.",
     },
     {
       question: "How do I apply for financing?",
@@ -49,11 +47,11 @@ const FinanceWithUsPage: React.FC = () => {
         </title>
         <meta
           name="description"
-          content="Explore flexible financing options at Bana Dental Design. Learn about Alphaeon, Sunbit, CareCredit, and Financials to manage the cost of your dental procedures."
+          content="Explore flexible financing options at Bana Dental Design. Learn about Alphaeon, Sunbit, CareCredit, and Proceed Finance to manage the cost of your dental procedures."
         />
         <meta
           name="keywords"
-          content="Dental Financing, Finance with Us, Alphaeon, Sunbit, CareCredit, Financials, Bana Dental Design"
+          content="Dental Financing, Finance with Us, Alphaeon, Sunbit, CareCredit, Proceed Finance, Bana Dental Design"
         />
         <meta
           property="og:title"
@@ -61,7 +59,7 @@ const FinanceWithUsPage: React.FC = () => {
         />
         <meta
           property="og:description"
-          content="Explore flexible financing options at Bana Dental Design. Learn about Alphaeon, Sunbit, CareCredit, and Financials to manage the cost of your dental procedures."
+          content="Explore flexible financing options at Bana Dental Design. Learn about Alphaeon, Sunbit, CareCredit, and Proceed Finance to manage the cost of your dental procedures."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -110,6 +108,7 @@ const FinanceWithUsPage: React.FC = () => {
             </p>
           </ScrollFadeIn>
         </section>
+
         {/* Hero Image */}
         <section className={commonStyles.servicePageHero}>
           <Image
@@ -158,15 +157,14 @@ const FinanceWithUsPage: React.FC = () => {
                 dental needs. Enjoy flexible payment plans with competitive
                 interest rates.
               </p>
-              <Link
+              <MyButton
+                href="https://www.alphaeon.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.financingOption__link}
-                href="https://www.alphaeon.com"
-                passHref
               >
                 Learn More
-              </Link>
+              </MyButton>
             </div>
 
             {/* Sunbit */}
@@ -182,15 +180,14 @@ const FinanceWithUsPage: React.FC = () => {
                 Sunbit provides fast and easy financing for your dental
                 procedures. Apply in minutes and get instant approval.
               </p>
-              <Link
+              <MyButton
+                href="https://www.sunbit.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.financingOption__link}
-                href="https://www.sunbit.com"
-                passHref
               >
                 Learn More
-              </Link>
+              </MyButton>
             </div>
 
             {/* CareCredit */}
@@ -206,39 +203,37 @@ const FinanceWithUsPage: React.FC = () => {
                 CareCredit is a dedicated healthcare credit card that covers
                 dental treatments with flexible financing options.
               </p>
-              <Link
+              <MyButton
+                href="https://www.carecredit.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.financingOption__link}
-                href="https://www.carecredit.com"
-                passHref
               >
                 Learn More
-              </Link>
+              </MyButton>
             </div>
 
-            {/* Financials */}
+            {/* Proceed Finance */}
             <div className={styles.financingOption}>
               <Image
-                src="/images/financials-logo.png"
-                alt="Financials Logo"
+                src="/images/proceed-finance-logo.png"
+                alt="Proceed Finance Logo"
                 width={150}
                 height={80}
                 className={styles.financingOption__logo}
               />
               <p>
-                Financials offers personalized financing plans to ensure you
-                receive the dental care you need without financial strain.
+                Proceed Finance offers personalized financing plans to ensure
+                you receive the dental care you need without financial strain.
               </p>
-              <Link
+              <MyButton
+                href="https://www.proceedfinance.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.financingOption__link}
-                href="https://www.financials.com"
-                passHref
               >
                 Learn More
-              </Link>
+              </MyButton>
             </div>
           </div>
         </section>
@@ -249,16 +244,18 @@ const FinanceWithUsPage: React.FC = () => {
             Explore Our Other Dental Services
           </h2>
           <div className={styles.relatedServicesButtons}>
-            <Link href="/dental-services/sedation-dentistry">
-              <button className={styles.serviceButton}>
-                Sedation Dentistry
-              </button>
-            </Link>
-            <Link href="/dental-services/emergency-dentistry">
-              <button className={styles.serviceButton}>
-                Emergency Dentistry
-              </button>
-            </Link>
+            <MyButton
+              href="/dental-services/sedation-dentistry"
+              className={styles.serviceButton}
+            >
+              Sedation Dentistry
+            </MyButton>
+            <MyButton
+              href="/dental-services/emergency-dentistry"
+              className={styles.serviceButton}
+            >
+              Emergency Dentistry
+            </MyButton>
             {/* Add more related service buttons as needed */}
           </div>
         </section>
@@ -271,11 +268,12 @@ const FinanceWithUsPage: React.FC = () => {
           <p className={commonStyles.servicePageContactText}>
             Ready to make your dental care affordable?
           </p>
-          <Link href="/contact-us" passHref>
-            <MyButton className={commonStyles.servicePageContactButton}>
-              Schedule a Consultation Today
-            </MyButton>
-          </Link>
+          <MyButton
+            href="/contact-us"
+            className={commonStyles.servicePageContactButton}
+          >
+            Schedule a Consultation Today
+          </MyButton>
         </section>
       </div>
     </>
