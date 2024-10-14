@@ -12,9 +12,9 @@
   text-align: center;
   font-family: var(--font-body);
   font-weight: 600;
-  
+
   &:focus {
-    outline: 2px solid var(--primary-color-light);
+    outline: 2px solid var(--primary-color-dark);
     outline-offset: 2px;
   }
 
@@ -43,7 +43,7 @@
 
 /* Primary Variant */
 .primary {
-  background-color: var(--primary-color); /* Blue background */
+  background-color: var(--primary-color); /* Deep Blue */
   color: #fff; /* White font */
 
   &:hover {
@@ -53,10 +53,10 @@
 
 /* Secondary Variant */
 .secondary {
-  background-color: var(--secondary-color); /* Grey background */
-  color: var(--tertiary-color); /* Gold font */
+  background-color: var(--accent-color); /* Lux Grey */
+  color: var(--secondary-color); /* Muted Gold font */
 
   &:hover {
-    background-color: lighten(var(--secondary-color), 10%);
+    background-color: var(--accent-color-light); /* Light Lux Grey for hover */
   }
 }

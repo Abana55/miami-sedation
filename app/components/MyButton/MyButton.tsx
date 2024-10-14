@@ -4,10 +4,12 @@ import React, { forwardRef, useRef } from "react";
 import Link from "next/link";
 import styles from "./MyButton.module.scss";
 
+export type ButtonVariant = "primary" | "secondary";
+
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string;
-  variant?: "primary" | "secondary"; // Define available variants
+  variant?: ButtonVariant;
 }
 
 const MyButton = forwardRef<HTMLButtonElement, ButtonProps>(

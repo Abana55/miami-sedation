@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.scss";
-import MyButton from "../MyButton/MyButton";
+import MyButton from "../MyButton/MyButton"; 
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
         <div className={styles["header-end__phone"]}>
           Call us: (305) 555-5555
         </div>
-        <MyButton href="/contact-us" className={styles["header-end__button"]}>
+        <MyButton href="/contact-us" variant="primary" className={styles["header-end__button"]}>
           Contact Us
         </MyButton>
       </div>
@@ -70,6 +70,7 @@ const Header: React.FC = () => {
         <div className={styles["header-nav__container"]}>
           <MyButton
             href="/about-us"
+            variant="secondary"
             className={styles["header-nav__button"]}
             onClick={closeMenu}
           >
@@ -77,6 +78,7 @@ const Header: React.FC = () => {
           </MyButton>
           <MyButton
             href="/services"
+            variant="secondary"
             className={styles["header-nav__button"]}
             onClick={closeMenu}
           >
@@ -84,6 +86,7 @@ const Header: React.FC = () => {
           </MyButton>
           <MyButton
             href="/finance-with-us"
+            variant="secondary"
             className={styles["header-nav__button"]}
             onClick={closeMenu}
           >
@@ -91,6 +94,7 @@ const Header: React.FC = () => {
           </MyButton>
           <MyButton
             href="/contact-us"
+            variant="secondary"
             className={styles["header-nav__button"]}
             onClick={closeMenu}
           >
