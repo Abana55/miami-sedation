@@ -2,10 +2,42 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import commonStyles from "../../DentalServices.module.scss";
-import styles from "./SedationDentistry.module.scss";
+import commonStyles from "../../DentalServices.module.scss"; 
+import styles from "./SedationDentistry.module.scss"; 
+import ScrollFadeIn from "../../components/ScrollFadeIn/ScrollFadeIn"; 
+import FAQs from "../../components/FAQs/FAQs"; 
 
-const SedationDentistryPage = () => {
+const SedationDentistryPage: React.FC = () => {
+  // FAQs data
+  const faqs = [
+    {
+      question: "What is sedation dentistry?",
+      answer:
+        "Sedation dentistry involves the use of medication to help patients relax during dental procedures. It is especially beneficial for those with dental anxiety or fear.",
+    },
+    {
+      question: "What types of sedation are available?",
+      answer:
+        "There are several levels of sedation including minimal sedation (anxiolysis), moderate sedation (conscious sedation), deep sedation, and general anesthesia. Your dentist will recommend the best option based on your needs.",
+    },
+    {
+      question: "Is sedation dentistry safe?",
+      answer:
+        "Yes, sedation dentistry is safe when administered by a trained and experienced dental professional. All necessary precautions are taken to ensure patient safety.",
+    },
+    {
+      question: "Will I be unconscious during the procedure?",
+      answer:
+        "Depending on the level of sedation, you may remain fully conscious, in a light sleep, or completely unconscious. Your level of awareness will be determined based on your specific needs and the complexity of the procedure.",
+    },
+    {
+      question: "How should I prepare for sedation dentistry?",
+      answer:
+        "Preparation instructions may vary based on the type of sedation. Generally, you may be advised to avoid eating or drinking for a certain period before the procedure. Your dentist will provide detailed instructions during your consultation.",
+    },
+    // Add more FAQs as needed
+  ];
+
   return (
     <>
       <Head>
@@ -14,47 +46,32 @@ const SedationDentistryPage = () => {
         </title>
         <meta
           name="description"
-          content="Experience stress-free dental visits with Sedation Dentistry at Bana Dental Design. Learn about our sedation options and how we ensure your comfort."
+          content="Experience comfortable dental care with sedation dentistry at Bana Dental Design. Learn about the benefits, types of sedation, and FAQs."
         />
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="canonical"
-          href="https://yourwebsite.com/dental-services/sedation-dentistry"
+        <meta
+          name="keywords"
+          content="Sedation Dentistry, Comfortable Dental Care, Bana Dental Design, Dental Anxiety, Relaxation Dentistry"
         />
-
-        {/* Open Graph Meta Tags */}
         <meta
           property="og:title"
           content="Sedation Dentistry | Comfortable Dental Care | Bana Dental Design"
         />
         <meta
           property="og:description"
-          content="Experience stress-free dental visits with Sedation Dentistry at Bana Dental Design. Contact us today!"
+          content="Experience comfortable dental care with sedation dentistry at Bana Dental Design. Learn about the benefits, types of sedation, and FAQs."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://yourwebsite.com/dental-services/sedation-dentistry"
         />
         <meta
           property="og:image"
           content="https://yourwebsite.com/images/sedation-dentistry.jpg"
         />
-        <meta
-          property="og:url"
-          content="https://yourwebsite.com/dental-services/sedation-dentistry"
-        />
-        <meta property="og:type" content="website" />
-
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Sedation Dentistry | Comfortable Dental Care | Bana Dental Design"
-        />
-        <meta
-          name="twitter:description"
-          content="Relax during your dental treatment with our sedation options. Contact Bana Dental Design today!"
-        />
-        <meta
-          name="twitter:image"
-          content="https://yourwebsite.com/images/sedation-dentistry.jpg"
+        <link
+          rel="canonical"
+          href="https://yourwebsite.com/dental-services/sedation-dentistry"
         />
 
         {/* FAQ Schema Markup */}
@@ -64,25 +81,14 @@ const SedationDentistryPage = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "What is Sedation Dentistry?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Sedation Dentistry involves the use of medication to help patients relax during dental procedures. It is ideal for patients with dental anxiety or those undergoing lengthy treatments.",
-                  },
+              mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
                 },
-                {
-                  "@type": "Question",
-                  name: "What types of sedation do you offer?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "We offer various sedation options, including nitrous oxide (laughing gas), oral sedation, and IV sedation, depending on your needs and the complexity of the procedure.",
-                  },
-                },
-                // Add more FAQs as needed
-              ],
+              })),
             }),
           }}
         />
@@ -92,27 +98,28 @@ const SedationDentistryPage = () => {
       >
         {/* Header Section */}
         <section className={commonStyles.headerSection}>
-          <h1 className={commonStyles.servicePageHeaderTitle}>
-            Sedation Dentistry
-          </h1>
-          <p className={commonStyles.servicePageIntro}>
-            Dr. Bana has been providing sedation dentistry for his patients for
-            over 30 years. His extensive experience has brought comfortable and
-            stress-free dental care to patients, allowing them to feel at ease
-            during their procedures.
-          </p>
+          <ScrollFadeIn>
+            <h1 className={commonStyles.servicePageHeaderTitle}>
+              Sedation Dentistry
+            </h1>
+            <p className={commonStyles.servicePageIntro}>
+              Comfortable dental care for a stress-free experience.
+            </p>
+          </ScrollFadeIn>
         </section>
 
+        {/* Hero Image */}
         <section className={commonStyles.servicePageHero}>
           <Image
             src="/images/sedation-dentistry.jpg"
-            alt="Patient relaxing during dental treatment with sedation at Bana Dental Design"
+            alt="Sedation Dentistry at Bana Dental Design"
             width={800}
             height={500}
             className={commonStyles.servicePageHeroImage}
           />
         </section>
 
+        {/* Details Section */}
         <section
           className={`${commonStyles.servicePageDetails} ${commonStyles.servicePageSection}`}
         >
@@ -120,58 +127,40 @@ const SedationDentistryPage = () => {
             What is Sedation Dentistry?
           </h2>
           <p className={commonStyles.servicePageText}>
-            Sedation Dentistry involves the use of medication to help patients
-            relax during dental procedures...
+            Sedation dentistry utilizes medication to help patients relax during
+            dental procedures. It is an excellent option for those who
+            experience dental anxiety, fear, or have difficulty sitting through
+            lengthy treatments. Our sedation methods ensure that your dental
+            experience is as comfortable and stress-free as possible.
           </p>
         </section>
 
         {/* Benefits Section */}
         <section
-          className={`${styles.benefitsSection} ${styles.servicePageSection}`}
+          className={`${commonStyles.benefitsSection} ${commonStyles.servicePageSection}`}
         >
-          <h2 className={styles.servicePageSubheader}>
+          <h2 className={commonStyles.servicePageSubheader}>
             Benefits of Sedation Dentistry
           </h2>
-          <div className={styles.benefitsContainer}>
-            <div className={styles.benefitCard}>
+          <div className={commonStyles.benefitsContainer}>
+            <div className={commonStyles.benefitCard}>
               <h3>Reduced Anxiety</h3>
-              <p>Feel calm and relaxed during your dental appointments.</p>
-            </div>
-            <div className={styles.benefitCard}>
-              <h3>Comfort During Procedures</h3>
               <p>
-                Experience minimal discomfort, even during lengthy treatments.
+                Alleviates fear and anxiety, making dental visits more pleasant.
               </p>
             </div>
-            <div className={styles.benefitCard}>
-              <h3>Efficient Treatment</h3>
-              <p>Allows for more work to be completed in fewer visits.</p>
-            </div>
-          </div>
-        </section>
-
-        <section className={`${styles.typesOfSedationSection} ${commonStyles.servicePageSection}`}>
-          <h2 className={commonStyles.servicePageSubheader}>Types of Sedation We Offer</h2>
-          <div className={styles.sedationTypesContainer}>
-            <div className={styles.sedationTypeCard}>
-              <h3>Nitrous Oxide (Laughing Gas)</h3>
+            <div className={commonStyles.benefitCard}>
+              <h3>Increased Comfort</h3>
               <p>
-                A mild sedative inhaled through a mask, helping you relax while
-                remaining awake and responsive.
+                Minimizes discomfort during procedures, allowing for a more
+                relaxed experience.
               </p>
             </div>
-            <div className={styles.sedationTypeCard}>
-              <h3>Oral Sedation</h3>
+            <div className={commonStyles.benefitCard}>
+              <h3>Efficient Treatments</h3>
               <p>
-                A prescribed pill taken before your appointment, inducing a
-                deeper level of relaxation.
-              </p>
-            </div>
-            <div className={styles.sedationTypeCard}>
-              <h3>IV Sedation</h3>
-              <p>
-                Administered intravenously, providing a deeper sedation level
-                for patients undergoing complex procedures.
+                Facilitates longer and more comprehensive treatments in a single
+                visit.
               </p>
             </div>
           </div>
@@ -179,86 +168,52 @@ const SedationDentistryPage = () => {
 
         {/* Process Section */}
         <section
-          className={`${styles.processSection} ${styles.servicePageSection}`}
+          className={`${commonStyles.processSection} ${commonStyles.servicePageSection}`}
         >
-          <h2 className={styles.servicePageSubheader}>Our Process</h2>
-          <p className={styles.servicePageText}>
-            During your initial consultation, we'll discuss your medical
-            history, concerns, and preferences to determine the most suitable
-            sedation option. On the day of your procedure, we'll monitor you
-            closely to ensure your safety and comfort throughout the treatment.
-          </p>
-        </section>
-
-        {/* Risks Section */}
-        <section
-          className={`${styles.risksSection} ${styles.servicePageSection}`}
-        >
-          <h2 className={styles.servicePageSubheader}>Possible Risks</h2>
-          <p className={styles.servicePageText}>
-            While sedation dentistry is generally safe, potential risks may
-            include allergic reactions, breathing difficulties, or adverse
-            interactions with medications. Our team conducts thorough
-            evaluations to minimize risks and ensure your safety.
-          </p>
-        </section>
-
-        {/* FAQs */}
-        <section
-          className={`${styles.faqSection} ${styles.servicePageSection}`}
-        >
-          <h2 className={styles.servicePageSubheader}>
-            Frequently Asked Questions
+          <h2 className={commonStyles.servicePageSubheader}>
+            Our Sedation Dentistry Process
           </h2>
-          <div className={styles.faqContainer}>
-            <div className={styles.faqItem}>
-              <h3>Is sedation dentistry safe?</h3>
-              <p>
-                Yes, when administered by trained professionals, sedation
-                dentistry is safe. We monitor patients closely to ensure their
-                well-being.
-              </p>
-            </div>
-            <div className={styles.faqItem}>
-              <h3>Will I be unconscious during the procedure?</h3>
-              <p>
-                Most sedation options keep you awake but deeply relaxed. IV
-                sedation may induce a sleep-like state, but you can still
-                respond to stimuli.
-              </p>
-            </div>
-            <div className={styles.faqItem}>
-              <h3>How long does the sedation last?</h3>
-              <p>
-                The duration depends on the type of sedation used. Effects may
-                last from a few minutes after the procedure to several hours.
-              </p>
-            </div>
-            <div className={styles.faqItem}>
-              <h3>Can I drive myself home after sedation?</h3>
-              <p>
-                For nitrous oxide, you can typically drive yourself home. For
-                oral or IV sedation, you'll need someone to accompany you.
-              </p>
-            </div>
-            <div className={styles.faqItem}>
-              <h3>Is sedation dentistry covered by insurance?</h3>
-              <p>
-                Coverage varies by provider and plan. Our team can help you
-                understand your benefits and explore financing options.
-              </p>
-            </div>
-            {/* Add more FAQs as needed */}
+          <p className={commonStyles.servicePageText}>
+            Our sedation dentistry process begins with a thorough consultation
+            to assess your needs and determine the most appropriate sedation
+            method. We offer various levels of sedation, including minimal,
+            moderate, deep sedation, and general anesthesia, tailored to your
+            comfort and the complexity of the procedure. Throughout the process,
+            our experienced team ensures your safety and well-being.
+          </p>
+        </section>
+
+        {/* Related Services Banner */}
+        <section className={styles.relatedServicesBanner}>
+          <h2 className={styles.relatedServicesTitle}>
+            Explore Our Other Dental Services
+          </h2>
+          <div className={styles.relatedServicesButtons}>
+            <Link href="/dental-services/veneers">
+              <button className={styles.serviceButton}>Veneers</button>
+            </Link>
+            <Link href="/dental-services/root-canal-treatment">
+              <button className={styles.serviceButton}>
+                Root Canal Treatment
+              </button>
+            </Link>
+            {/* Add more related service buttons as needed */}
           </div>
         </section>
 
+        {/* FAQs Section */}
+        <FAQs faqs={faqs} />
+
         {/* Contact Banner */}
-        <section className={styles.servicePageContactBanner}>
-          <p className={styles.servicePageContactText}>
-            Ready to experience comfortable dental care with Sedation Dentistry?
+        <section className={commonStyles.servicePageContactBanner}>
+          <p className={commonStyles.servicePageContactText}>
+            Ready to experience comfortable dental care?
           </p>
-          <Link href="/contact" className={styles.servicePageContactButton}>
-            Schedule Your Consultation Today
+          <Link
+            href="/contact"
+            className={commonStyles.servicePageContactButton}
+          >
+            Schedule a Consultation Today
           </Link>
         </section>
       </div>
