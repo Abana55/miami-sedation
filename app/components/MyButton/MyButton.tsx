@@ -7,10 +7,11 @@ import styles from "./MyButton.module.scss";
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string;
+  variant?: "primary" | "secondary"; // Define available variants
 }
 
 const MyButton = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, href, className, ...props }, ref) => {
+  ({ children, href, className, variant = "primary", ...props }, ref) => {
     const rippleRef = useRef<HTMLSpanElement>(null);
 
     const createRipple = (
@@ -22,8 +23,12 @@ const MyButton = forwardRef<HTMLButtonElement, ButtonProps>(
       const radius = diameter / 2;
 
       ripple.style.width = ripple.style.height = `${diameter}px`;
-      ripple.style.left = `${event.clientX - element.offsetLeft - radius}px`;
-      ripple.style.top = `${event.clientY - element.offsetTop - radius}px`;
+      ripple.style.left = `${
+        event.clientX - element.getBoundingClientRect().left - radius
+      }px`;
+      ripple.style.top = `${
+        event.clientY - element.getBoundingClientRect().top - radius
+      }px`;
       ripple.classList.add(styles.ripple);
 
       const rippleContainer = element.getElementsByClassName(styles.ripple)[0];
@@ -35,11 +40,15 @@ const MyButton = forwardRef<HTMLButtonElement, ButtonProps>(
       element.appendChild(ripple);
     };
 
+    const combinedClassName = `${styles.button} ${styles[variant]} ${
+      className || ""
+    }`;
+
     if (href) {
       return (
         <Link
           href={href}
-          className={`${styles.button} ${className}`}
+          className={combinedClassName}
           onClick={(e) => {
             createRipple(e as any);
             props.onClick && props.onClick(e);
@@ -55,7 +64,7 @@ const MyButton = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={`${styles.button} ${className}`}
+        className={combinedClassName}
         onClick={(e) => {
           createRipple(e);
           props.onClick && props.onClick(e);

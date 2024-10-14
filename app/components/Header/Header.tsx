@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.scss";
-import MyButton from "../MyButton/MyButton"; 
+import MyButton from "../MyButton/MyButton";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,6 +18,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
+      {/* Hamburger Menu Icon */}
       <div className={styles["header-hamburger"]} onClick={toggleMenu}>
         <span
           className={`${styles["header-hamburger__line"]} ${
@@ -35,6 +36,8 @@ const Header: React.FC = () => {
           }`}
         ></span>
       </div>
+
+      {/* Logo */}
       <div className={styles["header-logo"]}>
         <Link href="/">
           <Image
@@ -47,6 +50,8 @@ const Header: React.FC = () => {
           />
         </Link>
       </div>
+
+      {/* Contact Info and Button */}
       <div className={styles["header-end"]}>
         <div className={styles["header-end__phone"]}>
           Call us: (305) 555-5555
@@ -55,6 +60,8 @@ const Header: React.FC = () => {
           Contact Us
         </MyButton>
       </div>
+
+      {/* Navigation Menu */}
       <nav
         className={`${styles["header-nav"]} ${
           isMenuOpen ? styles["header-nav--open"] : ""
