@@ -1,3 +1,6 @@
+@use '../../styles/mixins.scss' as *;
+
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -52,13 +55,92 @@
         gap: 1rem;
 
         .footerIcon {
-          font-size: 2rem; 
-          color: var(--primary-color); 
+          font-size: 2rem;
+          color: var(--primary-color);
           transition: color 0.3s;
 
           &:hover {
             color: var(--secondary-color);
           }
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 20px;
+
+    .footerLeft,
+    .footerRight {
+      width: 100%;
+      text-align: center;
+    }
+
+    .footerLeft {
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      .footerLogo {
+        max-width: 100px;
+      }
+    }
+
+    .footerRight {
+      align-items: center;
+
+      .footerSections {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
+        .footerColumn {
+          width: 100%;
+          h3 {
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      .footerBottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        .footerSocialMedia {
+          justify-content: center;
+
+          .footerIcon {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    flex-direction: row;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    border-radius: 30px;
+
+    .footerRight {
+      .footerSections {
+        .footerColumn {
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .footerBottom {
+        font-size: 1rem;
+
+        .footerSocialMedia .footerIcon {
+          font-size: 1.75rem;
         }
       }
     }
