@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  width: 100%; 
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 1001;
 
@@ -17,26 +17,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .header-logo__img {
-      width: 12rem;
-      height: 12rem;
-      border-radius: 50%;
-
-      @include tablet {
-        width: 14rem; 
-        height: 14rem;
-      }
-
-      @include desktop {
-        width: 16rem; 
-        height: 16rem;
-      }
-    }
   }
 
   .header-hamburger {
-    padding-left: 1rem; 
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -88,16 +72,16 @@
 
     &__button {
       box-shadow: var(--box-shadow);
-      padding-right: 1rem; 
+      padding-right: 1rem;
 
       @include tablet {
-        padding: 0.75rem 1.5rem; 
-        font-size: 1rem; 
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
       }
 
       @include desktop {
-        padding: 1rem 2rem; 
-        font-size: 1.25rem; 
+        padding: 1rem 2rem;
+        font-size: 1.25rem;
       }
     }
 
@@ -119,16 +103,16 @@
       }
 
       @include tablet {
-        font-size: 1rem; 
+        font-size: 1rem;
         padding: 0.5rem 1rem;
-        width: 10rem; 
+        width: 10rem;
         height: 2.5rem;
       }
 
       @include desktop {
-        font-size: 1.25rem; 
+        font-size: 1.25rem;
         padding: 0.75rem 1.25rem;
-        width: 12rem; 
+        width: 12rem;
         height: 3rem;
 
         &:hover {
@@ -139,61 +123,79 @@
     }
   }
 
-  &-nav {
+  .header-nav {
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%; 
-    background-color: rgba(255, 255, 255, 0.8);
+    left: auto; /* Align underneath hamburger */
+    right: 0;
+    width: auto; /* Smaller width */
+    background-color: rgba(255, 255, 255, 0.9);
     max-height: 0;
-    overflow: hidden;
     opacity: 0;
     visibility: hidden;
+    overflow: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 0.5rem;
     box-shadow: var(--box-shadow);
-
+  
     &--open {
-      max-height: 300px; 
+      max-height: 200px; /* Adjust max-height for the menu */
       opacity: 1;
       visibility: visible;
     }
-
+  
     &__container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 1rem;
-
+      padding: 0.5rem 1rem;
+  
       @include tablet {
-        padding: 1.5rem; 
+        padding: 1rem;
       }
-
+  
       @include desktop {
-        padding: 2rem; 
+        padding: 1rem;
       }
     }
-
-    &__button:not(:last-child) {
-      margin-bottom: 0.5rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  
+    /* Dropdown Button Styles */
+    &__button {
+      width: 100%;
+      padding: 0.75rem 0;
+      font-size: 1rem;
+      color: var(--primary-color);
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      border: none; /* No border on the buttons */
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Add a border-bottom */
+      background: none; /* No background */
+  
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05); /* Slight hover effect */
+      }
+  
+      &:last-child {
+        border-bottom: none; /* Remove border-bottom on the last button */
+      }
     }
-
+  
     @include mobile {
-      width: 100%; 
+      width: 180px; /* Small width for mobile */
     }
-
+  
     @include tablet {
-      width: 100%; 
+      width: 220px;
     }
-
+  
     @include desktop {
-      width: 100%; 
-      max-height: 500px; 
+      width: 240px;
     }
   }
+  
 
   @include mobile {
     grid-template-columns: auto 1fr auto;
@@ -204,30 +206,30 @@
     }
 
     .header-nav {
-      width: 100%; 
+      right: 1rem; /* Ensure dropdown is well positioned on mobile */
     }
 
     .header-end__phone {
-      display: none; 
+      display: none;
     }
   }
 
   @include tablet {
     grid-template-columns: auto 1fr auto;
-    gap: 1.5rem; 
+    gap: 1.5rem;
 
     .header-logo__img {
-      width: 14rem; 
+      width: 14rem;
       height: 14rem;
     }
 
     .header-end__phone {
-      display: flex; 
-      font-size: 1rem; 
+      display: flex;
+      font-size: 1rem;
     }
 
     .header-nav {
-      width: 100%; 
+      right: 1.5rem;
     }
   }
 
@@ -235,16 +237,16 @@
     grid-template-columns: auto 1fr auto;
 
     .header-logo__img {
-      width: 16rem; 
+      width: 16rem;
       height: 16rem;
     }
 
     .header-nav {
-      width: 100%; 
+      right: 2rem;
     }
 
     .header-end__phone {
-      font-size: 1.25rem; 
+      font-size: 1.25rem;
       padding: 0.75rem 1.5rem;
 
       &:hover {
