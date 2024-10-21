@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.scss";
-import MyButton from "../MyButton/MyButton"; 
+import MyButton from "../MyButton/MyButton";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +12,7 @@ const Header: React.FC = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -54,9 +55,13 @@ const Header: React.FC = () => {
       {/* Contact Info and Button */}
       <div className={styles["header-end"]}>
         <div className={styles["header-end__phone"]}>
-          Call us: (305) 555-5555
+          Call us: (305) 857-3731
         </div>
-        <MyButton href="/contact-us" variant="primary" className={styles["header-end__button"]}>
+        <MyButton
+          href="/contact-us"
+          variant="primary"
+          className={styles["header-end__button"]}
+        >
           Contact Us
         </MyButton>
       </div>
