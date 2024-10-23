@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.scss";
-import MyButton from "../MyButton/MyButton";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,13 +56,6 @@ const Header: React.FC = () => {
         <div className={styles["header-end__phone"]}>
           Call us: (305) 857-3731
         </div>
-        <MyButton
-          href="/contact-us"
-          variant="primary"
-          className={styles["header-end__button"]}
-        >
-          Contact Us
-        </MyButton>
       </div>
 
       {/* Navigation Menu */}
@@ -73,38 +65,34 @@ const Header: React.FC = () => {
         }`}
       >
         <div className={styles["header-nav__container"]}>
-          <MyButton
+          <Link
             href="/about-us"
-            variant="primary"
-            className={styles["header-nav__button"]}
+            className={styles["header-nav__link"]}
             onClick={closeMenu}
           >
             About Us
-          </MyButton>
-          <MyButton
+          </Link>
+          <Link
             href="/services"
-            variant="primary"
-            className={styles["header-nav__button"]}
+            className={styles["header-nav__link"]}
             onClick={closeMenu}
           >
             Services
-          </MyButton>
-          <MyButton
+          </Link>
+          <Link
             href="/finance-with-us"
-            variant="primary"
-            className={styles["header-nav__button"]}
+            className={styles["header-nav__link"]}
             onClick={closeMenu}
           >
             Finance with Us
-          </MyButton>
-          <MyButton
+          </Link>
+          <Link
             href="/contact-us"
-            variant="primary"
-            className={styles["header-nav__button"]}
+            className={styles["header-nav__link"]}
             onClick={closeMenu}
           >
             Contact Us
-          </MyButton>
+          </Link>
         </div>
       </nav>
     </header>
