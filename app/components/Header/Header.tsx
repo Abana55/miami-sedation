@@ -56,6 +56,9 @@ const Header: React.FC = () => {
         <div className={styles["header-end__phone"]}>
           Call us: (305) 857-3731
         </div>
+        <Link href="/contact-us" passHref>
+          <button className={styles["header-end__button"]}>Contact Us</button>
+        </Link>
       </div>
 
       {/* Navigation Menu */}

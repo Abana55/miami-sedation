@@ -26,46 +26,26 @@
     justify-content: space-around;
     cursor: pointer;
     z-index: 1002;
-    width: 3rem;
-    height: 3rem;
-    position: relative; /* Ensure the transform works relative to the hamburger */
-  
+    width: 2.25rem; 
+    height: 2.25rem; 
+
     &__line {
       width: 100%;
-      height: 0.25rem;
+      height: 0.2rem;
       background-color: var(--primary-color);
       transition: transform 0.3s ease, opacity 0.3s ease;
-      position: absolute;
-      left: 0; /* Ensures lines stay aligned */
     }
-  
-    /* Top line transforms to form the X */
+
     &__line--open-top {
-      transform: rotate(45deg) translate(0, -0.75rem); /* Rotate and move up */
+      transform: rotate(45deg) translate(0.3rem, 0.3rem);
     }
-  
-    /* Hide the middle line */
+
     &__line--open-middle {
       opacity: 0;
     }
-  
-    /* Bottom line transforms to form the X */
+
     &__line--open-bottom {
-      transform: rotate(-45deg) translate(0, 0.75rem); /* Rotate and move down */
-    }
-  
-    /* Default positioning for the lines */
-    &__line:nth-child(1) {
-      top: 0;
-    }
-  
-    &__line:nth-child(2) {
-      top: 50%;
-      transform: translateY(-50%); /* Centers the middle line */
-    }
-  
-    &__line:nth-child(3) {
-      bottom: 0;
+      transform: rotate(-45deg) translate(0.3rem, -0.3rem);
     }
   }
 
@@ -75,9 +55,10 @@
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
-    margin-right: 0;
+    margin-right: 1rem;
 
     &__phone {
+      font-size: 1rem;
       border-radius: 1.5rem;
       cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -88,11 +69,26 @@
       font-family: var(--font-body);
       font-weight: 400;
     }
+
+    &__button {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--secondary-color);
+      }
+    }
   }
 
   .header-nav {
     position: absolute;
-    top: 14.8125rem;
+    top: 14.8125rem; 
     left: 17%;
     transform: translateX(-50%);
     width: 15rem;
@@ -144,7 +140,7 @@
       }
 
       &:hover::after {
-        transform: scaleX(1); /* Animate underline on hover */
+        transform: scaleX(1);
       }
 
       &:hover {
@@ -152,10 +148,8 @@
       }
     }
   }
-}
 
-@include mobile {
-  .header {
+  @include mobile {
     grid-template-columns: auto 1fr auto;
 
     .header-logo__img {
@@ -171,10 +165,8 @@
       display: none;
     }
   }
-}
 
-@include tablet {
-  .header {
+  @include tablet {
     grid-template-columns: auto 1fr auto;
     gap: 1.5rem;
 
@@ -188,10 +180,8 @@
       font-size: 1rem;
     }
   }
-}
 
-@include desktop {
-  .header {
+  @include desktop {
     grid-template-columns: auto 1fr auto;
 
     .header-logo__img {
