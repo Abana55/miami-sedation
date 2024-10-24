@@ -19,6 +19,7 @@
     align-items: center;
   }
 
+  /* Hamburger Menu (reduce size to fit all screens) */
   .header-hamburger {
     padding-left: 1rem;
     display: flex;
@@ -26,8 +27,8 @@
     justify-content: space-around;
     cursor: pointer;
     z-index: 1002;
-    width: 2.25rem; 
-    height: 2.25rem; 
+    width: 2.25rem; /* Reduced size for all screens */
+    height: 2.25rem; /* Reduced size for all screens */
 
     &__line {
       width: 100%;

@@ -66,10 +66,9 @@ const Home = () => {
         />
       </Head>
 
-      {/* Hero Section */}
       <div className={styles.hero}>
         <video
-          className={styles.heroVideo}
+          className={styles["hero__video"]}
           autoPlay
           muted
           loop
@@ -80,9 +79,9 @@ const Home = () => {
           <source src="/videos/Website Video 2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className={styles.heroContent}>
+        <div className={styles["hero__content"]}>
           <Link href="/contact-us" passHref>
-            <button className={styles.heroButton}>
+            <button className={styles["hero__content__button"]}>
               Request a Consultation
             </button>
           </Link>
