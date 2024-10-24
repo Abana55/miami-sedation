@@ -56,112 +56,117 @@
   }
 }
 
-.welcome-section {
-  @include section-padding(2rem);
-  background-color: var(--background-color);
+.welcomeSection {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr; // Two columns for text and image
   align-items: center;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  background-color: var(--background-color); // Background color for the section
 
-  &__text {
-    text-align: center;
+  .welcomeText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
 
-    &__title {
-      font-size: 4rem;
+    .welcomeTitle {
+      font-size: 3.5rem;
       color: var(--primary-color);
       margin-bottom: 1rem;
-      font-weight: 100;
+      font-weight: 700;
+      text-transform: uppercase; // Modern and bold effect
     }
 
-    &__description {
+    .welcomeDescription {
       font-size: 1.2rem;
+      line-height: 1.6;
       color: var(--text-color);
+      margin-bottom: 2rem;
     }
 
-    &__button {
-      @include button-style(transparent, var(--primary-color), var(--primary-color), #fff, 0.5rem 1rem, 1rem);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    .welcomeButton {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      color: white;
+      background-color: var(--primary-color);
+      border-radius: 8px;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-decoration: none; 
+      transition: all 0.3s ease;
+    
+      &:hover {
+        background-color: var(--primary-color-dark);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
     }
   }
 
-  &__image {
-    text-align: center;
-
+  .welcomeImage {
+    text-align: right; // Align the image to the right side
     img {
+      border-radius: 10px; // Rounded corners for a modern effect
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); // Soft shadow
       max-width: 100%;
-      border-radius: 1rem;
-      @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+      height: auto;
     }
   }
 
   @include mobile {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; // Stack the image and text on mobile
+    text-align: center;
 
-    &__text {
-      &__title {
-        font-size: 2.5rem;
-      }
-
-      &__description {
-        font-size: 1rem;
-      }
+    .welcomeText {
+      text-align: center;
     }
-  }
 
-  @include tablet {
-    grid-template-columns: 1fr 1fr;
-
-    &__text {
-      &__title {
-        font-size: 3rem;
+    .welcomeImage {
+      img {
+        width: 80%; // Scale down the image on mobile
       }
     }
   }
 }
 
-.mission-statement {
-  @include section-padding(2rem);
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
+.missionStatement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-background-color); // Different background for the banner
+  padding: 4rem 2rem;
+  text-align: center;
 
-  &__banner-image {
-    width: 90%;
-    height: auto;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
+  .bannerImage {
+    width: 100%;
+    max-width: 1200px; // Keep the image size reasonable
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
 
-  &__text-container {
-    width: 50%;
+  .textContainer {
+    max-width: 800px;
     color: var(--secondary-color);
-    text-align: center;
 
-    &__gold-line {
+    .goldLine {
       font-size: 2rem;
+      color: var(--accent-color);
       margin-bottom: 1rem;
-      font-weight: 100;
-      color: var(--secondary-color);
     }
 
-    &__content {
-      margin: 1rem 0;
-      line-height: 1.6;
-      color: var(--secondary-color);
+    .sectionContent {
+      font-size: 1.4rem;
+      line-height: 1.7;
+      color: var(--text-color);
     }
   }
 
   @include mobile {
-    &__text-container {
-      width: 80%;
-      font-size: 1rem;
-    }
-  }
+    padding: 3rem 1.5rem;
 
-  @include tablet {
-    &__text-container {
-      width: 70%;
+    .textContainer {
       font-size: 1.2rem;
     }
   }

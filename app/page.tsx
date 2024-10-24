@@ -88,16 +88,15 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Welcome Section */}
       <section className={styles.welcomeSection}>
         <div className={styles.welcomeText}>
           <h1 className={styles.welcomeTitle}>Welcome to Bana Dental Design</h1>
           <p className={styles.welcomeDescription}>
             Encounter an elegant, artistry, and inspiring dental experience.
           </p>
-          <button className={styles.welcomeButton}>
+          <Link className={styles.welcomeButton} href="/about-us" passHref>
             What Makes Us Different
-          </button>
+          </Link>
         </div>
         <div className={styles.welcomeImage}>
           <Image
