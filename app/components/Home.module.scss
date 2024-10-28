@@ -250,37 +250,39 @@
   }
 }
 
-
-
 .banner {
   background-image: url('/images/CONNECT/connectBanner.png');
   background-size: cover;
-  background-position: center;
+  background-position: center right; 
   background-repeat: no-repeat;
   background-color: var(--fallback-color);
+  position: relative;
   margin: 1.25rem;
+  padding: 2rem 1.5rem; 
   border-radius: 1.25rem;
   overflow: hidden;
-  height: 400px;
-  text-align: center;
+  height: 40rem;
   color: var(--secondary-color);
-  position: relative;
+  display: flex;
+  flex-direction: column;
 
   &__title {
-    font-size: 6rem;
+    font-size: 8rem;
     margin-bottom: 10px;
     color: var(--secondary-color);
+    z-index: 2; 
   }
 
   &__content {
     max-width: 37.5rem;
-    margin: 0 auto;
+    z-index: 2;
   }
 
   &__text {
     font-size: 1.2em;
     margin-bottom: 20px;
     color: var(--secondary-color);
+    z-index: 2;
   }
 
   &__social-links {
@@ -288,6 +290,7 @@
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
+    z-index: 2;
   }
 
   &__social-link {
@@ -313,11 +316,11 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
 
     &__office-number {
       font-size: 1.2em;
       color: #fff;
-      margin: 0;
       font-family: var(--font-body);
       font-weight: 100;
     }
@@ -435,6 +438,119 @@
       &__social-link {
         font-size: 1.5em;
       }
+    }
+  }
+}
+
+
+.magazineSection {
+  padding: 2rem;
+  background-color: var(--gold-color); /* Background color for the section */
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+
+  .glassmorphicContainer {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphic effect */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .magazineArticle {
+    flex: 1;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .magazineImage {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .magazineTitle {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      font-weight: bold;
+      text-align: center;
+      margin: 0;
+    }
+
+    .magazineDescription {
+      font-size: 1rem;
+      color: var(--text-color);
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+
+    .learnMoreButton {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: #fff;
+      background-color: var(--primary-color);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--primary-color-dark);
+      }
+    }
+  }
+
+  .divider {
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: auto; /* Adjust height to match content */
+    align-self: stretch; /* Ensures the divider spans full height between articles */
+  }
+
+  /* Responsive adjustments */
+  @include mobile {
+    flex-direction: column;
+
+    .glassmorphicContainer {
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .divider {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    .magazineArticle {
+      padding: 1rem;
+    }
+
+    .learnMoreButton {
+      padding: 0.5rem 1rem;
     }
   }
 }

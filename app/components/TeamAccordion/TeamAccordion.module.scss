@@ -1,8 +1,8 @@
 .accordion {
   display: flex;
-  gap: 1rem;
+  
   overflow: hidden;
-  padding: 2rem;
+  
   background-color: var(--light-grey);
   border-radius: 20px;
 }
@@ -14,7 +14,7 @@
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s ease; /* Reduce the transition duration for faster effect */
+  transition: flex 0.5s ease;
   margin: 0 0.5rem;
 
   &.active {
@@ -35,11 +35,10 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: filter 0.2s ease-in-out, transform 0.2s ease;
   filter: brightness(0.5);
+  transition: filter 0.4s ease-in-out, transform 0.4s ease;
   z-index: 1;
-  will-change: transform, filter;
-  
+
   &:hover {
     filter: brightness(0.8);
     transform: scale(1.05);
@@ -52,43 +51,42 @@
   left: 0;
   z-index: 2;
   width: 100%;
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  color: white;
-  transition: background 0.3s ease; /* Faster background transition */
+  padding: 1rem;
+  color: #ffffff;
+  background: none;
+  text-align: center;
+  overflow: hidden;
+  white-space: normal;
 
-  h3 {
-    margin: 0;
-    font-size: 1.8rem;
-    color: var(--primary-color);
+  .cardTitle {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
   }
 
-  p {
-    margin-top: 0.5rem;
+  .cardSubtitle {
+    font-family: var(--font-body);
     font-size: 1rem;
-    color: var(--text-light);
+    color: #ffffff;
   }
-}
 
-.cardTitle {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
+  .cardDescription {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    line-height: 1.2;
+    color: #ffffff;
+    max-height: 2rem; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 
-.cardSubtitle {
-  font-family: var(--font-body);
-  font-size: 1.2rem;
-  color: var(--secondary-color);
-}
-
-.cardDescription {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-  line-height: 1.4;
-  color: var(--text-color);
+    .card.active & {
+      max-height: none;
+      white-space: normal;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -102,14 +100,15 @@
   }
 
   .cardContent {
-    padding: 1rem;
+    padding: 0.5rem;
 
-    h3 {
-      font-size: 1.5rem;
+    .cardTitle {
+      font-size: 1.2rem;
     }
 
-    p {
-      font-size: 0.9rem;
+    .cardSubtitle,
+    .cardDescription {
+      font-size: 0.7rem;
     }
   }
 }
