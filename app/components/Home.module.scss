@@ -208,46 +208,49 @@
   }
 }
 
-.team-section {
-  &__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.teamSection {
+  padding: 3rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: var(--light-grey);
+  border-radius: 1.25rem;
+
+  .teamContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
 
-    &__team {
-      text-align: center;
+    @include tablet {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
     }
+  }
 
-    &__article {
+  .team {
+    flex: 3;
+  }
+
+  .articleSection {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    font-size: 2rem; // Adjust as necessary
+    font-weight: bold;
+    text-align: center;
+
+    @include tablet {
+      align-self: stretch;
       text-align: left;
-
-      &__title {
-        font-size: 3rem;
-        color: var(--secondary-color);
-        margin-bottom: 1rem;
-        font-weight: 100;
-        font: var(font-heading);
-      }
-
-      &__content {
-        font-size: 1rem;
-        color: var(--text-color);
-      }
-    }
-  }
-
-  @include mobile {
-    &__content {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @include tablet {
-    &__content {
-      grid-template-columns: 1fr 1fr;
+      padding: 0 2rem;
     }
   }
 }
+
+
 
 .banner {
   background-image: url('/images/CONNECT/connectBanner.png');
