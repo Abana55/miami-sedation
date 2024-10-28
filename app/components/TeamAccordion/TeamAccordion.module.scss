@@ -1,21 +1,25 @@
 .accordion {
   display: flex;
+  gap: 1rem;
   overflow: hidden;
+  padding: 2rem;
+  background-color: var(--light-grey);
+  border-radius: 20px;
 }
 
 .card {
   flex: 1;
-  transition: flex 0.5s ease;
   position: relative;
-  height: 25rem; /* Adjust height as needed */
-  border-radius: 10px;
+  height: 25rem;
+  border-radius: 15px;
   overflow: hidden;
-  margin: 0 10px; /* Adjust spacing as needed */
   cursor: pointer;
-  background: transparent; /* Clear background */
+  transition: all 0.3s ease; /* Reduce the transition duration for faster effect */
+  margin: 0 0.5rem;
 
   &.active {
-    flex: 3;
+    flex: 4;
+    margin: 0 1rem;
   }
 
   &:not(.active) {
@@ -31,45 +35,81 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.7);
-  transition: filter 0.3s ease;
+  transition: filter 0.2s ease-in-out, transform 0.2s ease;
+  filter: brightness(0.5);
+  z-index: 1;
+  will-change: transform, filter;
+  
+  &:hover {
+    filter: brightness(0.8);
+    transform: scale(1.05);
+  }
 }
 
 .cardContent {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 2;
   width: 100%;
-  padding: 1rem;
-  color: white; 
-  transition: background 0.5s ease;
-  
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  color: white;
+  transition: background 0.3s ease; /* Faster background transition */
 
   h3 {
     margin: 0;
-    font-size: 1.5rem;
-    color: white; /* Font color white */
+    font-size: 1.8rem;
+    color: var(--primary-color);
   }
 
   p {
-    margin: 0.5rem 0 0 0;
-    font-size: 0.5rem;
-    color: white;
-    overflow:auto;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-light);
   }
 }
 
 .cardTitle {
   font-family: var(--font-heading);
-  color: white; /* Font color white */
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .cardSubtitle {
   font-family: var(--font-body);
-  color: white; /* Font color white */
+  font-size: 1.2rem;
+  color: var(--secondary-color);
 }
 
 .cardDescription {
   font-family: var(--font-body);
-  color: white; /* Font color white */
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .accordion {
+    flex-direction: column;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+    height: 20rem;
+  }
+
+  .cardContent {
+    padding: 1rem;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
 }
