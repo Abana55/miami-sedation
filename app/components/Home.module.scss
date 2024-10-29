@@ -1,5 +1,4 @@
-@use '../styles/mixins.scss' as *;
-
+@use "../styles/mixins.scss" as *;
 
 .container {
   padding: 0;
@@ -34,10 +33,15 @@
 
     &__button {
       @include glassmorphism(rgba(255, 255, 255, 0.1));
-      @include button-style(rgba(255, 255, 255, 0.1), #fff, rgba(255, 255, 255, 0.2), #fff);
+      @include button-style(
+        rgba(255, 255, 255, 0.1),
+        #fff,
+        rgba(255, 255, 255, 0.2),
+        #fff
+      );
     }
   }
-  
+
   @include mobile {
     height: 70vh;
 
@@ -94,9 +98,9 @@
       border-radius: 8px;
       text-transform: uppercase;
       font-weight: 500;
-      text-decoration: none; 
+      text-decoration: none;
       transition: all 0.3s ease;
-    
+
       &:hover {
         background-color: var(--primary-color-dark);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -134,7 +138,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--secondary-background-color); // Different background for the banner
+  background-color: var(
+    --secondary-background-color
+  ); // Different background for the banner
   padding: 4rem 2rem;
   text-align: center;
 
@@ -249,106 +255,132 @@
     }
   }
 }
+.articleTitle {
+  color: var(--secondary-color);
+  font-weight: 100;
+  padding: 0;
+}
 
 .banner {
-  background-image: url('/images/CONNECT/connectBanner.png');
+  background-image: url("/images/CONNECT/connectBanner.png");
   background-size: cover;
-  background-position: center right; 
+  background-position: center right;
   background-repeat: no-repeat;
   background-color: var(--fallback-color);
   position: relative;
-  margin: 1.25rem;
-  padding: 2rem 1.5rem; 
+  margin: 0 1.25rem; // Removes the top margin
+  padding: 2rem 1.5rem;
   border-radius: 1.25rem;
   overflow: hidden;
-  height: 40rem;
+  height: 60rem;
   color: var(--secondary-color);
   display: flex;
   flex-direction: column;
 
   &__title {
-    font-size: 8rem;
+    font-size: 10rem;
     margin-bottom: 10px;
     color: var(--secondary-color);
-    z-index: 2; 
-  }
-
-  &__content {
-    max-width: 37.5rem;
     z-index: 2;
+  }
+  &__content {
+    max-width: 600px;
+    position: relative; /* Needed for z-index stacking */
+    z-index: 1; /* Ensure content appears above the image */
   }
 
   &__text {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
     color: var(--secondary-color);
-    z-index: 2;
   }
 
   &__social-links {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-    z-index: 2;
+    gap: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2; /* Place social links above other elements */
   }
 
   &__social-link {
-    color: #fff;
-    font-size: 1.5em;
-    transition: color 0.3s ease;
+    color: var(--primary-color);
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
 
     &:hover {
       color: var(--secondary-color);
+      transform: scale(1.2);
     }
   }
 
   &__contact-info {
-    padding: 20px;
-    margin-top: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    padding: .5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px); /* Adjusted for a moderate blur effect */
+    -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
+    border-radius: 1rem;
+    max-width: 400px;
+    width: 100%; /* Responsive width */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    position: relative;
+
 
     &__office-number {
-      font-size: 1.2em;
+      font-size: 1rem;
       color: #fff;
       font-family: var(--font-body);
-      font-weight: 100;
+      font-weight: 400;
+      margin: 0;
+      text-align: center;
     }
 
     &__schedule-button {
       display: inline-block;
-      background-color: var(--primary-color);
-      color: #fff;
+      background-color: #ffd700; /* Gold background */
+      color: #0047ab; /* Blue font color */
+      border: none;
+      border-radius: 12px;
       padding: 0.75rem 2rem;
       font-size: 1rem;
-      border-radius: 5px;
+      font-weight: bold;
       cursor: pointer;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 71, 171, 0.4); /* Blue shadow */
 
+      /* Hover effect */
       &:hover {
-        background-color: var(--primary-color-dark);
+        background-color: #ffc300; /* Slightly darker gold */
+        color: #003366; /* Darker blue on hover */
+        transform: translateY(-3px); /* Lift on hover */
+        box-shadow: 0 6px 15px rgba(0, 71, 171, 0.6); /* Stronger shadow */
+      }
+
+      /* Click effect */
+      &:active {
+        transform: scale(0.97); /* Slight shrink on click */
+        box-shadow: 0 4px 10px rgba(0, 71, 171, 0.4); /* Reset shadow on click */
       }
     }
   }
 
   @include mobile {
-    height: 300px;
+    height: 26.25rem;
+
     padding: 1rem;
     margin: 0.5rem;
 
     &__title {
-      font-size: 2.5rem;
+      font-size: 5rem;
       margin-bottom: 5px;
     }
 
@@ -380,11 +412,13 @@
   }
 
   @include tablet {
-    height: 350px;
+    height: 30rem;
     padding: 1.5rem;
 
     &__title {
-      font-size: 4rem;
+      font-size: 6rem;
+      font-weight: 100;
+      width: 60%;
     }
 
     &__text {
@@ -411,7 +445,8 @@
   }
 
   @include desktop {
-    height: 400px;
+    height: 26.25rem;
+
     padding: 2rem;
 
     &__title {
@@ -441,7 +476,6 @@
     }
   }
 }
-
 
 .magazineSection {
   padding: 2rem;
@@ -551,6 +585,47 @@
 
     .learnMoreButton {
       padding: 0.5rem 1rem;
+    }
+  }
+}
+
+.imageBanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  margin: 2rem 0;
+  overflow: hidden;
+
+  img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 0.5rem; /* Slight rounding */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    }
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    padding: 1rem;
+
+    img {
+      max-width: 90%; /* More space on smaller screens */
+      border-radius: 0.25rem;
+    }
+  }
+
+  /* Tablet adjustments */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    padding: 1.5rem;
+
+    img {
+      max-width: 85%;
     }
   }
 }

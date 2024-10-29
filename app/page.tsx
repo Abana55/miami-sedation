@@ -145,35 +145,6 @@ const Home = () => {
           <p className={styles["banner__text"]}>
             We look forward to meeting you.
           </p>
-          <div className={styles["banner__social-links"]}>
-            <Link
-              className={styles["banner__social-link"]}
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.instagram.com"
-              passHref
-            >
-              <FontAwesomeIcon icon={faInstagram} />
-            </Link>
-            <Link
-              className={styles["banner__social-link"]}
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.facebook.com"
-              passHref
-            >
-              <FontAwesomeIcon icon={faFacebook} />
-            </Link>
-            <Link
-              className={styles["banner__social-link"]}
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.twitter.com"
-              passHref
-            >
-              <FontAwesomeIcon icon={faTwitter} />
-            </Link>
-          </div>
         </div>
         <div className={styles["banner__contact-info"]}>
           <p className={styles["banner__office-number"]}>
@@ -188,7 +159,6 @@ const Home = () => {
           </Link>
         </div>
       </div>
-
       {/* Our Office Section */}
       <OurOffice />
 
