@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import styles from './OurOffice.module.scss';
 
 const officeImages = [
-  { src: '/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG', alt: 'Office Image 1' },
-  { src: '/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG', alt: 'Office Image 2' },
-  { src: '/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG', alt: 'Office Image 3' },
-  { src: '/images/OFFICCE/dentist-doctor-teeth-health-care-specialist-explai-2023-11-27-05-10-10-utc.JPG', alt: 'Office Image 4' },
+  { src: '/images/OFFICCE/officePhoto1.jpg', alt: 'Office Image 1' },
+  { src: '/images/OFFICCE/officePhoto2.jpg', alt: 'Office Image 2' },
+  { src: '/images/OFFICCE/officePhoto3.jpg', alt: 'Office Image 3' },
+  { src: '/images/OFFICCE/officePhoto4.jpg', alt: 'Office Image 4' },
 ];
 
 const OurOffice = () => {
