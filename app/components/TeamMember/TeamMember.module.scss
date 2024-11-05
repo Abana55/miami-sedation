@@ -17,6 +17,44 @@
     transform: translateY(-5px);
   }
 
+  .imageContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    margin-bottom: 1rem;
+
+    .image {
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .teamInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--secondary-color);
+    }
+
+    .position {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-color);
+    }
+  }
+
   .bio {
     max-height: 0;
     opacity: 0;
@@ -38,35 +76,6 @@
   }
 }
 
-.imageContainer {
-  position: relative;
-  width: 100%;
-  max-width: 200px;
-  height: 200px;
-  margin-bottom: 1rem;
-
-  .image {
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.teamInfo {
-  .name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: var(--secondary-color);
-  }
-
-  .position {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-  }
-}
-
 /* Doctor-specific styling */
 .doctor {
   grid-column: span 2;
@@ -85,13 +94,13 @@
   .teamInfo {
     .name {
       font-size: 1.5rem;
-      color: var(--primary-color); /* Ensure the title is prominent */
+      color: var(--primary-color);
     }
 
     .position {
       font-size: 1.2rem;
-      color: var(--text-light); /* Make sure it's visible over background */
-      z-index: 1; /* Ensure the position text is above any background elements */
+      color: var(--text-light);
+      z-index: 1;
     }
   }
 
@@ -102,13 +111,29 @@
   }
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .doctor {
-    grid-column: span 1;
+  .teamMember {
+    padding: 1rem;
+  }
 
-    .imageContainer {
-      max-width: 200px;
-      height: 300px;
-    }
+  .imageContainer {
+    max-width: 280px;
+    height: 380px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .teamMember {
+    flex-direction: row;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .imageContainer {
+    max-width: 320px;
+    height: 420px;
+    margin-right: 1rem;
   }
 }
