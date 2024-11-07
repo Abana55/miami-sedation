@@ -1,7 +1,7 @@
 .serviceCard {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   background: var(--background-color);
   border: 1px solid #e0e0e0;
   border-radius: 10px;
@@ -9,7 +9,16 @@
   text-decoration: none;
   color: inherit;
   width: 100%;
-  margin: 0;
+  max-width: 600px; /* Optional max-width for desktop */
+  margin: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -41,6 +50,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -52,7 +62,6 @@
     font-family: var(--font-heading);
     font-weight: bold;
     margin-bottom: 0.5rem;
-    text-align: center;
   }
 
   .cardDescription {
@@ -60,7 +69,6 @@
     color: var(--text-color);
     font-family: var(--font-body);
     margin-bottom: 1rem;
-    text-align: center;
   }
 
   .button {
@@ -74,5 +82,11 @@
     text-decoration: none;
     cursor: pointer;
     align-self: center;
+    transition: background-color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 215, 0, 0.8); /* Adjusted color for hover effect */
+    }
   }
 }
