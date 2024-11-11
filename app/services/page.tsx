@@ -9,19 +9,19 @@ const servicesList = {
   preventive: [
     {
       title: "Teeth Cleaning",
-      description: "Maintain your oral health with regular teeth cleaning.",
+      description: "Routine cleanings to maintain optimal oral health.",
       image: "/images/Teeth Whitening Photo by Cedric Fauntleroy.jpg",
       link: "/dental-services/teeth-cleaning",
     },
     {
       title: "Oral Exams",
-      description: "Comprehensive oral exams to ensure your dental health.",
+      description: "Thorough exams for early detection of dental issues.",
       image: "/images/Implant Photos Shvetsa.jpg",
       link: "/dental-services/oral-exams",
     },
     {
       title: "X-Rays",
-      description: "Advanced dental x-rays for accurate diagnosis.",
+      description: "High-resolution x-rays for precise dental diagnostics.",
       image: "/images/Shiny Diamond.jpg",
       link: "/dental-services/x-rays",
     },
@@ -29,31 +29,31 @@ const servicesList = {
   restorative: [
     {
       title: "Crowns",
-      description: "Protect and strengthen your teeth with dental crowns.",
+      description: "Custom crowns to protect and restore your teeth.",
       image: "/images/crowns.jpg",
       link: "/dental-services/crowns",
     },
     {
       title: "Bridges",
-      description: "Replace missing teeth with durable dental bridges.",
+      description: "Replace missing teeth with durable, natural-looking bridges.",
       image: "/images/bridges.jpg",
       link: "/dental-services/bridges",
     },
     {
       title: "Fillings",
-      description: "Restore your teeth with durable fillings.",
+      description: "Long-lasting fillings to repair cavities effectively.",
       image: "/images/fillings.jpg",
       link: "/dental-services/fillings",
     },
     {
       title: "Dental Implants",
-      description: "Permanent solutions for missing teeth.",
+      description: "Permanent, secure replacements for missing teeth.",
       image: "/images/dental-implants.jpg",
       link: "/dental-services/dental-implants",
     },
     {
       title: "Inlays and Onlays",
-      description: "Restore damaged teeth with precision-crafted inlays and onlays.",
+      description: "Precisely crafted inlays and onlays for tooth restoration.",
       image: "/images/inlays-onlays.jpg",
       link: "/dental-services/inlays-onlays",
     },
@@ -61,31 +61,31 @@ const servicesList = {
   cosmetic: [
     {
       title: "Teeth Whitening",
-      description: "Brighten your smile with our professional teeth whitening services.",
+      description: "Professional treatments to whiten and brighten your smile.",
       image: "/images/teeth-whitening.jpg",
       link: "/dental-services/teeth-whitening",
     },
     {
       title: "Veneers",
-      description: "Get the perfect smile with custom veneers.",
+      description: "Achieve a flawless smile with custom-made veneers.",
       image: "/images/veneers.jpg",
       link: "/dental-services/veneers",
     },
     {
       title: "Full Mouth Rehab",
-      description: "Comprehensive cosmetic treatments for a perfect smile.",
+      description: "Comprehensive solutions for a revitalized smile.",
       image: "/images/smile-makeovers.jpg",
       link: "/dental-services/smile-makeovers",
     },
     {
       title: "Gum Contouring",
-      description: "Enhance your smile with precise gum contouring.",
+      description: "Refine your gum line for a more balanced smile.",
       image: "/images/gum-contouring.jpg",
       link: "/dental-services/gum-contouring",
     },
     {
       title: "Full Arch Dentistry",
-      description: "Reconstruct your smile with full arch dentistry solutions.",
+      description: "Advanced treatments for complete smile reconstruction.",
       image: "/images/full-arch-dentistry.jpg",
       link: "/dental-services/full-arch-dentistry",
     },
@@ -93,19 +93,19 @@ const servicesList = {
   specialized: [
     {
       title: "Emergency Dentistry",
-      description: "Get immediate care for urgent dental problems.",
+      description: "Urgent care for immediate dental needs.",
       image: "/images/emergency-dentistry.jpg",
       link: "/dental-services/emergency-dentistry",
     },
     {
       title: "Sedation Dentistry",
-      description: "Relax during dental treatments with sedation options.",
+      description: "Comfort-enhancing sedation options for a relaxed experience.",
       image: "/images/sedation-dentistry.jpg",
       link: "/dental-services/sedation-dentistry",
     },
-    // Pediatric Dentistry has been removed as per your request
   ],
 };
+
 
 const ServicesPage = () => {
   return (
