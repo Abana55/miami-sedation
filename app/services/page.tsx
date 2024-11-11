@@ -62,13 +62,13 @@ const servicesList = {
     {
       title: "Teeth Whitening",
       description: "Professional treatments to whiten and brighten your smile.",
-      image: "/images/teeth-whitening.jpg",
+      image: "/images/services/Shiny Diamond.jpg",
       link: "/dental-services/teeth-whitening",
     },
     {
       title: "Veneers",
-      description: "Achieve a flawless smile with custom-made veneers.",
-      image: "/images/veneers.jpg",
+      description: "Get your perfect smile with custom veneers.",
+      image: "/images/services/veneers.jpg",
       link: "/dental-services/veneers",
     },
     {
@@ -126,7 +126,6 @@ const ServicesPage = () => {
           </p>
         </header>
 
-        {/* Preventive Care Section */}
         <section className={styles.servicesPage__category}>
           <h2 className={styles.servicesPage__categoryTitle}>
             Preventive Care
@@ -149,7 +148,6 @@ const ServicesPage = () => {
           </Link>
         </section>
 
-        {/* Restorative Care Section */}
         <section className={styles.servicesPage__category}>
           <h2 className={styles.servicesPage__categoryTitle}>
             Restorative Dental Treatments

@@ -270,6 +270,7 @@ const AboutPage: NextPage = () => {
           position="Human Resources"
           bio={[`makes everyone happy`]}
           />
+          
 
         </div>
       </section>
