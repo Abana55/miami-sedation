@@ -78,12 +78,6 @@ const servicesList = {
       link: "/dental-services/smile-makeovers",
     },
     {
-      title: "Gum Contouring",
-      description: "Refine your gum line for a more balanced smile.",
-      image: "/images/gum-contouring.jpg",
-      link: "/dental-services/gum-contouring",
-    },
-    {
       title: "Full Arch Dentistry",
       description: "Advanced treatments for complete smile reconstruction.",
       image: "/images/full-arch-dentistry.jpg",

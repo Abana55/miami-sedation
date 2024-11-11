@@ -2,21 +2,18 @@
   padding: 2rem;
   background-color: var(--light-background);
 
-  header {
+  .title {
     text-align: center;
-    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
 
-    .title {
-      font-size: 3rem;
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-
-    .text {
-      font-size: 1.2rem;
-      color: var(--text-light);
-      margin-top: 0;
-    }
+  .text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-top: 0;
   }
 
   .subtitle {
@@ -25,72 +22,59 @@
     margin-bottom: 1.5rem;
     text-align: center;
   }
-}
 
-/* Doctors' grid styling */
-.doctorsGrid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
+  .doctorsRow {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
 
-/* General team grid styling */
-.teamGrid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.teamMember {
-  padding: 1.5rem;
-  background-color: var(--light-background);
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.3s;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    transform: translateY(-5px);
-  }
-
-  &.doctor {
-    border: 2px solid var(--primary-color);
-    border-radius: 12px;
-
-    /* Ensures that doctors' cards span across columns on larger screens */
     @media (min-width: 768px) {
-      grid-column: span 2;
+      flex-wrap: nowrap; 
+    }
+  }
+
+  .staffGrid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @media (min-width: 1024px) {
-      grid-column: span 2;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  .imageContainer {
-    position: relative;
-    width: 100%;
-    max-width: 200px;
-    height: 200px;
-    margin-bottom: 1rem;
+  .teamMember {
+    padding: 1.5rem;
+    background-color: var(--light-background);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
 
-    .image {
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    &:hover,
+    &:focus {
+      transform: translateY(-5px);
     }
-  }
 
-  .teamInfo {
+    .imageContainer {
+      position: relative;
+      width: 100%;
+      max-width: 200px;
+      height: 200px;
+      margin-bottom: 1rem;
+
+      .image {
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+
     .name {
       font-size: 1.2rem;
       font-weight: bold;
@@ -102,25 +86,5 @@
       font-size: 1rem;
       color: var(--text-color);
     }
-  }
-
-  .bio {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-    text-align: left;
-    color: var(--text-color);
-    margin-top: 0.5rem;
-
-    p {
-      margin-bottom: 0.5rem;
-      line-height: 1.5;
-    }
-  }
-
-  &.showBio .bio {
-    max-height: 1000px;
-    opacity: 1;
   }
 }
