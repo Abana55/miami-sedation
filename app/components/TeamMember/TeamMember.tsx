@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import styles from "./TeamMember.module.scss";
+import blurData from "../../public/images/aboutUs/blurData"; // Import blur data
 
 interface TeamMemberProps {
   imageSrc: string;
@@ -10,6 +11,7 @@ interface TeamMemberProps {
   position: string;
   bio: string[];
   isDoctor?: boolean;
+  className?: string;
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({
@@ -19,6 +21,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   position,
   bio,
   isDoctor = false,
+  className = "",
 }) => {
   const [showBio, setShowBio] = useState(isDoctor);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -57,11 +60,15 @@ const TeamMember: React.FC<TeamMemberProps> = ({
     }
   }, [isDoctor]);
 
+  // Define image dimensions
+  const imageWidth = isDoctor ? 320 : 240;
+  const imageHeight = isDoctor ? 420 : 240;
+
   return (
     <div
       className={`${styles.teamMember} ${showBio ? styles.showBio : ""} ${
         isDoctor ? styles.doctor : ""
-      }`}
+      } ${className}`}
       onClick={handleCardClick}
       onKeyPress={handleKeyPress}
       tabIndex={0}
@@ -73,11 +80,14 @@ const TeamMember: React.FC<TeamMemberProps> = ({
         <Image
           src={imageSrc}
           alt={altText}
-          width={isDoctor ? 300 : 200} 
-          height={isDoctor ? 400 : 200} 
+          width={imageWidth}
+          height={imageHeight}
           className={styles.image}
           priority={isDoctor}
           loading={isDoctor ? "eager" : "lazy"}
+          sizes="(max-width: 768px) 100vw, 240px"
+          placeholder="blur"
+          blurDataURL={blurData[imageSrc]} // Use blur data URL
         />
       </div>
       <div className={styles.teamInfo}>

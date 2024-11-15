@@ -68,13 +68,13 @@ const servicesList = {
     {
       title: "Veneers",
       description: "Get your perfect smile with custom veneers.",
-      image: "/images/services/veneers.jpg",
+      image: "/images/services/veneer.jpg",
       link: "/dental-services/veneers",
     },
     {
       title: "Full Mouth Rehab",
       description: "Comprehensive solutions for a revitalized smile.",
-      image: "/images/smile-makeovers.jpg",
+      image: "/images/services/fullarch.jpg",
       link: "/dental-services/smile-makeovers",
     },
     {
