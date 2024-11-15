@@ -1,4 +1,3 @@
-
 import { NextPage } from "next";
 import Head from "next/head";
 import ConsultationBanner from "../components/ConsultationBanner/ConsultationBanner";
@@ -6,32 +5,128 @@ import TeamMember from "../components/TeamMember/TeamMember";
 import styles from "./AboutUs.module.scss";
 import React from "react";
 
-
-import DrBanaImage from "../public/images/aboutUs/DrBana.jpg";
-import DrBrittainImage from "../public/images/aboutUs/DrBrittain.jpg";
-import JudyImage from "../public/images/aboutUs/Judy.jpg";
-import SandraImage from "../public/images/aboutUs/Sandra.jpg";
-import AraImage from "../public/images/aboutUs/Ara.jpg";
-import JackieImage from "../public/images/aboutUs/Jackie.jpg";
-import LaurenImage from "../public/images/aboutUs/Lauren.jpg";
-import LourdesImage from "../public/images/aboutUs/LourdesBana.jpg";
-import YoanImage from "../public/images/aboutUs/Yoan.jpg";
-
 const AboutPage: NextPage = () => {
   return (
     <div className={styles.aboutContainer}>
       <Head>
-        {/* ... existing meta tags and SEO content ... */}
+        {/* Primary Meta Tags */}
+        <title>
+          About Us | Bana Dental Design - Miami's Premier Dental Team
+        </title>
+        <meta
+          name="description"
+          content="Meet the experienced and passionate team at Bana Dental Design. We are dedicated to providing exceptional dental care in Miami with a personal touch."
+        />
+        <meta
+          name="keywords"
+          content="Bana Dental Design, About Us, Dental Team, Miami Dentist, Dental Care, Dr. Ramon Bana, Dr. Andrew Brattain, Cosmetic Dentistry, Oral Health"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="About Us | Bana Dental Design" />
+        <meta
+          property="og:description"
+          content="Discover the dedicated team at Bana Dental Design committed to your oral health and a brighter smile."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.banadental.com/about-us" />
+        <meta
+          property="og:image"
+          content="https://www.banadental.com/images/og-image.jpg" // Replace with an actual image URL
+        />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Bana Dental Design" />
+        <meta
+          name="twitter:description"
+          content="Meet our experienced dental team in Miami dedicated to providing exceptional dental care."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.banadental.com/images/og-image.jpg" // Replace with an actual image URL
+        />
+
+        {/* Canonical Link */}
+        <link rel="canonical" href="https://www.banadental.com/about-us" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Dentist",
+              name: "Bana Dental Design",
+              url: "https://www.banadental.com/",
+              logo: "https://www.banadental.com/images/logo.png",
+              image: "https://www.banadental.com/images/clinic.jpg",
+              description:
+                "Bana Dental Design offers exceptional dental care services in Miami. Meet our experienced team dedicated to your oral health.",
+              telephone: "+1-305-555-5555",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "123 Main Street",
+                addressLocality: "Miami",
+                addressRegion: "FL",
+                postalCode: "33101",
+                addressCountry: "US",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: "25.7617",
+                longitude: "-80.1918",
+              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                  ],
+                  opens: "09:00",
+                  closes: "17:00",
+                },
+              ],
+              sameAs: [
+                "https://www.facebook.com/banadentaldesign",
+                "https://www.twitter.com/banadentaldesign",
+                "https://www.instagram.com/banadentaldesign",
+                // Add other social profiles
+              ],
+              founder: [
+                {
+                  "@type": "Person",
+                  name: "Dr. Ramon Bana",
+                  jobTitle: "Doctor of Dental Surgery",
+                  image: "https://www.banadental.com/images/aboutUs/DrBana.jpg",
+                },
+                {
+                  "@type": "Person",
+                  name: "Dr. Andrew Brattain",
+                  jobTitle: "Doctor of Dental Medicine",
+                  image:
+                    "https://www.banadental.com/images/aboutUs/DrBrittain.jpg",
+                },
+              ],
+            }),
+          }}
+        />
       </Head>
 
       <header className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.title}>Get to Know Us</h1>
           <p className={styles.text}>
-            Our dental team is unlike any you’ve ever met in Miami. We value excellence in patient
-            care, and it shows. We love to laugh and have a good time, but know when it’s time to get
-            down to business. Our team is overflowing with passion and commitment. We hope you get to
-            know us a little bit better here, and we can’t wait to get to know you!
+            Our dental team is unlike any you’ve ever met in Miami. We value
+            excellence in patient care, and it shows. We love to laugh and have
+            a good time, but know when it’s time to get down to business. Our
+            team is overflowing with passion and commitment. We hope you get to
+            know us a little bit better here, and we can’t wait to get to know
+            you!
           </p>
         </div>
       </header>
@@ -39,10 +134,9 @@ const AboutPage: NextPage = () => {
       <section>
         <h2 className={styles.subtitle}>Our Team</h2>
 
-        {/* Doctors Row */}
         <div className={styles.doctorsRow}>
           <TeamMember
-            imageSrc={DrBanaImage}
+            imageSrc="/images/aboutUs/DrBana.jpg"
             altText="Dr. Ramon Bana"
             name="Dr. Ramon Bana"
             position="Doctor of Dental Surgery"
@@ -56,7 +150,7 @@ const AboutPage: NextPage = () => {
           />
 
           <TeamMember
-            imageSrc={DrBrittainImage}
+            imageSrc="/images/aboutUs/DrBrittain.jpg"
             altText="Dr. Andrew Brattain"
             name="Dr. Andrew Brattain"
             position="Doctor of Dental Medicine"
@@ -70,10 +164,9 @@ const AboutPage: NextPage = () => {
           />
         </div>
 
-        {/* Staff Grid */}
         <div className={styles.staffGrid}>
           <TeamMember
-            imageSrc={JudyImage}
+            imageSrc="/images/aboutUs/Judy.jpg"
             altText="Judy Martinez"
             name="Judy Martinez"
             position="Dental Hygienist"
@@ -82,7 +175,7 @@ const AboutPage: NextPage = () => {
             ]}
           />
           <TeamMember
-            imageSrc={SandraImage}
+            imageSrc="/images/aboutUs/Sandra.jpg"
             altText="Sandra Lopez"
             name="Sandra Lopez"
             position="Dental Assistant"
@@ -91,7 +184,7 @@ const AboutPage: NextPage = () => {
             ]}
           />
           <TeamMember
-            imageSrc={AraImage}
+            imageSrc="/images/aboutUs/Ara.jpg"
             altText="Araceli Gomez"
             name="Araceli Gomez"
             position="Dental Assistant"
@@ -100,7 +193,7 @@ const AboutPage: NextPage = () => {
             ]}
           />
           <TeamMember
-            imageSrc={JackieImage}
+            imageSrc="/images/aboutUs/Jackie.jpg"
             altText="Jackie Nguyen"
             name="Jackie Nguyen"
             position="Dental Assistant"
@@ -109,7 +202,7 @@ const AboutPage: NextPage = () => {
             ]}
           />
           <TeamMember
-            imageSrc={LaurenImage}
+            imageSrc="/images/aboutUs/Lauren.jpg"
             altText="Lauren Bana"
             name="Lauren Bana"
             position="Social Media Manager"
@@ -118,7 +211,7 @@ const AboutPage: NextPage = () => {
             ]}
           />
           <TeamMember
-            imageSrc={LourdesImage}
+            imageSrc="/images/aboutUs/Lourdes.jpg"
             altText="Lourdes Bana"
             name="Lourdes Bana"
             position="Community Relations"
@@ -127,7 +220,7 @@ const AboutPage: NextPage = () => {
             ]}
           />
           <TeamMember
-            imageSrc={YoanImage}
+            imageSrc="/images/aboutUs/Yoan.jpg"
             altText="Yoan Perez"
             name="Yoan Perez"
             position="Treatment Coordinator"

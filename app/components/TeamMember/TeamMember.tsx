@@ -2,10 +2,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import styles from "./TeamMember.module.scss";
-import blurData from "../../public/images/aboutUs/blurData"; // Import blur data
 
 interface TeamMemberProps {
-  imageSrc: string;
+  imageSrc: string; 
   altText: string;
   name: string;
   position: string;
@@ -66,9 +65,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({
 
   return (
     <div
-      className={`${styles.teamMember} ${showBio ? styles.showBio : ""} ${
-        isDoctor ? styles.doctor : ""
-      } ${className}`}
+    className={`${styles.teamMember} ${showBio ? styles.showBio : ""} ${
+      isDoctor ? styles.doctor : ""
+    } ${className}`}
       onClick={handleCardClick}
       onKeyPress={handleKeyPress}
       tabIndex={0}
@@ -86,8 +85,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
           priority={isDoctor}
           loading={isDoctor ? "eager" : "lazy"}
           sizes="(max-width: 768px) 100vw, 240px"
-          placeholder="blur"
-          blurDataURL={blurData[imageSrc]} // Use blur data URL
+          placeholder="empty" 
         />
       </div>
       <div className={styles.teamInfo}>
