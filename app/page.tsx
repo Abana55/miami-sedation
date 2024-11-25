@@ -112,7 +112,7 @@ const Home = () => {
       <section className={styles.missionStatement}>
         <img
           className={styles.bannerImage}
-          src="/images/Figma 97b407c020051452.gif"
+          src="./images/IMG_3696.JPG"
           alt="Mission Banner"
         />
         <div className={styles.textContainer}>
