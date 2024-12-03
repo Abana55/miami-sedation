@@ -110,11 +110,17 @@ const Home = () => {
       </section>
 
       <section className={styles.missionStatement}>
-        <img
-          className={styles.bannerImage}
+        <video
+          className={styles.bannerVideo}
           src="/videos/BANNER 1.mp4"
-          alt="Mission Banner"
-        />
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/videos/BANNER 1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className={styles.textContainer}>
           <div className={styles.goldLine}>|</div>
           <p className={styles.sectionContent}>

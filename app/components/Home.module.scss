@@ -62,11 +62,11 @@
 
 .welcomeSection {
   display: grid;
-  grid-template-columns: 1fr 1fr; // Two columns for text and image
+  grid-template-columns: 1fr 1fr; 
   align-items: center;
   gap: 3rem;
   padding: 4rem 2rem;
-  background-color: var(--background-color); // Background color for the section
+  background-color: var(--background-color); 
 
   .welcomeText {
     display: flex;
@@ -79,7 +79,7 @@
       color: var(--primary-color);
       margin-bottom: 1rem;
       font-weight: 700;
-      text-transform: uppercase; // Modern and bold effect
+      text-transform: uppercase; 
     }
 
     .welcomeDescription {
@@ -109,17 +109,17 @@
   }
 
   .welcomeImage {
-    text-align: right; // Align the image to the right side
+    text-align: right; 
     img {
-      border-radius: 10px; // Rounded corners for a modern effect
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); // Soft shadow
+      border-radius: 10px; 
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
       max-width: 100%;
       height: auto;
     }
   }
 
   @include mobile {
-    grid-template-columns: 1fr; // Stack the image and text on mobile
+    grid-template-columns: 1fr; 
     text-align: center;
 
     .welcomeText {
@@ -128,33 +128,35 @@
 
     .welcomeImage {
       img {
-        width: 80%; // Scale down the image on mobile
+        width: 80%; 
       }
     }
   }
 }
 
 .missionStatement {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(
-    --secondary-background-color
-  ); // Different background for the banner
-  padding: 4rem 2rem;
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
 
-  .bannerImage {
+  .bannerVideo {
     width: 100%;
-    max-width: 1200px; // Keep the image size reasonable
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    height: auto;
+    object-fit: cover; 
+    display: block;
   }
 
   .textContainer {
-    max-width: 800px;
-    color: var(--secondary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: var(--text-color);
+    padding: 0 1rem;
+    max-width: 800px; 
+    width: 100%;
 
     .goldLine {
       font-size: 2rem;
@@ -169,11 +171,45 @@
     }
   }
 
-  @include mobile {
-    padding: 3rem 1.5rem;
 
+  @include mobile {
     .textContainer {
-      font-size: 1.2rem;
+      padding: 0 1rem;
+
+      .goldLine {
+        font-size: 1.5rem;
+      }
+
+      .sectionContent {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+
+  @include tablet {
+    .textContainer {
+      .goldLine {
+        font-size: 1.75rem;
+      }
+
+      .sectionContent {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+
+  @include desktop {
+    .textContainer {
+      .goldLine {
+        font-size: 2rem;
+      }
+
+      .sectionContent {
+        font-size: 1.4rem;
+      }
     }
   }
 }

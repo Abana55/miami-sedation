@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import styles from './OurOffice.module.scss';
 
 const officeImages = [
-  { src: require('../../images/OFFICCE/officePhoto1.jpg'), alt: 'Office Image 1' },
-  { src: require('../../images/OFFICCE/officePhoto2.jpg'), alt: 'Office Image 2' },
-  { src: require('../../images/OFFICCE/officePhoto3.jpg'), alt: 'Office Image 3' },
-  { src: require('../../images/OFFICCE/officePhoto4.jpg'), alt: 'Office Image 4' },
+  { src: '/images/OFFICCE/officePhoto1.jpg', alt: 'Operatory featuring dental chair and equipment' },
+  { src: '/images/OFFICCE/officePhoto2.jpg', alt: 'Front desk with a curved modern design' },
+  { src: '/images/OFFICCE/officePhoto3.jpg', alt: 'Lobby area with seating including chairs and a couch' },
+  { src: '/images/OFFICCE/officePhoto4.jpg', alt: 'Additional operatory with dental chair and instruments' },
 ];
 
 const OurOffice = () => {
