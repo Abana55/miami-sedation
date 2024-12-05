@@ -1,0 +1,133 @@
+/* components/ConnectBanner/ConnectBanner.module.scss */
+
+.connectBanner {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    overflow: hidden;
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    
+    /* Slideshow Styling */
+  .react-slideshow-container,
+  .react-slideshow-fade-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place behind content */
+  }
+
+  .connectBanner__slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  .connectBanner__slide-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  
+    /* Background Image Styling */
+    &__image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      animation: slideShow 15s infinite;
+    }
+  
+    /* Assign background images and animation delays */
+    &__image:nth-child(1) {
+      background-image: url('/images/connectBanner1.jpg');
+      animation-delay: 0s;
+    }
+  
+    &__image:nth-child(2) {
+      background-image: url('/images/connectBanner2.jpg');
+      animation-delay: 5s;
+    }
+  
+    &__image:nth-child(3) {
+      background-image: url('/images/connectBanner3.jpg');
+      animation-delay: 10s;
+    }
+  
+    /* Slideshow Animation */
+    @keyframes slideShow {
+      0% {
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 1;
+      }
+      35% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  
+    /* Content Styling */
+    &__title {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      z-index: 1;
+    }
+  
+    &__content {
+      max-width: 600px;
+      z-index: 1;
+    }
+  
+    &__text {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      z-index: 1;
+    }
+  
+    &__contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+    }
+  
+    &__office-number {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  
+    &__schedule-button {
+      padding: 0.75rem 2rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: var(--primary-color-dark);
+      }
+    }
+  }
+  
