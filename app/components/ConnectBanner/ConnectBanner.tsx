@@ -1,4 +1,4 @@
-// components/ConnectBanner/ConnectBanner.tsx
+"use client";
 
 import Link from 'next/link';
 import { Fade } from 'react-slideshow-image';
