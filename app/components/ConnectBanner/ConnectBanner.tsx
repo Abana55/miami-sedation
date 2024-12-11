@@ -32,7 +32,7 @@ const ConnectBanner = () => {
       </div>
       <div className={styles["connectBanner__contact-info"]}>
         <p className={styles["connectBanner__office-number"]}>
-          Call us: (123) 456-7890
+          Call us: (305) 857-3931
         </p>
         <Link className={styles["connectBanner__schedule-button"]} href="/contact-us" passHref>
           Schedule an Appointment
