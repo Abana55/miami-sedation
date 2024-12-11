@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./components/Home.module.scss";
 import TeamAccordion from "./components/TeamAccordion/TeamAccordion";
 import OurOffice from "./components/OurOffice/OurOffice";
+import ConnectBanner from "./components/ConnectBanner/ConnectBanner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
@@ -144,27 +145,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Social Media Banner */}
-      <div className={styles.banner}>
-        <h1 className={styles["banner__title"]}>Connect with Us</h1>
-        <div className={styles["banner__content"]}>
-          <p className={styles["banner__text"]}>
-            We look forward to meeting you.
-          </p>
-        </div>
-        <div className={styles["banner__contact-info"]}>
-          <p className={styles["banner__office-number"]}>
-            Call us: (123) 456-7890
-          </p>
-          <Link
-            className={styles["banner__schedule-button"]}
-            href="/contact-us"
-            passHref
-          >
-            Schedule an Appointment
-          </Link>
-        </div>
-      </div>
+      <section className="connect-banner-section">
+        <ConnectBanner />
+      </section>
       {/* Our Office Section */}
       <OurOffice />
 
