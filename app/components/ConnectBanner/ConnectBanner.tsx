@@ -26,13 +26,11 @@ const ConnectBanner = () => {
       </Fade>
       <h1 className={styles["connectBanner__title"]}>Connect with Us</h1>
       <div className={styles["connectBanner__content"]}>
-        <p className={styles["connectBanner__text"]}>
-          We look forward to meeting you.
-        </p>
+        <p className={styles["connectBanner__text"]}>We look forward to meeting you.</p>
       </div>
       <div className={styles["connectBanner__contact-info"]}>
         <p className={styles["connectBanner__office-number"]}>
-          Call us: (305) 857-3931
+          Call us: (123) 456-7890
         </p>
         <Link className={styles["connectBanner__schedule-button"]} href="/contact-us" passHref>
           Schedule an Appointment
